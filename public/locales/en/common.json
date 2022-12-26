@@ -1,0 +1,10 @@
+{
+  "navbar": {
+    "name": "Movie quotes"
+  },
+  "404": {
+    "mainText": "We can't see the page you are looking for",
+    "return": "Return home",
+    "whoops": "Whoops!"
+  }
+}
