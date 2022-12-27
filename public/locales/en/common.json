@@ -30,5 +30,18 @@
       "text": "“I see in your eyes the same fear that would take the heart of me....”",
       "name": "The Lord of the Rings, 2003"
     }
+  },
+  "form": {
+    "login": {
+      "header": "Log in to your account",
+      "welcomeBack": "Welcome back! Please enter your details.",
+      "email": "Email",
+      "emailInput": "Enter your email",
+      "password": "Password",
+      "rememberMe": "Rememer me",
+      "forgotPassword": "Forgot password",
+      "loginWithGoogle": "Sign in with Google",
+      "alreadyHaveAccount": "Already have an account?"
+    }
   }
 }
