@@ -1,1 +1,1 @@
-export * from './LanguageSwihiddentcher';
+export * from './LanguageSwitcher';
