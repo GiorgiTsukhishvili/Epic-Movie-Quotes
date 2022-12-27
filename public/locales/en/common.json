@@ -6,5 +6,9 @@
     "mainText": "We can't see the page you are looking for",
     "return": "Return home",
     "whoops": "Whoops!"
+  },
+  "403": {
+    "mainText": "You shall not pass!",
+    "noEntry": "Sorry, but  you don’t have permission to access this page"
   }
 }
