@@ -1,6 +1,8 @@
 {
   "navbar": {
-    "name": "Movie quotes"
+    "login": "Log in",
+    "singUp": "Sign Up",
+    "language": "Eng"
   },
   "404": {
     "mainText": "We can't see the page you are looking for",
@@ -12,6 +14,10 @@
     "noEntry": "Sorry, but  you don’t have permission to access this page"
   },
   "landing": {
+    "top": {
+      "mainText": "Find any quote in millions of movie lines",
+      "button": "Get started"
+    },
     "interstellar": {
       "text": "“You have to leave somethig behind to go forward”",
       "name": "Interstellar, 2014"
