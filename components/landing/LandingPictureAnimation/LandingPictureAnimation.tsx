@@ -7,8 +7,9 @@ const LandingPictureAnimation = () => {
   return (
     <Fragment>
       <div className='h-screen relative'>
-        <div className={`w-screen h-screen landing-interstellar`} />
-        <div className='z-[2] absolute flex gap-4 top-[18rem] md:top-[25.813rem] left-[2.188rem] md:left-[10.625rem]'>
+        <div className='w-full h-full bg-interstellar-gradient absolute z-[2] rotate--90' />
+        <div className='w-screen h-screen bg-interstellar absolute bg-no-repeat bg-center bg-cover bg-fixed' />
+        <div className='z-[3] absolute flex gap-4 top-[18rem] md:top-[25.813rem] left-[2.188rem] md:left-[10.625rem]'>
           <div className='w-[1.063rem] md:w-[3.313rem] h-0.5 bg-white mt-[0.938rem] md:mt-[2.563rem]' />
           <div>
             <h1 className='font-bold max-w-[47.563rem] text-white leading-[150%] text-xl md:text-5xl'>
@@ -21,7 +22,8 @@ const LandingPictureAnimation = () => {
         </div>
       </div>
       <div className='h-screen relative'>
-        <div className={`w-screen h-screen landing-trt`} />
+        <div className='w-full h-full bg-interstellar-gradient absolute z-[2] rotate--90' />
+        <div className='w-screen h-screen bg-trt absolute bg-no-repeat bg-center bg-cover bg-fixed' />
         <div className='z-[2] absolute  flex gap-4 top-[18rem] md:top-[30.938rem] left-[2.188rem] md:left-[10.625rem]'>
           <div className='w-[1.063rem] md:w-[3.313rem] h-0.5 bg-white mt-[0.938rem] md:mt-[2.563rem]' />
           <div>
@@ -35,7 +37,8 @@ const LandingPictureAnimation = () => {
         </div>
       </div>
       <div className='h-screen relative'>
-        <div className={`w-screen h-screen landing-lotr`} />
+        <div className='w-full h-full bg-interstellar-gradient absolute z-[2]' />
+        <div className='w-screen h-screen bg-lotr absolute bg-no-repeat bg-center bg-cover bg-fixed' />
         <div className='z-[2] absolute max-w-[47.563rem] flex gap-4 top-[18rem] md:top-[40.875rem] left-[2.188rem] md:left-[10.625rem]'>
           <div className='w-[1.063rem] md:w-[3.313rem] h-0.5 bg-white mt-[0.938rem] md:mt-[2.563rem]' />
           <div>
