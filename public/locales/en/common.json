@@ -10,5 +10,19 @@
   "403": {
     "mainText": "You shall not pass!",
     "noEntry": "Sorry, but  you don’t have permission to access this page"
+  },
+  "landing": {
+    "interstellar": {
+      "text": "“You have to leave somethig behind to go forward”",
+      "name": "Interstellar, 2014"
+    },
+    "trt": {
+      "text": "“I think we’re just gonna havevto be secretly in love with earch other and leave it that”",
+      "name": "The Royal Tenenbaums,2001"
+    },
+    "lotr": {
+      "text": "“I see in your eyes the same fear that would take the heart of me....”",
+      "name": "The Lord of the Rings, 2003"
+    }
   }
 }

@@ -1,3 +1,36 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.landing-interstellar {
+  background-image: url(../public/assets/imgs/interstellar.jpg);
+  background-position: 75% center;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  z-index: 1;
+}
+
+.landing-trt {
+  background-image: url(../public/assets/imgs/trt.jpg);
+  background-position: 75% center;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  z-index: 1;
+}
+
+.landing-lotr {
+  background-image: url(../public/assets/imgs/lotr.jpg);
+  background-position: 75% center;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  z-index: 1;
+}

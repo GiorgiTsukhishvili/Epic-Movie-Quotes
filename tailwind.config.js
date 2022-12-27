@@ -13,6 +13,7 @@ module.exports = {
       colors: {
         zinc: {
           150: '#F0F0F0',
+          350: '#D9D9D9',
         },
         red: {
           650: '#E31221',
