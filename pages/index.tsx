@@ -1,4 +1,4 @@
-import { LandingTop, LandingPictureAnimation } from 'components';
+import { LandingTop, LandingPictureAnimation, Navbar } from 'components';
 import { Fragment } from 'react';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { GetStaticProps } from 'next';
@@ -6,6 +6,7 @@ import { GetStaticProps } from 'next';
 export default function Home() {
   return (
     <Fragment>
+      <Navbar />
       <LandingTop />
       <LandingPictureAnimation />
     </Fragment>

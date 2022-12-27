@@ -9,6 +9,8 @@ module.exports = {
       backgroundImage: {
         'main-gradient':
           'linear-gradient(187.16deg, #181623 0.07%, #191725 51.65%, #0D0B14 98.75%)',
+        'landing-gradient':
+          'linear-gradient(187.16deg, #181623 0.07%, #191725 51.65%, #0D0B14 98.75%)',
         interstellar: 'url(/assets/imgs/interstellar.jpg)',
         'the-royal-tenenbaums': 'url(/assets/imgs/the-royal-tenenbaums.jpg)',
         'lord-of-the-rings': 'url(/assets/imgs/lord-of-the-rings.jpg)',
@@ -26,6 +28,9 @@ module.exports = {
         },
         red: {
           650: '#E31221',
+        },
+        orange: {
+          250: '#DDCCAA',
         },
       },
     },
