@@ -29,15 +29,26 @@ module.exports = {
         },
         gray: {
           550: '#6C757D',
+          350: '#CED4DA',
         },
         red: {
+          550: '#DC3545',
           650: '#E31221',
         },
         orange: {
           250: '#DDCCAA',
         },
+        blue: {
+          650: '#0D6EFD',
+        },
+        green: {
+          750: '#198754',
+        },
       },
     },
+    boxShadow: {
+      'input-custom': '0px 0px 0px 4px rgba(13, 110, 253, 0.25)',
+    },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/forms')],
 };

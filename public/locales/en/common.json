@@ -38,10 +38,13 @@
       "email": "Email",
       "emailInput": "Enter your email",
       "password": "Password",
+      "singIn": "Sign in",
       "rememberMe": "Rememer me",
       "forgotPassword": "Forgot password",
       "loginWithGoogle": "Sign in with Google",
-      "alreadyHaveAccount": "Already have an account?"
+      "alreadyHaveAccount": "Don't have an account?",
+      "required": "Field is mandatory",
+      "minLength": "Minimum length is 3 symbols"
     }
   }
 }

@@ -38,10 +38,13 @@
       "email": "მეილი",
       "emailInput": "შეიყვანეთ თქვენი მეილი",
       "password": "პაროლი",
+      "singIn": "შესვლა",
       "rememberMe": "დამიმახსოვრე",
       "forgotPassword": "დაგავიწყდა პაროლი",
       "loginWithGoogle": "შედი გუგლით",
-      "alreadyHaveAccount": "უკვე გაქვს ანგარიში?"
+      "alreadyHaveAccount": "არ გაქვს ანგარიში?",
+      "required": "ველი სავალდებულოა",
+      "minLength": "შეიყვანეთ მინიმუმ 3 სიმბოლო"
     }
   }
 }
