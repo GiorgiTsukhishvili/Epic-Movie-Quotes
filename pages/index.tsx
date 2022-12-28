@@ -1,13 +1,8 @@
-import {
-  LandingTop,
-  LandingPictureAnimation,
-  Navbar,
-  useFormChooser,
-  Login,
-} from 'components';
+import { LandingTop, LandingPictureAnimation, Navbar, Login } from 'components';
 import { Fragment } from 'react';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { GetStaticProps } from 'next';
+import { useFormChooser } from 'hooks';
 
 export default function Home() {
   const { whichForm, setWhichForm } = useFormChooser();
