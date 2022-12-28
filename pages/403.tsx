@@ -18,7 +18,7 @@ const NotAllowedPage = () => {
           priority
         />
         <Image
-          src={'/assets/imgs/Union.png'}
+          src={'/assets/imgs/union.png'}
           width={121}
           height={137}
           alt='error ghost'
