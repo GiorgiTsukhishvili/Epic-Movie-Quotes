@@ -13,7 +13,7 @@ const Login: React.FC<LoginProps> = ({ setWhichForm }) => {
         <h1 className='text-white text-2xl md:text-[2rem] font-medium leading-[120%]'>
           {t('form.login.header')}
         </h1>
-        <h1 className='text-gray-550 mt-3 text-base font-normal leading-[150%] '>
+        <h1 className='text-gray-550 mt-3 text-base font-normal leading-[150%] px-[2.125rem] sm:px-[7.5rem]'>
           {t('form.login.welcomeBack')}
         </h1>
         <form
@@ -104,7 +104,7 @@ const Login: React.FC<LoginProps> = ({ setWhichForm }) => {
               <input
                 type='checkbox'
                 {...register('remember')}
-                className='rounded-[0.25rem] w-4 h-4'
+                className='rounded-[0.25rem] w-4 h-4 cursor-pointer'
               />
               <label
                 htmlFor='remember'
