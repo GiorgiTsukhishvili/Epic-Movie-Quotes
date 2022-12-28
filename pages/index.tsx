@@ -1,4 +1,10 @@
-import { LandingTop, LandingPictureAnimation, Navbar, Login } from 'components';
+import {
+  LandingTop,
+  LandingPictureAnimation,
+  Navbar,
+  Login,
+  Footer,
+} from 'components';
 import { Fragment } from 'react';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { GetStaticProps } from 'next';
@@ -13,6 +19,7 @@ export default function Home() {
       <LandingTop />
       <LandingPictureAnimation />
       {whichForm === 'login' ? <Login setWhichForm={setWhichForm} /> : <></>}
+      <Footer />
     </Fragment>
   );
 }
