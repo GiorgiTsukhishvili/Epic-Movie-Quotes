@@ -23,7 +23,7 @@ const useForgotPassword = () => {
     setWhichForm: Dispatch<SetStateAction<string>>
   ) => {
     console.log(data);
-    setWhichForm('');
+    setWhichForm('forgot-sent');
   };
 
   return { t, register, handleSubmit, onSubmit, errors, email };

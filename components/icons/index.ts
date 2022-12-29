@@ -3,3 +3,4 @@ export { default as Google } from './Google';
 export { default as GreenCheck } from './GreenCheck';
 export { default as RedCircle } from './RedCircle';
 export { default as ArrowRight } from './ArrowRight';
+export { default as Airplane } from './Airplane';
