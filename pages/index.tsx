@@ -4,6 +4,7 @@ import {
   Navbar,
   Login,
   Footer,
+  ForgotPassword,
 } from 'components';
 import { Fragment } from 'react';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
@@ -18,7 +19,13 @@ export default function Home() {
       <Navbar setWhichForm={setWhichForm} />
       <LandingTop />
       <LandingPictureAnimation />
-      {whichForm === 'login' ? <Login setWhichForm={setWhichForm} /> : <></>}
+      {whichForm === 'login' ? (
+        <Login setWhichForm={setWhichForm} />
+      ) : whichForm === 'forgot' ? (
+        <ForgotPassword setWhichForm={setWhichForm} />
+      ) : (
+        <></>
+      )}
       <Footer />
     </Fragment>
   );
