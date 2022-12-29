@@ -60,6 +60,25 @@
       "mainTwo": "We have sent a password recover instructions to your email",
       "goToEmail": "Go to my email",
       "skip": "Skip, I’ll confirm later"
+    },
+    "register": {
+      "header": "Create an account",
+      "mainText": "Start your journey!",
+      "name": "Name",
+      "nameInput": "At least 3 & max.15 lower case characters",
+      "email": "Email",
+      "emailInput": "Enter your email",
+      "password": "Password",
+      "passwordInput": "At least 8 & max.15 lower case characters",
+      "passwordConfirmation": "Confirm password",
+      "passwordConfirmationInput": "Confirm password",
+      "submit": "Get started",
+      "google": "Sign up with Google",
+      "haveAccount": "Already have an account?",
+      "logIn": "Log in",
+      "nameMax": "Maximum 15 symbols",
+      "onlyLowerAndNumbers": "Input lower case letters or numbers",
+      "passwordsNoMatch": "Passwords do not match"
     }
   }
 }

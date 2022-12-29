@@ -41,7 +41,7 @@
       "singIn": "შესვლა",
       "rememberMe": "დამიმახსოვრე",
       "forgotPassword": "დაგავიწყდა პაროლი",
-      "loginWithGoogle": "შედი გუგლით",
+      "loginWithGoogle": "შედი Google-ით",
       "alreadyHaveAccount": "არ გაქვს ანგარიში?",
       "required": "ველი სავალდებულოა",
       "minLength": "შეიყვანეთ მინიმუმ 3 სიმბოლო"
@@ -60,6 +60,25 @@
       "mainTwo": "ჩვენ გამოგიგზავნეთ პაროლის აღდგენის ინსტრუქციები თქვენს ელფოსტაზე",
       "goToEmail": "გადადით ჩემს მეილზე",
       "skip": "გამოტოვეთ, მოგვიანებით დავადასტურებ"
+    },
+    "register": {
+      "header": "შექმენით ანგარიში",
+      "mainText": "დაიწყე შენი მოგზაურობა!",
+      "name": "სახელი",
+      "nameInput": "მინიმუმ 3 და მაქსიმუმ 15 პატარა ასო",
+      "email": "მეილი",
+      "emailInput": "შეიყვანეთ თქვენი ელექტრონული ფოსტა",
+      "password": "პაროლი",
+      "passwordInput": "მინიმუმ 8 და მაქსიმუმ 15 პატარა ასო",
+      "passwordConfirmation": "დაადასტურე პაროლი",
+      "passwordConfirmationInput": "დაადასტურე პაროლი",
+      "submit": "დაიწყე",
+      "google": "დარეგისტრირდი Google-ით",
+      "haveAccount": "უკვე გაქვთ ანგარიში?",
+      "logIn": "შესვლა",
+      "nameMax": "მაქსიმუმ 15 სიმბოლო",
+      "onlyLowerAndNumbers": "შეიყვანეთ მცირე ასოები ან რიცხვები",
+      "passwordsNoMatch": "პაროლები არ ემთხვევა"
     }
   }
 }
