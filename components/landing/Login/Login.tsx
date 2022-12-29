@@ -17,7 +17,7 @@ const Login: React.FC<LoginProps> = ({ setWhichForm }) => {
           {t('form.login.welcomeBack')}
         </h1>
         <form
-          onSubmit={handleSubmit(onSubmit)}
+          onSubmit={handleSubmit((data) => onSubmit(data, setWhichForm))}
           className='px-[2.125rem] sm:px-[7.5rem] flex flex-col items-start mt-8'
         >
           <div className='w-full flex flex-col items-start relative'>

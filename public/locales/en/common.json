@@ -50,7 +50,8 @@
       "header": "Forgot password?",
       "mainText": "Enter the email and we’ll send an email with instructions to reset your password",
       "sendInstructions": "Send instructions",
-      "goBack": "Back to log in"
+      "goBack": "Back to log in",
+      "inputEmail": "Please input email"
     }
   }
 }
