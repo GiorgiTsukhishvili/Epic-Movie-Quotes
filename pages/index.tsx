@@ -6,6 +6,7 @@ import {
   Footer,
   ForgotPassword,
   EmailSent,
+  Registration,
 } from 'components';
 import { Fragment } from 'react';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
@@ -18,7 +19,7 @@ export default function Home() {
   return (
     <Fragment>
       <Navbar setWhichForm={setWhichForm} />
-      <LandingTop />
+      <LandingTop setWhichForm={setWhichForm} />
       <LandingPictureAnimation />
       {whichForm === 'login' ? (
         <Login setWhichForm={setWhichForm} />
@@ -32,6 +33,8 @@ export default function Home() {
           goToEmail={'form.verify.goToEmail'}
           skip={'form.verify.skip'}
         />
+      ) : whichForm === 'registration' ? (
+        <Registration setWhichForm={setWhichForm} />
       ) : whichForm === 'registration-sent' ? (
         <EmailSent
           setWhichForm={setWhichForm}
