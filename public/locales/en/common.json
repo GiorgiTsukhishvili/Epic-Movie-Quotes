@@ -52,6 +52,14 @@
       "sendInstructions": "Send instructions",
       "goBack": "Back to log in",
       "inputEmail": "Please input email"
+    },
+    "verify": {
+      "headerOne": "Check your email",
+      "headerTwo": "Thank you!",
+      "mainOne": "Please check your email and follow the instructions to activate your account.",
+      "mainTwo": "We have sent a password recover instructions to your email",
+      "goToEmail": "Go to my email",
+      "skip": "Skip, I’ll confirm later"
     }
   }
 }
