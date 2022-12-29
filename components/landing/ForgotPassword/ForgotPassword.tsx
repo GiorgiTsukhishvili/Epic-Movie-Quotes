@@ -26,7 +26,7 @@ const ForgotPassword: React.FC<ForgotPasswordProps> = ({ setWhichForm }) => {
           {t('form.forgotPassword.mainText')}
         </h1>
         <form
-          onSubmit={handleSubmit(onSubmit)}
+          onSubmit={handleSubmit((data) => onSubmit(data, setWhichForm))}
           className='px-[2.125rem] sm:px-[7.5rem] flex flex-col items-start mt-8'
         >
           <div className='w-full flex flex-col items-start relative'>
@@ -37,15 +37,22 @@ const ForgotPassword: React.FC<ForgotPasswordProps> = ({ setWhichForm }) => {
               {t('form.login.email')}
             </label>
             <input
-              type='email'
+              type='text'
               {...register('email', {
                 required: {
                   value: true,
                   message: t('form.login.required'),
                 },
-                minLength: {
-                  value: 3,
-                  message: t('form.login.minLength'),
+                validate: {
+                  isEmail: (value) => {
+                    if (
+                      !/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
+                        value
+                      )
+                    ) {
+                      return t('form.forgotPassword.inputEmail')!;
+                    }
+                  },
                 },
               })}
               className={`${

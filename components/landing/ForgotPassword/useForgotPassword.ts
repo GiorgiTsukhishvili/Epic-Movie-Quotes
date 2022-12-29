@@ -1,4 +1,5 @@
 import { useTranslation } from 'next-i18next';
+import { Dispatch, SetStateAction } from 'react';
 import { useForm } from 'react-hook-form';
 import { ForgotPasswordTypes } from './forgotTypes';
 
@@ -17,8 +18,12 @@ const useForgotPassword = () => {
 
   const { email } = getValues();
 
-  const onSubmit = (data: ForgotPasswordTypes) => {
+  const onSubmit = (
+    data: ForgotPasswordTypes,
+    setWhichForm: Dispatch<SetStateAction<string>>
+  ) => {
     console.log(data);
+    setWhichForm('');
   };
 
   return { t, register, handleSubmit, onSubmit, errors, email };
