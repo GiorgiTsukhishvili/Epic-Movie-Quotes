@@ -1,4 +1,4 @@
-import { Airplane, useEmailSent } from 'components';
+import { Airplane, CloseIcon, useEmailSent } from 'components';
 import { Fragment } from 'react';
 import { EmailSentProps } from './emailSentTypes';
 
@@ -47,6 +47,12 @@ const EmailSent: React.FC<EmailSentProps> = ({
             </h1>
           )}
         </div>
+      </div>
+      <div
+        className='absolute top-5 right-5 md:hidden inline z-30 cursor-pointer'
+        onClick={() => setWhichForm('')}
+      >
+        <CloseIcon />
       </div>
     </Fragment>
   );
