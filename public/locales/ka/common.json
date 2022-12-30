@@ -78,7 +78,8 @@
       "logIn": "შესვლა",
       "nameMax": "მაქსიმუმ 15 სიმბოლო",
       "onlyLowerAndNumbers": "შეიყვანეთ მცირე ასოები ან რიცხვები",
-      "passwordsNoMatch": "პაროლები არ ემთხვევა"
+      "passwordsNoMatch": "პაროლები არ ემთხვევა",
+      "minLength": "შეიყვანეთ მინიმუმ 8 სიმბოლო"
     },
     "passwordReset": {
       "header": "შექმენით ახალი პაროლი",

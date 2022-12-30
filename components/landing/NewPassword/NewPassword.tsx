@@ -54,7 +54,7 @@ const NewPassword: React.FC<NewPasswordProps> = ({ setWhichForm }) => {
                 },
                 minLength: {
                   value: 8,
-                  message: t('form.login.minLength'),
+                  message: t('form.register.minLength'),
                 },
                 maxLength: {
                   value: 15,

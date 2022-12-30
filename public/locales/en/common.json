@@ -78,7 +78,8 @@
       "logIn": "Log in",
       "nameMax": "Maximum 15 symbols",
       "onlyLowerAndNumbers": "Input lower case letters or numbers",
-      "passwordsNoMatch": "Passwords do not match"
+      "passwordsNoMatch": "Passwords do not match",
+      "minLength": "Minimum length is 8 symbols"
     },
     "passwordReset": {
       "header": "Create new password",
