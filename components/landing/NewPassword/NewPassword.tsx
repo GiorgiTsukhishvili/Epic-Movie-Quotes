@@ -6,7 +6,7 @@ import {
   EyeRegular,
   GreenCheck,
   RedCircle,
-} from 'components/icons';
+} from 'components';
 import Link from 'next/link';
 import React, { Fragment } from 'react';
 import { NewPasswordProps } from './newPassowrdTypes';
