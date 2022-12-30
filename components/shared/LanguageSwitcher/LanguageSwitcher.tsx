@@ -17,7 +17,7 @@ const LanguageSwitcher = () => {
       </div>
 
       {isDropdownOpen && (
-        <div className='bg-white px-4 py-2 text-base font-normal leading-[150%] absolute rounded-md top-10 left-[-2rem]'>
+        <div className='bg-white px-4 py-2 text-base font-normal leading-[150%] absolute rounded-md top-14 left-[-2rem]'>
           <h1
             className='cursor-pointer text-base font-normal leading-[150%] text-center'
             onClick={() => changeLanguage('ka')}

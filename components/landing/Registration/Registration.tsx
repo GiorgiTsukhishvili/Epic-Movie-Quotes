@@ -28,7 +28,7 @@ const Registration: React.FC<RegistrationProps> = ({ setWhichForm }) => {
 
   return (
     <Fragment>
-      <div className='md:pt-[3.313rem] pt-[4.5rem] text-center fixed md:w-[37.563rem] md:h-[46rem] h-screen w-screen bg-zinc-850 z-30 top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] rounded-[0.625rem]'>
+      <div className='md:pt-[3.313rem] overflow-y-scroll pt-[4.5rem] text-center fixed md:w-[37.563rem] md:h-[46rem] h-screen w-screen bg-zinc-850 z-30 top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] rounded-[0.625rem]'>
         <h1 className='text-white text-2xl md:text-[2rem] font-medium leading-[120%]'>
           {t('form.register.header')}
         </h1>
