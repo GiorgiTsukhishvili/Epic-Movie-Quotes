@@ -7,7 +7,7 @@ const LandingTop: React.FC<LandingTopProps> = ({ setWhichForm }) => {
   return (
     <div className='h-[50.5rem] bg-landing-gradient pt-48 md:pt-[21.5rem]'>
       <div className='md:gap-6 gap-8 flex flex-col justify-center items-center'>
-        <h1 className='text-2xl md:text-6xl font-bold leading-[150%] text-center text-orange-250 max-w-[17.563rem] md:max-w-[43.938rem]'>
+        <h1 className='text-2xl md:text-6xl font-bold text-center text-orange-250 max-w-[17.563rem] md:max-w-[43.938rem]  leading-[150%]   md:leading-[150%] '>
           {t('landing.top.mainText')}
         </h1>
         <button
