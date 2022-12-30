@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import { RegistrationProps } from './registrationTypes';
 import {
+  CloseIcon,
   EyeCrossed,
   EyeRegular,
   Google,
@@ -321,6 +322,12 @@ const Registration: React.FC<RegistrationProps> = ({ setWhichForm }) => {
         className='h-screen w-screen fixed top-0 left-0 z-[20] backdrop-blur-sm	'
         onClick={() => setWhichForm('')}
       />
+      <div
+        className='absolute top-5 right-5 md:hidden inline z-30 cursor-pointer'
+        onClick={() => setWhichForm('')}
+      >
+        <CloseIcon />
+      </div>
     </Fragment>
   );
 };

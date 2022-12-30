@@ -6,3 +6,4 @@ export { default as ArrowRight } from './ArrowRight';
 export { default as Airplane } from './Airplane';
 export { default as EyeRegular } from './EyeRegular';
 export { default as EyeCrossed } from './EyeCrossed';
+export { default as CloseIcon } from './CloseIcon';

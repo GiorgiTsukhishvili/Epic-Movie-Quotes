@@ -1,4 +1,4 @@
-import { Google, GreenCheck, RedCircle, useLogin } from 'components';
+import { CloseIcon, Google, GreenCheck, RedCircle, useLogin } from 'components';
 import React, { Fragment } from 'react';
 import { ErrorMessage } from '@hookform/error-message';
 import { LoginProps } from './loginTypes';
@@ -152,6 +152,12 @@ const Login: React.FC<LoginProps> = ({ setWhichForm }) => {
         className='h-screen w-screen fixed top-0 left-0 z-[20] backdrop-blur-sm	'
         onClick={() => setWhichForm('')}
       />
+      <div
+        className='absolute top-5 right-5 md:hidden inline z-30 cursor-pointer'
+        onClick={() => setWhichForm('')}
+      >
+        <CloseIcon />
+      </div>
     </Fragment>
   );
 };

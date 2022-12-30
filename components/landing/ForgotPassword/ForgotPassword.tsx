@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import {
   ArrowRight,
+  CloseIcon,
   GreenCheck,
   RedCircle,
   useForgotPassword,
@@ -90,6 +91,12 @@ const ForgotPassword: React.FC<ForgotPasswordProps> = ({ setWhichForm }) => {
             </h1>
           </div>
         </div>
+      </div>
+      <div
+        className='absolute top-5 right-5 md:hidden inline z-30 cursor-pointer'
+        onClick={() => setWhichForm('')}
+      >
+        <CloseIcon />
       </div>
     </Fragment>
   );
