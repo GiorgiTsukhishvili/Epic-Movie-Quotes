@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const useFormChooser = () => {
-  const [whichForm, setWhichForm] = useState<string>('');
+  const [whichForm, setWhichForm] = useState<string>('registration');
 
   return { whichForm, setWhichForm };
 };

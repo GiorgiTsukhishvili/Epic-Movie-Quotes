@@ -45,7 +45,7 @@ const Login: React.FC<LoginProps> = ({ setWhichForm }) => {
                   : login
                   ? 'border-green-750'
                   : 'border-gray-350'
-              } focus:shadow-input-custom focus:outline-none w-full border-2  rounded-md bg-gray-350 text-gray-550 px-[0.813rem] py-[0.438rem] placeholder-gray-550`}
+              } focus:shadow-input-custom focus:outline-none w-full border-2 pr-10 rounded-md bg-gray-350 text-gray-550 px-[0.813rem] py-[0.438rem] placeholder-gray-550`}
               placeholder={`${t('form.login.emailInput')}`}
             />
             <div className='text-red-550 h-5 font-normal text-sm leading-[150%] my-1'>
@@ -75,7 +75,7 @@ const Login: React.FC<LoginProps> = ({ setWhichForm }) => {
                   message: t('form.login.minLength'),
                 },
               })}
-              className={`focus:shadow-input-custom focus:outline-none w-full border-2  rounded-md bg-gray-350 text-gray-550 px-[0.813rem] py-[0.438rem] placeholder-gray-550 ${
+              className={`focus:shadow-input-custom focus:outline-none w-full border-2 pr-10 rounded-md bg-gray-350 text-gray-550 px-[0.813rem] py-[0.438rem] placeholder-gray-550 ${
                 errors.password
                   ? 'border-red-550'
                   : password
@@ -142,7 +142,7 @@ const Login: React.FC<LoginProps> = ({ setWhichForm }) => {
           </h1>
           <button
             className='text-base leading-[150%] font-normal text-blue-650 underline'
-            onClick={() => setWhichForm('register')}
+            onClick={() => setWhichForm('registration')}
           >
             {t('navbar.singUp')}
           </button>

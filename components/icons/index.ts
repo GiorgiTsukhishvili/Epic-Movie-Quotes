@@ -4,3 +4,5 @@ export { default as GreenCheck } from './GreenCheck';
 export { default as RedCircle } from './RedCircle';
 export { default as ArrowRight } from './ArrowRight';
 export { default as Airplane } from './Airplane';
+export { default as EyeRegular } from './EyeRegular';
+export { default as EyeCrossed } from './EyeCrossed';
