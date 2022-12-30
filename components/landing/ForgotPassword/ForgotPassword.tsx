@@ -80,9 +80,9 @@ const ForgotPassword: React.FC<ForgotPasswordProps> = ({ setWhichForm }) => {
             {t('form.forgotPassword.sendInstructions')}
           </button>
         </form>
-        <div className='flex w-full items-center justify-center mt-8 cursor-pointer'>
+        <div className='flex w-full items-center justify-center mt-8 '>
           <div
-            className='flex items-center justify-center  gap-3'
+            className='flex items-center justify-center  gap-3 cursor-pointer'
             onClick={() => setWhichForm('login')}
           >
             <ArrowRight />

@@ -79,6 +79,11 @@
       "nameMax": "Maximum 15 symbols",
       "onlyLowerAndNumbers": "Input lower case letters or numbers",
       "passwordsNoMatch": "Passwords do not match"
+    },
+    "passwordReset": {
+      "header": "Create new password",
+      "mainText": "Your new password must be different from previous used passwords",
+      "reset": "Reset password"
     }
   }
 }

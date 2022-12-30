@@ -6,3 +6,4 @@ export * from './Footer';
 export * from './ForgotPassword';
 export * from './EmailSent';
 export * from './Registration';
+export * from './NewPassword';

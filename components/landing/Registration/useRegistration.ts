@@ -1,6 +1,6 @@
 import { useTranslation } from 'next-i18next';
 import { Dispatch, SetStateAction, useState } from 'react';
-import { useForm } from 'react-hook-form';
+import { useForm, useWatch } from 'react-hook-form';
 import { RegistrationTypes } from './registrationTypes';
 
 const useRegistration = () => {
@@ -15,6 +15,7 @@ const useRegistration = () => {
     formState: { errors },
     handleSubmit,
     getValues,
+    control,
   } = useForm<RegistrationTypes>({
     mode: 'onChange',
     defaultValues: {
@@ -24,6 +25,8 @@ const useRegistration = () => {
       password_confirmation: '',
     },
   });
+
+  useWatch({ control, name: 'password' });
 
   const { name, email, password, password_confirmation } = getValues();
 
