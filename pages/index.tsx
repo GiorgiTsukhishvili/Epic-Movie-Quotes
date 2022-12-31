@@ -8,7 +8,6 @@ import {
   EmailSent,
   Registration,
 } from 'components';
-import { Fragment } from 'react';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { GetStaticProps } from 'next';
 import { useFormChooser } from 'hooks';
@@ -17,7 +16,12 @@ export default function Home() {
   const { whichForm, setWhichForm } = useFormChooser();
 
   return (
-    <Fragment>
+    <div
+      className={`${
+        whichForm !== '' &&
+        'fixed w-screen overflow-hidden md:static md:w-auto md:overflow-y-auto'
+      }`}
+    >
       <Navbar setWhichForm={setWhichForm} />
       <LandingTop setWhichForm={setWhichForm} />
       <LandingPictureAnimation />
@@ -46,7 +50,7 @@ export default function Home() {
         <></>
       )}
       <Footer />
-    </Fragment>
+    </div>
   );
 }
 

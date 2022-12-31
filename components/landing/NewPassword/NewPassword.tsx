@@ -43,7 +43,7 @@ const NewPassword: React.FC<NewPasswordProps> = ({ setWhichForm }) => {
               htmlFor='password'
               className='text-base text-white font-normal leading-[150%] mb-2'
             >
-              {t('form.login.password')}
+              {t('form.login.password')} <span className='text-red-550'>*</span>
             </label>
             <input
               type={passwordsVisible.password ? 'text' : 'password'}
@@ -126,7 +126,8 @@ const NewPassword: React.FC<NewPasswordProps> = ({ setWhichForm }) => {
               htmlFor='password_confirmation'
               className='text-base text-white font-normal leading-[150%] mb-2'
             >
-              {t('form.register.passwordConfirmation')}
+              {t('form.register.passwordConfirmation')}{' '}
+              <span className='text-red-550'>*</span>
             </label>
             <input
               type={
@@ -226,7 +227,7 @@ const NewPassword: React.FC<NewPasswordProps> = ({ setWhichForm }) => {
         href={'/'}
       ></Link>
       <Link
-        className='absolute top-5 right-5 md:hidden inline z-30 cursor-pointer'
+        className='fixed top-5 right-5 md:hidden inline z-30 cursor-pointer'
         href={'/'}
       >
         <CloseIcon />

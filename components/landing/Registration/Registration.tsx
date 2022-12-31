@@ -28,7 +28,7 @@ const Registration: React.FC<RegistrationProps> = ({ setWhichForm }) => {
 
   return (
     <Fragment>
-      <div className='md:pt-[3.313rem] pt-[4.5rem] text-center fixed md:w-[37.563rem] md:h-[46rem] h-screen w-screen bg-zinc-850 z-30 top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] rounded-[0.625rem]'>
+      <div className='md:pt-[3.313rem] overflow-y-scroll pt-[4.5rem] text-center fixed md:w-[37.563rem] md:h-[46rem] h-screen w-screen bg-zinc-850 z-30 top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] rounded-[0.625rem]'>
         <h1 className='text-white text-2xl md:text-[2rem] font-medium leading-[120%]'>
           {t('form.register.header')}
         </h1>
@@ -44,7 +44,7 @@ const Registration: React.FC<RegistrationProps> = ({ setWhichForm }) => {
               htmlFor='name'
               className='text-base text-white font-normal leading-[150%] mb-2'
             >
-              {t('form.register.name')}
+              {t('form.register.name')} <span className='text-red-550'>*</span>
             </label>
             <input
               type='text'
@@ -91,7 +91,7 @@ const Registration: React.FC<RegistrationProps> = ({ setWhichForm }) => {
               htmlFor='email'
               className='text-base text-white font-normal leading-[150%] mb-2'
             >
-              {t('form.login.email')}
+              {t('form.login.email')} <span className='text-red-550'>*</span>
             </label>
             <input
               type='text'
@@ -134,7 +134,7 @@ const Registration: React.FC<RegistrationProps> = ({ setWhichForm }) => {
               htmlFor='password'
               className='text-base text-white font-normal leading-[150%] mb-2'
             >
-              {t('form.login.password')}
+              {t('form.login.password')} <span className='text-red-550'>*</span>
             </label>
             <input
               type={passwordsVisible.password ? 'text' : 'password'}
@@ -217,7 +217,8 @@ const Registration: React.FC<RegistrationProps> = ({ setWhichForm }) => {
               htmlFor='password_confirmation'
               className='text-base text-white font-normal leading-[150%] mb-2'
             >
-              {t('form.register.passwordConfirmation')}
+              {t('form.register.passwordConfirmation')}{' '}
+              <span className='text-red-550'>*</span>
             </label>
             <input
               type={
@@ -323,7 +324,7 @@ const Registration: React.FC<RegistrationProps> = ({ setWhichForm }) => {
         onClick={() => setWhichForm('')}
       />
       <div
-        className='absolute top-5 right-5 md:hidden inline z-30 cursor-pointer'
+        className='fixed top-5 right-5 md:hidden inline z-30 cursor-pointer'
         onClick={() => setWhichForm('')}
       >
         <CloseIcon />

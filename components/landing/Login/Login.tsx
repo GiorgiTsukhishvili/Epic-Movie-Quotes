@@ -153,7 +153,7 @@ const Login: React.FC<LoginProps> = ({ setWhichForm }) => {
         onClick={() => setWhichForm('')}
       />
       <div
-        className='absolute top-5 right-5 md:hidden inline z-30 cursor-pointer'
+        className='fixed top-5 right-5 md:hidden inline z-30 cursor-pointer'
         onClick={() => setWhichForm('')}
       >
         <CloseIcon />
