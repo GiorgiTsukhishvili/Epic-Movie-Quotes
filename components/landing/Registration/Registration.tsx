@@ -44,7 +44,7 @@ const Registration: React.FC<RegistrationProps> = ({ setWhichForm }) => {
               htmlFor='name'
               className='text-base text-white font-normal leading-[150%] mb-2'
             >
-              {t('form.register.name')}
+              {t('form.register.name')} <span className='text-red-550'>*</span>
             </label>
             <input
               type='text'
@@ -91,7 +91,7 @@ const Registration: React.FC<RegistrationProps> = ({ setWhichForm }) => {
               htmlFor='email'
               className='text-base text-white font-normal leading-[150%] mb-2'
             >
-              {t('form.login.email')}
+              {t('form.login.email')} <span className='text-red-550'>*</span>
             </label>
             <input
               type='text'
@@ -134,7 +134,7 @@ const Registration: React.FC<RegistrationProps> = ({ setWhichForm }) => {
               htmlFor='password'
               className='text-base text-white font-normal leading-[150%] mb-2'
             >
-              {t('form.login.password')}
+              {t('form.login.password')} <span className='text-red-550'>*</span>
             </label>
             <input
               type={passwordsVisible.password ? 'text' : 'password'}
@@ -217,7 +217,8 @@ const Registration: React.FC<RegistrationProps> = ({ setWhichForm }) => {
               htmlFor='password_confirmation'
               className='text-base text-white font-normal leading-[150%] mb-2'
             >
-              {t('form.register.passwordConfirmation')}
+              {t('form.register.passwordConfirmation')}{' '}
+              <span className='text-red-550'>*</span>
             </label>
             <input
               type={

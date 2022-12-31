@@ -6,7 +6,7 @@ const LandingPictureAnimation = () => {
 
   return (
     <Fragment>
-      <div className='h-screen relative'>
+      <div className='h-screen relative overflow-x-hidden'>
         <div className='w-full h-full bg-interstellar-gradient absolute z-[2] rotate--90 translate-y-[-0.2rem]' />
         <div className='w-screen h-screen bg-interstellar absolute bg-no-repeat bg-center bg-cover bg-fixed' />
         <div className='z-[3] absolute flex gap-4 top-[18rem] md:top-[25.813rem] left-[2.188rem] md:left-[10.625rem]'>
@@ -21,7 +21,7 @@ const LandingPictureAnimation = () => {
           </div>
         </div>
       </div>
-      <div className='h-screen relative'>
+      <div className='h-screen relative overflow-x-hidden'>
         <div className='w-full h-full bg-the-royal-tenenbaums-gradient absolute z-[2] ' />
         <div className='w-screen h-screen bg-the-royal-tenenbaums absolute bg-no-repeat bg-center bg-cover bg-fixed' />
         <div className='z-[2] absolute  flex gap-4 top-[18rem] md:top-[30.938rem] left-[2.188rem] md:left-[10.625rem]'>
@@ -36,7 +36,7 @@ const LandingPictureAnimation = () => {
           </div>
         </div>
       </div>
-      <div className='h-screen relative'>
+      <div className='h-screen relative overflow-x-hidden'>
         <div className='w-full h-full bg-lord-of-the-rings-gradient absolute z-[2]' />
         <div className='w-screen h-screen bg-lord-of-the-rings absolute bg-no-repeat bg-center bg-cover bg-fixed' />
         <div className='z-[2] absolute max-w-[47.563rem] flex gap-4 top-[18rem] md:top-[40.875rem] left-[2.188rem] md:left-[10.625rem]'>
