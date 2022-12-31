@@ -85,6 +85,13 @@
       "header": "Create new password",
       "mainText": "Your new password must be different from previous used passwords",
       "reset": "Reset password"
+    },
+    "successMessage": {
+      "headerOne": "Thank you!",
+      "headerTwo": "Success!",
+      "mainOne": "Your account has been activated.",
+      "mainTwo": "Password changed successfully",
+      "button": "Go to login"
     }
   }
 }
