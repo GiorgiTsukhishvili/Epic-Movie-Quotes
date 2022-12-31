@@ -93,7 +93,7 @@ const ForgotPassword: React.FC<ForgotPasswordProps> = ({ setWhichForm }) => {
         </div>
       </div>
       <div
-        className='absolute top-5 right-5 md:hidden inline z-30 cursor-pointer'
+        className='fixed top-5 right-5 md:hidden inline z-30 cursor-pointer'
         onClick={() => setWhichForm('')}
       >
         <CloseIcon />

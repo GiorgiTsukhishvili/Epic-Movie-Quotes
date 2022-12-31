@@ -226,7 +226,7 @@ const NewPassword: React.FC<NewPasswordProps> = ({ setWhichForm }) => {
         href={'/'}
       ></Link>
       <Link
-        className='absolute top-5 right-5 md:hidden inline z-30 cursor-pointer'
+        className='fixed top-5 right-5 md:hidden inline z-30 cursor-pointer'
         href={'/'}
       >
         <CloseIcon />
