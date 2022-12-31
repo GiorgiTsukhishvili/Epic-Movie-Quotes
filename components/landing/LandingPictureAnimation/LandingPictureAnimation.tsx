@@ -21,7 +21,7 @@ const LandingPictureAnimation = () => {
           </div>
         </div>
       </div>
-      <div className='h-screen relative overflow-x-hidden'>
+      <div className='h-screen relative overflow-hidden'>
         <div className='w-full h-full bg-the-royal-tenenbaums-gradient absolute z-[2] ' />
         <div className='w-screen h-screen bg-the-royal-tenenbaums absolute bg-no-repeat bg-center bg-cover bg-fixed' />
         <div className='z-[2] absolute  flex gap-4 top-[18rem] md:top-[25.813rem] left-[2.188rem] md:left-[10.625rem]'>
