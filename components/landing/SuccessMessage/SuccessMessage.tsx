@@ -30,7 +30,7 @@ const SuccessMessage: React.FC<SuccessMessageProps> = ({
           </h1>
           <Link
             href='/'
-            className=' w-full bg-red-650 py-[0.438rem] md:w-[22.5rem] text-white leading-[150%] text-base mt-8 md:mt-10 rounded-md'
+            className=' w-full bg-red-650 hover:bg-red-750 py-[0.438rem] md:w-[22.5rem] text-white leading-[150%] text-base mt-8 md:mt-10 rounded-md'
             onClick={() => setWhichForm('login')}
           >
             {t(goToLogin)}

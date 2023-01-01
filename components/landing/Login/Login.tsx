@@ -123,7 +123,7 @@ const Login: React.FC<LoginProps> = ({ setWhichForm }) => {
 
           <button
             type='submit'
-            className='bg-red-650 text-white text-base  h-[2.375rem]  leading-[150%]  w-full rounded-md '
+            className='bg-red-650 hover:bg-red-750 text-white text-base  h-[2.375rem]  leading-[150%]  w-full rounded-md '
           >
             {t('form.login.singIn')}
           </button>

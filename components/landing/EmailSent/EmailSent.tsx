@@ -34,7 +34,7 @@ const EmailSent: React.FC<EmailSentProps> = ({
             rel={'noreferrer'}
             className={`${
               skip ? 'w-full' : 'w-[11.875rem]'
-            } bg-red-650 py-[0.438rem] md:w-[22.5rem] text-white leading-[150%] text-base mt-6 md:mt-10 rounded-md`}
+            } bg-red-650 hover:bg-red-750 py-[0.438rem] md:w-[22.5rem] text-white leading-[150%] text-base mt-6 md:mt-10 rounded-md`}
           >
             {t(goToEmail)}
           </a>
