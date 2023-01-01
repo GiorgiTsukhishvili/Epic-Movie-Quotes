@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: HelveticaEn;
+    font-style: normal;
+    src: url(/assets/fonts/en/Helvetica_Neue.ttf) format('ttf');
+  }
+}
+
+@layer base {
+  @font-face {
+    font-family: HelveticaKa;
+    font-style: normal;
+    src: url(/assets/fonts/ka/Helvetica_Neue-Geo.ttf) format('ttf');
+  }
+}
