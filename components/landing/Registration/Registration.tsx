@@ -300,7 +300,7 @@ const Registration: React.FC<RegistrationProps> = ({ setWhichForm }) => {
           </button>
         </form>
 
-        <div className='mx-[2.125rem] mt-4 px-2 sm:mx-[7.5rem] h-[2.375rem] gap-2 flex items-center justify-center border-2 border-gray-350 rounded-md'>
+        <div className='mx-[2.125rem] cursor-pointer mt-4 px-2 sm:mx-[7.5rem] h-[2.375rem] gap-2 flex items-center justify-center border-2 border-gray-350 rounded-md'>
           <Google />
           <h1 className='text-white text-base font-normal leading-[150%] overflow-ellipsis overflow-hidden h-6'>
             {t('form.register.google')}
