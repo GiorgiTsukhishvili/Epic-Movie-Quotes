@@ -2,6 +2,7 @@ import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const ErrorPage = () => {
   const { t } = useTranslation();
@@ -23,9 +24,12 @@ const ErrorPage = () => {
       <h1 className='text-white leading-[150%] text-base lg:text-2xl font-medium mt-4 lg:mt-2 mb-8 lg:mb-[2.938rem]'>
         {t('404.mainText')}
       </h1>
-      <button className='bg-red-650 text-white text-base lg:text-xl leading-[150%] py-2 lg:py-2.5 px-7 lg:px-4 rounded-md '>
+      <Link
+        href={'/'}
+        className='bg-red-650 text-white text-base lg:text-xl leading-[150%] py-2 lg:py-2.5 px-7 lg:px-4 rounded-md '
+      >
         {t('404.return')}
-      </button>
+      </Link>
     </div>
   );
 };
