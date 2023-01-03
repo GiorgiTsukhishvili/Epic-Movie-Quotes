@@ -129,7 +129,7 @@ const Login: React.FC<LoginProps> = ({ setWhichForm }) => {
           </button>
         </form>
 
-        <div className='mx-[2.125rem] mt-4 sm:mx-[7.5rem] h-[2.375rem] gap-2 flex items-center justify-center border-2 border-gray-350 rounded-md'>
+        <div className='mx-[2.125rem] cursor-pointer mt-4 sm:mx-[7.5rem] h-[2.375rem] gap-2 flex items-center justify-center border-2 border-gray-350 rounded-md'>
           <Google />
           <h1 className='text-white text-base font-normal leading-[150%]'>
             {t('form.login.loginWithGoogle')}
