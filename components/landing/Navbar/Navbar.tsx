@@ -14,12 +14,12 @@ const Navbar: React.FC<NavbarProps> = ({ setWhichForm }) => {
         <LanguageSwitcher />
         <button
           onClick={() => setWhichForm('registration')}
-          className='bg-red-650 hover:bg-red-750 text-white text-base md:inline hidden lg:text-xl md:leading-[150%] leading-[150%] py-2 lg:py-2 px-7 lg:px-4 rounded-md '
+          className='bg-red-650 hover:bg-red-750 text-white text-base md:inline hidden lg:text-xl md:leading-[150%] leading-[150%] h-[2.375rem] px-7 lg:px-4 rounded-md '
         >
           {t('navbar.singUp')}
         </button>
         <button
-          className='text-white text-sm sm:text-base lg:text-xl md:leading-[150%] leading-[150%] py-2 lg:py-2 px-4 lg:px-4 rounded-md border-2 border-white'
+          className='text-white text-sm sm:text-base lg:text-xl md:leading-[150%] leading-[150%] h-[2.375rem] px-4 lg:px-4 rounded-md border-2 border-white'
           onClick={() => setWhichForm('login')}
         >
           {t('navbar.login')}

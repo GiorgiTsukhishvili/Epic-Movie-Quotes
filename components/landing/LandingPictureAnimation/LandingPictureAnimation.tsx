@@ -15,7 +15,7 @@ const LandingPictureAnimation = () => {
             <h1 className='font-bold max-w-[47.563rem] text-white leading-[150%] md:leading-[150%] text-xl md:text-5xl'>
               {t('landing.interstellar.text')}
             </h1>
-            <h1 className='font-bold text-zinc-350 leading-[150%] text-base md:text-3xl'>
+            <h1 className='font-bold text-zinc-350 leading-[150%] text-base md:text-3xl  mt-4'>
               {t('landing.interstellar.name')}
             </h1>
           </div>
@@ -30,7 +30,7 @@ const LandingPictureAnimation = () => {
             <h1 className='font-bold max-w-[47.563rem] text-white leading-[150%] md:leading-[150%] text-xl md:text-5xl'>
               {t('landing.the-royal-tenenbaums.text')}
             </h1>
-            <h1 className='font-bold text-zinc-350 leading-[150%] text-base md:text-3xl'>
+            <h1 className='font-bold text-zinc-350 leading-[150%] text-base md:text-3xl  mt-4'>
               {t('landing.the-royal-tenenbaums.name')}
             </h1>
           </div>
@@ -45,7 +45,7 @@ const LandingPictureAnimation = () => {
             <h1 className='font-bold max-w-[47.563rem] text-white leading-[150%] md:leading-[150%] text-xl md:text-5xl'>
               {t('landing.lord-of-the-rings.text')}
             </h1>
-            <h1 className='font-bold text-zinc-350 leading-[150%] text-base md:text-3xl'>
+            <h1 className='font-bold text-zinc-350 leading-[150%] text-base md:text-3xl mt-4'>
               {t('landing.lord-of-the-rings.name')}
             </h1>
           </div>
