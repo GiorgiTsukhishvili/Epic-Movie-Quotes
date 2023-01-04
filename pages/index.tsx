@@ -7,6 +7,7 @@ import {
   ForgotPassword,
   EmailSent,
   Registration,
+  SuccessMessage,
 } from 'components';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { GetStaticProps } from 'next';
@@ -15,7 +16,7 @@ import { Fragment } from 'react';
 import Head from 'next/head';
 
 export default function Home() {
-  const { whichForm, setWhichForm } = useFormChooser();
+  const { whichForm, setWhichForm, query } = useFormChooser();
 
   return (
     <Fragment>
@@ -55,6 +56,16 @@ export default function Home() {
         ) : (
           <></>
         )}
+
+        {query['register-link'] && (
+          <SuccessMessage
+            setWhichForm={setWhichForm}
+            header={'form.successMessage.headerOne'}
+            mainText={'form.successMessage.mainOne'}
+            goToLogin={'form.successMessage.button'}
+          />
+        )}
+
         <Footer />
       </div>
     </Fragment>
