@@ -93,5 +93,9 @@
       "mainTwo": "Password changed successfully",
       "button": "Go to login"
     }
+  },
+  "errors": {
+    "name": "Name is already taken",
+    "email": "Email is already taken"
   }
 }
