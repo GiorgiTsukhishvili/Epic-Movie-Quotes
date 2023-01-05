@@ -96,6 +96,8 @@
   },
   "errors": {
     "name": "Name is already taken",
-    "email": "Email is already taken"
+    "email": "Email is already taken",
+    "emailNotVerified": "Email is not verified",
+    "emailDoesNotExist": "Email does not exist"
   }
 }
