@@ -33,10 +33,10 @@ const useForgotPassword = () => {
       }
     } catch (err) {
       if (err instanceof AxiosError) {
-        if (err.response!.data === 'email is not verified') {
+        if (err.response!.data) {
           setError('email', {
             type: 'all',
-            message: t('errors.emailNotVerified')!,
+            message: err.response!.data,
           });
         }
         if (err.response!.data?.errors?.email) {
