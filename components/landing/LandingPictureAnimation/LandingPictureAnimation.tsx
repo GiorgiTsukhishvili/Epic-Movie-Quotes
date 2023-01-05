@@ -6,9 +6,9 @@ const LandingPictureAnimation = () => {
 
   return (
     <Fragment>
-      <div className='h-screen relative overflow-x-hidden'>
-        <div className='w-full h-full bg-interstellar-gradient absolute z-[2] rotate--90 translate-y-[-0.2rem]' />
-        <div className='w-screen h-screen bg-interstellar absolute bg-no-repeat bg-center bg-cover bg-fixed' />
+      <div className='h-screen sticky top-0 overflow-x-hidden'>
+        <div className='w-full h-full bg-interstellar-gradient absolute z-[2] rotate--90 ' />
+        <div className='w-screen h-screen bg-interstellar absolute bg-no-repeat bg-center bg-cover' />
         <div className='z-[3] absolute flex gap-4 top-[18rem] md:top-[25.813rem] left-[2.188rem] md:left-[10.625rem]'>
           <div className='w-[1.063rem] md:w-[3.313rem] h-0.5 bg-white mt-[0.938rem] md:mt-[2.563rem]' />
           <div>

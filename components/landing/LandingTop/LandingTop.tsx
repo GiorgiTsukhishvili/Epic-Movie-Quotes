@@ -5,9 +5,9 @@ const LandingTop: React.FC<LandingTopProps> = ({ setWhichForm }) => {
   const { t } = useTranslation();
 
   return (
-    <div className='h-[50.5rem] bg-landing-gradient pt-48 md:pt-[21.5rem] relative overflow-x-hidden'>
+    <div className='h-[50.5rem] bg-landing-gradient relative overflow-x-hidden'>
       <div className='bg-landing-top-gradient absolute w-screen top-0 h-[50.5rem]' />
-      <div className='md:gap-6 gap-8 flex flex-col justify-center items-center z-10 absolute w-full'>
+      <div className='md:gap-6 gap-8 flex flex-col justify-center top-1/2 translate-y-[-50%] items-center z-10 absolute w-full'>
         <h1 className='text-2xl md:text-6xl font-bold text-center text-orange-250 max-w-[17.563rem] md:max-w-[43.938rem]  leading-[150%]   md:leading-[150%] '>
           {t('landing.top.mainText')}
         </h1>

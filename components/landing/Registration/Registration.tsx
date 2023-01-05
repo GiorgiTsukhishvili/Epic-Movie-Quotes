@@ -172,7 +172,14 @@ const Registration: React.FC<RegistrationProps> = ({ setWhichForm }) => {
               <ErrorMessage errors={errors} name='password' />
             </div>
 
-            <div className='absolute top-[2.875rem] h-4 right-[0.85rem] flex items-center justify-start gap-1 w-[2.625rem]'>
+            <div className='absolute top-[2.875rem] h-4 right-[0.85rem] flex items-center justify-end gap-1 w-[2.625rem]'>
+              {errors.password ? (
+                <RedCircle />
+              ) : password ? (
+                <GreenCheck />
+              ) : (
+                <></>
+              )}
               {passwordsVisible.password ? (
                 <span
                   onClick={() =>
@@ -201,13 +208,6 @@ const Registration: React.FC<RegistrationProps> = ({ setWhichForm }) => {
                 >
                   <EyeCrossed />
                 </span>
-              )}
-              {errors.password ? (
-                <RedCircle />
-              ) : password ? (
-                <GreenCheck />
-              ) : (
-                <></>
               )}
             </div>
           </div>
@@ -250,7 +250,14 @@ const Registration: React.FC<RegistrationProps> = ({ setWhichForm }) => {
               <ErrorMessage errors={errors} name='password_confirmation' />
             </div>
 
-            <div className='absolute top-[2.875rem] h-4 right-[0.85rem] flex items-center justify-start gap-1 w-[2.625rem]'>
+            <div className='absolute top-[2.875rem] h-4 right-[0.85rem] flex items-center justify-end gap-1 w-[2.625rem]'>
+              {errors.password_confirmation ? (
+                <RedCircle />
+              ) : password_confirmation ? (
+                <GreenCheck />
+              ) : (
+                <></>
+              )}
               {passwordsVisible.password_confirmation ? (
                 <span
                   onClick={() =>
@@ -281,13 +288,6 @@ const Registration: React.FC<RegistrationProps> = ({ setWhichForm }) => {
                 >
                   <EyeCrossed />
                 </span>
-              )}
-              {errors.password_confirmation ? (
-                <RedCircle />
-              ) : password_confirmation ? (
-                <GreenCheck />
-              ) : (
-                <></>
               )}
             </div>
           </div>
