@@ -98,6 +98,7 @@
     "name": "Name is already taken",
     "email": "Email is already taken",
     "emailNotVerified": "Email is not verified",
-    "emailDoesNotExist": "Email does not exist"
+    "emailDoesNotExist": "Email does not exist",
+    "linkNotValid": "Link is not valid"
   }
 }

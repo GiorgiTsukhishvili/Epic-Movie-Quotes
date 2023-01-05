@@ -23,6 +23,7 @@ const NewPassword: React.FC<NewPasswordProps> = ({ setWhichForm }) => {
     onSubmit,
     passwordsVisible,
     setPasswordsVisible,
+    linkValid,
   } = useNewPassword();
 
   return (
@@ -209,6 +210,11 @@ const NewPassword: React.FC<NewPasswordProps> = ({ setWhichForm }) => {
           </button>
         </form>
 
+        {!linkValid && (
+          <h1 className='text-red-550 h-5 font-normal text-lg leading-[150%] mt-1'>
+            {t('errors.linkNotValid')}
+          </h1>
+        )}
         <div className='flex w-full items-center justify-center mt-8 '>
           <Link
             className='flex items-center justify-center  gap-3 cursor-pointer'

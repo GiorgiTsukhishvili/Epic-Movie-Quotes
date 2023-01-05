@@ -8,6 +8,8 @@ import {
   EmailSent,
   Registration,
   SuccessMessage,
+  NewPassword,
+  PasswordChangeSuccess,
 } from 'components';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { GetStaticProps } from 'next';
@@ -66,6 +68,11 @@ export default function Home() {
           />
         )}
 
+        {query['reset-link'] && <NewPassword setWhichForm={setWhichForm} />}
+
+        {query['password-change'] && (
+          <PasswordChangeSuccess setWhichForm={setWhichForm} />
+        )}
         <Footer />
       </div>
     </Fragment>

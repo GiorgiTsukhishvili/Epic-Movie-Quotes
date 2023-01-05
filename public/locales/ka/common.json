@@ -98,6 +98,7 @@
     "name": "სახელი დაკავებულია",
     "email": "მეილი დაკავებულია",
     "emailNotVerified": "მეილი არ არის ვერიფიცირებული",
-    "emailDoesNotExist": "მეილი არ არსებობს"
+    "emailDoesNotExist": "მეილი არ არსებობს",
+    "linkNotValid": "ლინკი არ არის ვალიდური"
   }
 }
