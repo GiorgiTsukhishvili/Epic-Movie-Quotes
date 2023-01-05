@@ -5,7 +5,7 @@ import { sendRegistrationVerification } from 'services';
 const useSuccessMessage = () => {
   const { t } = useTranslation();
 
-  const { query, replace, pathname } = useQuery();
+  const { query, replace, pathname, push } = useQuery();
 
   if (query.lang) {
     replace(
@@ -29,6 +29,8 @@ const useSuccessMessage = () => {
     );
   }
 
+  let link: string;
+
   try {
     let url = new URL(query['register-link']?.toString()!);
     let params = new URLSearchParams(url.search);
@@ -36,17 +38,21 @@ const useSuccessMessage = () => {
     params.append('token', query.token as string);
     params.append('signature', query.signature as string);
 
-    const link = url.href + '&' + params;
-
-    const sendVerificationLink = async () => {
-      await sendRegistrationVerification(link);
-    };
-
-    if (query['register-link']) {
-      sendVerificationLink();
-    }
+    link = url.href + '&' + params;
   } catch (err) {
-    replace({ pathname }, '/');
+    push('/403');
+  }
+
+  const sendVerificationLink = async () => {
+    try {
+      await sendRegistrationVerification(link);
+    } catch (err) {
+      push('/403');
+    }
+  };
+
+  if (query['register-link']) {
+    sendVerificationLink();
   }
 
   return { t };
