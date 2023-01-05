@@ -36,7 +36,7 @@ const useForgotPassword = () => {
         if (err.response!.data) {
           setError('email', {
             type: 'all',
-            message: err.response!.data,
+            message: err.response!.data.message.toString(),
           });
         }
         if (err.response!.data?.errors?.email) {
