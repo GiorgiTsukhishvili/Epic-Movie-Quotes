@@ -8,3 +8,4 @@ export * from './EmailSent';
 export * from './Registration';
 export * from './NewPassword';
 export * from './SuccessMessage';
+export * from './PasswordChangeSuccess';
