@@ -3,6 +3,7 @@ import { Dispatch, SetStateAction, useState } from 'react';
 import { useForm, useWatch } from 'react-hook-form';
 import { sendUserRegisterData } from 'services';
 import { RegistrationTypes } from './registrationTypes';
+import { AxiosError } from 'axios';
 
 const useRegistration = () => {
   const { t } = useTranslation();
@@ -36,14 +37,21 @@ const useRegistration = () => {
     data: RegistrationTypes,
     setWhichForm: Dispatch<SetStateAction<string>>
   ) => {
-    const response = await sendUserRegisterData(data);
+    try {
+      const response = await sendUserRegisterData(data);
 
-    if (response.status === 201) {
-      setWhichForm('registration-sent');
-    } else if (response.data.errors.name) {
-      setError('name', { type: 'custom', message: t('errors.name')! });
-    } else if (response.data.errors.name) {
-      setError('email', { type: 'custom', message: t('errors.email')! });
+      if (response.status === 201) {
+        setWhichForm('registration-sent');
+      }
+    } catch (err) {
+      if (err instanceof AxiosError) {
+        if (err.response!.data.errors.name) {
+          setError('name', { type: 'all', message: t('errors.name')! });
+        }
+        if (err.response!.data.errors.email) {
+          setError('email', { type: 'all', message: t('errors.email')! });
+        }
+      }
     }
   };
 
