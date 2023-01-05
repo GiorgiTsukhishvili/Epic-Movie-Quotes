@@ -1,33 +1,13 @@
-import { useQuery } from 'hooks';
+import { AxiosError } from 'axios';
+import { useQuery as myUseQuery } from 'hooks';
 import { useTranslation } from 'next-i18next';
+import { useQuery } from 'react-query';
 import { sendRegistrationVerification } from 'services';
 
 const useSuccessMessage = () => {
   const { t } = useTranslation();
 
-  const { query, replace, pathname, push } = useQuery();
-
-  if (query.lang) {
-    replace(
-      {
-        pathname,
-        query: {
-          'register-link': query['register-link'],
-          signature: query.signature,
-          token: query.token,
-        },
-      },
-      {
-        pathname,
-        query: {
-          'register-link': query['register-link'],
-          signature: query.signature,
-          token: query.token,
-        },
-      },
-      { locale: query.lang as string }
-    );
-  }
+  const { query, push } = myUseQuery();
 
   let link: string;
 
@@ -43,17 +23,20 @@ const useSuccessMessage = () => {
     push('/403');
   }
 
-  const sendVerificationLink = async () => {
-    try {
-      await sendRegistrationVerification(link);
-    } catch (err) {
-      push('/403');
-    }
-  };
-
-  if (query['register-link']) {
-    sendVerificationLink();
-  }
+  useQuery('sendVerifyEmail', () => sendRegistrationVerification(link), {
+    onError: (error) => {
+      if (error instanceof AxiosError) {
+        if (error?.response?.status === 401) {
+          push('/403');
+        } else {
+          push('/403');
+        }
+      }
+    },
+    refetchOnMount: false,
+    retry: false,
+    refetchOnWindowFocus: false,
+  });
 
   return { t };
 };

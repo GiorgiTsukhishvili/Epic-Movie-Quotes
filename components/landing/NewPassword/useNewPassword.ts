@@ -13,29 +13,7 @@ const useNewPassword = () => {
   });
   const [linkValid, setLinkValid] = useState<boolean>(true);
 
-  const { query, replace, pathname, push } = useQuery();
-
-  if (query.lang) {
-    replace(
-      {
-        pathname,
-        query: {
-          'reset-link': query['reset-link'],
-          signature: query.signature,
-          token: query.token,
-        },
-      },
-      {
-        pathname,
-        query: {
-          'reset-link': query['reset-link'],
-          signature: query.signature,
-          token: query.token,
-        },
-      },
-      { locale: query.lang as string }
-    );
-  }
+  const { query, push } = useQuery();
 
   const {
     register,
