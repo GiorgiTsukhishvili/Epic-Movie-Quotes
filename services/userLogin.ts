@@ -12,3 +12,7 @@ export const userLogin = async (data: LoginFormTypes) => {
 export const userLogout = async () => {
   return axios.get('/api/logout');
 };
+
+export const fetchUserInfo = async () => {
+  return axios.get('/api/user-info');
+};
