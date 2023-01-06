@@ -2,6 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { useForm } from 'react-hook-form';
 import { LoginFormTypes } from './loginTypes';
 import { fetchCSRFToken, userLogin } from 'services';
+import { deleteCookie } from 'cookies-next';
 
 const useLogin = () => {
   const { t } = useTranslation();
@@ -26,6 +27,7 @@ const useLogin = () => {
     } catch (err) {
       setError('login', { type: 'all', message: t('errors.incorrectLogin')! });
       setError('password', { type: 'all', message: '' });
+      deleteCookie('XSRF-TOKEN');
     }
   };
 
