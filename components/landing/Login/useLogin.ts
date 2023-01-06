@@ -3,6 +3,8 @@ import { useForm } from 'react-hook-form';
 import { LoginFormTypes } from './loginTypes';
 import { fetchCSRFToken, userLogin } from 'services';
 import { deleteCookie } from 'cookies-next';
+import { useDispatch } from 'react-redux';
+import { updateUserData } from 'state';
 
 const useLogin = () => {
   const { t } = useTranslation();
@@ -16,6 +18,7 @@ const useLogin = () => {
     mode: 'onChange',
     defaultValues: { login: '', password: '', remember: false },
   });
+  const dispatch = useDispatch();
 
   const { login, password } = getValues();
 
@@ -23,7 +26,7 @@ const useLogin = () => {
     try {
       await fetchCSRFToken();
       const response = await userLogin(data);
-      console.log(response);
+      dispatch(updateUserData(response.data.user));
     } catch (err) {
       setError('login', { type: 'all', message: t('errors.incorrectLogin')! });
       setError('password', { type: 'all', message: '' });
