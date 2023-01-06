@@ -99,6 +99,7 @@
     "email": "Email is already taken",
     "emailNotVerified": "Email is not verified",
     "emailDoesNotExist": "Email does not exist",
-    "linkNotValid": "Link is not valid"
+    "linkNotValid": "Link is not valid",
+    "incorrectLogin": "User email or password is incorrect"
   }
 }
