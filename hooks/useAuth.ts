@@ -1,0 +1,27 @@
+import { hasCookie } from 'cookies-next';
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
+import { fetchUserInfo } from 'services';
+import { useDispatch } from 'react-redux';
+import { updateUserData } from 'state';
+
+const useAuth = () => {
+  const router = useRouter();
+  const dispatch = useDispatch();
+  useEffect(() => {
+    const checkAuth = async () => {
+      try {
+        const response = await fetchUserInfo();
+        dispatch(updateUserData(response.data.user));
+      } catch (error) {}
+      if (router.pathname !== '/') {
+        router.push('/');
+      }
+    };
+    if (hasCookie('XSRF-TOKEN')) {
+      checkAuth();
+    }
+  }, [router]);
+};
+
+export default useAuth;
