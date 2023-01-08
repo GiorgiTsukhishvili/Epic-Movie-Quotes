@@ -38,11 +38,13 @@ module.exports = {
         gray: {
           550: '#6C757D',
           350: '#CED4DA',
+          950: '#181624',
         },
         red: {
           550: '#DC3545',
           650: '#E31221',
           750: '#CC0E10',
+          850: '#E33812',
         },
         orange: {
           250: '#DDCCAA',
@@ -53,10 +55,16 @@ module.exports = {
         green: {
           750: '#198754',
         },
+        neutral: {
+          950: '#11101A',
+        },
       },
     },
     boxShadow: {
       'input-custom': '0px 0px 0px 4px rgba(13, 110, 253, 0.25)',
+    },
+    backdropBlur: {
+      'user-page': '25px',
     },
   },
   plugins: [require('@tailwindcss/forms')],
