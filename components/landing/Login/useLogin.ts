@@ -5,8 +5,10 @@ import { fetchCSRFToken, userLogin } from 'services';
 import { deleteCookie } from 'cookies-next';
 import { useDispatch } from 'react-redux';
 import { updateUserData } from 'state';
+import { useRouter } from 'next/router';
 
 const useLogin = () => {
+  const { push } = useRouter();
   const { t } = useTranslation();
   const {
     register,
@@ -27,6 +29,7 @@ const useLogin = () => {
       await fetchCSRFToken();
       const response = await userLogin(data);
       dispatch(updateUserData(response.data.user));
+      push('news-feed');
     } catch (err) {
       setError('login', { type: 'all', message: t('errors.incorrectLogin')! });
       setError('password', { type: 'all', message: '' });
