@@ -8,3 +8,6 @@ export { default as EyeRegular } from './EyeRegular';
 export { default as EyeCrossed } from './EyeCrossed';
 export { default as CloseIcon } from './CloseIcon';
 export { default as CheckCircle } from './CheckCircle';
+export { default as Burger } from './Burger';
+export { default as Bell } from './Bell';
+export { default as SearchIcon } from './SearchIcon';

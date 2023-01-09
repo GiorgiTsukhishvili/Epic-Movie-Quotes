@@ -101,5 +101,10 @@
     "emailDoesNotExist": "Email does not exist",
     "linkNotValid": "Link is not valid",
     "incorrectLogin": "User email or password is incorrect"
+  },
+  "user": {
+    "navbar": {
+      "logout": "Log out"
+    }
   }
 }

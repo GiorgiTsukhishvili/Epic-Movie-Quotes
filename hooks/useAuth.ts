@@ -13,9 +13,10 @@ const useAuth = () => {
       try {
         const response = await fetchUserInfo();
         dispatch(updateUserData(response.data.user));
-      } catch (error) {}
-      if (router.pathname !== '/') {
-        router.push('/');
+      } catch (error) {
+        if (router.pathname !== '/') {
+          router.push('/');
+        }
       }
     };
     if (hasCookie('XSRF-TOKEN')) {

@@ -101,5 +101,10 @@
     "emailDoesNotExist": "მეილი არ არსებობს",
     "linkNotValid": "ლინკი არ არის ვალიდური",
     "incorrectLogin": "მომხმარებლის მეილი ან პაროლი არასწორია"
+  },
+  "user": {
+    "navbar": {
+      "logout": "გასვლა"
+    }
   }
 }
