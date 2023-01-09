@@ -1,8 +1,8 @@
-const House = () => {
+const House = ({ isSidebar }: { isSidebar: boolean }) => {
   return (
     <svg
-      width='24'
-      height='22'
+      width={isSidebar ? '30' : '24'}
+      height={isSidebar ? '27' : '22'}
       viewBox='0 0 24 22'
       fill='none'
       xmlns='http://www.w3.org/2000/svg'
