@@ -11,3 +11,5 @@ export { default as CheckCircle } from './CheckCircle';
 export { default as Burger } from './Burger';
 export { default as Bell } from './Bell';
 export { default as SearchIcon } from './SearchIcon';
+export { default as House } from './House';
+export { default as Camera } from './Camera';

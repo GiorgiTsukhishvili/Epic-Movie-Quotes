@@ -1,10 +1,27 @@
-import { Bell, Burger, SearchIcon, useUserNavbar } from 'components';
+import {
+  Bell,
+  Burger,
+  Camera,
+  House,
+  SearchIcon,
+  useUserNavbar,
+} from 'components';
+import Image from 'next/image';
+import Link from 'next/link';
 import { Fragment } from 'react';
 import { LanguageSwitcher } from '../LanguageSwitcher';
+import { UserNavbarTypes } from './userNavbarTypes';
 
-const UserNavbar = () => {
-  const { t, logoutUser, isMobileProfileOpen, setIsMobileProfileOpen } =
-    useUserNavbar();
+const UserNavbar: React.FC<UserNavbarTypes> = ({ isNewsFeed }) => {
+  const {
+    t,
+    logoutUser,
+    isMobileProfileOpen,
+    setIsMobileProfileOpen,
+    name,
+    image,
+    ref,
+  } = useUserNavbar();
 
   return (
     <Fragment>
@@ -21,9 +38,11 @@ const UserNavbar = () => {
         </button>
 
         <div className='flex justify-center items-center gap-10'>
-          <div className='cursor-pointer inline md:hidden'>
-            <SearchIcon />
-          </div>
+          {isNewsFeed && (
+            <div className='cursor-pointer inline md:hidden'>
+              <SearchIcon />
+            </div>
+          )}
           <div className='relative cursor-pointer'>
             <Bell />
             <div className='bg-red-850 w-[1.563rem] h-[1.563rem] rounded-full flex justify-center items-center absolute top-[-0.5rem] left-[0.85rem]'>
@@ -40,7 +59,43 @@ const UserNavbar = () => {
         </div>
       </div>
       {isMobileProfileOpen && (
-        <div className='absolute h-[41.125rem] w-[23.875rem] bg-neutral-950 rounded-r-xl left-0 top-0 inline md:hidden backdrop-filter backdrop-blur-user-page rotate--180'></div>
+        <div
+          ref={ref}
+          className='absolute h-[41.125rem] pt-[2.8rem] pl-[2.8rem] pr-24 flex flex-col justify-start items-start gap-12 bg-neutral-950 rounded-r-xl left-0 top-0  md:hidden backdrop-filter backdrop-blur-user-page rotate--180'
+        >
+          <div className='flex justify-center items-center gap-5'>
+            {image && (
+              <Image src={image} alt='profile-photo' width={40} height={40} />
+            )}
+            <div>
+              <h1 className='text-white text-xl leading-[150%] uppercase'>
+                {name}
+              </h1>
+              <Link href={'/'} className='text-gray-350 text-sm leading-[150%]'>
+                {t('user.profileSidebar.edit')}
+              </Link>
+            </div>
+          </div>
+          <div className='flex justify-center items-center gap-7'>
+            <House />
+            <Link
+              href={'/'}
+              className='text-white text-xl leading-[150%] uppercase'
+            >
+              {t('user.profileSidebar.newsFeed')}
+            </Link>
+          </div>
+
+          <div className='flex justify-center items-center gap-7'>
+            <Camera />
+            <Link
+              href={'/'}
+              className='text-white text-xl leading-[150%] uppercase'
+            >
+              {t('user.profileSidebar.movies')}
+            </Link>
+          </div>
+        </div>
       )}
     </Fragment>
   );
