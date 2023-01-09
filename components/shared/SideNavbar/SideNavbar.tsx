@@ -1,4 +1,4 @@
-import { Camera, House } from 'components/icons';
+import { Camera, House } from 'components';
 import Image from 'next/image';
 import Link from 'next/link';
 import useSideNavbar from './useSideNavbar';
@@ -7,7 +7,7 @@ const SideNavbar = () => {
   const { t, name, image } = useSideNavbar();
 
   return (
-    <div className='pt-8 pl-[4.375rem] flex flex-col justify-start items-start gap-11 hidden md:flex'>
+    <div className='pt-8 pl-[4.375rem] flex-col justify-start items-start gap-11 hidden md:flex'>
       <div className='flex justify-center items-center gap-5'>
         {image && (
           <Image
