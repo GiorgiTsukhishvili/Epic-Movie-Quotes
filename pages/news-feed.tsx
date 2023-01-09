@@ -1,4 +1,4 @@
-import { UserNavbar } from 'components';
+import { SideNavbar, UserNavbar } from 'components';
 import { useAuth } from 'hooks';
 import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
@@ -10,6 +10,10 @@ const NewsFeed = () => {
   return (
     <div className='bg-gray-950 min-h-screen'>
       <UserNavbar isNewsFeed={true} />
+      <div className='flex justify-between items-center'>
+        <SideNavbar />
+        <div></div>
+      </div>
     </div>
   );
 };

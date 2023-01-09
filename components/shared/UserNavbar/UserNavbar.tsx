@@ -77,7 +77,7 @@ const UserNavbar: React.FC<UserNavbarTypes> = ({ isNewsFeed }) => {
             </div>
           </div>
           <div className='flex justify-center items-center gap-7'>
-            <House />
+            <House isSidebar={false} />
             <Link
               href={'/'}
               className='text-white text-xl leading-[150%] uppercase'
@@ -87,9 +87,9 @@ const UserNavbar: React.FC<UserNavbarTypes> = ({ isNewsFeed }) => {
           </div>
 
           <div className='flex justify-center items-center gap-7'>
-            <Camera />
+            <Camera isSidebar={false} />
             <Link
-              href={'/'}
+              href={'/movies'}
               className='text-white text-xl leading-[150%] uppercase'
             >
               {t('user.profileSidebar.movies')}
