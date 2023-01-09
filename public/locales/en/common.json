@@ -105,6 +105,11 @@
   "user": {
     "navbar": {
       "logout": "Log out"
+    },
+    "profileSidebar": {
+      "edit": "Edit your profile",
+      "newsFeed": "News feed",
+      "movies": "List of movies"
     }
   }
 }

@@ -105,6 +105,11 @@
   "user": {
     "navbar": {
       "logout": "გასვლა"
+    },
+    "profileSidebar": {
+      "edit": "შეასწორე შენი პროფილი",
+      "newsFeed": "ახალი ამბები",
+      "movies": "ფილმების სია"
     }
   }
 }

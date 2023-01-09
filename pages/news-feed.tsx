@@ -9,7 +9,7 @@ const NewsFeed = () => {
 
   return (
     <div className='bg-gray-950 min-h-screen'>
-      <UserNavbar />
+      <UserNavbar isNewsFeed={true} />
     </div>
   );
 };
