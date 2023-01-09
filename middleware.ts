@@ -19,5 +19,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/news-feed', '/'],
+  matcher: ['/news-feed', '/', '/movies'],
 };

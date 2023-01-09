@@ -25,13 +25,13 @@ const UserNavbar: React.FC<UserNavbarTypes> = ({ isNewsFeed }) => {
 
   return (
     <Fragment>
-      <div className='bg-white rotate--180 h-[5.375rem] flex justify-between items-center px-9 md:px-[4.375rem] py-8 backdrop-filter backdrop-blur-user-page bg-opacity-5'>
-        <h1 className='uppercase text-orange-250 font-medium leading-[150%] hidden md:inline'>
+      <div className='bg-white fixed w-full rotate--180 h-[5.375rem] flex justify-between items-center px-9 lg:px-[4.375rem] py-8 backdrop-filter backdrop-blur-user-page bg-opacity-5'>
+        <h1 className='uppercase text-orange-250 font-medium leading-[150%] hidden lg:inline'>
           movie quotes
         </h1>
 
         <button
-          className='inline md:hidden cursor-pointer'
+          className='inline lg:hidden cursor-pointer'
           onClick={() => setIsMobileProfileOpen(true)}
         >
           <Burger />
@@ -39,7 +39,7 @@ const UserNavbar: React.FC<UserNavbarTypes> = ({ isNewsFeed }) => {
 
         <div className='flex justify-center items-center gap-10'>
           {isNewsFeed && (
-            <div className='cursor-pointer inline md:hidden'>
+            <div className='cursor-pointer inline lg:hidden'>
               <SearchIcon />
             </div>
           )}
@@ -51,7 +51,7 @@ const UserNavbar: React.FC<UserNavbarTypes> = ({ isNewsFeed }) => {
           </div>
           <LanguageSwitcher />
           <button
-            className='hidden md:inline text-white text-sm sm:text-base lg:text-xl md:leading-[150%] leading-[150%] h-[2.375rem] px-4 lg:px-4 rounded-md border-2 border-white'
+            className='hidden lg:inline text-white text-sm sm:text-base lg:text-xl lg:leading-[150%] leading-[150%] h-[2.375rem] px-4 lg:px-4 rounded-lg border-2 border-white'
             onClick={logoutUser}
           >
             {t('user.navbar.logout')}
@@ -61,7 +61,7 @@ const UserNavbar: React.FC<UserNavbarTypes> = ({ isNewsFeed }) => {
       {isMobileProfileOpen && (
         <div
           ref={ref}
-          className='absolute h-[41.125rem] pt-[2.8rem] pl-[2.8rem] pr-24 flex flex-col justify-start items-start gap-12 bg-neutral-950 rounded-r-xl left-0 top-0  md:hidden backdrop-filter backdrop-blur-user-page rotate--180'
+          className='fixed h-[41.125rem] pt-[2.8rem] pl-[2.8rem] pr-24 flex flex-col justify-start items-start gap-12 bg-neutral-950 rounded-r-xl left-0 top-0  lg:hidden backdrop-filter backdrop-blur-user-page rotate--180'
         >
           <div className='flex justify-center items-center gap-5'>
             {image && (
@@ -79,7 +79,7 @@ const UserNavbar: React.FC<UserNavbarTypes> = ({ isNewsFeed }) => {
           <div className='flex justify-center items-center gap-7'>
             <House isSidebar={false} />
             <Link
-              href={'/'}
+              href={'/news-feed'}
               className='text-white text-xl leading-[150%] uppercase'
             >
               {t('user.profileSidebar.newsFeed')}
