@@ -19,6 +19,8 @@ type Quotes = {
   movie_id: number;
   quote: string;
   updated_at: string;
+  comments_count: number;
+  likes_count: number;
 };
 
 export type SingleMovieTypes = {
