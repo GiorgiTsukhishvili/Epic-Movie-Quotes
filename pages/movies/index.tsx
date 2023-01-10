@@ -8,7 +8,6 @@ import Link from 'next/link';
 import { dehydrate, QueryClient } from 'react-query';
 import { getAllMovies } from 'services';
 import { MovieTypes } from 'types';
-import { v4 as uuid } from 'uuid';
 
 const MoviePage = () => {
   const { t, data } = useMoviesPage();
@@ -41,7 +40,7 @@ const MoviePage = () => {
 
           <div className='flex flex-wrap justify-center items-center mt-9 lg:mt-[4.25rem] gap-12'>
             {data?.data.map((movie: MovieTypes) => (
-              <Link href={`/movies/${movie.id}`} key={uuid()}>
+              <Link href={`/movies/${movie.id}`} key={movie.id}>
                 <Image
                   src={movie.image}
                   alt='movie-img'
