@@ -110,6 +110,11 @@
       "edit": "შეასწორე შენი პროფილი",
       "newsFeed": "ახალი ამბები",
       "movies": "ფილმების სია"
+    },
+    "allMovies": {
+      "totalMovies": "ჩემი ფილმები",
+      "totalSecond": " (ჯამი ",
+      "addMovie": "დაამატე"
     }
   }
 }

@@ -7,7 +7,7 @@ const SideNavbar = () => {
   const { t, name, image } = useSideNavbar();
 
   return (
-    <div className='pt-8 pl-[4.375rem] flex-col justify-start items-start gap-11 hidden md:flex'>
+    <div className='pt-8 pl-[4.375rem] flex-col justify-start items-start gap-11 hidden lg:flex fixed top-[5.375rem]'>
       <div className='flex justify-center items-center gap-5'>
         {image && (
           <Image
@@ -30,7 +30,7 @@ const SideNavbar = () => {
       <div className='flex justify-center items-center gap-11'>
         <House isSidebar={true} />
         <Link
-          href={'/'}
+          href={'/news-feed'}
           className='text-white text-2xl leading-[150%] uppercase'
         >
           {t('user.profileSidebar.newsFeed')}

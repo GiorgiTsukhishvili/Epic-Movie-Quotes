@@ -110,6 +110,11 @@
       "edit": "Edit your profile",
       "newsFeed": "News feed",
       "movies": "List of movies"
+    },
+    "allMovies": {
+      "totalMovies": "My list of movies",
+      "totalSecond": " (Total ",
+      "addMovie": "Add movie"
     }
   }
 }

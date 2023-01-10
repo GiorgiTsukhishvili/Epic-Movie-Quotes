@@ -13,3 +13,5 @@ export { default as Bell } from './Bell';
 export { default as SearchIcon } from './SearchIcon';
 export { default as House } from './House';
 export { default as Camera } from './Camera';
+export { default as Plus } from './Plus';
+export { default as Comment } from './Comment';
