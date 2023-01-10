@@ -116,6 +116,11 @@
       "totalSecond": " (Total ",
       "addMovie": "Add movie",
       "search": "Search"
+    },
+    "singleMovie": {
+      "topHeader": "Movie description",
+      "director": "Director",
+      "budget": "Budget"
     }
   }
 }
