@@ -114,7 +114,8 @@
     "allMovies": {
       "totalMovies": "ჩემი ფილმები",
       "totalSecond": " (ჯამი ",
-      "addMovie": "დაამატე"
+      "addMovie": "დაამატე",
+      "search": "ძებნა"
     }
   }
 }

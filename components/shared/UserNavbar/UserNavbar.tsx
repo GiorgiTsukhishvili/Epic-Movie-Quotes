@@ -25,7 +25,8 @@ const UserNavbar: React.FC<UserNavbarTypes> = ({ isNewsFeed }) => {
 
   return (
     <Fragment>
-      <div className='bg-white fixed w-full rotate--180 h-[5.375rem] flex justify-between items-center px-9 lg:px-[4.375rem] py-8 backdrop-filter backdrop-blur-user-page bg-opacity-5'>
+      <div className='bg-neutral-950 z-10  fixed w-full  h-[5.375rem] ' />
+      <div className='bg-white fixed z-10 w-full rotate--180 h-[5.375rem] flex justify-between items-center px-9 lg:px-[4.375rem] py-8 backdrop-filter backdrop-blur-user-page bg-opacity-5'>
         <h1 className='uppercase text-orange-250 font-medium leading-[150%] hidden lg:inline'>
           movie quotes
         </h1>
@@ -61,7 +62,7 @@ const UserNavbar: React.FC<UserNavbarTypes> = ({ isNewsFeed }) => {
       {isMobileProfileOpen && (
         <div
           ref={ref}
-          className='fixed h-[41.125rem] pt-[2.8rem] pl-[2.8rem] pr-24 flex flex-col justify-start items-start gap-12 bg-neutral-950 rounded-r-xl left-0 top-0  lg:hidden backdrop-filter backdrop-blur-user-page rotate--180'
+          className='fixed z-20 h-[41.125rem] pt-[2.8rem] pl-[2.8rem] pr-24 flex flex-col justify-start items-start gap-12 bg-neutral-950 rounded-r-xl left-0 top-0  lg:hidden backdrop-filter backdrop-blur-user-page rotate--180'
         >
           <div className='flex justify-center items-center gap-5'>
             {image && (

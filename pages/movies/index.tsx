@@ -1,4 +1,4 @@
-import { Comment, Plus, SideNavbar, UserNavbar } from 'components';
+import { Comment, Plus, SearchIcon, SideNavbar, UserNavbar } from 'components';
 import { useMoviesPage } from 'hooks';
 import { GetServerSideProps } from 'next';
 import { i18n } from 'next-i18next';
@@ -10,7 +10,7 @@ import { getAllMovies } from 'services';
 import { MovieTypes } from 'types';
 
 const MoviePage = () => {
-  const { t, data } = useMoviesPage();
+  const { t, data, register, onSubmit, handleSubmit } = useMoviesPage();
 
   return (
     <div className='bg-gray-950 min-h-screen'>
@@ -30,14 +30,33 @@ const MoviePage = () => {
                 {data?.data.length})
               </h1>
             </div>
+            <div className='flex justify-center items-center gap-8'>
+              <form
+                onSubmit={handleSubmit(onSubmit)}
+                className='flex justify-center items-center '
+              >
+                <label
+                  className=' translate-x-5 cursor-pointer'
+                  htmlFor='search'
+                >
+                  <SearchIcon />
+                </label>
+                <input
+                  type='text'
+                  className='bg-transparent border-0 text-gray-350 pl-9 ring-0 placeholder:text-gray-350 focus:ring-0 focus:outline-0 focus:border-b focus:border-b-gray-350  w-24 focus:w-60 duration-300'
+                  placeholder={t('user.allMovies.search')!}
+                  {...register('search')}
+                  id='search'
+                />
+              </form>
 
-            <button className='flex gap-2  justify-center items-center bg-red-650 text-white px-[1.125rem] py-[0.625rem] rounded-md text-xl leading-[150%]'>
-              <Plus />
+              <button className='flex gap-2  justify-center items-center bg-red-650 text-white px-[1.125rem] py-[0.625rem] rounded-md text-xl leading-[150%]'>
+                <Plus />
 
-              {t('user.allMovies.addMovie')}
-            </button>
+                {t('user.allMovies.addMovie')}
+              </button>
+            </div>
           </div>
-
           <div className='flex flex-wrap justify-center items-center mt-9 lg:mt-[4.25rem] gap-12'>
             {data?.data.map((movie: MovieTypes) => (
               <Link href={`/movies/${movie.id}`} key={movie.id}>
