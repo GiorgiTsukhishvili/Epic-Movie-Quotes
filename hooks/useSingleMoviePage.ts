@@ -6,9 +6,7 @@ import useAuth from './useAuth';
 
 const useSingleMoviePage = (id: string) => {
   const { push } = useRouter();
-  const { data } = useQuery(['movie'], () =>
-    getSingleMovie(`/api/movie/${id}`)
-  );
+  const { data } = useQuery(['movie'], () => getSingleMovie(id));
   useAuth();
 
   const removeMovie = async () => {

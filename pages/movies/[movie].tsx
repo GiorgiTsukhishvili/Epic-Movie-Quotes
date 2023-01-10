@@ -29,7 +29,7 @@ const Movie = ({ name }: { name: string }) => {
                 width={809}
                 height={441}
                 priority
-                className='w-[22.375rem] h-[18.875rem] lg:w-[50.56rem] lg:h-[27.5rem] rounded-xl'
+                className='w-[22.375rem] h-[18.875rem] lg:w-[50.56rem] 2xl:min-w-[50.56rem] lg:h-[27.5rem] rounded-xl'
               />
             )}
 
