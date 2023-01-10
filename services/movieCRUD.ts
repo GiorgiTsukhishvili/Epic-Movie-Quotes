@@ -8,6 +8,10 @@ export const getAllMovies = async (): Promise<AxiosResponse<MovieTypes[]>> => {
 
 export const getSingleMovie = async (
   link: string
-): Promise<AxiosResponse<SingleMovieTypes>> => {
+): Promise<AxiosResponse<SingleMovieTypes[]>> => {
   return axios.get(link);
+};
+
+export const deleteMovie = async (movie: string) => {
+  return axios.delete(`/api/delete-movie/${movie}`);
 };

@@ -116,6 +116,11 @@
       "totalSecond": " (ჯამი ",
       "addMovie": "დაამატე",
       "search": "ძებნა"
+    },
+    "singleMovie": {
+      "topHeader": "ფილმის აღწერა",
+      "director": "რეჟისორი",
+      "budget": "ბიუჯეტი"
     }
   }
 }

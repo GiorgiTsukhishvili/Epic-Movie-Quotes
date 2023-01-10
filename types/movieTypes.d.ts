@@ -32,5 +32,6 @@ export type SingleMovieTypes = {
   tags: string;
   updated_at: string;
   user_id: number;
+  budget: string;
   quotes: Quotes[];
 };

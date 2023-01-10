@@ -15,3 +15,5 @@ export { default as House } from './House';
 export { default as Camera } from './Camera';
 export { default as Plus } from './Plus';
 export { default as Comment } from './Comment';
+export { default as Pencil } from './Pencil';
+export { default as TrashCan } from './TrashCan';
