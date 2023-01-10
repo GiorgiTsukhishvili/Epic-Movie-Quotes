@@ -52,7 +52,6 @@ const MoviePage = () => {
 
               <button className='flex gap-2  justify-center items-center bg-red-650 text-white px-[1.125rem] py-[0.625rem] rounded-md text-xl leading-[150%]'>
                 <Plus />
-
                 {t('user.allMovies.addMovie')}
               </button>
             </div>

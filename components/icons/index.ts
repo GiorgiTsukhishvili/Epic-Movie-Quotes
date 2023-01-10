@@ -17,3 +17,6 @@ export { default as Plus } from './Plus';
 export { default as Comment } from './Comment';
 export { default as Pencil } from './Pencil';
 export { default as TrashCan } from './TrashCan';
+export { default as Like } from './Like';
+export { default as QuoteComment } from './QuoteComment';
+export { default as ThreeDots } from './ThreeDots';

@@ -59,6 +59,7 @@ module.exports = {
         neutral: {
           950: '#11101A',
         },
+        'border-transparent': '#efefef33',
       },
     },
     boxShadow: {
