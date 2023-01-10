@@ -114,7 +114,8 @@
     "allMovies": {
       "totalMovies": "My list of movies",
       "totalSecond": " (Total ",
-      "addMovie": "Add movie"
+      "addMovie": "Add movie",
+      "search": "Search"
     }
   }
 }
