@@ -14,9 +14,9 @@ export type MovieTypes = {
 
 type Quotes = {
   created_at: string;
-  id: 1;
+  id: number;
   image: string;
-  movie_id: 1;
+  movie_id: number;
   quote: string;
   updated_at: string;
 };
