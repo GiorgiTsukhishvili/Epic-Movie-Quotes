@@ -67,6 +67,7 @@ module.exports = {
     },
     backdropBlur: {
       'user-page': '25px',
+      'main-page': '3px',
     },
   },
   plugins: [require('@tailwindcss/forms')],

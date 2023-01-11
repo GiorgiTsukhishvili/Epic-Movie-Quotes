@@ -20,3 +20,4 @@ export { default as TrashCan } from './TrashCan';
 export { default as Like } from './Like';
 export { default as QuoteComment } from './QuoteComment';
 export { default as ThreeDots } from './ThreeDots';
+export { default as EyeColored } from './EyeColored';

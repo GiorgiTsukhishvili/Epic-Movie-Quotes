@@ -320,7 +320,7 @@ const Registration: React.FC<RegistrationProps> = ({ setWhichForm }) => {
         </div>
       </div>
       <div
-        className='h-screen w-screen fixed top-0 left-0 z-[20] backdrop-blur-sm	'
+        className='h-screen w-screen fixed top-0 left-0 z-[20] backdrop-filter backdrop-blur-main-page'
         onClick={() => setWhichForm('')}
       />
       <div
