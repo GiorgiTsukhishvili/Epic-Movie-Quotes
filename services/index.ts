@@ -3,3 +3,4 @@ export * from './userRegister';
 export * from './userPasswordReset';
 export * from './userLogin';
 export * from './movieCRUD';
+export * from './quoteCRUD';

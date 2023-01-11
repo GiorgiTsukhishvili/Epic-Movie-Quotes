@@ -5,7 +5,7 @@ const nextConfig = {
   i18n,
   reactStrictMode: true,
   images: {
-    domains: [process.env.NEXT_PUBLIC_BACK_API_DOMAIN],
+    domains: [...process.env.NEXT_PUBLIC_BACK_API_DOMAIN?.split(' ')],
   },
 };
 

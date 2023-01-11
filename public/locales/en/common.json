@@ -125,7 +125,11 @@
       "addQuote": "Add quote",
       "viewQuote": "View Quote",
       "edit": "Edit",
-      "delete": "Delete"
+      "delete": "Delete",
+      "editQuote": "Edit Quote",
+      "saveChanges": "Save changes",
+      "changePhoto": "Change photo",
+      "maxLength": "Maximum symbol length is 115"
     }
   }
 }

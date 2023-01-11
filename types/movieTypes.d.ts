@@ -17,7 +17,7 @@ type Quotes = {
   id: number;
   image: string;
   movie_id: number;
-  quote: string;
+  quote: { en: string; ka: string };
   updated_at: string;
   comments_count: number;
   likes_count: number;
