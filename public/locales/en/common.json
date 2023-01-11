@@ -122,7 +122,10 @@
       "director": "Director",
       "budget": "Budget",
       "totalQuotes": "Quotes (Total ",
-      "addQuote": "Add quote"
+      "addQuote": "Add quote",
+      "viewQuote": "View Quote",
+      "edit": "Edit",
+      "delete": "Delete"
     }
   }
 }

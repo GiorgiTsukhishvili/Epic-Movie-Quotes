@@ -1,10 +1,18 @@
-import { Like, QuoteComment, ThreeDots, useListOfQuotes } from 'components';
+import {
+  EyeColored,
+  Like,
+  Pencil,
+  QuoteComment,
+  ThreeDots,
+  TrashCan,
+  useListOfQuotes,
+} from 'components';
 import { i18n } from 'next-i18next';
 import Image from 'next/image';
 import { ListOfQuotesTypes } from './listOfQuotesTypes';
 
 const ListOfQuotes: React.FC<ListOfQuotesTypes> = ({ quote }) => {
-  const { isViewOpen, setIsViewOpen, ref } = useListOfQuotes();
+  const { isViewOpen, setIsViewOpen, ref, t } = useListOfQuotes();
 
   return (
     <div className='xl:max-w-[50.563rem] w-full bg-neutral-950 rounded-lg backdrop-filter backdrop-blur-user-page relative'>
@@ -47,8 +55,27 @@ const ListOfQuotes: React.FC<ListOfQuotesTypes> = ({ quote }) => {
       {isViewOpen && (
         <div
           ref={ref}
-          className='w-[15.625rem] h-[12.5rem] bg-zinc-750 rounded-xl absolute xl:right-[-4rem] xl:top-12 2xl:right-[-12em] bottom-9 right-9'
-        ></div>
+          className='w-[15.625rem] flex flex-col px-10 justify-center gap-9 h-[12.5rem] bg-zinc-750 rounded-xl absolute xl:right-[-4rem] xl:top-12 2xl:right-[-12em] bottom-9 right-9'
+        >
+          <div className='flex justify-start items-center gap-4'>
+            <EyeColored />
+            <h1 className='text-white text-base leading-[150%]'>
+              {t('user.singleMovie.viewQuote')}
+            </h1>
+          </div>
+          <div className='flex justify-start items-center gap-4'>
+            <Pencil />
+            <h1 className='text-white text-base leading-[150%]'>
+              {t('user.singleMovie.edit')}
+            </h1>
+          </div>
+          <div className='flex justify-start items-center gap-4'>
+            <TrashCan />
+            <h1 className='text-white text-base leading-[150%]'>
+              {t('user.singleMovie.delete')}
+            </h1>
+          </div>
+        </div>
       )}
     </div>
   );

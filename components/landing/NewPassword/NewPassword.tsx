@@ -229,7 +229,7 @@ const NewPassword: React.FC<NewPasswordProps> = ({ setWhichForm }) => {
         </div>
       </div>
       <Link
-        className='h-screen w-screen fixed top-0 left-0 z-[20] backdrop-blur-sm	'
+        className='h-screen w-screen fixed top-0 left-0 z-[20] backdrop-filter backdrop-blur-main-page	'
         href={'/'}
       ></Link>
       <Link
