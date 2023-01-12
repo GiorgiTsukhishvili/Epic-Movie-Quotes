@@ -4,6 +4,7 @@ import { useForm, useWatch } from 'react-hook-form';
 import { fetchCSRFToken, sendUserRegisterData } from 'services';
 import { RegistrationTypes } from './registrationTypes';
 import { AxiosError } from 'axios';
+import { deleteCookie } from 'cookies-next';
 
 const useRegistration = () => {
   const { t } = useTranslation();
@@ -44,6 +45,7 @@ const useRegistration = () => {
         setWhichForm('registration-sent');
       }
     } catch (err) {
+      deleteCookie('XSRF-TOKEN');
       if (err instanceof AxiosError) {
         if (err.response!.data.errors.name) {
           setError('name', { type: 'all', message: t('errors.name')! });

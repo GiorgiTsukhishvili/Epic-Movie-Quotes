@@ -17,7 +17,7 @@ const MoviePage = () => {
       <UserNavbar />
       <div className='flex items-start'>
         <div className='hidden min-w-[26.875rem] lg:inline'>
-          <SideNavbar />
+          <SideNavbar isMoviesPage={true} />
         </div>
         <div className='w-full px-9 lg:pl-0 lg:pr-[4.375rem]'>
           <div className='w-full mt-[7.375rem] flex items-center justify-between'>
@@ -33,7 +33,7 @@ const MoviePage = () => {
             <div className='flex justify-center items-center gap-8'>
               <form
                 onSubmit={handleSubmit(onSubmit)}
-                className='flex justify-center items-center '
+                className='justify-center items-center hidden md:flex'
               >
                 <label
                   className=' translate-x-5 cursor-pointer'

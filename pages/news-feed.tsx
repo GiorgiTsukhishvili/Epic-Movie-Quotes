@@ -11,7 +11,7 @@ const NewsFeed = () => {
     <div className='bg-gray-950 min-h-screen'>
       <UserNavbar isNewsFeed={true} />
       <div className='flex justify-between items-center'>
-        <SideNavbar />
+        <SideNavbar isNewsFeed={true} />
         <div></div>
       </div>
     </div>

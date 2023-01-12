@@ -7,6 +7,7 @@ import {
   ThreeDots,
   TrashCan,
   useListOfQuotes,
+  ViewQuote,
 } from 'components';
 import { i18n } from 'next-i18next';
 import Image from 'next/image';
@@ -69,7 +70,10 @@ const ListOfQuotes: React.FC<ListOfQuotesTypes> = ({ quote }) => {
             ref={ref}
             className='w-[15.625rem] flex flex-col px-10 justify-center gap-9 h-[12.5rem] bg-zinc-750 rounded-xl absolute xl:right-[-4rem] xl:top-12 2xl:right-[-12em] bottom-9 right-9'
           >
-            <div className='flex justify-start items-center gap-4 cursor-pointer'>
+            <div
+              className='flex justify-start items-center gap-4 cursor-pointer'
+              onClick={() => setIsQuoteModelOpen('view')}
+            >
               <EyeColored />
               <h1 className='text-white text-base leading-[150%]'>
                 {t('user.singleMovie.viewQuote')}
@@ -102,6 +106,14 @@ const ListOfQuotes: React.FC<ListOfQuotesTypes> = ({ quote }) => {
           quoteId={quote.id}
           quoteImage={quote.image}
           quoteText={quote.quote}
+          removeQuery={removeQuery}
+        />
+      )}
+
+      {isQuoteModelOpen === 'view' && (
+        <ViewQuote
+          setIsQuoteModelOpen={setIsQuoteModelOpen}
+          quoteId={quote.id}
           removeQuery={removeQuery}
         />
       )}

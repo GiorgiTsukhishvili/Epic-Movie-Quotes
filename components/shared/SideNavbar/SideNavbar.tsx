@@ -1,9 +1,13 @@
 import { Camera, House } from 'components';
 import Image from 'next/image';
 import Link from 'next/link';
+import { SideNavbarProps } from './sideNavbarTypes';
 import useSideNavbar from './useSideNavbar';
 
-const SideNavbar = () => {
+const SideNavbar: React.FC<SideNavbarProps> = ({
+  isMoviesPage,
+  isNewsFeed,
+}) => {
   const { t, name, image } = useSideNavbar();
 
   return (
@@ -28,7 +32,7 @@ const SideNavbar = () => {
         </div>
       </div>
       <div className='flex justify-center items-center gap-11'>
-        <House isSidebar={true} />
+        <House isSidebar={true} isNewsFeed={isNewsFeed} />
         <Link
           href={'/news-feed'}
           className='text-white text-2xl leading-[150%] uppercase'
@@ -38,7 +42,7 @@ const SideNavbar = () => {
       </div>
 
       <div className='flex justify-center items-center gap-11'>
-        <Camera isSidebar={true} />
+        <Camera isSidebar={true} isMoviesPage={isMoviesPage} />
         <Link
           href={'/movies'}
           className='text-white text-2xl leading-[150%] uppercase'

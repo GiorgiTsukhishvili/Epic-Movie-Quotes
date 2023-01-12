@@ -1,5 +1,9 @@
 import { axios } from 'services';
 
+export const showQuote = async (id: number) => {
+  return axios.get(`/api/quote/${id}`);
+};
+
 export const createQuote = async (data: FormData) => {
   return axios.post('/api/create-quote', data, {
     headers: {

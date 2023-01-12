@@ -26,13 +26,13 @@ const Movie = ({ name }: { name: string }) => {
         <UserNavbar />
         <div className='flex items-start'>
           <div className='hidden min-w-[26.875rem] lg:inline'>
-            <SideNavbar />
+            <SideNavbar isMoviesPage={true} />
           </div>
           <div className='w-full lg:pr-[4.375rem] mt-[7.375rem] '>
             <h1 className='text-2xl  px-9 lg:pl-0 font-medium leading-[150%] text-white hidden lg:block'>
               {t('user.singleMovie.topHeader')}
             </h1>
-            <div className='lg:mt-8  pl-9 lg:pl-0 mt-0 flex gap-6 xl:flex-row flex-col'>
+            <div className='lg:mt-8  pl-9 lg:pl-0 mt-0 flex gap-6 2xl:flex-row flex-col'>
               {data?.data[0].image && (
                 <Image
                   src={data?.data[0].image}
@@ -44,14 +44,14 @@ const Movie = ({ name }: { name: string }) => {
                 />
               )}
 
-              <div className='flex flex-col gap-4'>
-                <div className='flex justify-between items-center'>
+              <div className='flex flex-col  gap-4'>
+                <div className='flex justify-between items-center lg:flex-wrap'>
                   <h1 className='text-2xl font-medium leading-[150%] text-orange-250'>
                     {data && data?.data[0].name[i18n?.language! as 'en' | 'ka']}
                     ({data?.data[0].date})
                   </h1>
 
-                  <div className=' bg-zinc-750 rounded-md py-2.5 px-7 lg:flex hidden'>
+                  <div className=' bg-zinc-750 rounded-md py-2.5 px-7 lg:flex  hidden'>
                     <span className='pr-6 border-r border-r-gray-550 cursor-pointer'>
                       <Pencil />
                     </span>
