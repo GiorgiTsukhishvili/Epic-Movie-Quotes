@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { useForm } from 'react-hook-form';
 import { LoginFormTypes } from './loginTypes';
 import { fetchCSRFToken, userLogin } from 'services';
-import { deleteCookie } from 'cookies-next';
+import { deleteCookie, setCookie } from 'cookies-next';
 import { useDispatch } from 'react-redux';
 import { updateUserData } from 'state';
 import { useRouter } from 'next/router';
@@ -30,10 +30,12 @@ const useLogin = () => {
       const response = await userLogin(data);
       dispatch(updateUserData(response.data.user));
       push('news-feed');
+      setCookie('isLoggedIn', true);
     } catch (err) {
       setError('login', { type: 'all', message: t('errors.incorrectLogin')! });
       setError('password', { type: 'all', message: '' });
       deleteCookie('XSRF-TOKEN');
+      deleteCookie('isLoggedIn');
     }
   };
 

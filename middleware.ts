@@ -3,18 +3,21 @@ import type { NextRequest } from 'next/server';
 import { AUTH_ROUTES, GUEST_ROUTE } from 'config';
 
 export function middleware(request: NextRequest) {
+  let response = NextResponse.next();
   const cookies = request.cookies.getAll();
-  const userHasToken = cookies.some((cookie) => cookie.name === 'XSRF-TOKEN');
+  const userIsLoggedIn = cookies.some((cookie) => cookie.name === 'isLoggedIn');
   const { pathname } = request.nextUrl;
 
-  if (pathname === GUEST_ROUTE && userHasToken) {
-    return NextResponse.rewrite(new URL('/news-feed', request.url));
+  if (pathname === GUEST_ROUTE && userIsLoggedIn) {
+    response = NextResponse.rewrite(new URL('/news-feed', request.url));
   }
   for (const route of AUTH_ROUTES) {
-    if (pathname.includes(route) && !userHasToken) {
-      return NextResponse.rewrite(new URL('/', request.url));
+    if (pathname.includes(route) && !userIsLoggedIn) {
+      response = NextResponse.rewrite(new URL('/', request.url));
     }
   }
+
+  return response;
 }
 
 export const config = {

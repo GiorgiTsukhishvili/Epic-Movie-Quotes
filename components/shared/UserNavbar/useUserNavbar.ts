@@ -21,6 +21,7 @@ const useUserNavbar = () => {
     try {
       await userLogout();
       deleteCookie('XSRF-TOKEN');
+      deleteCookie('isLoggedIn');
       push('/');
     } catch (err) {
       console.log(err);
