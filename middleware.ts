@@ -10,14 +10,13 @@ export function middleware(request: NextRequest) {
   if (pathname === GUEST_ROUTE && userHasToken) {
     return NextResponse.rewrite(new URL('/news-feed', request.url));
   }
-
   for (const route of AUTH_ROUTES) {
-    if (route === pathname && !userHasToken) {
+    if (pathname.includes(route) && !userHasToken) {
       return NextResponse.rewrite(new URL('/', request.url));
     }
   }
 }
 
 export const config = {
-  matcher: ['/news-feed', '/', '/movies'],
+  matcher: ['/news-feed', '/', '/movies', '/movies/:path*'],
 };
