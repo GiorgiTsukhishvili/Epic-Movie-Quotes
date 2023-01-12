@@ -1,4 +1,4 @@
-import { hasCookie } from 'cookies-next';
+import { deleteCookie, hasCookie } from 'cookies-next';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import { fetchUserInfo } from 'services';
@@ -15,6 +15,7 @@ const useAuth = () => {
         dispatch(updateUserData(response.data.user));
       } catch (error) {
         if (router.pathname !== '/') {
+          deleteCookie('XSRF-TOKEN');
           router.push('/');
         }
       }

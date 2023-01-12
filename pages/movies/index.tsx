@@ -68,7 +68,7 @@ const MoviePage = () => {
                   className='lg:w-[27.5rem] lg:h-[23.125rem] w-[22.375rem] h-auto rounded-xl'
                 />
                 <h1 className='text-white text-2xl leading-[150%] mt-4 font-medium'>
-                  {JSON.parse(movie.name)[i18n?.language!]} ({movie.date})
+                  {movie.name[i18n?.language! as 'ka' | 'en']} ({movie.date})
                 </h1>
                 <h1 className='text-white text-2xl leading-[150%] mt-4 font-medium flex gap-3 items-center'>
                   {movie.quotes_count}
