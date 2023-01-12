@@ -1,7 +1,7 @@
 import { useTranslation } from 'next-i18next';
 import { Dispatch, SetStateAction, useState } from 'react';
 import { useForm, useWatch } from 'react-hook-form';
-import { sendUserRegisterData } from 'services';
+import { fetchCSRFToken, sendUserRegisterData } from 'services';
 import { RegistrationTypes } from './registrationTypes';
 import { AxiosError } from 'axios';
 
@@ -38,8 +38,8 @@ const useRegistration = () => {
     setWhichForm: Dispatch<SetStateAction<string>>
   ) => {
     try {
+      await fetchCSRFToken();
       const response = await sendUserRegisterData(data);
-
       if (response.status === 201) {
         setWhichForm('registration-sent');
       }

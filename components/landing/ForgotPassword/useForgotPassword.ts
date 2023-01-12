@@ -2,7 +2,7 @@ import { AxiosError } from 'axios';
 import { useTranslation } from 'next-i18next';
 import { Dispatch, SetStateAction } from 'react';
 import { useForm } from 'react-hook-form';
-import { sendUserResetEmail } from 'services';
+import { fetchCSRFToken, sendUserResetEmail } from 'services';
 import { ForgotPasswordTypes } from './forgotTypes';
 
 const useForgotPassword = () => {
@@ -26,6 +26,7 @@ const useForgotPassword = () => {
     setWhichForm: Dispatch<SetStateAction<string>>
   ) => {
     try {
+      await fetchCSRFToken();
       const response = await sendUserResetEmail(data);
 
       if (response.status === 201) {

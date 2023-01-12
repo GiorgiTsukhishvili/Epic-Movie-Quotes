@@ -2,7 +2,7 @@ import { useQuery } from 'hooks';
 import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
 import { useForm, useWatch } from 'react-hook-form';
-import { sendNewPasswordDetails } from 'services';
+import { fetchCSRFToken, sendNewPasswordDetails } from 'services';
 import { NewPasswordTypes } from './newPassowrdTypes';
 
 const useNewPassword = () => {
@@ -46,6 +46,7 @@ const useNewPassword = () => {
 
   const onSubmit = async (data: NewPasswordTypes) => {
     try {
+      await fetchCSRFToken();
       const response = await sendNewPasswordDetails(link, data);
       if (response.status === 201) {
         push('/?password-change=success');
