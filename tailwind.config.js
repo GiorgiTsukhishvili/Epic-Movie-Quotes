@@ -59,6 +59,9 @@ module.exports = {
         neutral: {
           950: '#11101A',
         },
+        purple: {
+          150: 'rgba(151, 71, 255, 0.4)',
+        },
         'border-transparent': '#efefef33',
       },
     },

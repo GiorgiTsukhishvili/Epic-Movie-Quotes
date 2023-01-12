@@ -129,7 +129,10 @@
       "editQuote": "Edit Quote",
       "saveChanges": "Save changes",
       "changePhoto": "Change photo",
-      "maxLength": "Maximum symbol length is 115"
+      "maxLength": "Maximum symbol length is 115",
+      "chooseFile": "Choose file",
+      "drag": "Drag & drop your image here or",
+      "upload": "Upload image"
     }
   }
 }

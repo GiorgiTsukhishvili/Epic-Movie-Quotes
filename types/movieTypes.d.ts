@@ -1,11 +1,11 @@
 export type MovieTypes = {
   created_at: string;
   date: string;
-  description: string;
-  director: string;
+  description: { en: string; ka: string };
+  director: { en: string; ka: string };
   id: number;
   image: string;
-  name: string;
+  name: { en: string; ka: string };
   quotes_count: number;
   tags: string;
   updated_at: string;
@@ -26,11 +26,11 @@ type Quotes = {
 export type SingleMovieTypes = {
   created_at: string;
   date: string;
-  description: string;
-  director: string;
+  description: { en: string; ka: string };
+  director: { en: string; ka: string };
   id: number;
   image: string;
-  name: string;
+  name: { en: string; ka: string };
   tags: string;
   updated_at: string;
   user_id: number;
