@@ -1,5 +1,5 @@
 import { ErrorMessage } from '@hookform/error-message';
-import { CloseIcon, Photo, useAddQuote } from 'components';
+import { CloseIcon, Photo, TextAreaInput, useAddQuote } from 'components';
 import { i18n } from 'next-i18next';
 import Image from 'next/image';
 import { Fragment } from 'react';
@@ -98,19 +98,11 @@ const AddQuote: React.FC<AddQuoteProps> = ({
             <div className='flex lg:flex-col flex-col-reverse'>
               <div>
                 <div className='relative'>
-                  <textarea
-                    {...register('quote-en', {
-                      required: {
-                        value: true,
-                        message: t('form.login.required'),
-                      },
-                    })}
-                    id='quote-en'
-                    cols={30}
-                    rows={10}
-                    placeholder='"Quote in English."'
-                    className='bg-transparent w-full pr-12 placeholder:text-white border-gray-550 rounded-md border h-[5.375rem] text-white text-base lg:text-2xl leading-[150%] focus:ring-0 focus:border-gray-550 focus:border'
-                  ></textarea>
+                  <TextAreaInput
+                    register={register}
+                    name={'quote-en'}
+                    text={t('form.login.required')}
+                  />
                   <label
                     htmlFor='quote-en'
                     className='absolute right-2 top-7 text-gray-550 leading-[150%] text-xl'
@@ -124,19 +116,11 @@ const AddQuote: React.FC<AddQuoteProps> = ({
                 </div>
 
                 <div className='relative'>
-                  <textarea
-                    {...register('quote-ka', {
-                      required: {
-                        value: true,
-                        message: t('form.login.required'),
-                      },
-                    })}
-                    id=''
-                    className='bg-transparent w-full pr-12 placeholder:text-white border-gray-550 rounded-md border h-[5.375rem] text-white text-base lg:text-2xl leading-[150%] focus:ring-0 focus:border-gray-550 focus:border'
-                    cols={30}
-                    rows={10}
-                    placeholder='“ციტატა ქართულ ენაზე”'
-                  ></textarea>
+                  <TextAreaInput
+                    register={register}
+                    name={'quote-ka'}
+                    text={t('form.login.required')}
+                  />
                   <label
                     htmlFor='quote-ka'
                     className='absolute right-2 top-7 text-gray-550 leading-[150%] text-xl'

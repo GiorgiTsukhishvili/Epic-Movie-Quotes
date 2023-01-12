@@ -1,5 +1,5 @@
 import { ErrorMessage } from '@hookform/error-message';
-import { CloseIcon, TrashCan, Photo } from 'components';
+import { CloseIcon, TrashCan, Photo, TextAreaInput } from 'components';
 import Image from 'next/image';
 import { Fragment } from 'react';
 import { EditQuoteProps } from './editQuoteTypes';
@@ -60,18 +60,11 @@ const EditQuote: React.FC<EditQuoteProps> = ({
 
         <form onSubmit={handleSubmit(onSubmit)} className='mx-8 mb-5'>
           <div className='relative'>
-            <textarea
-              {...register('quote-en', {
-                required: {
-                  value: true,
-                  message: t('form.login.required'),
-                },
-              })}
-              id='quote-en'
-              cols={30}
-              rows={10}
-              className='bg-transparent w-full pr-12 border-gray-550 rounded-md border h-[5.375rem] text-white text-base lg:text-2xl leading-[150%] focus:ring-0 focus:border-gray-550 focus:border'
-            ></textarea>
+            <TextAreaInput
+              register={register}
+              name={'quote-en'}
+              text={t('form.login.required')}
+            />
             <label
               htmlFor='quote-en'
               className='absolute right-2 top-7 text-gray-550 leading-[150%] text-xl'
@@ -85,18 +78,11 @@ const EditQuote: React.FC<EditQuoteProps> = ({
           </div>
 
           <div className='relative'>
-            <textarea
-              {...register('quote-ka', {
-                required: {
-                  value: true,
-                  message: t('form.login.required'),
-                },
-              })}
-              id=''
-              className='bg-transparent w-full pr-12 border-gray-550 rounded-md border h-[5.375rem] text-white text-base lg:text-2xl leading-[150%] focus:ring-0 focus:border-gray-550 focus:border'
-              cols={30}
-              rows={10}
-            ></textarea>
+            <TextAreaInput
+              text={t('form.login.required')}
+              register={register}
+              name={'quote-ka'}
+            />
             <label
               htmlFor='quote-ka'
               className='absolute right-2 top-7 text-gray-550 leading-[150%] text-xl'
