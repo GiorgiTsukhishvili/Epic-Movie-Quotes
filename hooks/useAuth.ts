@@ -20,7 +20,7 @@ const useAuth = () => {
         }
       }
     };
-    if (hasCookie('XSRF-TOKEN')) {
+    if (hasCookie('XSRF-TOKEN') && hasCookie('isLoggedIn')) {
       checkAuth();
     }
   }, [router]);
