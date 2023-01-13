@@ -1,5 +1,4 @@
 import {
-  EditQuote,
   EyeColored,
   Like,
   Pencil,
@@ -7,23 +6,15 @@ import {
   ThreeDots,
   TrashCan,
   useListOfQuotes,
-  ViewQuote,
 } from 'components';
 import { i18n } from 'next-i18next';
 import Image from 'next/image';
+import Link from 'next/link';
 import { Fragment } from 'react';
 import { ListOfQuotesTypes } from './listOfQuotesTypes';
 
-const ListOfQuotes: React.FC<ListOfQuotesTypes> = ({ quote }) => {
-  const {
-    isViewOpen,
-    setIsViewOpen,
-    ref,
-    t,
-    removeQuery,
-    isQuoteModelOpen,
-    setIsQuoteModelOpen,
-  } = useListOfQuotes();
+const ListOfQuotes: React.FC<ListOfQuotesTypes> = ({ quote, removeQuote }) => {
+  const { isViewOpen, setIsViewOpen, ref, t } = useListOfQuotes();
 
   return (
     <Fragment>
@@ -70,27 +61,33 @@ const ListOfQuotes: React.FC<ListOfQuotesTypes> = ({ quote }) => {
             ref={ref}
             className='w-[15.625rem] flex flex-col px-10 justify-center gap-9 h-[12.5rem] bg-zinc-750 rounded-xl absolute xl:right-[-4rem] xl:top-12 2xl:right-[-12em] bottom-9 right-9'
           >
-            <div
+            <Link
+              href={{
+                pathname: `/movies/${quote.movie_id}`,
+                query: { mode: 'view', 'quote-id': quote.id },
+              }}
               className='flex justify-start items-center gap-4 cursor-pointer'
-              onClick={() => setIsQuoteModelOpen('view')}
             >
               <EyeColored />
               <h1 className='text-white text-base leading-[150%]'>
                 {t('user.singleMovie.viewQuote')}
               </h1>
-            </div>
-            <div
+            </Link>
+            <Link
+              href={{
+                pathname: `/movies/${quote.movie_id}`,
+                query: { mode: 'edit', 'quote-id': quote.id },
+              }}
               className='flex justify-start items-center gap-4 cursor-pointer'
-              onClick={() => setIsQuoteModelOpen('edit')}
             >
               <Pencil />
               <h1 className='text-white text-base leading-[150%]'>
                 {t('user.singleMovie.edit')}
               </h1>
-            </div>
+            </Link>
             <div
               className='flex justify-start items-center gap-4 cursor-pointer'
-              onClick={() => removeQuery(quote.id)}
+              onClick={() => removeQuote(quote.id)}
             >
               <TrashCan />
               <h1 className='text-white text-base leading-[150%]'>
@@ -100,23 +97,6 @@ const ListOfQuotes: React.FC<ListOfQuotesTypes> = ({ quote }) => {
           </div>
         )}
       </div>
-      {isQuoteModelOpen === 'edit' && (
-        <EditQuote
-          setIsQuoteModelOpen={setIsQuoteModelOpen}
-          quoteId={quote.id}
-          quoteImage={quote.image}
-          quoteText={quote.quote}
-          removeQuery={removeQuery}
-        />
-      )}
-
-      {isQuoteModelOpen === 'view' && (
-        <ViewQuote
-          setIsQuoteModelOpen={setIsQuoteModelOpen}
-          quoteId={quote.id}
-          removeQuery={removeQuery}
-        />
-      )}
     </Fragment>
   );
 };

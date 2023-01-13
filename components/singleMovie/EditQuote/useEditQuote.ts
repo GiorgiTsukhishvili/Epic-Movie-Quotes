@@ -1,5 +1,5 @@
+import { useQuery } from 'hooks';
 import { useTranslation } from 'next-i18next';
-import { Dispatch, SetStateAction } from 'react';
 import { useForm, useWatch } from 'react-hook-form';
 import { useMutation, useQueryClient } from 'react-query';
 import { useSelector } from 'react-redux';
@@ -11,13 +11,13 @@ const useEditQuote = (
   quoteImage: string,
   quoteText: { en: string; ka: string },
   quoteId: number,
-  setIsQuoteModelOpen: Dispatch<SetStateAction<string>>
+  movieId: number
 ) => {
   const { t } = useTranslation();
   const {
     user: { name, image },
   } = useSelector((state: { user: UserTypes }) => state);
-
+  const { push } = useQuery();
   const {
     register,
     handleSubmit,
@@ -42,7 +42,7 @@ const useEditQuote = (
   const { mutate } = useMutation(updateQuote, {
     onSuccess: () => {
       queryClient.invalidateQueries('movie');
-      setIsQuoteModelOpen('');
+      push(`/movies/${movieId}`);
     },
   });
 
