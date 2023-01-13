@@ -1,4 +1,5 @@
 import { AxiosError } from 'axios';
+import { deleteCookie } from 'cookies-next';
 import { useTranslation } from 'next-i18next';
 import { Dispatch, SetStateAction } from 'react';
 import { useForm } from 'react-hook-form';
@@ -33,6 +34,7 @@ const useForgotPassword = () => {
         setWhichForm('forgot-sent');
       }
     } catch (err) {
+      deleteCookie('XSRF-TOKEN');
       if (err instanceof AxiosError) {
         if (err.response!.data) {
           setError('email', {

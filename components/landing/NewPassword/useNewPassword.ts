@@ -1,3 +1,4 @@
+import { deleteCookie } from 'cookies-next';
 import { useQuery } from 'hooks';
 import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
@@ -52,6 +53,7 @@ const useNewPassword = () => {
         push('/?password-change=success');
       }
     } catch (err) {
+      deleteCookie('XSRF-TOKEN');
       setLinkValid(false);
     }
   };
