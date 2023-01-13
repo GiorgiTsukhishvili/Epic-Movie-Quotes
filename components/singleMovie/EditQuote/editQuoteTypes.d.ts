@@ -1,5 +1,5 @@
 export type EditQuoteProps = {
-  setIsQuoteModelOpen: Dispatch<SetStateAction<string>>;
+  movieId: number;
   quoteId: number;
   quoteImage: string;
   quoteText: { en: string; ka: string };

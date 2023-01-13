@@ -1,11 +1,13 @@
 import {
   AddQuote,
+  EditQuote,
   ListOfQuotes,
   Pencil,
   Plus,
   SideNavbar,
   TrashCan,
   UserNavbar,
+  ViewQuote,
 } from 'components';
 import { useSingleMoviePage } from 'hooks';
 import { GetServerSideProps } from 'next';
@@ -17,8 +19,16 @@ import { dehydrate, QueryClient } from 'react-query';
 import { getSingleMovie } from 'services';
 
 const Movie = ({ name }: { name: string }) => {
-  const { t, data, removeMovie, isAddQuoteOpen, setIsAddQuoteOpen, quotes } =
-    useSingleMoviePage(name);
+  const {
+    t,
+    data,
+    removeMovie,
+    isAddQuoteOpen,
+    setIsAddQuoteOpen,
+    quotes,
+    query,
+    removeQuote,
+  } = useSingleMoviePage(name);
 
   return (
     <Fragment>
@@ -103,7 +113,11 @@ const Movie = ({ name }: { name: string }) => {
             <div className='lg:mt-16 mt-9 flex flex-col lg:gap-10 gap-8'>
               {data &&
                 quotes.map((quote) => (
-                  <ListOfQuotes key={quote.id} quote={quote} />
+                  <ListOfQuotes
+                    key={quote.id}
+                    quote={quote}
+                    removeQuote={removeQuote}
+                  />
                 ))}
             </div>
           </div>
@@ -119,6 +133,28 @@ const Movie = ({ name }: { name: string }) => {
           tags={data?.data[0].tags}
           setIsAddQuoteOpen={setIsAddQuoteOpen}
         />
+      )}
+
+      {query.mode === 'edit' && data && (
+        <EditQuote
+          quoteId={+query['quote-id']!}
+          movieId={data?.data[0].id}
+          quoteImage={
+            quotes.find((quote) => quote.id === +query['quote-id']!)
+              ? quotes.find((quote) => quote.id === +query['quote-id']!)!.image
+              : ''
+          }
+          quoteText={
+            quotes.find((quote) => quote.id === +query['quote-id']!)!
+              ? quotes.find((quote) => quote.id === +query['quote-id']!)!.quote
+              : { en: '', ka: '' }
+          }
+          removeQuery={removeQuote}
+        />
+      )}
+
+      {query.mode === 'view' && (
+        <ViewQuote quoteId={+query['quote-id']!} removeQuery={removeQuote} />
       )}
     </Fragment>
   );

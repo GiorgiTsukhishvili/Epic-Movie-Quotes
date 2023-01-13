@@ -22,6 +22,8 @@ const useAuth = () => {
     };
     if (hasCookie('XSRF-TOKEN') && hasCookie('isLoggedIn')) {
       checkAuth();
+    } else {
+      deleteCookie('isLoggedIn');
     }
   }, [router]);
 };

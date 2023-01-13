@@ -1,4 +1,5 @@
 import 'styles/globals.css';
+import React from 'react';
 import type { AppProps } from 'next/app';
 import { appWithTranslation, i18n } from 'next-i18next';
 import { Hydrate, QueryClient, QueryClientProvider } from 'react-query';
@@ -6,7 +7,9 @@ import { Provider } from 'react-redux';
 import { store } from 'state';
 
 function App({ Component, pageProps }: AppProps) {
-  const queryClient = new QueryClient();
+  const [queryClient] = React.useState(function () {
+    return new QueryClient();
+  });
 
   return (
     <Provider store={store}>
