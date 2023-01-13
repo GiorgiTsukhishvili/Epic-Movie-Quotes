@@ -58,7 +58,15 @@ const EditQuote: React.FC<EditQuoteProps> = ({
           </Link>
         </div>
         <div className='ml-8 mt-8 mb-4 flex items-center gap-4'>
-          <Image src={image!} alt='author-image' width={60} height={60} />
+          {image && (
+            <Image
+              src={image}
+              alt='author-image'
+              width={60}
+              height={60}
+              className='rounded-full w-[3.75rem] h-[3.75rem]'
+            />
+          )}
           <h1 className='text-white text-xl = leading-[150%] font-medium'>
             {name}
           </h1>

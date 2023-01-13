@@ -22,3 +22,4 @@ export { default as QuoteComment } from './QuoteComment';
 export { default as ThreeDots } from './ThreeDots';
 export { default as EyeColored } from './EyeColored';
 export { default as Photo } from './Photo';
+export { default as LikeFilled } from './LikeFilled';

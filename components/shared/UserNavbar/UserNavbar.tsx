@@ -66,7 +66,13 @@ const UserNavbar: React.FC<UserNavbarTypes> = ({ isNewsFeed }) => {
         >
           <div className='flex justify-center items-center gap-5'>
             {image && (
-              <Image src={image} alt='profile-photo' width={40} height={40} />
+              <Image
+                src={image}
+                alt='profile-photo'
+                width={40}
+                height={40}
+                className='rounded-full w-10 h-10'
+              />
             )}
             <div>
               <h1 className='text-white text-xl leading-[150%] uppercase'>

@@ -63,6 +63,7 @@ module.exports = {
           150: 'rgba(151, 71, 255, 0.4)',
         },
         'border-transparent': '#efefef33',
+        'comment-input': 'rgba(36, 34, 47, 0.6)',
       },
     },
     boxShadow: {
