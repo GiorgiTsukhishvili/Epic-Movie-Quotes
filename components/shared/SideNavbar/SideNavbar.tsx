@@ -20,6 +20,7 @@ const SideNavbar: React.FC<SideNavbarProps> = ({
             width={60}
             height={60}
             priority
+            className='rounded-full w-[3.75rem] h-[3.75rem]'
           />
         )}
         <div>
