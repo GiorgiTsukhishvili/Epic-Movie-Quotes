@@ -133,7 +133,8 @@
       "chooseFile": "Choose file",
       "drag": "Drag & drop your image here or",
       "upload": "Upload image",
-      "writeComment": "Write a comment"
+      "writeComment": "Write a comment",
+      "date": "Year"
     }
   }
 }

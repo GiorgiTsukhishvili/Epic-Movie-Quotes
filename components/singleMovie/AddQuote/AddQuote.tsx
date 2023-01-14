@@ -97,37 +97,26 @@ const AddQuote: React.FC<AddQuoteProps> = ({
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className='flex lg:flex-col flex-col-reverse'>
               <div>
-                <div className='relative'>
-                  <TextAreaInput
-                    register={register}
-                    name={'quote-en'}
-                    text={t('form.login.required')}
-                  />
-                  <label
-                    htmlFor='quote-en'
-                    className='absolute right-2 top-7 text-gray-550 leading-[150%] text-xl'
-                  >
-                    Eng
-                  </label>
-                </div>
+                <TextAreaInput
+                  register={register}
+                  name={'quote-en'}
+                  text={t('form.login.required')}
+                  placeholder='“Quote in English.”'
+                  labelText='Eng'
+                />
 
                 <div className='text-red-550 h-5 font-normal text-sm leading-[150%] my-1 mb-5'>
                   <ErrorMessage errors={errors} name='quote-en' />
                 </div>
 
-                <div className='relative'>
-                  <TextAreaInput
-                    register={register}
-                    name={'quote-ka'}
-                    text={t('form.login.required')}
-                  />
-                  <label
-                    htmlFor='quote-ka'
-                    className='absolute right-2 top-7 text-gray-550 leading-[150%] text-xl'
-                  >
-                    ქარ
-                  </label>
-                </div>
+                <TextAreaInput
+                  register={register}
+                  name={'quote-ka'}
+                  text={t('form.login.required')}
+                  placeholder='“ციტატა ქართულ ენაზე”'
+                  labelText='ქარ'
+                />
+
                 <div className='text-red-550 h-5 font-normal text-sm leading-[150%] my-1 z-50 '>
                   <ErrorMessage errors={errors} name='quote-ka' />
                 </div>

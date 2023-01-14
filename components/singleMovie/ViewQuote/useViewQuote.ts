@@ -35,6 +35,7 @@ const useViewQuote = (id: number) => {
   const {
     register,
     handleSubmit,
+    setValue,
     formState: { errors },
   } = useForm<{ comment: string }>({
     mode: 'onChange',
@@ -43,6 +44,8 @@ const useViewQuote = (id: number) => {
 
   const onSubmit = (data: { comment: string }) => {
     commentMutation({ ...data, quote_id: quoteData.id });
+
+    setValue('comment', '');
   };
 
   const quoteData = data ? data?.data[0] : '';

@@ -43,9 +43,9 @@ const Movie = ({ name }: { name: string }) => {
               {t('user.singleMovie.topHeader')}
             </h1>
             <div className='lg:mt-8  pl-9 lg:pl-0 mt-0 flex gap-6 2xl:flex-row flex-col'>
-              {data?.data[0].image && (
+              {data?.data.image && (
                 <Image
-                  src={data?.data[0].image}
+                  src={data?.data.image}
                   alt='movie-image'
                   width={809}
                   height={441}
@@ -57,8 +57,8 @@ const Movie = ({ name }: { name: string }) => {
               <div className='flex flex-col  gap-4'>
                 <div className='flex justify-between items-center lg:flex-wrap'>
                   <h1 className='text-2xl font-medium leading-[150%] text-orange-250'>
-                    {data && data?.data[0].name[i18n?.language! as 'en' | 'ka']}
-                    ({data?.data[0].date})
+                    {data && data?.data.name[i18n?.language! as 'en' | 'ka']}(
+                    {data?.data.date})
                   </h1>
 
                   <div className=' bg-zinc-750 rounded-md py-2.5 px-7 lg:flex  hidden'>
@@ -72,7 +72,7 @@ const Movie = ({ name }: { name: string }) => {
                 </div>
                 <div className='flex gap-2'>
                   {data &&
-                    data.data[0].tags.split(',').map((tag) => (
+                    data.data.tags.split(',').map((tag) => (
                       <h1
                         key={tag}
                         className='text-white font-bold text-lg bg-gray-550 h-8 px-3 rounded-md'
@@ -84,22 +84,22 @@ const Movie = ({ name }: { name: string }) => {
                 <h1 className='text-gray-350 font-bold text-lg leading-[150%]'>
                   {t('user.singleMovie.director')}:&#160;
                   {data &&
-                    (data?.data[0].director)[i18n?.language! as 'en' | 'ka']}
+                    (data?.data.director)[i18n?.language! as 'en' | 'ka']}
                 </h1>
                 <h1 className='text-gray-350 font-bold text-lg leading-[150%]'>
                   {t('user.singleMovie.budget')}:&#160;
-                  {data?.data[0].budget && data && data?.data[0].budget}$
+                  {data?.data.budget && data && data?.data.budget}$
                 </h1>
                 <h1 className='text-gray-350 font-normal text-lg leading-[150%] '>
                   {data &&
-                    (data?.data[0].description)[i18n?.language! as 'en' | 'ka']}
+                    (data?.data.description)[i18n?.language! as 'en' | 'ka']}
                 </h1>
               </div>
             </div>
             <div className='mt-11  px-9 lg:pl-0 lg:flex-row flex flex-col-reverse items-start lg:items-center'>
               <h1 className='text-white text-2xl w-full lg:w-auto leading-[150%] pt-10 border-t border-t-gray-350 lg:pt-0 lg:border-t-0 lg:pr-4 lg:border-r lg:border-r-gray-350'>
                 {t('user.singleMovie.totalQuotes')}{' '}
-                {data && data.data[0].quotes.length})
+                {data && data.data.quotes.length})
               </h1>
 
               <button
@@ -125,12 +125,12 @@ const Movie = ({ name }: { name: string }) => {
       </div>
       {isAddQuoteOpen && data && (
         <AddQuote
-          name={data?.data[0].name}
-          director={data?.data[0].director}
-          image={data?.data[0].image}
-          id={data?.data[0].id}
-          date={data?.data[0].date}
-          tags={data?.data[0].tags}
+          name={data?.data.name}
+          director={data?.data.director}
+          image={data?.data.image}
+          id={data?.data.id}
+          date={data?.data.date}
+          tags={data?.data.tags}
           setIsAddQuoteOpen={setIsAddQuoteOpen}
         />
       )}
@@ -138,7 +138,7 @@ const Movie = ({ name }: { name: string }) => {
       {query.mode === 'edit' && data && (
         <EditQuote
           quoteId={+query['quote-id']!}
-          movieId={data?.data[0].id}
+          movieId={data?.data.id}
           quoteImage={
             quotes.find((quote) => quote.id === +query['quote-id']!)
               ? quotes.find((quote) => quote.id === +query['quote-id']!)!.image

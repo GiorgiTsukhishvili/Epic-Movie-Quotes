@@ -1,4 +1,11 @@
-import { Comment, Plus, SearchIcon, SideNavbar, UserNavbar } from 'components';
+import {
+  AddNewMovie,
+  Comment,
+  Plus,
+  SearchIcon,
+  SideNavbar,
+  UserNavbar,
+} from 'components';
 import { useMoviesPage } from 'hooks';
 import { GetServerSideProps } from 'next';
 import { i18n } from 'next-i18next';
@@ -10,7 +17,15 @@ import { getAllMovies } from 'services';
 import { MovieTypes } from 'types';
 
 const MoviePage = () => {
-  const { t, data, register, onSubmit, handleSubmit } = useMoviesPage();
+  const {
+    t,
+    data,
+    register,
+    onSubmit,
+    handleSubmit,
+    setIsAddMovieOpen,
+    isAddMovieOpen,
+  } = useMoviesPage();
 
   return (
     <div className='bg-gray-950 min-h-screen'>
@@ -50,7 +65,10 @@ const MoviePage = () => {
                 />
               </form>
 
-              <button className='flex gap-2  justify-center items-center bg-red-650 text-white px-[1.125rem] py-[0.625rem] rounded-md text-xl leading-[150%]'>
+              <button
+                onClick={() => setIsAddMovieOpen(true)}
+                className='flex gap-2  justify-center items-center bg-red-650 text-white px-[1.125rem] py-[0.625rem] rounded-md text-xl leading-[150%]'
+              >
                 <Plus />
                 {t('user.allMovies.addMovie')}
               </button>
@@ -79,14 +97,18 @@ const MoviePage = () => {
           </div>
         </div>
       </div>
+      {isAddMovieOpen && <AddNewMovie setIsAddMovieOpen={setIsAddMovieOpen} />}
     </div>
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
+export const getServerSideProps: GetServerSideProps = async ({
+  locale,
+  query,
+}) => {
   const queryClient = new QueryClient();
 
-  await queryClient.prefetchQuery(['movies'], getAllMovies);
+  await queryClient.prefetchQuery(['movies'], () => getAllMovies(query));
 
   return {
     props: {

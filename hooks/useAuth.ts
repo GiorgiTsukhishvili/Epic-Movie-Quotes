@@ -24,6 +24,7 @@ const useAuth = () => {
       checkAuth();
     } else {
       deleteCookie('isLoggedIn');
+      router.push('/');
     }
   }, [router]);
 };

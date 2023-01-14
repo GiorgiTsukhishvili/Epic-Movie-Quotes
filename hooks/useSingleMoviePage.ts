@@ -7,7 +7,12 @@ import { useAuth } from 'hooks';
 
 const useSingleMoviePage = (id: string) => {
   const { push, query } = useRouter();
-  const { data } = useQuery(['movie'], () => getSingleMovie(id));
+  const { data } = useQuery(['movie'], () => getSingleMovie(id), {
+    retry: false,
+    onError: () => {
+      push('/404');
+    },
+  });
   const [isAddQuoteOpen, setIsAddQuoteOpen] = useState<boolean>(false);
   useAuth();
 
@@ -33,7 +38,7 @@ const useSingleMoviePage = (id: string) => {
     mutate(id);
   };
 
-  const quotes = data ? data?.data[0].quotes.sort((a, b) => b.id - a.id) : [];
+  const quotes = data ? data?.data.quotes.sort((a, b) => b.id - a.id) : [];
 
   const { t } = useTranslation();
 
