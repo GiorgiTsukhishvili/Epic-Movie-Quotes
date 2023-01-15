@@ -1,5 +1,6 @@
 import {
   AddQuote,
+  EditMovie,
   EditQuote,
   ListOfQuotes,
   Pencil,
@@ -28,6 +29,9 @@ const Movie = ({ name }: { name: string }) => {
     quotes,
     query,
     removeQuote,
+    isEditMovieOpen,
+    setIsEditMovieOpen,
+    editMovieFormData,
   } = useSingleMoviePage(name);
 
   return (
@@ -62,7 +66,10 @@ const Movie = ({ name }: { name: string }) => {
                   </h1>
 
                   <div className=' bg-zinc-750 rounded-md py-2.5 px-7 lg:flex  hidden'>
-                    <span className='pr-6 border-r border-r-gray-550 cursor-pointer'>
+                    <span
+                      className='pr-6 border-r border-r-gray-550 cursor-pointer'
+                      onClick={() => setIsEditMovieOpen(true)}
+                    >
                       <Pencil />
                     </span>
                     <span className='ml-6 cursor-pointer' onClick={removeMovie}>
@@ -155,6 +162,13 @@ const Movie = ({ name }: { name: string }) => {
 
       {query.mode === 'view' && (
         <ViewQuote quoteId={+query['quote-id']!} removeQuery={removeQuote} />
+      )}
+
+      {isEditMovieOpen && (
+        <EditMovie
+          setIsEditMovieOpen={setIsEditMovieOpen}
+          formData={editMovieFormData}
+        />
       )}
     </Fragment>
   );
