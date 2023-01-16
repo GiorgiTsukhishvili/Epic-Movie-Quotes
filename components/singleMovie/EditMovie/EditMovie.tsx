@@ -13,7 +13,6 @@ const EditMovie: React.FC<EditMovieProps> = ({
     getValues,
     handleFileUpload,
     removeTag,
-    addOrRemoveTag,
   } = useEditMovie(formData);
 
   return (
@@ -26,7 +25,6 @@ const EditMovie: React.FC<EditMovieProps> = ({
       getValues={getValues}
       handleSubmit={handleSubmit}
       removeTag={removeTag}
-      addOrRemoveTag={addOrRemoveTag}
     />
   );
 };

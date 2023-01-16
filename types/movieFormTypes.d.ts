@@ -8,5 +8,5 @@ export type MovieFormTypes = {
   'description-en': string;
   'description-ka': string;
   image: string | File;
-  tags: { en: string; ka: string }[];
+  tags: string[];
 };

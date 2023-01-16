@@ -11,7 +11,6 @@ const AddNewMovie: React.FC<AddNewMovieProps> = ({ setIsAddMovieOpen }) => {
     handleFileUpload,
     getValues,
     removeTag,
-    addOrRemoveTag,
   } = useAddNewMovie();
 
   return (
@@ -24,7 +23,6 @@ const AddNewMovie: React.FC<AddNewMovieProps> = ({ setIsAddMovieOpen }) => {
       onSubmit={onSubmit}
       setModel={setIsAddMovieOpen}
       removeTag={removeTag}
-      addOrRemoveTag={addOrRemoveTag}
     />
   );
 };

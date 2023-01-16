@@ -21,7 +21,6 @@ const MovieInputs: React.FC<MovieInputsTypes> = ({
   getValues,
   setModel,
   removeTag,
-  addOrRemoveTag,
 }) => {
   const { t, name, image, data, isGenresOpen, setIsGenresOpen, ref } =
     useMovieInputs();
@@ -102,19 +101,22 @@ const MovieInputs: React.FC<MovieInputsTypes> = ({
               onClick={() => setIsGenresOpen(true)}
             />
             {getValues().tags.length > 0 ? (
-              getValues().tags.map((tag: { en: string; ka: string }) => (
+              getValues().tags.map((tag: string) => (
                 <div
-                  key={tag.ka}
-                  className='bg-gray-550  h-[1.625rem] rounded-sm pl-1.5 pr-2.5 flex justify-center items-center gap-2'
+                  key={tag}
+                  className='bg-gray-550  h-[1.625rem] rounded-sm pl-1.5  flex justify-center items-center '
                 >
                   <h1 className='text-white leading-6 text-sm'>
-                    {tag[i18n?.language as 'ka' | 'en']}
-                  </h1>
-                  <div
-                    onClick={() =>
-                      removeTag(tag[i18n?.language as 'ka' | 'en'])
+                    {
+                      data?.data.find(
+                        (tagData: { id: number }) => tagData.id === +tag
+                      ).tags[i18n?.language as 'ka' | 'en']
                     }
-                    className='z-20'
+                  </h1>
+
+                  <div
+                    className='z-30 cursor-pointer w-4 h-4 flex justify-center items-center'
+                    onClick={() => removeTag(tag)}
                   >
                     <TagsX />
                   </div>
@@ -131,25 +133,33 @@ const MovieInputs: React.FC<MovieInputsTypes> = ({
                 ref={ref}
               >
                 {data &&
-                  data.data.map((tag: { en: string; ka: string }) => (
-                    <h1
-                      key={tag.en}
-                      className={`text-xl leading-[150%] my-1 px-4 ${
+                  data.data.map(
+                    (tag: { id: number; tags: { en: string; ka: string } }) => (
+                      <Fragment key={tag.tags.en}>
+                        <input
+                          type='checkbox'
+                          {...register('tags')}
+                          value={tag.id}
+                          id={tag.id.toString()}
+                          className='hidden'
+                        />
+                        <label
+                          htmlFor={tag.id.toString()}
+                          className={`text-xl leading-[150%] my-1 px-4 block cursor-pointer
+                      ${
                         getValues().tags.find(
-                          (allTags: { en: string; ka: string }) =>
-                            allTags[i18n?.language as 'ka' | 'en'] ===
-                            tag[i18n?.language as 'ka' | 'en']
+                          (tagData: string) => +tagData === +tag.id
                         )
                           ? 'bg-gray-550 text-white'
                           : 'text-black'
-                      }`}
-                      onClick={() =>
-                        addOrRemoveTag(tag[i18n?.language as 'ka' | 'en'])
                       }
-                    >
-                      {tag[i18n?.language as 'ka' | 'en']}
-                    </h1>
-                  ))}
+                          `}
+                        >
+                          {tag.tags[i18n?.language as 'ka' | 'en']}
+                        </label>
+                      </Fragment>
+                    )
+                  )}
               </div>
             )}
           </div>

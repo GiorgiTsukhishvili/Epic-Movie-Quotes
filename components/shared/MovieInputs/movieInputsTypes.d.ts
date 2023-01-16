@@ -9,5 +9,4 @@ export type MovieInputsTypes = {
   getValues: UseFormGetValues<object>;
   setModel: Dispatch<SetStateAction<boolean>>;
   removeTag: (newTag: string) => void;
-  addOrRemoveTag: (newTag: string) => void;
 };

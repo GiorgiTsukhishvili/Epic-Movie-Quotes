@@ -1,14 +1,10 @@
-import { i18n, useTranslation } from 'next-i18next';
+import { useTranslation } from 'next-i18next';
 import { useForm, useWatch } from 'react-hook-form';
-import { useQuery } from 'react-query';
-import { getMovieGenres } from 'services';
 import { MovieFormTypes } from 'types';
 import { addNewMovieFormValue } from 'utils';
 
 const useAddNewMovie = () => {
   const { t } = useTranslation();
-
-  const { data } = useQuery('genres', getMovieGenres);
 
   const {
     register,
@@ -50,36 +46,9 @@ const useAddNewMovie = () => {
   };
 
   const removeTag = (newTag: string) => {
-    const newTags = getValues().tags.filter(
-      (tag: { en: string; ka: string }) =>
-        tag[i18n?.language as 'ka' | 'en'] !== newTag
-    );
+    const newTags = getValues().tags.filter((tag: string) => tag !== newTag);
 
     setValue('tags', newTags);
-  };
-
-  const addOrRemoveTag = (newTag: string) => {
-    if (
-      getValues().tags.find(
-        (tag: { en: string; ka: string }) =>
-          tag[i18n?.language as 'ka' | 'en'] === newTag
-      )
-    ) {
-      const newTags = getValues().tags.filter(
-        (tag: { en: string; ka: string }) =>
-          tag[i18n?.language as 'ka' | 'en'] !== newTag
-      );
-      setValue('tags', newTags);
-    } else {
-      const newTags = getValues().tags;
-      newTags.push(
-        data?.data.find(
-          (tag: { en: string; ka: string }) =>
-            tag[i18n?.language as 'ka' | 'en'] === newTag
-        )
-      );
-      setValue('tags', newTags);
-    }
   };
 
   return {
@@ -89,7 +58,6 @@ const useAddNewMovie = () => {
     errors,
     getValues,
     handleFileUpload,
-    addOrRemoveTag,
     removeTag,
   };
 };

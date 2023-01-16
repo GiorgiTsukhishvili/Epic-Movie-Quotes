@@ -8,7 +8,7 @@ export type EditMovieFormData = {
   'description-en': string | undefined;
   'description-ka': string | undefined;
   image: string | File | undefined;
-  tags: { en: string; ka: string }[] | undefined;
+  tags: string[] | undefined;
 };
 
 export type EditMovieProps = {
