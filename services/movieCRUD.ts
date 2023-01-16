@@ -17,3 +17,7 @@ export const getSingleMovie = async (
 export const deleteMovie = async (movie: string) => {
   return axios.delete(`/api/delete-movie/${movie}`);
 };
+
+export const getMovieGenres = async () => {
+  return await axios.get('/api/movie-genres');
+};

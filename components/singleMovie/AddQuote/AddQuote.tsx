@@ -12,7 +12,6 @@ const AddQuote: React.FC<AddQuoteProps> = ({
   image,
   name,
   tags,
-
   setIsAddQuoteOpen,
 }) => {
   const {
@@ -77,12 +76,12 @@ const AddQuote: React.FC<AddQuoteProps> = ({
               </h1>
               <div className='flex lg:flex-col flex-col-reverse gap-3'>
                 <div className='flex gap-2'>
-                  {tags.split(',').map((tag) => (
+                  {tags.map((tag) => (
                     <h1
-                      key={tag}
+                      key={tag.id}
                       className='text-white font-bold text-base lg:text-lg bg-gray-550 h-5 lg:h-8 px-3 rounded-md'
                     >
-                      {tag}
+                      {tag.tags[i18n?.language! as 'ka' | 'en']}
                     </h1>
                   ))}
                 </div>

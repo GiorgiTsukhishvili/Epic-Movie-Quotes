@@ -8,4 +8,5 @@ export const addNewMovieFormValue = {
   'description-en': '',
   'description-ka': '',
   image: '',
+  tags: [],
 };

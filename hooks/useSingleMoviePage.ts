@@ -52,6 +52,7 @@ const useSingleMoviePage = (id: string) => {
     'description-en': data?.data.description['en'],
     'description-ka': data?.data.description['ka'],
     image: data?.data.image,
+    tags: data?.data.tags.map((tag) => tag.tags),
   };
 
   const { t } = useTranslation();

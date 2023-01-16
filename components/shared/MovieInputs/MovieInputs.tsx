@@ -3,9 +3,11 @@ import {
   CloseIcon,
   NormalInput,
   Photo,
+  TagsX,
   TextAreaInput,
   useMovieInputs,
 } from 'components';
+import { i18n } from 'next-i18next';
 import Image from 'next/image';
 import { Fragment } from 'react';
 import { MovieInputsTypes } from './movieInputsTypes';
@@ -18,8 +20,11 @@ const MovieInputs: React.FC<MovieInputsTypes> = ({
   handleFileUpload,
   getValues,
   setModel,
+  removeTag,
+  addOrRemoveTag,
 }) => {
-  const { t, name, image } = useMovieInputs();
+  const { t, name, image, data, isGenresOpen, setIsGenresOpen, ref } =
+    useMovieInputs();
 
   return (
     <Fragment>
@@ -89,6 +94,68 @@ const MovieInputs: React.FC<MovieInputsTypes> = ({
 
           <div className='text-red-550 h-5 font-normal text-base leading-[150%] my-1 '>
             <ErrorMessage errors={errors} name='director-en' />
+          </div>
+
+          <div className='bg-transparent relative w-full pr-12 border-gray-550 rounded-md border min-h-[3rem]  cursor-pointer flex-wrap flex items-center px-5 py-2.5 gap-1'>
+            <div
+              className='w-full absolute h-full top-0 left-0'
+              onClick={() => setIsGenresOpen(true)}
+            />
+            {getValues().tags.length > 0 ? (
+              getValues().tags.map((tag: { en: string; ka: string }) => (
+                <div
+                  key={tag.ka}
+                  className='bg-gray-550  h-[1.625rem] rounded-sm pl-1.5 pr-2.5 flex justify-center items-center gap-2'
+                >
+                  <h1 className='text-white leading-6 text-sm'>
+                    {tag[i18n?.language as 'ka' | 'en']}
+                  </h1>
+                  <div
+                    onClick={() =>
+                      removeTag(tag[i18n?.language as 'ka' | 'en'])
+                    }
+                    className='z-20'
+                  >
+                    <TagsX />
+                  </div>
+                </div>
+              ))
+            ) : (
+              <h1 className='text-white leading-[150%] text-base lg:text-2xl'>
+                {t('user.singleMovie.chooseTag')}
+              </h1>
+            )}
+            {isGenresOpen && (
+              <div
+                className='bg-white rounded-md absolute left-0 top-14 w-full z-10  py-2'
+                ref={ref}
+              >
+                {data &&
+                  data.data.map((tag: { en: string; ka: string }) => (
+                    <h1
+                      key={tag.en}
+                      className={`text-xl leading-[150%] my-1 px-4 ${
+                        getValues().tags.find(
+                          (allTags: { en: string; ka: string }) =>
+                            allTags[i18n?.language as 'ka' | 'en'] ===
+                            tag[i18n?.language as 'ka' | 'en']
+                        )
+                          ? 'bg-gray-550 text-white'
+                          : 'text-black'
+                      }`}
+                      onClick={() =>
+                        addOrRemoveTag(tag[i18n?.language as 'ka' | 'en'])
+                      }
+                    >
+                      {tag[i18n?.language as 'ka' | 'en']}
+                    </h1>
+                  ))}
+              </div>
+            )}
+          </div>
+
+          <div className='text-red-550 h-5 font-normal text-base leading-[150%] my-1 '>
+            <ErrorMessage errors={errors} name='tags' />
           </div>
 
           <NormalInput
