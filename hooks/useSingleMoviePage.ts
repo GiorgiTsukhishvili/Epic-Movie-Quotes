@@ -14,6 +14,8 @@ const useSingleMoviePage = (id: string) => {
     },
   });
   const [isAddQuoteOpen, setIsAddQuoteOpen] = useState<boolean>(false);
+  const [isEditMovieOpen, setIsEditMovieOpen] = useState<boolean>(false);
+
   useAuth();
 
   const removeMovie = async () => {
@@ -40,6 +42,18 @@ const useSingleMoviePage = (id: string) => {
 
   const quotes = data ? data?.data.quotes.sort((a, b) => b.id - a.id) : [];
 
+  const editMovieFormData = {
+    'name-en': data?.data.name['en'],
+    'name-ka': data?.data.name['ka'],
+    'director-en': data?.data.director['en'],
+    'director-ka': data?.data.director['ka'],
+    budget: data?.data.budget,
+    date: data?.data.date,
+    'description-en': data?.data.description['en'],
+    'description-ka': data?.data.description['ka'],
+    image: data?.data.image,
+  };
+
   const { t } = useTranslation();
 
   return {
@@ -51,6 +65,9 @@ const useSingleMoviePage = (id: string) => {
     quotes,
     query,
     removeQuote,
+    isEditMovieOpen,
+    setIsEditMovieOpen,
+    editMovieFormData,
   };
 };
 
