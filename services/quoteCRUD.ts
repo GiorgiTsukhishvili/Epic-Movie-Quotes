@@ -1,5 +1,14 @@
 import { axios } from 'services';
 
+export const getAllQuotes = async ({
+  pageParam = 1,
+}: {
+  pageParam: number;
+}) => {
+  const response = await axios.get(`/api/quotes?page=${pageParam}`);
+  return response;
+};
+
 export const showQuote = async (id: number) => {
   return axios.get(`/api/quote/${id}`);
 };
