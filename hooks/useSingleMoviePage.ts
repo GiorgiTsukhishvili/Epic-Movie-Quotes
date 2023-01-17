@@ -13,6 +13,9 @@ const useSingleMoviePage = (id: string) => {
       push('/404');
     },
   });
+
+  console.log(data);
+
   const [isAddQuoteOpen, setIsAddQuoteOpen] = useState<boolean>(false);
   const [isEditMovieOpen, setIsEditMovieOpen] = useState<boolean>(false);
 
@@ -52,6 +55,7 @@ const useSingleMoviePage = (id: string) => {
     'description-en': data?.data.description['en'],
     'description-ka': data?.data.description['ka'],
     image: data?.data.image,
+    tags: data?.data.tags.map((tag) => tag.pivot.tag_id.toString()),
   };
 
   const { t } = useTranslation();

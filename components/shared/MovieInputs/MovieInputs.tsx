@@ -3,9 +3,11 @@ import {
   CloseIcon,
   NormalInput,
   Photo,
+  TagsX,
   TextAreaInput,
   useMovieInputs,
 } from 'components';
+import { i18n } from 'next-i18next';
 import Image from 'next/image';
 import { Fragment } from 'react';
 import { MovieInputsTypes } from './movieInputsTypes';
@@ -18,8 +20,10 @@ const MovieInputs: React.FC<MovieInputsTypes> = ({
   handleFileUpload,
   getValues,
   setModel,
+  removeTag,
 }) => {
-  const { t, name, image } = useMovieInputs();
+  const { t, name, image, data, isGenresOpen, setIsGenresOpen, ref } =
+    useMovieInputs();
 
   return (
     <Fragment>
@@ -89,6 +93,79 @@ const MovieInputs: React.FC<MovieInputsTypes> = ({
 
           <div className='text-red-550 h-5 font-normal text-base leading-[150%] my-1 '>
             <ErrorMessage errors={errors} name='director-en' />
+          </div>
+
+          <div className='bg-transparent relative w-full pr-12 border-gray-550 rounded-md border min-h-[3rem]  cursor-pointer flex-wrap flex items-center px-5 py-2.5 gap-1'>
+            <div
+              className='w-full absolute h-full top-0 left-0'
+              onClick={() => setIsGenresOpen(true)}
+            />
+            {getValues().tags.length > 0 ? (
+              getValues().tags.map((tag: string) => (
+                <div
+                  key={tag}
+                  className='bg-gray-550  h-[1.625rem] rounded-sm pl-1.5  flex justify-center items-center '
+                >
+                  <h1 className='text-white leading-6 text-sm'>
+                    {
+                      data?.data.find(
+                        (tagData: { id: number }) => tagData.id === +tag
+                      ).tags[i18n?.language as 'ka' | 'en']
+                    }
+                  </h1>
+
+                  <div
+                    className='z-30 cursor-pointer w-4 h-4 flex justify-center items-center'
+                    onClick={() => removeTag(tag)}
+                  >
+                    <TagsX />
+                  </div>
+                </div>
+              ))
+            ) : (
+              <h1 className='text-white leading-[150%] text-base lg:text-2xl'>
+                {t('user.singleMovie.chooseTag')}
+              </h1>
+            )}
+            {isGenresOpen && (
+              <div
+                className='bg-white rounded-md absolute left-0 top-14 w-full z-10  py-2'
+                ref={ref}
+              >
+                {data &&
+                  data.data.map(
+                    (tag: { id: number; tags: { en: string; ka: string } }) => (
+                      <Fragment key={tag.tags.en}>
+                        <input
+                          type='checkbox'
+                          {...register('tags')}
+                          value={tag.id}
+                          id={tag.id.toString()}
+                          className='hidden'
+                        />
+                        <label
+                          htmlFor={tag.id.toString()}
+                          className={`text-xl leading-[150%] my-1 px-4 block cursor-pointer
+                      ${
+                        getValues().tags.find(
+                          (tagData: string) => +tagData === +tag.id
+                        )
+                          ? 'bg-gray-550 text-white'
+                          : 'text-black'
+                      }
+                          `}
+                        >
+                          {tag.tags[i18n?.language as 'ka' | 'en']}
+                        </label>
+                      </Fragment>
+                    )
+                  )}
+              </div>
+            )}
+          </div>
+
+          <div className='text-red-550 h-5 font-normal text-base leading-[150%] my-1 '>
+            <ErrorMessage errors={errors} name='tags' />
           </div>
 
           <NormalInput

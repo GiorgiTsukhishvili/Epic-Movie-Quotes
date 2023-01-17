@@ -134,7 +134,8 @@
       "drag": "Drag & drop your image here or",
       "upload": "Upload image",
       "writeComment": "Write a comment",
-      "date": "Year"
+      "date": "Year",
+      "chooseTag": "Please choose genres"
     }
   }
 }

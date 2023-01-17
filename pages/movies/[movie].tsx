@@ -79,12 +79,12 @@ const Movie = ({ name }: { name: string }) => {
                 </div>
                 <div className='flex gap-2'>
                   {data &&
-                    data.data.tags.split(',').map((tag) => (
+                    data.data.tags.map((tag) => (
                       <h1
-                        key={tag}
+                        key={tag.id}
                         className='text-white font-bold text-lg bg-gray-550 h-8 px-3 rounded-md'
                       >
-                        {tag}
+                        {tag.tags[i18n?.language! as 'ka' | 'en']}
                       </h1>
                     ))}
                 </div>

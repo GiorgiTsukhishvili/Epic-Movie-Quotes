@@ -31,7 +31,19 @@ export type SingleMovieTypes = {
   id: number;
   image: string;
   name: { en: string; ka: string };
-  tags: string;
+  tags: {
+    id: number;
+    tags: {
+      en: string;
+      ka: string;
+    };
+    created_at: string;
+    updated_at: string;
+    pivot: {
+      movie_id: number;
+      tag_id: number;
+    };
+  }[];
   updated_at: string;
   user_id: number;
   budget: string;

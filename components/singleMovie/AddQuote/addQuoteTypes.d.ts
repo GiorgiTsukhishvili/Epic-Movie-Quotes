@@ -4,8 +4,17 @@ export type AddQuoteProps = {
   id: number;
   image: string;
   name: { en: string; ka: string };
-  tags: string;
-
+  tags: {
+    id: number;
+    tags: {
+      en: string;
+      ka: string;
+    };
+    pivot: {
+      movie_id: number;
+      tag_id: number;
+    };
+  }[];
   setIsAddQuoteOpen: Dispatch<SetStateAction<boolean>>;
 };
 

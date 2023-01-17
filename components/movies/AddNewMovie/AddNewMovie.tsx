@@ -10,6 +10,7 @@ const AddNewMovie: React.FC<AddNewMovieProps> = ({ setIsAddMovieOpen }) => {
     errors,
     handleFileUpload,
     getValues,
+    removeTag,
   } = useAddNewMovie();
 
   return (
@@ -21,6 +22,7 @@ const AddNewMovie: React.FC<AddNewMovieProps> = ({ setIsAddMovieOpen }) => {
       register={register}
       onSubmit={onSubmit}
       setModel={setIsAddMovieOpen}
+      removeTag={removeTag}
     />
   );
 };

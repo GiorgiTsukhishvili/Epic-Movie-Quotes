@@ -21,11 +21,16 @@ const useEditMovie = (formData: EditMovieFormData) => {
     defaultValues: formData,
   });
 
-  useWatch({ control, name: 'image' });
+  useWatch({ control, name: ['image', 'tags'] });
 
   const onSubmit = (data: EditMovieFormData) => {
     if (data.image === '') {
       setError('image', { type: 'custom', message: t('form.login.required')! });
+      return;
+    }
+
+    if (getValues().tags!.length === 0) {
+      setError('tags', { type: 'custom', message: t('form.login.required')! });
       return;
     }
 
@@ -41,6 +46,12 @@ const useEditMovie = (formData: EditMovieFormData) => {
     }
   };
 
+  const removeTag = (newTag: string) => {
+    const newTags = getValues().tags!.filter((tag: string) => tag !== newTag);
+
+    setValue('tags', newTags);
+  };
+
   return {
     register,
     handleSubmit,
@@ -48,6 +59,7 @@ const useEditMovie = (formData: EditMovieFormData) => {
     errors,
     getValues,
     handleFileUpload,
+    removeTag,
   };
 };
 export default useEditMovie;
