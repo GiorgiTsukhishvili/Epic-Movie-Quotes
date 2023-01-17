@@ -50,7 +50,7 @@ const useEditMovie = (
     }
 
     const formData = new FormData();
-    formData.append('id', query.movie);
+    formData.append('id', query.movie! as string);
     formData.append('image', getValues().image!);
     formData.append('name-en', getValues()['name-en']!);
     formData.append('name-ka', getValues()['name-ka']!);

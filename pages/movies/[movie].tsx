@@ -77,7 +77,7 @@ const Movie = ({ name }: { name: string }) => {
                     </span>
                   </div>
                 </div>
-                <div className='flex gap-2'>
+                <div className='flex gap-2 flex-wrap'>
                   {data &&
                     data.data.tags.map((tag) => (
                       <h1
