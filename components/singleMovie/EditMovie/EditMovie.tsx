@@ -13,7 +13,7 @@ const EditMovie: React.FC<EditMovieProps> = ({
     getValues,
     handleFileUpload,
     removeTag,
-  } = useEditMovie(formData);
+  } = useEditMovie(formData, setIsEditMovieOpen);
 
   return (
     <MovieInputs

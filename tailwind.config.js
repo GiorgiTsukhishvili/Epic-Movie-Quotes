@@ -65,6 +65,9 @@ module.exports = {
         'border-transparent': '#efefef33',
         'comment-input': 'rgba(36, 34, 47, 0.6)',
       },
+      screens: {
+        xs: '400px',
+      },
     },
     boxShadow: {
       'input-custom': '0px 0px 0px 4px rgba(13, 110, 253, 0.25)',

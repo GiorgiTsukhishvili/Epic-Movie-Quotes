@@ -61,7 +61,7 @@ const AddQuote: React.FC<AddQuoteProps> = ({
             </h1>
           </div>
 
-          <div className='flex bg-black lg:bg-transparent gap-7 px-4 py-6 lg:p-0 mb-7 rounded-md'>
+          <div className='flex flex-wrap xs:flex-nowrap bg-black lg:bg-transparent gap-7 px-4 py-6 lg:p-0 mb-7 rounded-md'>
             <Image
               src={image}
               alt='movie-photo'
@@ -70,12 +70,12 @@ const AddQuote: React.FC<AddQuoteProps> = ({
               className='w-[7.625rem] h-20 lg:w-[18.125rem] lg:h-40'
             />
 
-            <div className='flex flex-col gap-5'>
+            <div className='flex flex-col flex-wrap gap-5'>
               <h1 className='text-orange-250 text-base font-medium lg:text-2xl leading-[150%]'>
                 {name[i18n?.language as 'ka' | 'en']} ({date})
               </h1>
               <div className='flex lg:flex-col flex-col-reverse gap-3'>
-                <div className='flex gap-2'>
+                <div className='flex gap-2 flex-wrap'>
                   {tags.map((tag) => (
                     <h1
                       key={tag.id}
