@@ -11,7 +11,7 @@ const AddNewMovie: React.FC<AddNewMovieProps> = ({ setIsAddMovieOpen }) => {
     handleFileUpload,
     getValues,
     removeTag,
-  } = useAddNewMovie();
+  } = useAddNewMovie(setIsAddMovieOpen);
 
   return (
     <MovieInputs

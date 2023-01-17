@@ -14,8 +14,6 @@ const useSingleMoviePage = (id: string) => {
     },
   });
 
-  console.log(data);
-
   const [isAddQuoteOpen, setIsAddQuoteOpen] = useState<boolean>(false);
   const [isEditMovieOpen, setIsEditMovieOpen] = useState<boolean>(false);
 
