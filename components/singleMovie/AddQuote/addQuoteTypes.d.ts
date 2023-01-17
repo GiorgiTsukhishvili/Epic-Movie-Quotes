@@ -10,8 +10,6 @@ export type AddQuoteProps = {
       en: string;
       ka: string;
     };
-    created_at: string;
-    updated_at: string;
     pivot: {
       movie_id: number;
       tag_id: number;
