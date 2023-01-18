@@ -1,4 +1,9 @@
-import { NewsFeedQuotes, SideNavbar, UserNavbar } from 'components';
+import {
+  AddQuoteNewsFeed,
+  NewsFeedQuotes,
+  SideNavbar,
+  UserNavbar,
+} from 'components';
 import useNewsFeed from 'hooks/useNewsFeed';
 import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
@@ -13,8 +18,10 @@ const NewsFeed = () => {
     <div className='bg-gray-950 min-h-screen'>
       <UserNavbar isNewsFeed={true} />
       <SideNavbar isNewsFeed={true} />
-      <div className='lg:ml-[25rem] w-full lg:w-auto lg:mr-4 mr-0 lg:max-w-[58.625rem] pt-[7.375rem] pb-12'>
-        <div className='w-full'></div>
+      <div className='lg:ml-[25rem] w-full lg:w-auto lg:mr-4 mr-0 lg:max-w-[58.625rem] pt-[5.375rem] lg:pt-[7.375rem] pb-12'>
+        <div className='w-full flex items-center mb-4'>
+          <AddQuoteNewsFeed />
+        </div>
         {isSuccess && data && (
           <InfiniteScroll
             next={fetchNextPage}

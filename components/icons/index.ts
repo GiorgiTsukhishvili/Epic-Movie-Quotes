@@ -24,3 +24,4 @@ export { default as EyeColored } from './EyeColored';
 export { default as Photo } from './Photo';
 export { default as LikeFilled } from './LikeFilled';
 export { default as TagsX } from './TagsX';
+export { default as PencilAndBoard } from './PencilAndBoard';
