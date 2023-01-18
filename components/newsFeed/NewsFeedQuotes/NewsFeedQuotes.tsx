@@ -44,7 +44,7 @@ const NewsFeedQuotes: React.FC<NewsFeedQuotesProps> = ({ data }) => {
             alt='quote-image'
             width={890}
             height={500}
-            className='rounded-xl'
+            className='rounded-xl object-cover h-[12.5rem] md:h-[20rem] lg:h-[31.25rem]'
           />
 
           <div className='py-6  flex gap-8 items-center'>

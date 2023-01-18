@@ -136,6 +136,10 @@
       "writeComment": "Write a comment",
       "date": "Year",
       "chooseTag": "Please choose genres"
+    },
+    "newsFeed": {
+      "writeQuote": "Write new quote",
+      "chooseMovie": "Choose movie"
     }
   }
 }

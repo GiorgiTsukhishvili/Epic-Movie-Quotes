@@ -37,3 +37,7 @@ export const updateMovie = async (data: FormData) => {
     },
   });
 };
+
+export const getMovieNames = () => {
+  return axios.get('/api/movie-names');
+};
