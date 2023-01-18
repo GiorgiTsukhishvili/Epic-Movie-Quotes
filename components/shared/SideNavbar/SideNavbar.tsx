@@ -32,25 +32,22 @@ const SideNavbar: React.FC<SideNavbarProps> = ({
           </Link>
         </div>
       </div>
-      <div className='flex justify-center items-center gap-11'>
-        <House isSidebar={true} isNewsFeed={isNewsFeed} />
-        <Link
-          href={'/news-feed'}
-          className='text-white text-2xl leading-[150%] uppercase'
-        >
-          {t('user.profileSidebar.newsFeed')}
-        </Link>
-      </div>
 
-      <div className='flex justify-center items-center gap-11'>
+      <Link
+        href={'/news-feed'}
+        className='text-white text-2xl leading-[150%] flex justify-center items-center gap-11'
+      >
+        <House isSidebar={true} isNewsFeed={isNewsFeed} />
+        {t('user.profileSidebar.newsFeed')}
+      </Link>
+
+      <Link
+        href={'/movies'}
+        className='text-white text-2xl leading-[150%] flex justify-center items-center gap-11'
+      >
         <Camera isSidebar={true} isMoviesPage={isMoviesPage} />
-        <Link
-          href={'/movies'}
-          className='text-white text-2xl leading-[150%] uppercase'
-        >
-          {t('user.profileSidebar.movies')}
-        </Link>
-      </div>
+        {t('user.profileSidebar.movies')}
+      </Link>
     </div>
   );
 };

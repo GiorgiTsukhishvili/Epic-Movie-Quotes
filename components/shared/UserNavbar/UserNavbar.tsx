@@ -5,6 +5,8 @@ import {
   House,
   SearchIcon,
   useUserNavbar,
+  ArrowRight,
+  NoSSRWrapper,
 } from 'components';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -21,6 +23,11 @@ const UserNavbar: React.FC<UserNavbarTypes> = ({ isNewsFeed }) => {
     name,
     image,
     ref,
+    setIsSearchOpen,
+    isSearchOpen,
+    register,
+    onSubmit,
+    handleSubmit,
   } = useUserNavbar();
 
   return (
@@ -40,9 +47,60 @@ const UserNavbar: React.FC<UserNavbarTypes> = ({ isNewsFeed }) => {
 
         <div className='flex justify-center items-center gap-10'>
           {isNewsFeed && (
-            <div className='cursor-pointer inline lg:hidden'>
-              <SearchIcon />
-            </div>
+            <Fragment>
+              <div
+                className='cursor-pointer inline lg:hidden'
+                onClick={() => setIsSearchOpen(true)}
+              >
+                <SearchIcon />
+              </div>
+              {isSearchOpen && (
+                <div className='w-screen h-screen fixed top-0 left-0 bg-neutral-850 z-50 inline lg:hidden'>
+                  <div className='flex mt-6 pb-6 gap-6 items-center justify-start border-b border-b-border-transparent'>
+                    <div
+                      className='ml-8 cursor-pointer'
+                      onClick={() => setIsSearchOpen(false)}
+                    >
+                      <ArrowRight isSearchOpen={true} />
+                    </div>
+                    <form
+                      onSubmit={handleSubmit(onSubmit)}
+                      className='justify-center items-center '
+                    >
+                      <NoSSRWrapper>
+                        <input
+                          type='text'
+                          className='bg-transparent border-0 text-white text-base ring-0 placeholder:text-gray-350 focus:ring-0 focus:outline-0   w-[60vw]  duration-300'
+                          placeholder={t('user.newsFeed.searchBy')!}
+                          {...register('search')}
+                          id='search'
+                        />
+                      </NoSSRWrapper>
+                    </form>
+                  </div>
+                  <div className='flex flex-col items-start gap-6 mt-6 ml-[4.625rem]'>
+                    <h1 className='text-white text-base leading-[150%]'>
+                      <span className='opacity-60'>
+                        {t('user.newsFeed.enter')}
+                      </span>{' '}
+                      @{' '}
+                      <span className='opacity-60'>
+                        {t('user.newsFeed.searchMovies')}
+                      </span>
+                    </h1>
+                    <h1 className='text-white text-base leading-[150%]'>
+                      <span className='opacity-60'>
+                        {t('user.newsFeed.enter')}
+                      </span>{' '}
+                      #{' '}
+                      <span className='opacity-60'>
+                        {t('user.newsFeed.searchQuotes')}
+                      </span>
+                    </h1>
+                  </div>
+                </div>
+              )}
+            </Fragment>
           )}
           <div className='relative cursor-pointer'>
             <Bell />

@@ -1,11 +1,14 @@
 import { AxiosResponse } from 'axios';
+import { i18n } from 'next-i18next';
 import { axios } from 'services';
 import { MovieTypes, SingleMovieTypes } from 'types';
 
 export const getAllMovies = async (query: {
   search?: string;
 }): Promise<AxiosResponse<MovieTypes[]>> => {
-  return axios.get('/api/movies', { params: query });
+  return axios.get('/api/movies', {
+    params: { ...query, lang: i18n?.language },
+  });
 };
 
 export const getSingleMovie = async (

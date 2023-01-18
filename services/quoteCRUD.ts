@@ -1,11 +1,19 @@
+import { i18n } from 'next-i18next';
 import { axios } from 'services';
 
-export const getAllQuotes = async ({
-  pageParam = 1,
-}: {
-  pageParam: number;
-}) => {
-  const response = await axios.get(`/api/quotes?page=${pageParam}`);
+export const getAllQuotes = async (
+  {
+    pageParam = 1,
+  }: {
+    pageParam: number;
+  },
+  query: {
+    search?: string;
+  }
+) => {
+  const response = await axios.get(`/api/quotes?page=${pageParam}`, {
+    params: { ...query, lang: i18n?.language },
+  });
   return response;
 };
 
