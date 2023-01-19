@@ -2,6 +2,8 @@ import { deleteCookie } from 'cookies-next';
 import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
 import { useEffect, useRef, useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { useQueryClient } from 'react-query';
 import { useSelector } from 'react-redux';
 import { userLogout } from 'services';
 import { UserTypes } from 'types';
@@ -10,9 +12,10 @@ const useUserNavbar = () => {
   const [isMobileProfileOpen, setIsMobileProfileOpen] =
     useState<boolean>(false);
   const ref = useRef<HTMLDivElement>(null);
+  const [isSearchOpen, setIsSearchOpen] = useState<boolean>(false);
 
   const { t } = useTranslation();
-  const { push } = useRouter();
+  const { push, replace } = useRouter();
   const {
     user: { name, image },
   } = useSelector((state: { user: UserTypes }) => state);
@@ -41,6 +44,19 @@ const useUserNavbar = () => {
       window.removeEventListener('mousedown', (e) => closeDropdown(e));
   }, [isMobileProfileOpen]);
 
+  const { register, handleSubmit, setValue } = useForm<{ search: string }>({
+    mode: 'onChange',
+    defaultValues: { search: '' },
+  });
+
+  const queryClient = useQueryClient();
+
+  const onSubmit = (data: { search: string }) => {
+    replace({ query: data });
+    queryClient.invalidateQueries({ queryKey: 'movies' });
+    setValue('search', '');
+  };
+
   return {
     t,
     logoutUser,
@@ -49,6 +65,11 @@ const useUserNavbar = () => {
     name,
     image,
     ref,
+    setIsSearchOpen,
+    isSearchOpen,
+    register,
+    onSubmit,
+    handleSubmit,
   };
 };
 

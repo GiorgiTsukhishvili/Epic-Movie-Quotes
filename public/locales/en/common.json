@@ -139,7 +139,12 @@
     },
     "newsFeed": {
       "writeQuote": "Write new quote",
-      "chooseMovie": "Choose movie"
+      "chooseMovie": "Choose movie",
+      "searchBy": "Search by",
+      "desktopPlaceholder": "Enter @ to search movies, Enter # to search quotes",
+      "enter": "Enter",
+      "searchMovies": "to search movies",
+      "searchQuotes": "to search quotes"
     }
   }
 }

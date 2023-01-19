@@ -1,6 +1,8 @@
 import {
   AddQuoteNewsFeed,
   NewsFeedQuotes,
+  NoSSRWrapper,
+  SearchIcon,
   SideNavbar,
   UserNavbar,
 } from 'components';
@@ -12,7 +14,16 @@ import InfiniteScroll from 'react-infinite-scroll-component';
 import { NewsFeedPageProps } from 'types';
 
 const NewsFeed = () => {
-  const { data, fetchNextPage, hasNextPage, isSuccess } = useNewsFeed();
+  const {
+    data,
+    fetchNextPage,
+    hasNextPage,
+    isSuccess,
+    t,
+    handleSubmit,
+    register,
+    onSubmit,
+  } = useNewsFeed();
 
   return (
     <div className='bg-gray-950 min-h-screen'>
@@ -21,6 +32,31 @@ const NewsFeed = () => {
       <div className='lg:ml-[25rem] w-full lg:w-auto lg:mr-4 mr-0 lg:max-w-[58.625rem] pt-[5.375rem] lg:pt-[7.375rem] pb-12'>
         <div className='w-full flex items-center mb-4'>
           <AddQuoteNewsFeed />
+          <form
+            onSubmit={handleSubmit(onSubmit)}
+            className='justify-center items-center hidden lg:flex'
+          >
+            <label className=' translate-x-5 cursor-pointer' htmlFor='search'>
+              <SearchIcon />
+            </label>
+            <NoSSRWrapper>
+              <input
+                type='text'
+                className='bg-transparent border-0 text-gray-350 pl-9 ring-0 placeholder:text-gray-350 focus:ring-0 focus:outline-0 focus:border-b focus:border-b-gray-350  w-[8.125rem] focus:w-[27vw]  xl:focus:w-[35vw] duration-300'
+                placeholder={t('user.newsFeed.searchBy')!}
+                {...register('search')}
+                id='search'
+                onFocus={(e) =>
+                  (e.target.placeholder = t(
+                    'user.newsFeed.desktopPlaceholder'
+                  )!)
+                }
+                onBlur={(e) =>
+                  (e.target.placeholder = t('user.newsFeed.searchBy')!)
+                }
+              />
+            </NoSSRWrapper>
+          </form>
         </div>
         {isSuccess && data && (
           <InfiniteScroll
