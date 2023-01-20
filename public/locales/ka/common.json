@@ -104,7 +104,9 @@
   },
   "user": {
     "navbar": {
-      "logout": "გასვლა"
+      "logout": "გასვლა",
+      "notifications": "ნოტიფიკაციები",
+      "mark": "მონიშნე ყველა წაკითხულად"
     },
     "profileSidebar": {
       "edit": "შეასწორე შენი პროფილი",

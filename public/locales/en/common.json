@@ -104,7 +104,9 @@
   },
   "user": {
     "navbar": {
-      "logout": "Log out"
+      "logout": "Log out",
+      "notifications": "Notifications",
+      "mark": "Mark all as read"
     },
     "profileSidebar": {
       "edit": "Edit your profile",
