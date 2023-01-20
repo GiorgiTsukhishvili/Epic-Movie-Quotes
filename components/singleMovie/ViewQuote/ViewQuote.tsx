@@ -107,7 +107,12 @@ const ViewQuote: React.FC<ViewQuoteProps> = ({ quoteId, removeQuery }) => {
           </div>
           <div
             className='flex gap-3 text-white leading-[150%] text-xl cursor-pointer'
-            onClick={() => likeMutation(quoteData.id)}
+            onClick={() =>
+              likeMutation({
+                id: quoteData.id,
+                userId: quoteData.movie.user_id,
+              })
+            }
           >
             {quoteData.likes.length}
             {quoteData.likes.find(

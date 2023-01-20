@@ -1,5 +1,7 @@
 import { axios } from 'services';
 
-export const likeOrUnlike = (id: number) => {
-  return axios.post(`/api/store-or-destroy/${id}`);
+export const likeOrUnlike = (info: { id: number; userId: number | null }) => {
+  return axios.post(`/api/store-or-destroy/${info.id}`, {
+    user_id: info.userId,
+  });
 };

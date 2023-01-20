@@ -1,5 +1,4 @@
 import {
-  Bell,
   Burger,
   Camera,
   House,
@@ -7,6 +6,7 @@ import {
   useUserNavbar,
   ArrowRight,
   NoSSRWrapper,
+  Notifications,
 } from 'components';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -102,12 +102,7 @@ const UserNavbar: React.FC<UserNavbarTypes> = ({ isNewsFeed }) => {
               )}
             </Fragment>
           )}
-          <div className='relative cursor-pointer'>
-            <Bell />
-            <div className='bg-red-850 w-[1.563rem] h-[1.563rem] rounded-full flex justify-center items-center absolute top-[-0.5rem] left-[0.85rem]'>
-              <span className='text-white leading-[150%] font-medium'>3</span>
-            </div>
-          </div>
+          <Notifications />
           <LanguageSwitcher />
           <button
             className='hidden lg:inline text-white text-sm sm:text-base lg:text-xl lg:leading-[150%] leading-[150%] h-[2.375rem] px-4 lg:px-4 rounded-lg border-2 border-white'

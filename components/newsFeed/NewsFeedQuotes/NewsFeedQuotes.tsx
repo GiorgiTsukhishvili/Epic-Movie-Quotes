@@ -54,7 +54,9 @@ const NewsFeedQuotes: React.FC<NewsFeedQuotesProps> = ({ data }) => {
             </div>
             <div
               className='flex gap-3 text-white leading-[150%] text-xl cursor-pointer'
-              onClick={() => likeMutation(quote.id)}
+              onClick={() =>
+                likeMutation({ id: quote.id, userId: quote.movie.user_id })
+              }
             >
               {quote.likes.length}
               {quote.likes.find(
