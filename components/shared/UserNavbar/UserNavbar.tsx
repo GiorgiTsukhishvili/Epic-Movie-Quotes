@@ -14,7 +14,11 @@ import { Fragment } from 'react';
 import { LanguageSwitcher } from '../LanguageSwitcher';
 import { UserNavbarTypes } from './userNavbarTypes';
 
-const UserNavbar: React.FC<UserNavbarTypes> = ({ isNewsFeed }) => {
+const UserNavbar: React.FC<UserNavbarTypes> = ({
+  isNewsFeed,
+  isMoviesPage,
+  isProfilePage,
+}) => {
   const {
     t,
     logoutUser,
@@ -124,20 +128,25 @@ const UserNavbar: React.FC<UserNavbarTypes> = ({ isNewsFeed }) => {
                 alt='profile-photo'
                 width={40}
                 height={40}
-                className='rounded-full w-10 h-10'
+                className={`rounded-full w-10 h-10 ${
+                  isProfilePage && 'border-2 border-red-650'
+                }`}
               />
             )}
             <div>
               <h1 className='text-white text-xl leading-[150%] uppercase'>
                 {name}
               </h1>
-              <Link href={'/'} className='text-gray-350 text-sm leading-[150%]'>
+              <Link
+                href={'/profile'}
+                className='text-gray-350 text-sm leading-[150%]'
+              >
                 {t('user.profileSidebar.edit')}
               </Link>
             </div>
           </div>
           <div className='flex justify-center items-center gap-7'>
-            <House isSidebar={false} />
+            <House isSidebar={false} isNewsFeed={isNewsFeed} />
             <Link
               href={'/news-feed'}
               className='text-white text-xl leading-[150%] uppercase'
@@ -147,7 +156,7 @@ const UserNavbar: React.FC<UserNavbarTypes> = ({ isNewsFeed }) => {
           </div>
 
           <div className='flex justify-center items-center gap-7'>
-            <Camera isSidebar={false} />
+            <Camera isSidebar={false} isMoviesPage={isMoviesPage} />
             <Link
               href={'/movies'}
               className='text-white text-xl leading-[150%] uppercase'

@@ -29,7 +29,7 @@ const MoviePage = () => {
 
   return (
     <div className='bg-gray-950 min-h-screen'>
-      <UserNavbar />
+      <UserNavbar isMoviesPage={true} />
       <div className='flex items-start'>
         <div className='hidden min-w-[26.875rem] lg:inline'>
           <SideNavbar isMoviesPage={true} />

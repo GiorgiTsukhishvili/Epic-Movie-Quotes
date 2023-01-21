@@ -7,6 +7,7 @@ import useSideNavbar from './useSideNavbar';
 const SideNavbar: React.FC<SideNavbarProps> = ({
   isMoviesPage,
   isNewsFeed,
+  isProfilePage,
 }) => {
   const { t, name, image } = useSideNavbar();
 
@@ -20,14 +21,19 @@ const SideNavbar: React.FC<SideNavbarProps> = ({
             width={60}
             height={60}
             priority
-            className='rounded-full w-[3.75rem] h-[3.75rem]'
+            className={`rounded-full w-[3.75rem] h-[3.75rem] ${
+              isProfilePage && 'border-2 border-red-650'
+            }`}
           />
         )}
         <div>
           <h1 className='text-white text-2xl leading-[150%] uppercase'>
             {name}
           </h1>
-          <Link href={'/'} className='text-gray-350 text-base leading-[150%]'>
+          <Link
+            href={'/profile'}
+            className='text-gray-350 text-base leading-[150%]'
+          >
             {t('user.profileSidebar.edit')}
           </Link>
         </div>
