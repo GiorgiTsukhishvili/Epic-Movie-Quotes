@@ -23,6 +23,12 @@ const useNotifications = () => {
     }
   };
 
+  useEffect(() => {
+    window.addEventListener('click', (e) => closeDropdown(e));
+
+    return () => window.removeEventListener('click', (e) => closeDropdown(e));
+  }, [isNotificationsOpen]);
+
   const [notifications, setNotifications] = useState<NotificationsTypes[]>([]);
 
   useQuery('notifications', getUserNotifications, {
@@ -48,13 +54,33 @@ const useNotifications = () => {
     }
   }, [id]);
 
-  useEffect(() => {
-    window.addEventListener('click', (e) => closeDropdown(e));
+  const calculateData = (date: string) => {
+    const time = Math.round((Date.now() - +new Date(date)) / 60000);
 
-    return () => window.removeEventListener('click', (e) => closeDropdown(e));
-  }, [isNotificationsOpen]);
+    if (time < 60) {
+      return time + ' min ago';
+    } else if (time < 1440) {
+      return Math.round(time / 60) + ' hour ago';
+    } else {
+      return Math.round(time / 60 / 24) + ' day ago';
+    }
+  };
 
-  return { isNotificationsOpen, setIsNotificationsOpen, t, ref, notifications };
+  const calculateNewNotifications = () => {
+    const count = notifications.filter((not) => not.is_new).length;
+
+    return count;
+  };
+
+  return {
+    isNotificationsOpen,
+    setIsNotificationsOpen,
+    t,
+    ref,
+    notifications,
+    calculateData,
+    calculateNewNotifications,
+  };
 };
 
 export default useNotifications;

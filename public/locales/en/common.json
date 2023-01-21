@@ -106,7 +106,10 @@
     "navbar": {
       "logout": "Log out",
       "notifications": "Notifications",
-      "mark": "Mark all as read"
+      "mark": "Mark all as read",
+      "commented": "Commented to your movie quote",
+      "reacted": "Reacted to your quote",
+      "new": "New"
     },
     "profileSidebar": {
       "edit": "Edit your profile",

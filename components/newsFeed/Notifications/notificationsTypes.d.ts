@@ -6,4 +6,13 @@ export type NotificationsTypes = {
   quote_id: number;
   created_at: string;
   id: number;
+  person: {
+    id: number;
+    image: string;
+    name: string;
+  };
+  quote: {
+    id: number;
+    movie_id: number;
+  };
 };
