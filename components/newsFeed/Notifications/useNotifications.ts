@@ -41,7 +41,7 @@ const useNotifications = () => {
     pusher();
 
     if (id) {
-      (window as any).Echo.private(`epic-movies.${id}`).listen(
+      window.Echo.private(`epic-movies.${id}`).listen(
         '.notifications',
         (e: { notifications: { data: NotificationsTypes } }) => {
           if (e.notifications.data.user_id === id) {

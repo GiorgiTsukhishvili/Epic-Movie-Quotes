@@ -10,7 +10,7 @@ export const pusher = () => {
     return xhr;
   };
 
-  (window as any).Echo = new Echo({
+  window.Echo = new Echo({
     broadcaster: 'pusher',
     key: process.env.NEXT_PUBLIC_PUSHER_APP_KEY,
     cluster: process.env.NEXT_PUBLIC_PUSHER_APP_CLUSTER,
