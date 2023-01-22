@@ -6,3 +6,4 @@ export * from './movieCRUD';
 export * from './quoteCRUD';
 export * from './quoteLikes';
 export * from './quoteComment';
+export * from './notifications';
