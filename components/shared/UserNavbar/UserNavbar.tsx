@@ -164,6 +164,15 @@ const UserNavbar: React.FC<UserNavbarTypes> = ({
               {t('user.profileSidebar.movies')}
             </Link>
           </div>
+          <div
+            className='flex justify-center items-center gap-7 cursor-pointer'
+            onClick={logoutUser}
+          >
+            <ArrowRight isLogout={true} />
+            <h1 className='text-white text-xl leading-[150%] uppercase'>
+              {t('user.navbar.logout')}
+            </h1>
+          </div>
         </div>
       )}
     </Fragment>

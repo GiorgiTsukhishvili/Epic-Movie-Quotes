@@ -1,8 +1,14 @@
-const ArrowRight = ({ isSearchOpen }: { isSearchOpen?: boolean }) => {
+const ArrowRight = ({
+  isSearchOpen,
+  isLogout,
+}: {
+  isSearchOpen?: boolean;
+  isLogout?: boolean;
+}) => {
   return (
     <svg
-      width={isSearchOpen ? '14' : '13'}
-      height={isSearchOpen ? '16' : '10'}
+      width={isSearchOpen ? '14' : isLogout ? '26' : '13'}
+      height={isSearchOpen ? '16' : isLogout ? '26' : '10'}
       viewBox='0 0 13 10'
       fill='none'
       xmlns='http://www.w3.org/2000/svg'

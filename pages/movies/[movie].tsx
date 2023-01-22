@@ -95,7 +95,13 @@ const Movie = ({ name }: { name: string }) => {
                 </h1>
                 <h1 className='text-gray-350 font-bold text-lg leading-[150%]'>
                   {t('user.singleMovie.budget')}:&#160;
-                  {data?.data.budget && data && data?.data.budget}$
+                  {data?.data.budget &&
+                    data &&
+                    data?.data.budget.replace(
+                      /\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g,
+                      '.'
+                    )}
+                  $
                 </h1>
                 <h1 className='text-gray-350 font-normal text-lg leading-[150%] '>
                   {data &&
