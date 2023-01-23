@@ -1,7 +1,8 @@
 import { ArrowDown, useLanguageSwitcher } from 'components';
+import Link from 'next/link';
 
 const LanguageSwitcher = () => {
-  const { t, isDropdownOpen, setIsDropdownOpen, changeLanguage, ref } =
+  const { t, isDropdownOpen, setIsDropdownOpen, ref, asPath } =
     useLanguageSwitcher();
 
   return (
@@ -18,18 +19,20 @@ const LanguageSwitcher = () => {
 
       {isDropdownOpen && (
         <div className='bg-white px-4 py-2 text-base font-normal leading-[150%] absolute rounded-md top-14 left-[-2rem]'>
-          <h1
-            className='cursor-pointer text-base font-normal leading-[150%] text-center'
-            onClick={() => changeLanguage('ka')}
+          <Link
+            href={{ pathname: asPath }}
+            locale='ka'
+            className='cursor-pointer text-base font-normal leading-[150%] text-center block'
           >
             ქართული
-          </h1>
-          <h1
-            className='cursor-pointer text-base font-normal leading-[150%] text-center'
-            onClick={() => changeLanguage('en')}
+          </Link>
+          <Link
+            href={{ pathname: asPath }}
+            locale='en'
+            className='cursor-pointer text-base font-normal leading-[150%] text-center block'
           >
             English
-          </h1>
+          </Link>
         </div>
       )}
     </div>

@@ -3,14 +3,10 @@ import { useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/router';
 
 const useLanguageSwitcher = () => {
-  const { asPath, replace } = useRouter();
+  const { asPath } = useRouter();
   const ref = useRef<HTMLDivElement>(null);
   const { t } = useTranslation();
   const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
-
-  const changeLanguage = (language: string) => {
-    replace(asPath, asPath, { locale: language });
-  };
 
   const closeDropdown = (e: MouseEvent) => {
     if (ref.current && !ref.current.contains(e.target as Node)) {
@@ -24,7 +20,7 @@ const useLanguageSwitcher = () => {
     return () => window.removeEventListener('click', (e) => closeDropdown(e));
   }, [isDropdownOpen]);
 
-  return { t, isDropdownOpen, setIsDropdownOpen, changeLanguage, ref };
+  return { t, isDropdownOpen, setIsDropdownOpen, ref, asPath };
 };
 
 export default useLanguageSwitcher;
