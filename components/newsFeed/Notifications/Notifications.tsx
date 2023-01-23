@@ -12,6 +12,8 @@ const Notifications = () => {
     notifications,
     calculateData,
     calculateNewNotifications,
+    mutate,
+    updateAllNotifications,
   } = useNotifications();
 
   return (
@@ -21,22 +23,27 @@ const Notifications = () => {
         onClick={() => setIsNotificationsOpen((prevState) => !prevState)}
       >
         <Bell />
-        <div className='bg-red-850 w-[1.563rem] h-[1.563rem] rounded-full flex justify-center items-center absolute top-[-0.5rem] left-[0.85rem]'>
-          <span className='text-white leading-[150%] font-medium'>
-            {calculateNewNotifications()}
-          </span>
-        </div>
+        {calculateNewNotifications() > 0 && (
+          <div className='bg-red-850 w-[1.563rem] h-[1.563rem] rounded-full flex justify-center items-center absolute top-[-0.5rem] left-[0.85rem]'>
+            <span className='text-white leading-[150%] font-medium'>
+              {calculateNewNotifications()}
+            </span>
+          </div>
+        )}
       </div>
 
       {isNotificationsOpen && (
         <Fragment>
-          <div className='border-b-black border-b-[2rem]  border-l-[1rem] border-r-[1rem] border-l-transparent border-r-transparent absolute top-[4.5rem] right-[7.8rem] lg:right-[18.5rem]' />
+          <div className='border-b-black border-b-[2rem]  border-l-[1rem] border-r-[1rem] border-l-transparent border-r-transparent absolute top-[4.5rem] right-[7.8rem] lg:right-[19.2rem]' />
           <div className='bg-black lg:w-[60rem] overflow-scroll pb-24 lg:pb-0 lg:h-[50.75rem] w-screen h-screen absolute top-[5.5rem] lg:top-[6rem] left-0 lg:left-auto  lg:right-[5rem] rounded-xl'>
             <div className='flex justify-between items-center px-8 lg:pt-10 pt-5 mb-8'>
               <h1 className='md:text-[2rem] text-xl text-white font-medium leading-[150%]'>
                 {t('user.navbar.notifications')}
               </h1>
-              <h1 className='md:text-xl text-sm text-white font-medium leading-[150%] underline cursor-pointer'>
+              <h1
+                className='md:text-xl text-sm text-white font-medium leading-[150%] underline cursor-pointer'
+                onClick={updateAllNotifications}
+              >
                 {t('user.navbar.mark')}
               </h1>
             </div>
@@ -46,6 +53,7 @@ const Notifications = () => {
                 key={notification.id}
                 href={`/movies/${notification.quote.movie_id}?mode=view&quote-id=${notification.quote_id}`}
                 className='lg:px-6 lg:py-5 p-4 border border-border-transparent mx-8 mb-4 rounded-md flex lg:justify-between lg:flex-row flex-col'
+                onClick={() => mutate([notification.id])}
               >
                 <div className='flex gap-3 lg:gap-6'>
                   <Image

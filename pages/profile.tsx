@@ -15,6 +15,7 @@ const Profile = () => {
           <div className='hidden min-w-[26.875rem] lg:inline'>
             <SideNavbar isProfilePage={true} />
           </div>
+          <div className='w-full px-9 lg:pl-0 lg:pr-[4.375rem]'></div>
         </div>
       </div>
     </Fragment>

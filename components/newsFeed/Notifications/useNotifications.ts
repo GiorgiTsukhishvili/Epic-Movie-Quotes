@@ -1,11 +1,11 @@
 import { useTranslation } from 'next-i18next';
 import { useEffect, useRef, useState } from 'react';
-import { getUserNotifications } from 'services';
+import { getUserNotifications, updateNotifications } from 'services';
 import { useSelector } from 'react-redux';
 import { UserTypes } from 'types';
 import { pusher } from 'config';
 import { NotificationsTypes } from './notificationsTypes';
-import { useQuery } from 'react-query';
+import { useMutation, useQuery, useQueryClient } from 'react-query';
 
 const useNotifications = () => {
   const [isNotificationsOpen, setIsNotificationsOpen] =
@@ -37,6 +37,22 @@ const useNotifications = () => {
     },
   });
 
+  const queryClient = useQueryClient();
+
+  const { mutate } = useMutation(updateNotifications, {
+    onSuccess: () => {
+      queryClient.invalidateQueries('notifications');
+    },
+  });
+
+  const updateAllNotifications = () => {
+    const notificationsToUpdate = notifications
+      .filter((notification) => notification.is_new)
+      .map((notification) => notification.id);
+
+    mutate(notificationsToUpdate);
+  };
+
   useEffect(() => {
     pusher();
 
@@ -58,16 +74,18 @@ const useNotifications = () => {
     const time = Math.round((Date.now() - +new Date(date)) / 60000);
 
     if (time < 60) {
-      return time + ' min ago';
+      return time + t('user.navbar.min');
     } else if (time < 1440) {
-      return Math.round(time / 60) + ' hour ago';
+      return Math.round(time / 60) + t('user.navbar.hour');
     } else {
-      return Math.round(time / 60 / 24) + ' day ago';
+      return Math.round(time / 60 / 24) + t('user.navbar.day');
     }
   };
 
   const calculateNewNotifications = () => {
-    const count = notifications.filter((not) => not.is_new).length;
+    const count = notifications.filter(
+      (notification) => notification.is_new
+    ).length;
 
     return count;
   };
@@ -80,6 +98,8 @@ const useNotifications = () => {
     notifications,
     calculateData,
     calculateNewNotifications,
+    mutate,
+    updateAllNotifications,
   };
 };
 

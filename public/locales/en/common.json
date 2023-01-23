@@ -109,7 +109,10 @@
       "mark": "Mark all as read",
       "commented": "Commented to your movie quote",
       "reacted": "Reacted to your quote",
-      "new": "New"
+      "new": "New",
+      "day": " day ago",
+      "hour": " hour ago",
+      "min": " min ago"
     },
     "profileSidebar": {
       "edit": "Edit your profile",
