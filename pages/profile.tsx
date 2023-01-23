@@ -2,6 +2,7 @@ import { SideNavbar, UserNavbar } from 'components';
 import useProfile from 'hooks/useProfile';
 import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import Head from 'next/head';
 import { Fragment } from 'react';
 
 const Profile = () => {
@@ -9,6 +10,9 @@ const Profile = () => {
 
   return (
     <Fragment>
+      <Head>
+        <title>Movie Quotes - Profile</title>
+      </Head>
       <div className='bg-gray-950 min-h-screen'>
         <UserNavbar isProfilePage={true} />
         <div className='flex items-start'>

@@ -9,11 +9,11 @@ export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   if (pathname === GUEST_ROUTE && userIsLoggedIn) {
-    response = NextResponse.rewrite(new URL('/news-feed', request.url));
+    response = NextResponse.redirect(new URL('/news-feed', request.url));
   }
   for (const route of AUTH_ROUTES) {
     if (pathname.includes(route) && !userIsLoggedIn) {
-      response = NextResponse.rewrite(new URL('/', request.url));
+      response = NextResponse.redirect(new URL('/', request.url));
     }
   }
 
@@ -21,5 +21,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/news-feed', '/', '/movies', '/movies/:path*', '/profile'],
+  matcher: ['/', '/news-feed', '/movies', '/movies/:path*', '/profile'],
 };
