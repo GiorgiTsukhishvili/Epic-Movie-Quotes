@@ -31,7 +31,7 @@ const SideNavbar: React.FC<SideNavbarProps> = ({
             {name}
           </h1>
           <Link
-            href={'/profile'}
+            href={{ pathname: '/profile' }}
             className='text-gray-350 text-base leading-[150%]'
           >
             {t('user.profileSidebar.edit')}
@@ -40,7 +40,7 @@ const SideNavbar: React.FC<SideNavbarProps> = ({
       </div>
 
       <Link
-        href={'/news-feed'}
+        href={{ pathname: '/news-feed' }}
         className='text-white text-2xl leading-[150%] flex justify-center items-center gap-11'
       >
         <House isSidebar={true} isNewsFeed={isNewsFeed} />
@@ -48,7 +48,7 @@ const SideNavbar: React.FC<SideNavbarProps> = ({
       </Link>
 
       <Link
-        href={'/movies'}
+        href={{ pathname: '/movies' }}
         className='text-white text-2xl leading-[150%] flex justify-center items-center gap-11'
       >
         <Camera isSidebar={true} isMoviesPage={isMoviesPage} />

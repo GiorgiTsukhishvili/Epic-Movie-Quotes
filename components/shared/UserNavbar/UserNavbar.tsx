@@ -138,7 +138,7 @@ const UserNavbar: React.FC<UserNavbarTypes> = ({
                 {name}
               </h1>
               <Link
-                href={'/profile'}
+                href={{ pathname: '/profile' }}
                 className='text-gray-350 text-sm leading-[150%]'
               >
                 {t('user.profileSidebar.edit')}
@@ -148,7 +148,7 @@ const UserNavbar: React.FC<UserNavbarTypes> = ({
           <div className='flex justify-center items-center gap-7'>
             <House isSidebar={false} isNewsFeed={isNewsFeed} />
             <Link
-              href={'/news-feed'}
+              href={{ pathname: '/news-feed' }}
               className='text-white text-xl leading-[150%] uppercase'
             >
               {t('user.profileSidebar.newsFeed')}
@@ -158,7 +158,7 @@ const UserNavbar: React.FC<UserNavbarTypes> = ({
           <div className='flex justify-center items-center gap-7'>
             <Camera isSidebar={false} isMoviesPage={isMoviesPage} />
             <Link
-              href={'/movies'}
+              href={{ pathname: '/movies' }}
               className='text-white text-xl leading-[150%] uppercase'
             >
               {t('user.profileSidebar.movies')}

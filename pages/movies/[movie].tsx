@@ -14,6 +14,7 @@ import { useSingleMoviePage } from 'hooks';
 import { GetServerSideProps } from 'next';
 import { i18n } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import Head from 'next/head';
 import Image from 'next/image';
 import { Fragment } from 'react';
 import { dehydrate, QueryClient } from 'react-query';
@@ -36,6 +37,9 @@ const Movie = ({ name }: { name: string }) => {
 
   return (
     <Fragment>
+      <Head>
+        <title>Movie Quotes - My Movie</title>
+      </Head>
       <div className='bg-gray-950 min-h-screen'>
         <UserNavbar isMoviesPage={true} />
         <div className='flex items-start'>

@@ -8,7 +8,7 @@ import { updateUserData } from 'state';
 import { useRouter } from 'next/router';
 
 const useLogin = () => {
-  const { push } = useRouter();
+  const { replace } = useRouter();
   const { t } = useTranslation();
   const {
     register,
@@ -29,7 +29,7 @@ const useLogin = () => {
       await fetchCSRFToken();
       const response = await userLogin(data);
       dispatch(updateUserData(response.data.user));
-      push('news-feed');
+      replace('/news-feed');
       setCookie('isLoggedIn', true);
     } catch (err) {
       setError('login', { type: 'all', message: t('errors.incorrectLogin')! });

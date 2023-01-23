@@ -95,6 +95,19 @@ const MovieInputs: React.FC<MovieInputsTypes> = ({
             <ErrorMessage errors={errors} name='director-en' />
           </div>
 
+          <NormalInput
+            type='text'
+            register={register}
+            name={'director-ka'}
+            text={t('form.login.required')}
+            placeholder='დირექტორი'
+            labelText='ქარ'
+          />
+
+          <div className='text-red-550 h-5 font-normal text-base leading-[150%] my-1 '>
+            <ErrorMessage errors={errors} name='director-ka' />
+          </div>
+
           <div className='bg-transparent relative w-full pr-12 border-gray-550 rounded-md border min-h-[3rem]  cursor-pointer flex-wrap flex items-center px-5 py-2.5 gap-1'>
             <div
               className='w-full absolute h-full top-0 left-0'
@@ -166,19 +179,6 @@ const MovieInputs: React.FC<MovieInputsTypes> = ({
 
           <div className='text-red-550 h-5 font-normal text-base leading-[150%] my-1 '>
             <ErrorMessage errors={errors} name='tags' />
-          </div>
-
-          <NormalInput
-            type='text'
-            register={register}
-            name={'director-ka'}
-            text={t('form.login.required')}
-            placeholder='დირექტორი'
-            labelText='ქარ'
-          />
-
-          <div className='text-red-550 h-5 font-normal text-base leading-[150%] my-1 '>
-            <ErrorMessage errors={errors} name='director-ka' />
           </div>
 
           <NormalInput
