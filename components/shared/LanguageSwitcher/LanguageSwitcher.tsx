@@ -2,11 +2,11 @@ import { ArrowDown, useLanguageSwitcher } from 'components';
 import Link from 'next/link';
 
 const LanguageSwitcher = () => {
-  const { t, isDropdownOpen, setIsDropdownOpen, ref, asPath } =
+  const { t, isDropdownOpen, setIsDropdownOpen, languageRef, asPath } =
     useLanguageSwitcher();
 
   return (
-    <div className='relative' ref={ref}>
+    <div className='relative' ref={languageRef}>
       <div
         className='flex items-center gap-2.5 cursor-pointer'
         onClick={() => setIsDropdownOpen((prevState) => !prevState)}

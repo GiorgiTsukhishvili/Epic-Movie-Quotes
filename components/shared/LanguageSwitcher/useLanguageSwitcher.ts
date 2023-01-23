@@ -4,12 +4,15 @@ import { useRouter } from 'next/router';
 
 const useLanguageSwitcher = () => {
   const { asPath } = useRouter();
-  const ref = useRef<HTMLDivElement>(null);
+  const languageRef = useRef<HTMLDivElement>(null);
   const { t } = useTranslation();
   const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
 
   const closeDropdown = (e: MouseEvent) => {
-    if (ref.current && !ref.current.contains(e.target as Node)) {
+    if (
+      languageRef.current &&
+      !languageRef.current.contains(e.target as Node)
+    ) {
       setIsDropdownOpen(false);
     }
   };
@@ -20,7 +23,7 @@ const useLanguageSwitcher = () => {
     return () => window.removeEventListener('click', (e) => closeDropdown(e));
   }, [isDropdownOpen]);
 
-  return { t, isDropdownOpen, setIsDropdownOpen, ref, asPath };
+  return { t, isDropdownOpen, setIsDropdownOpen, languageRef, asPath };
 };
 
 export default useLanguageSwitcher;
