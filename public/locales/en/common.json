@@ -103,6 +103,14 @@
     "incorrectLogin": "User email or password is incorrect"
   },
   "user": {
+    "profile": {
+      "myProfile": "My profile",
+      "newPhoto": "Upload new photo",
+      "username": "Username",
+      "edit": "Edit",
+      "cancel": "Cancel",
+      "save": "Save changes"
+    },
     "navbar": {
       "logout": "Log out",
       "notifications": "Notifications",
