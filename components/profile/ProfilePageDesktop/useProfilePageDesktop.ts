@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useForm, useWatch } from 'react-hook-form';
 import { useMutation, useQueryClient } from 'react-query';
 import { useDispatch } from 'react-redux';
+import { emailRegex } from 'config';
 import { updateUserInfo } from 'services';
 import { updateUserData } from 'state';
 import { ProfileFormTypes, UserAllInfoTypes } from 'types';
@@ -12,6 +13,8 @@ const useProfilePageDesktop = (data: UserAllInfoTypes) => {
   const [isNameEditOpen, setIsNameEditOpen] = useState<boolean>(false);
   const [isFileUploaded, setIsFileUploaded] = useState<boolean>(false);
   const [isPasswordEditOpen, setIsPasswordEditOpen] = useState<boolean>(false);
+  const [isAddEmailOpen, setIsAddEmailOpen] = useState<boolean>(false);
+
   const dispatch = useDispatch();
 
   const {
@@ -19,10 +22,11 @@ const useProfilePageDesktop = (data: UserAllInfoTypes) => {
     getValues,
     control,
     setValue,
-    formState: { errors, isDirty },
+    setError,
+    formState: { errors, isValid },
   } = useForm<ProfileFormTypes>({
     mode: 'onChange',
-    defaultValues: { image: data.image, name: data.name },
+    defaultValues: { image: data.image, name: data.name, email: '' },
   });
 
   useWatch({ control, name: ['image'] });
@@ -58,7 +62,7 @@ const useProfilePageDesktop = (data: UserAllInfoTypes) => {
   });
 
   const submitChanges = () => {
-    if (isDirty) return;
+    if (!isValid) return;
     const formData = new FormData();
 
     formData.append('image', getValues().image);
@@ -66,6 +70,19 @@ const useProfilePageDesktop = (data: UserAllInfoTypes) => {
 
     mutate(formData);
     closeForms();
+  };
+
+  const submitEmail = () => {
+    if (!emailRegex.test(getValues().email)) {
+      setError('email', {
+        type: 'custom',
+        message: t('form.forgotPassword.inputEmail')!,
+      });
+      return;
+    }
+
+    setIsAddEmailOpen(false);
+    console.log(getValues().email);
   };
 
   return {
@@ -81,6 +98,10 @@ const useProfilePageDesktop = (data: UserAllInfoTypes) => {
     cancelChanges,
     submitChanges,
     errors,
+    isAddEmailOpen,
+    setIsAddEmailOpen,
+    submitEmail,
+    setValue,
   };
 };
 

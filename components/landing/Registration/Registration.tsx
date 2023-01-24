@@ -10,6 +10,7 @@ import {
   useRegistration,
 } from 'components';
 import { ErrorMessage } from '@hookform/error-message';
+import { emailRegex } from 'config';
 
 const Registration: React.FC<RegistrationProps> = ({ setWhichForm }) => {
   const {
@@ -102,11 +103,7 @@ const Registration: React.FC<RegistrationProps> = ({ setWhichForm }) => {
                 },
                 validate: {
                   isEmail: (value) => {
-                    if (
-                      !/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
-                        value
-                      )
-                    ) {
+                    if (!emailRegex.test(value)) {
                       return t('form.forgotPassword.inputEmail')!;
                     }
                   },
