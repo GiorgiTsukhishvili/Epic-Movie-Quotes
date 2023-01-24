@@ -57,6 +57,7 @@ module.exports = {
           750: '#198754',
         },
         neutral: {
+          750: '#212529',
           850: '#12101A',
           950: '#11101A',
         },
@@ -65,6 +66,7 @@ module.exports = {
         },
         'border-transparent': '#efefef33',
         'comment-input': 'rgba(36, 34, 47, 0.6)',
+        'profile-border': 'rgba(206, 212, 218, 0.5)',
       },
       screens: {
         xs: '400px',

@@ -31,7 +31,7 @@ const useNewsFeed = () => {
 
   const onSubmit = (data: { search: string }) => {
     replace({ query: data });
-    queryClient.invalidateQueries({ queryKey: 'movies' });
+    queryClient.invalidateQueries({ queryKey: 'quotes' });
     setValue('search', '');
   };
 
