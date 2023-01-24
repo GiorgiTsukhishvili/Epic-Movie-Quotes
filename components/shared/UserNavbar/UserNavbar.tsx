@@ -36,8 +36,8 @@ const UserNavbar: React.FC<UserNavbarTypes> = ({
 
   return (
     <Fragment>
-      <div className='bg-neutral-950 z-10  fixed w-full  h-[5.375rem] ' />
-      <div className='bg-white fixed z-10 w-full rotate--180 h-[5.375rem] flex justify-between items-center px-9 lg:px-[4.375rem] py-8 backdrop-filter backdrop-blur-user-page bg-opacity-5'>
+      <div className='bg-neutral-950 z-40  fixed w-full  h-[5.375rem] ' />
+      <div className='bg-white fixed z-40 w-full rotate--180 h-[5.375rem] flex justify-between items-center px-9 lg:px-[4.375rem] py-8 backdrop-filter backdrop-blur-user-page bg-opacity-5'>
         <h1 className='uppercase text-orange-250 font-medium leading-[150%] hidden lg:inline'>
           movie quotes
         </h1>

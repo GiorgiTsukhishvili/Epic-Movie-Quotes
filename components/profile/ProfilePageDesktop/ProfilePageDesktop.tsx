@@ -1,7 +1,8 @@
+import { ErrorMessage } from '@hookform/error-message';
 import Image from 'next/image';
 import { Fragment } from 'react';
+import { ProfileEmailsDesktop, useProfilePageDesktop } from 'components';
 import { ProfilePageDesktopProps } from './profilePageDesktopTypes';
-import useProfilePageDesktop from './useProfilePageDesktop';
 
 const ProfilePageDesktop: React.FC<ProfilePageDesktopProps> = ({ data }) => {
   const {
@@ -15,6 +16,7 @@ const ProfilePageDesktop: React.FC<ProfilePageDesktopProps> = ({ data }) => {
     isFileUploaded,
     submitChanges,
     cancelChanges,
+    errors,
   } = useProfilePageDesktop(data);
 
   return (
@@ -34,7 +36,7 @@ const ProfilePageDesktop: React.FC<ProfilePageDesktopProps> = ({ data }) => {
             className='w-[11.75rem] h-[11.75rem] object-cover rounded-full -translate-y-[5.875rem]'
           />
         )}
-        <div className='-translate-y-[5.875rem] flex flex-col justify-start items-center mt-2'>
+        <div className='-translate-y-[5.875rem] flex flex-col justify-start items-start mt-2 px-4'>
           <input
             type='file'
             accept='image/*'
@@ -45,7 +47,7 @@ const ProfilePageDesktop: React.FC<ProfilePageDesktopProps> = ({ data }) => {
           />
           <label
             htmlFor='profile-photo'
-            className='text-xl block text-white leading-[150%] cursor-pointer'
+            className='text-xl block text-white leading-[150%] cursor-pointer self-center'
           >
             {t('user.profile.newPhoto')}
           </label>
@@ -61,27 +63,65 @@ const ProfilePageDesktop: React.FC<ProfilePageDesktopProps> = ({ data }) => {
               <Fragment>
                 <input
                   type='text'
-                  className='w-[27rem]  mt-2 inline xl:w-[33rem]  bg-gray-350 rounded-md py-2 px-4 text-neutral-750 text-2xl '
-                  {...register('name')}
+                  className='w-[27rem]  mt-2 inline xl:w-[33rem]  bg-gray-350 rounded-md py-2 px-4 text-neutral-750 text-2xl'
+                  {...register('name', {
+                    minLength: {
+                      value: 3,
+                      message: t('form.login.minLength'),
+                    },
+                    maxLength: {
+                      value: 15,
+                      message: t('form.register.nameMax'),
+                    },
+                    validate: {
+                      onlyLoweAndNumbers: (value) => {
+                        if (!/^[a-z0-9_\-]+$/.test(value)) {
+                          return t('form.register.onlyLowerAndNumbers')!;
+                        }
+                      },
+                    },
+                  })}
                 />
                 <h1 className='text-gray-350 leading-[150%] text-xl inline mr-8 opacity-0'>
                   {t('user.profile.edit')}
                 </h1>
+                <div className='text-red-550 h-5 font-normal text-sm leading-[150%] my-1 '>
+                  <ErrorMessage errors={errors} name='name' />
+                </div>
+                <div className='w-[27rem] xl:w-[33rem] border-b border-b-profile-border pt-7' />
               </Fragment>
             ) : (
-              <div className='flex justify-center items-center gap-8 w-full mt-2 '>
-                <h1 className='w-[27rem] xl:w-[33rem] bg-gray-350 rounded-md py-2 px-4 text-neutral-750 text-2xl '>
-                  {getValues().name}
-                </h1>
-                <button
-                  className='text-gray-350 leading-[150%] text-xl '
-                  onClick={() => setIsNameEditOpen(true)}
-                >
-                  {t('user.profile.edit')}
-                </button>
-              </div>
+              <Fragment>
+                <div className='flex justify-start items-center gap-8 w-full mt-2 '>
+                  <h1 className='w-[27rem] xl:w-[33rem] bg-gray-350 rounded-md py-2 px-4 text-neutral-750 text-2xl  '>
+                    {getValues().name}
+                  </h1>
+                  <button
+                    className='text-gray-350 leading-[150%] text-xl '
+                    onClick={() => setIsNameEditOpen(true)}
+                  >
+                    {t('user.profile.edit')}
+                  </button>
+                </div>
+                <div className='w-[27rem] xl:w-[33rem] border-b border-b-profile-border pt-[3.5rem]' />
+              </Fragment>
             )}
           </div>
+
+          {data.google_id ? (
+            <Fragment>
+              <h1 className='text-medium text-white leading-[150%] block mt-10 self-start'>
+                {t('user.profile.email')}
+              </h1>
+              <div className='flex justify-start items-center gap-8 w-full mt-2 '>
+                <h1 className='w-[27rem] xl:w-[33rem] bg-gray-350 rounded-md py-2 px-4 text-neutral-750 text-2xl  '>
+                  {data.emails[0].email}
+                </h1>
+              </div>
+            </Fragment>
+          ) : (
+            <ProfileEmailsDesktop emails={data.emails} />
+          )}
         </div>
       </div>
       {(isFileUploaded || isNameEditOpen || isPasswordEditOpen) && (
