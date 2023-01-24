@@ -117,7 +117,13 @@
       "remove": "Remove",
       "addEmail": "Add new email",
       "newEmail": "New email",
-      "enterNewEmail": "Enter new email"
+      "enterNewEmail": "Enter new email",
+      "password": "Password",
+      "shouldContain": "Passwords should contain:",
+      "min": "8 or more characters",
+      "max": "15 lowercase character",
+      "newPassword": "New password",
+      "confirmPassword": "Confirm new password"
     },
     "navbar": {
       "logout": "Log out",
