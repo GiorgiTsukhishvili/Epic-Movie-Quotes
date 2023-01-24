@@ -1,9 +1,9 @@
-import { UserAllInfoTypes } from 'types';
 import { useProfilePageMobile } from 'components';
 import { Fragment } from 'react';
 import Image from 'next/image';
+import { ProfilePageMobileProps } from './profilePageMobileTypes';
 
-const ProfilePageMobile: React.FC<{ data: UserAllInfoTypes }> = ({ data }) => {
+const ProfilePageMobile: React.FC<ProfilePageMobileProps> = ({ data }) => {
   const {
     t,
 

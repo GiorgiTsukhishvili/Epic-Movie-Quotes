@@ -1,9 +1,9 @@
 import Image from 'next/image';
 import { Fragment } from 'react';
-import { UserAllInfoTypes } from 'types';
+import { ProfilePageDesktopProps } from './profilePageDesktopTypes';
 import useProfilePageDesktop from './useProfilePageDesktop';
 
-const ProfilePageDesktop: React.FC<{ data: UserAllInfoTypes }> = ({ data }) => {
+const ProfilePageDesktop: React.FC<ProfilePageDesktopProps> = ({ data }) => {
   const {
     t,
     register,
