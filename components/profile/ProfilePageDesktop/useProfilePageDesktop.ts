@@ -12,6 +12,8 @@ const useProfilePageDesktop = (data: UserAllInfoTypes) => {
   const [isNameEditOpen, setIsNameEditOpen] = useState<boolean>(false);
   const [isFileUploaded, setIsFileUploaded] = useState<boolean>(false);
   const [isPasswordEditOpen, setIsPasswordEditOpen] = useState<boolean>(false);
+  const [isAddEmailOpen, setIsAddEmailOpen] = useState<boolean>(false);
+
   const dispatch = useDispatch();
 
   const {
@@ -19,10 +21,11 @@ const useProfilePageDesktop = (data: UserAllInfoTypes) => {
     getValues,
     control,
     setValue,
+    setError,
     formState: { errors, isDirty },
   } = useForm<ProfileFormTypes>({
     mode: 'onChange',
-    defaultValues: { image: data.image, name: data.name },
+    defaultValues: { image: data.image, name: data.name, email: '' },
   });
 
   useWatch({ control, name: ['image'] });
@@ -68,6 +71,23 @@ const useProfilePageDesktop = (data: UserAllInfoTypes) => {
     closeForms();
   };
 
+  const submitEmail = () => {
+    if (
+      !/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
+        getValues().email
+      )
+    ) {
+      setError('email', {
+        type: 'custom',
+        message: t('form.forgotPassword.inputEmail')!,
+      });
+      return;
+    }
+
+    setIsAddEmailOpen(false);
+    console.log(getValues().email);
+  };
+
   return {
     t,
     register,
@@ -81,6 +101,9 @@ const useProfilePageDesktop = (data: UserAllInfoTypes) => {
     cancelChanges,
     submitChanges,
     errors,
+    isAddEmailOpen,
+    setIsAddEmailOpen,
+    submitEmail,
   };
 };
 

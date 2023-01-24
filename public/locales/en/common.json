@@ -114,7 +114,10 @@
       "primary": "Primary Email",
       "makePrimary": "Make this primary",
       "notVerified": "Not verified",
-      "remove": "Remove"
+      "remove": "Remove",
+      "addEmail": "Add new email",
+      "newEmail": "New email",
+      "enterNewEmail": "Enter new email"
     },
     "navbar": {
       "logout": "Log out",

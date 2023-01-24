@@ -6,4 +6,5 @@ export type ProfileEmailsDesktopProps = {
     is_primary: number;
     user_id: number;
   }[];
+  setIsAddEmailOpen: Dispatch<SetStateAction<boolean>>;
 };

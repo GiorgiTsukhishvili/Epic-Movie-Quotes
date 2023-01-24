@@ -17,10 +17,55 @@ const ProfilePageDesktop: React.FC<ProfilePageDesktopProps> = ({ data }) => {
     submitChanges,
     cancelChanges,
     errors,
+    isAddEmailOpen,
+    setIsAddEmailOpen,
+    submitEmail,
   } = useProfilePageDesktop(data);
 
   return (
     <Fragment>
+      {isAddEmailOpen && (
+        <Fragment>
+          <div
+            className='h-screen w-screen fixed top-0 left-0 z-50 bg-add-email opacity-80 backdrop-filter backdrop-blur-main-page'
+            onClick={() => setIsAddEmailOpen(false)}
+          />
+          <div className='w-[38rem] rounded-md h-[22.5rem] fixed z-[100] top-[21.625rem] left-1/2 bg-neutral-950 -translate-x-1/2'>
+            <h1 className='text-white text-2xl font-medium leading-[150%] py-6 pl-8 border-b border-b-profile-border'>
+              {t('user.profile.addEmail')}
+            </h1>
+            <label
+              htmlFor='name'
+              className='text-medium text-white leading-[150%] block mt-10 pl-8'
+            >
+              {t('user.profile.newEmail')}
+            </label>
+            <input
+              type='text'
+              {...register('email')}
+              placeholder={t('user.profile.enterNewEmail')!}
+              className=' ml-8  mt-2 inline w-[33rem] placeholder:text-neutral-950 bg-gray-350 rounded-md py-2 px-4 text-neutral-950 text-2xl'
+            />
+            <div className='text-red-550 h-5 font-normal text-sm leading-[150%] my-1 ml-8'>
+              <ErrorMessage errors={errors} name='email' />
+            </div>
+            <div className='w-full flex justify-end gap-8 mt-10 pr-12'>
+              <button
+                className='text-gray-350 text-xl leading-[150%]'
+                onClick={() => setIsAddEmailOpen(false)}
+              >
+                {t('user.profile.cancel')}
+              </button>
+              <button
+                className='text-white leading-[150%] px-4 py-2 text-xl bg-red-650 rounded-md'
+                onClick={submitEmail}
+              >
+                {t('user.profile.save')}
+              </button>
+            </div>
+          </div>
+        </Fragment>
+      )}
       <div className='z-10 w-full min-h-[33.438rem] items-center flex-col relative justify-start flex'>
         <div className='bg-neutral-950 rounded-xl  backdrop-filter backdrop-blur-user-page -rotate-180  w-full h-full absolute top-0 left-0' />
         {getValues().image !== '' && (
@@ -120,7 +165,10 @@ const ProfilePageDesktop: React.FC<ProfilePageDesktopProps> = ({ data }) => {
               </div>
             </Fragment>
           ) : (
-            <ProfileEmailsDesktop emails={data.emails} />
+            <ProfileEmailsDesktop
+              emails={data.emails}
+              setIsAddEmailOpen={setIsAddEmailOpen}
+            />
           )}
         </div>
       </div>

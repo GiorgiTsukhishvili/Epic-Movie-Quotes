@@ -114,7 +114,10 @@
       "primary": "პირველადი მეილი",
       "makePrimary": "გახადე ძირითადი",
       "notVerified": "არადამოწმებული",
-      "remove": "წაშლა"
+      "remove": "წაშლა",
+      "addEmail": "დაამატე მეილი",
+      "newEmail": "ახალი მეილი",
+      "enterNewEmail": "შეიყვანე ახალი მეილი"
     },
     "navbar": {
       "logout": "გასვლა",

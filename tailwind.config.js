@@ -11,6 +11,8 @@ module.exports = {
         'helvetica-en': ['HelveticaEn'],
       },
       backgroundImage: {
+        'add-email':
+          'linear-gradient(187.16deg, #181623 0.07%, #191725 51.65%, #0D0B14 98.75%)',
         'main-gradient':
           'linear-gradient(187.16deg, #181623 0.07%, #191725 51.65%, #0D0B14 98.75%)',
         'landing-gradient':
