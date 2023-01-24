@@ -15,7 +15,7 @@ export const updateUserInfo = (data: FormData) => {
 };
 
 export const deleteEmail = (id: number) => {
-  return axios.delete(`/api/email-delete/${id}`);
+  return axios.delete(`/api/email/${id}`);
 };
 
 export const makePrimary = (id: number) => {
