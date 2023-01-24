@@ -14,7 +14,13 @@ const useProfilePageDesktop = (data: UserAllInfoTypes) => {
   const [isPasswordEditOpen, setIsPasswordEditOpen] = useState<boolean>(false);
   const dispatch = useDispatch();
 
-  const { register, getValues, control, setValue } = useForm<ProfileFormTypes>({
+  const {
+    register,
+    getValues,
+    control,
+    setValue,
+    formState: { errors, isDirty },
+  } = useForm<ProfileFormTypes>({
     mode: 'onChange',
     defaultValues: { image: data.image, name: data.name },
   });
@@ -52,6 +58,7 @@ const useProfilePageDesktop = (data: UserAllInfoTypes) => {
   });
 
   const submitChanges = () => {
+    if (isDirty) return;
     const formData = new FormData();
 
     formData.append('image', getValues().image);
@@ -73,6 +80,7 @@ const useProfilePageDesktop = (data: UserAllInfoTypes) => {
     setIsPasswordEditOpen,
     cancelChanges,
     submitChanges,
+    errors,
   };
 };
 

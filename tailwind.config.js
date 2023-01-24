@@ -61,12 +61,17 @@ module.exports = {
           850: '#12101A',
           950: '#11101A',
         },
+        amber: {
+          550: '#EC9524',
+        },
         purple: {
           150: 'rgba(151, 71, 255, 0.4)',
         },
         'border-transparent': '#efefef33',
         'comment-input': 'rgba(36, 34, 47, 0.6)',
         'profile-border': 'rgba(206, 212, 218, 0.5)',
+        primary: 'rgba(25, 135, 84, 0.2)',
+        'not-verified': 'rgba(236, 149, 36, 0.2)',
       },
       screens: {
         xs: '400px',

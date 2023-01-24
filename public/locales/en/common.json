@@ -109,7 +109,12 @@
       "username": "Username",
       "edit": "Edit",
       "cancel": "Cancel",
-      "save": "Save changes"
+      "save": "Save changes",
+      "email": "Email",
+      "primary": "Primary Email",
+      "makePrimary": "Make this primary",
+      "notVerified": "Not verified",
+      "remove": "Remove"
     },
     "navbar": {
       "logout": "Log out",
