@@ -22,7 +22,7 @@ const useProfilePageDesktop = (data: UserAllInfoTypes) => {
     control,
     setValue,
     setError,
-    formState: { errors, isDirty },
+    formState: { errors, isValid },
   } = useForm<ProfileFormTypes>({
     mode: 'onChange',
     defaultValues: { image: data.image, name: data.name, email: '' },
@@ -61,7 +61,7 @@ const useProfilePageDesktop = (data: UserAllInfoTypes) => {
   });
 
   const submitChanges = () => {
-    if (isDirty) return;
+    if (!isValid) return;
     const formData = new FormData();
 
     formData.append('image', getValues().image);
