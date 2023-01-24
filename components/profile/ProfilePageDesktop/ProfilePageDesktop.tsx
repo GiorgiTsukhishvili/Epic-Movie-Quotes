@@ -19,6 +19,7 @@ const ProfilePageDesktop: React.FC<ProfilePageDesktopProps> = ({ data }) => {
     errors,
     isAddEmailOpen,
     setIsAddEmailOpen,
+    setValue,
     submitEmail,
   } = useProfilePageDesktop(data);
 
@@ -52,7 +53,10 @@ const ProfilePageDesktop: React.FC<ProfilePageDesktopProps> = ({ data }) => {
             <div className='w-full flex justify-end gap-8 mt-10 pr-12'>
               <button
                 className='text-gray-350 text-xl leading-[150%]'
-                onClick={() => setIsAddEmailOpen(false)}
+                onClick={() => {
+                  setIsAddEmailOpen(false);
+                  setValue('email', '');
+                }}
               >
                 {t('user.profile.cancel')}
               </button>

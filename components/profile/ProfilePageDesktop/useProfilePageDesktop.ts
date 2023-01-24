@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useForm, useWatch } from 'react-hook-form';
 import { useMutation, useQueryClient } from 'react-query';
 import { useDispatch } from 'react-redux';
+import { emailRegex } from 'config';
 import { updateUserInfo } from 'services';
 import { updateUserData } from 'state';
 import { ProfileFormTypes, UserAllInfoTypes } from 'types';
@@ -72,11 +73,7 @@ const useProfilePageDesktop = (data: UserAllInfoTypes) => {
   };
 
   const submitEmail = () => {
-    if (
-      !/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
-        getValues().email
-      )
-    ) {
+    if (!emailRegex.test(getValues().email)) {
       setError('email', {
         type: 'custom',
         message: t('form.forgotPassword.inputEmail')!,
@@ -104,6 +101,7 @@ const useProfilePageDesktop = (data: UserAllInfoTypes) => {
     isAddEmailOpen,
     setIsAddEmailOpen,
     submitEmail,
+    setValue,
   };
 };
 
