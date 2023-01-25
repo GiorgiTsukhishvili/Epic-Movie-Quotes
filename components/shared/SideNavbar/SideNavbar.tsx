@@ -12,7 +12,7 @@ const SideNavbar: React.FC<SideNavbarProps> = ({
   const { t, name, image } = useSideNavbar();
 
   return (
-    <div className='pt-8 pl-[4.375rem] flex-col justify-start items-start gap-11 hidden lg:flex fixed top-[5.375rem]'>
+    <div className='pt-8 xl:pl-[4.375rem] pl-[1.375rem] flex-col justify-start items-start gap-11 hidden lg:flex fixed top-[5.375rem]'>
       <div className='flex justify-center items-center gap-5'>
         {image && (
           <Image

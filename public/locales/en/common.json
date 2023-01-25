@@ -123,7 +123,10 @@
       "min": "8 or more characters",
       "max": "15 lowercase character",
       "newPassword": "New password",
-      "confirmPassword": "Confirm new password"
+      "confirmPassword": "Confirm new password",
+      "enterNewName": "Enter new username",
+      "add": "Add",
+      "areYouSure": "Are you sure to make changes ?"
     },
     "navbar": {
       "logout": "Log out",
