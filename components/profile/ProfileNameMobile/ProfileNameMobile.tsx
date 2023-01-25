@@ -5,8 +5,9 @@ import { ProfileNameMobileProps } from './profileNameMobileTypes';
 
 const ProfileNameMobile: React.FC<ProfileNameMobileProps> = ({
   registerMobile,
-  errorsMobile,
   setNameEditStep,
+  errorsMobile,
+  cancel,
 }) => {
   const { t } = useProfileNameMobile();
 
@@ -47,13 +48,15 @@ const ProfileNameMobile: React.FC<ProfileNameMobileProps> = ({
       <div className='w-full flex justify-between gap-8 mt-24 px-7'>
         <button
           className='text-gray-350 text-xl leading-[150%]'
-          onClick={() => setNameEditStep('')}
+          onClick={() => cancel()}
         >
           {t('user.profile.cancel')}
         </button>
         <button
           className='text-white leading-[150%] px-4 py-2 text-xl bg-red-650 rounded-md'
-          onClick={() => setNameEditStep('second')}
+          onClick={() => {
+            !errorsMobile.name && setNameEditStep('second');
+          }}
         >
           {t('user.profile.add')}
         </button>

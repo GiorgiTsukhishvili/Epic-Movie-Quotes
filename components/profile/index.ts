@@ -4,3 +4,4 @@ export * from './ProfileEmailsDesktop';
 export * from './ProfilePasswordDesktop';
 export * from './ProfileNameMobile';
 export * from './ProfileSubmitMobile';
+export * from './ProfilePasswordMobile';

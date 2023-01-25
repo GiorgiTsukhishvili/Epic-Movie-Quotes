@@ -114,7 +114,7 @@ const Login: React.FC<LoginProps> = ({ setWhichForm }) => {
               </label>
             </div>
             <h1
-              className='text-base leading-[150%] font-normal text-blue-650 underline'
+              className='text-base leading-[150%] font-normal text-blue-650 underline cursor-pointer'
               onClick={() => setWhichForm('forgot')}
             >
               {t('form.login.forgotPassword')}
