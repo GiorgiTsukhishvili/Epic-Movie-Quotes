@@ -119,7 +119,7 @@ const UserNavbar: React.FC<UserNavbarTypes> = ({
       {isMobileProfileOpen && (
         <div
           ref={ref}
-          className='fixed z-20 h-[41.125rem] pt-[2.8rem] pl-[2.8rem] pr-24 flex flex-col justify-start items-start gap-12 bg-neutral-950 rounded-r-xl left-0 top-0  lg:hidden backdrop-filter backdrop-blur-user-page rotate--180'
+          className='fixed z-[50] h-[41.125rem] pt-[2.8rem] pl-[2.8rem] pr-24 flex flex-col justify-start items-start gap-12 bg-neutral-950 rounded-r-xl left-0 top-0  lg:hidden backdrop-filter backdrop-blur-user-page rotate--180'
         >
           <div className='flex justify-center items-center gap-5'>
             {image && (

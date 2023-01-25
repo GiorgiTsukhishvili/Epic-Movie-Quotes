@@ -37,7 +37,7 @@ const MoviePage = () => {
       <div className='bg-gray-950 min-h-screen'>
         <UserNavbar isMoviesPage={true} />
         <div className='flex items-start'>
-          <div className='hidden min-w-[26.875rem] lg:inline'>
+          <div className='hidden lg:min-w-[16.575rem] xl:min-w-[26.575rem] lg:inline'>
             <SideNavbar isMoviesPage={true} />
           </div>
           <div className='w-full px-9 lg:pl-0 lg:pr-[4.375rem]'>

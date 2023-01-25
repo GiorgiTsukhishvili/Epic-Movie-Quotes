@@ -23,7 +23,7 @@ const Profile = () => {
       <div className='bg-gray-950 min-h-screen'>
         <UserNavbar isProfilePage={true} />
         <div className='flex items-start'>
-          <div className='hidden min-w-[26.875rem] lg:inline'>
+          <div className='hidden lg:min-w-[16.575rem] xl:min-w-[26.575rem] lg:inline'>
             <SideNavbar isProfilePage={true} />
           </div>
           <div className=' lg:mr-4 mr-0  pt-[5.375rem] lg:w-full lg:max-w-[61.75rem] lg:pt-[7.375rem] pb-12'>
@@ -40,7 +40,7 @@ const Profile = () => {
               {data && <ProfilePageDesktop data={data?.data} />}
             </div>
 
-            <div className='w-screen relative min-h-[33.438rem] lg:hidden block'>
+            <div className='w-screen lg:hidden block'>
               {data && <ProfilePageMobile data={data?.data} />}
             </div>
           </div>

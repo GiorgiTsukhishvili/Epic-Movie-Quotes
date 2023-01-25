@@ -1,34 +1,78 @@
 import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
 import { useForm, useWatch } from 'react-hook-form';
+import { useMutation, useQueryClient } from 'react-query';
+import { useDispatch } from 'react-redux';
+import { updateUserInfo } from 'services';
+import { updateUserData } from 'state';
 import { ProfileFormTypes, UserAllInfoTypes } from 'types';
 
 const useProfilePageMobile = (data: UserAllInfoTypes) => {
   const { t } = useTranslation();
-  const [isNameEditOpen, setIsNameEditOpen] = useState<boolean>(false);
+  const [NameEditStep, setNameEditStep] = useState<string>('');
+  const dispatch = useDispatch();
 
-  const { register, getValues, control, setValue } = useForm<ProfileFormTypes>({
+  const {
+    register: registerMobile,
+    getValues: getValuesMobile,
+    control: control,
+    setValue: setValueMobile,
+    formState: { errors: errorsMobile, isValid: isValidMobile },
+  } = useForm<ProfileFormTypes>({
     mode: 'onChange',
     defaultValues: { image: data.image, name: data.name },
   });
 
   useWatch({ control, name: ['image'] });
 
-  const handleFileUpload = (imageData: FileList | null) => {
+  const handleFileUploadMobile = (imageData: FileList | null) => {
     if (imageData !== null) {
       if (imageData[0]) {
-        setValue('image', imageData[0]);
+        setValueMobile('image', imageData[0]);
       }
     }
   };
 
+  const closeForms = () => {
+    setNameEditStep('');
+  };
+
+  const cancelChanges = () => {
+    setValueMobile('image', data.image);
+    setValueMobile('name', data.name);
+    closeForms();
+  };
+
+  const queryClient = useQueryClient();
+
+  const { mutate } = useMutation(updateUserInfo, {
+    onSuccess: (data) => {
+      dispatch(updateUserData(data.data));
+      queryClient.invalidateQueries('profile-info');
+    },
+  });
+
+  const submitChanges = () => {
+    if (!isValidMobile) return;
+    const formData = new FormData();
+
+    formData.append('image', getValuesMobile().image);
+    formData.append('name', getValuesMobile().name);
+
+    mutate(formData);
+    closeForms();
+  };
+
   return {
     t,
-    register,
-    handleFileUpload,
-    getValues,
-    isNameEditOpen,
-    setIsNameEditOpen,
+    registerMobile,
+    handleFileUploadMobile,
+    getValuesMobile,
+    NameEditStep,
+    setNameEditStep,
+    errorsMobile,
+    submitChanges,
+    cancelChanges,
   };
 };
 

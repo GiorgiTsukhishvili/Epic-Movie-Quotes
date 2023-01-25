@@ -113,12 +113,12 @@ const Login: React.FC<LoginProps> = ({ setWhichForm }) => {
                 {t('form.login.rememberMe')}
               </label>
             </div>
-            <button
+            <h1
               className='text-base leading-[150%] font-normal text-blue-650 underline'
               onClick={() => setWhichForm('forgot')}
             >
               {t('form.login.forgotPassword')}
-            </button>
+            </h1>
           </div>
 
           <button
