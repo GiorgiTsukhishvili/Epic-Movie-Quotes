@@ -80,6 +80,7 @@ const ProfileEmailsDesktop: React.FC<ProfileEmailsDesktopProps> = ({
           {t('user.profile.addEmail')}
         </button>
       </div>
+      <div className='w-[27rem] xl:w-[33rem] border-b border-b-profile-border pt-12' />
     </Fragment>
   );
 };

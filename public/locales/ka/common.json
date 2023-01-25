@@ -117,7 +117,13 @@
       "remove": "წაშლა",
       "addEmail": "დაამატე მეილი",
       "newEmail": "ახალი მეილი",
-      "enterNewEmail": "შეიყვანე ახალი მეილი"
+      "enterNewEmail": "შეიყვანე ახალი მეილი",
+      "password": "პაროლი",
+      "shouldContain": "პაროლი უნდა შეიცავდეს:",
+      "min": "8 ან მეტ სიმბოლოს",
+      "max": "მაქსიმუმ 15 სიმბოლოს",
+      "newPassword": "ახალი პაროლი",
+      "confirmPassword": "გაიმეორე ახალი პაროლი"
     },
     "navbar": {
       "logout": "გასვლა",

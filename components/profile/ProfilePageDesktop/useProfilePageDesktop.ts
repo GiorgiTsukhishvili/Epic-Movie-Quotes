@@ -62,11 +62,25 @@ const useProfilePageDesktop = (data: UserAllInfoTypes) => {
   });
 
   const submitChanges = () => {
+    if (
+      isPasswordEditOpen &&
+      (getValues().password === '' || getValues().password_confirmation === '')
+    ) {
+      setError('password', {
+        type: 'custom',
+        message: t('form.login.required')!,
+      });
+      setError('password_confirmation', {
+        type: 'custom',
+        message: t('form.login.required')!,
+      });
+    }
     if (!isValid) return;
     const formData = new FormData();
 
     formData.append('image', getValues().image);
     formData.append('name', getValues().name);
+    formData.append('password', getValues().password);
 
     mutate(formData);
     closeForms();

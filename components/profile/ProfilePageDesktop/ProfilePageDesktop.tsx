@@ -1,7 +1,11 @@
 import { ErrorMessage } from '@hookform/error-message';
 import Image from 'next/image';
 import { Fragment } from 'react';
-import { ProfileEmailsDesktop, useProfilePageDesktop } from 'components';
+import {
+  ProfileEmailsDesktop,
+  ProfilePasswordDesktop,
+  useProfilePageDesktop,
+} from 'components';
 import { ProfilePageDesktopProps } from './profilePageDesktopTypes';
 
 const ProfilePageDesktop: React.FC<ProfilePageDesktopProps> = ({ data }) => {
@@ -13,6 +17,7 @@ const ProfilePageDesktop: React.FC<ProfilePageDesktopProps> = ({ data }) => {
     isNameEditOpen,
     setIsNameEditOpen,
     isPasswordEditOpen,
+    setIsPasswordEditOpen,
     isFileUploaded,
     submitChanges,
     cancelChanges,
@@ -108,53 +113,43 @@ const ProfilePageDesktop: React.FC<ProfilePageDesktopProps> = ({ data }) => {
             >
               {t('user.profile.username')}
             </label>
-            {isNameEditOpen ? (
-              <Fragment>
-                <input
-                  type='text'
-                  className='w-[27rem]  mt-2 inline xl:w-[33rem]  bg-gray-350 rounded-md py-2 px-4 text-neutral-750 text-2xl'
-                  {...register('name', {
-                    minLength: {
-                      value: 3,
-                      message: t('form.login.minLength'),
+            <Fragment>
+              <input
+                type='text'
+                className={`w-[27rem] ${
+                  !isNameEditOpen ? 'pointer-events-none' : ''
+                } mt-2 inline xl:w-[33rem]  bg-gray-350 rounded-md py-2 px-4 text-neutral-750 text-2xl`}
+                {...register('name', {
+                  minLength: {
+                    value: 3,
+                    message: t('form.login.minLength'),
+                  },
+                  maxLength: {
+                    value: 15,
+                    message: t('form.register.nameMax'),
+                  },
+                  validate: {
+                    onlyLoweAndNumbers: (value) => {
+                      if (!/^[a-z0-9_\-]+$/.test(value)) {
+                        return t('form.register.onlyLowerAndNumbers')!;
+                      }
                     },
-                    maxLength: {
-                      value: 15,
-                      message: t('form.register.nameMax'),
-                    },
-                    validate: {
-                      onlyLoweAndNumbers: (value) => {
-                        if (!/^[a-z0-9_\-]+$/.test(value)) {
-                          return t('form.register.onlyLowerAndNumbers')!;
-                        }
-                      },
-                    },
-                  })}
-                />
-                <h1 className='text-gray-350 leading-[150%] text-xl inline mr-8 opacity-0'>
-                  {t('user.profile.edit')}
-                </h1>
-                <div className='text-red-550 h-5 font-normal text-sm leading-[150%] my-1 '>
-                  <ErrorMessage errors={errors} name='name' />
-                </div>
-                <div className='w-[27rem] xl:w-[33rem] border-b border-b-profile-border pt-7' />
-              </Fragment>
-            ) : (
-              <Fragment>
-                <div className='flex justify-start items-center gap-8 w-full mt-2 '>
-                  <h1 className='w-[27rem] xl:w-[33rem] bg-gray-350 rounded-md py-2 px-4 text-neutral-750 text-2xl  '>
-                    {getValues().name}
-                  </h1>
-                  <button
-                    className='text-gray-350 leading-[150%] text-xl '
-                    onClick={() => setIsNameEditOpen(true)}
-                  >
-                    {t('user.profile.edit')}
-                  </button>
-                </div>
-                <div className='w-[27rem] xl:w-[33rem] border-b border-b-profile-border pt-[3.5rem]' />
-              </Fragment>
-            )}
+                  },
+                })}
+              />
+              <h1
+                className={`text-gray-350 leading-[150%] text-xl inline ml-8 ${
+                  isNameEditOpen ? 'opacity-0' : 'opacity-1'
+                }`}
+                onClick={() => setIsNameEditOpen(true)}
+              >
+                {t('user.profile.edit')}
+              </h1>
+              <div className='text-red-550 h-5 font-normal text-sm leading-[150%] my-1 '>
+                <ErrorMessage errors={errors} name='name' />
+              </div>
+              <div className='w-[27rem] xl:w-[33rem] border-b border-b-profile-border pt-7' />
+            </Fragment>
           </div>
 
           {data.google_id ? (
@@ -169,10 +164,19 @@ const ProfilePageDesktop: React.FC<ProfilePageDesktopProps> = ({ data }) => {
               </div>
             </Fragment>
           ) : (
-            <ProfileEmailsDesktop
-              emails={data.emails}
-              setIsAddEmailOpen={setIsAddEmailOpen}
-            />
+            <Fragment>
+              <ProfileEmailsDesktop
+                emails={data.emails}
+                setIsAddEmailOpen={setIsAddEmailOpen}
+              />
+              <ProfilePasswordDesktop
+                setIsPasswordEditOpen={setIsPasswordEditOpen}
+                isPasswordEditOpen={isPasswordEditOpen}
+                register={register}
+                errors={errors}
+                password={getValues().password}
+              />
+            </Fragment>
           )}
         </div>
       </div>
