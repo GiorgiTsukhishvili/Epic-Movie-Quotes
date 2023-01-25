@@ -11,6 +11,7 @@ const useProfilePageMobile = (data: UserAllInfoTypes) => {
   const { t } = useTranslation();
   const [nameEditStep, setNameEditStep] = useState<string>('');
   const [passwordEditStep, setPasswordEditStep] = useState<string>('');
+  const [isFileUploaded, setIsFileUploaded] = useState<boolean>(false);
 
   const dispatch = useDispatch();
 
@@ -32,6 +33,7 @@ const useProfilePageMobile = (data: UserAllInfoTypes) => {
     if (imageData !== null) {
       if (imageData[0]) {
         setValueMobile('image', imageData[0]);
+        setIsFileUploaded(true);
       }
     }
   };
@@ -39,6 +41,7 @@ const useProfilePageMobile = (data: UserAllInfoTypes) => {
   const closeForms = () => {
     setNameEditStep('');
     setPasswordEditStep('');
+    setIsFileUploaded(false);
   };
 
   const cancelChanges = () => {
@@ -83,6 +86,7 @@ const useProfilePageMobile = (data: UserAllInfoTypes) => {
     submitChanges,
     cancelChanges,
     setErrorMobile,
+    isFileUploaded,
   };
 };
 

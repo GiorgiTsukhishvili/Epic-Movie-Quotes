@@ -22,6 +22,7 @@ const ProfilePageMobile: React.FC<ProfilePageMobileProps> = ({ data }) => {
     passwordEditStep,
     setPasswordEditStep,
     setErrorMobile,
+    isFileUploaded,
   } = useProfilePageMobile(data);
 
   return (
@@ -133,6 +134,25 @@ const ProfilePageMobile: React.FC<ProfilePageMobileProps> = ({ data }) => {
         />
       ) : passwordEditStep === 'second' ? (
         <ProfileSubmitMobile cancel={cancelChanges} submit={submitChanges} />
+      ) : (
+        <></>
+      )}
+
+      {isFileUploaded ? (
+        <div className='w-full flex justify-end gap-8 mt-10 pr-4'>
+          <button
+            className='text-gray-350 text-xl leading-[150%]'
+            onClick={cancelChanges}
+          >
+            {t('user.profile.cancel')}
+          </button>
+          <button
+            className='text-white leading-[150%] px-4 py-2 text-xl bg-red-650 rounded-md'
+            onClick={submitChanges}
+          >
+            {t('user.profile.save')}
+          </button>
+        </div>
       ) : (
         <></>
       )}
