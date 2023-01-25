@@ -126,7 +126,8 @@
       "confirmPassword": "Confirm new password",
       "enterNewName": "Enter new username",
       "add": "Add",
-      "areYouSure": "Are you sure to make changes ?"
+      "areYouSure": "Are you sure to make changes ?",
+      "changePrimary": "Change primary email"
     },
     "navbar": {
       "logout": "Log out",

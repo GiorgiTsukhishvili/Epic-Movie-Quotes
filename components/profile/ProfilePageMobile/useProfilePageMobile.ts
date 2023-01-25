@@ -11,6 +11,7 @@ const useProfilePageMobile = (data: UserAllInfoTypes) => {
   const { t } = useTranslation();
   const [nameEditStep, setNameEditStep] = useState<string>('');
   const [passwordEditStep, setPasswordEditStep] = useState<string>('');
+  const [emailStep, setEmailStep] = useState<string>('');
   const [isFileUploaded, setIsFileUploaded] = useState<boolean>(false);
 
   const dispatch = useDispatch();
@@ -42,6 +43,7 @@ const useProfilePageMobile = (data: UserAllInfoTypes) => {
     setNameEditStep('');
     setPasswordEditStep('');
     setIsFileUploaded(false);
+    setEmailStep('');
   };
 
   const cancelChanges = () => {
@@ -49,6 +51,7 @@ const useProfilePageMobile = (data: UserAllInfoTypes) => {
     setValueMobile('name', data.name);
     setValueMobile('password', '');
     setValueMobile('password_confirmation', '');
+    setValueMobile('email', '');
     closeForms();
   };
 
@@ -87,6 +90,8 @@ const useProfilePageMobile = (data: UserAllInfoTypes) => {
     cancelChanges,
     setErrorMobile,
     isFileUploaded,
+    setEmailStep,
+    emailStep,
   };
 };
 
