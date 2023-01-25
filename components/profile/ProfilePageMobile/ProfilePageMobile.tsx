@@ -1,5 +1,6 @@
 import {
   ProfileNameMobile,
+  ProfilePasswordMobile,
   ProfileSubmitMobile,
   useProfilePageMobile,
 } from 'components';
@@ -12,21 +13,25 @@ const ProfilePageMobile: React.FC<ProfilePageMobileProps> = ({ data }) => {
     t,
     handleFileUploadMobile,
     getValuesMobile,
-    NameEditStep,
+    nameEditStep,
     setNameEditStep,
     registerMobile,
     errorsMobile,
     submitChanges,
     cancelChanges,
+    passwordEditStep,
+    setPasswordEditStep,
+    setErrorMobile,
+    isFileUploaded,
   } = useProfilePageMobile(data);
 
   return (
     <Fragment>
-      {NameEditStep === '' ? (
+      {nameEditStep === '' && passwordEditStep === '' ? (
         <div className='z-10 w-full min-h-[33.438rem] items-center flex-col relative justify-start flex'>
           <div className='bg-zinc-750 rounded-xl  backdrop-filter backdrop-blur-user-page -rotate-180  w-full h-full absolute top-0 left-0' />
 
-          <div className='absolute z-10 top-0 left-0 w-full h-[500px] flex items-center flex-col justify-start '>
+          <div className='z-10  w-full min-h-[31.25rem] flex items-center flex-col justify-start '>
             {getValuesMobile().image !== '' && (
               <Image
                 src={
@@ -77,20 +82,77 @@ const ProfilePageMobile: React.FC<ProfilePageMobileProps> = ({ data }) => {
                 </div>
               </div>
             </div>
+
+            <div>
+              <label
+                htmlFor='password'
+                className='text-medium text-white leading-[150%] block  mt-[3.75rem]'
+              >
+                {t('user.profile.password')}
+              </label>
+
+              <div className='flex justify-between w-[17rem] xs:w-[22.75rem]  items-center gap-8 mt-2 border-b border-b-profile-border '>
+                <h1 className='  text-white  rounded-md py-2 text-lg'>
+                  ••••••••••••
+                </h1>
+                <button
+                  className='text-gray-350 leading-[150%]  text-lg'
+                  onClick={() => setPasswordEditStep('first')}
+                >
+                  {t('user.profile.edit')}
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       ) : (
         <></>
       )}
 
-      {NameEditStep === 'first' ? (
+      {nameEditStep === 'first' ? (
         <ProfileNameMobile
           registerMobile={registerMobile}
           errorsMobile={errorsMobile}
           setNameEditStep={setNameEditStep}
+          cancel={cancelChanges}
         />
-      ) : NameEditStep === 'second' ? (
+      ) : nameEditStep === 'second' ? (
         <ProfileSubmitMobile cancel={cancelChanges} submit={submitChanges} />
+      ) : (
+        <></>
+      )}
+
+      {passwordEditStep === 'first' ? (
+        <ProfilePasswordMobile
+          registerMobile={registerMobile}
+          errorsMobile={errorsMobile}
+          setPasswordEditStep={setPasswordEditStep}
+          cancel={cancelChanges}
+          password={getValuesMobile().password}
+          password_confirmation={getValuesMobile().password_confirmation}
+          setErrorMobile={setErrorMobile}
+        />
+      ) : passwordEditStep === 'second' ? (
+        <ProfileSubmitMobile cancel={cancelChanges} submit={submitChanges} />
+      ) : (
+        <></>
+      )}
+
+      {isFileUploaded ? (
+        <div className='w-full flex justify-end gap-8 mt-10 pr-4'>
+          <button
+            className='text-gray-350 text-xl leading-[150%]'
+            onClick={cancelChanges}
+          >
+            {t('user.profile.cancel')}
+          </button>
+          <button
+            className='text-white leading-[150%] px-4 py-2 text-xl bg-red-650 rounded-md'
+            onClick={submitChanges}
+          >
+            {t('user.profile.save')}
+          </button>
+        </div>
       ) : (
         <></>
       )}

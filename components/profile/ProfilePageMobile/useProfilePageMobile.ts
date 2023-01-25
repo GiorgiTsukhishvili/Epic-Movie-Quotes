@@ -9,7 +9,10 @@ import { ProfileFormTypes, UserAllInfoTypes } from 'types';
 
 const useProfilePageMobile = (data: UserAllInfoTypes) => {
   const { t } = useTranslation();
-  const [NameEditStep, setNameEditStep] = useState<string>('');
+  const [nameEditStep, setNameEditStep] = useState<string>('');
+  const [passwordEditStep, setPasswordEditStep] = useState<string>('');
+  const [isFileUploaded, setIsFileUploaded] = useState<boolean>(false);
+
   const dispatch = useDispatch();
 
   const {
@@ -18,6 +21,7 @@ const useProfilePageMobile = (data: UserAllInfoTypes) => {
     control: control,
     setValue: setValueMobile,
     formState: { errors: errorsMobile, isValid: isValidMobile },
+    setError: setErrorMobile,
   } = useForm<ProfileFormTypes>({
     mode: 'onChange',
     defaultValues: { image: data.image, name: data.name },
@@ -29,17 +33,22 @@ const useProfilePageMobile = (data: UserAllInfoTypes) => {
     if (imageData !== null) {
       if (imageData[0]) {
         setValueMobile('image', imageData[0]);
+        setIsFileUploaded(true);
       }
     }
   };
 
   const closeForms = () => {
     setNameEditStep('');
+    setPasswordEditStep('');
+    setIsFileUploaded(false);
   };
 
   const cancelChanges = () => {
     setValueMobile('image', data.image);
     setValueMobile('name', data.name);
+    setValueMobile('password', '');
+    setValueMobile('password_confirmation', '');
     closeForms();
   };
 
@@ -58,6 +67,7 @@ const useProfilePageMobile = (data: UserAllInfoTypes) => {
 
     formData.append('image', getValuesMobile().image);
     formData.append('name', getValuesMobile().name);
+    formData.append('password', getValuesMobile().password);
 
     mutate(formData);
     closeForms();
@@ -68,11 +78,15 @@ const useProfilePageMobile = (data: UserAllInfoTypes) => {
     registerMobile,
     handleFileUploadMobile,
     getValuesMobile,
-    NameEditStep,
+    nameEditStep,
     setNameEditStep,
+    passwordEditStep,
+    setPasswordEditStep,
     errorsMobile,
     submitChanges,
     cancelChanges,
+    setErrorMobile,
+    isFileUploaded,
   };
 };
 
