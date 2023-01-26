@@ -22,9 +22,13 @@ const ProfileEmailsMobile: React.FC<ProfileEmailsMobileProps> = ({
           </div>
         </div>
 
-        <h1 className='text-white leading-[150%] text-sm max-w-[27rem] uppercase mt-[3.75rem] mb-6 mx-auto '>
-          {t('user.profile.changePrimary')}
-        </h1>
+        {emails.length > 1 ? (
+          <h1 className='text-white leading-[150%] text-sm max-w-[27rem] uppercase mt-[3.75rem] mb-6 mx-auto '>
+            {t('user.profile.changePrimary')}
+          </h1>
+        ) : (
+          <></>
+        )}
 
         {emails.map(
           (email) =>

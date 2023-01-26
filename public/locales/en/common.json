@@ -127,7 +127,8 @@
       "enterNewName": "Enter new username",
       "add": "Add",
       "areYouSure": "Are you sure to make changes ?",
-      "changePrimary": "Change primary email"
+      "changePrimary": "Change primary email",
+      "emailIsUsed": "Email already added"
     },
     "navbar": {
       "logout": "Log out",

@@ -95,6 +95,14 @@ const useProfilePageDesktop = (data: UserAllInfoTypes) => {
       return;
     }
 
+    if (data.emails.find((email) => email.email === getValues().email)) {
+      setError('email', {
+        type: 'custom',
+        message: t('user.profile.emailIsUsed')!,
+      });
+      return false;
+    }
+
     setIsAddEmailOpen(false);
     console.log(getValues().email);
   };
