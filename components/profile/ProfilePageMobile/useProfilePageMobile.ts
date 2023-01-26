@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useForm, useWatch } from 'react-hook-form';
 import { useMutation, useQueryClient } from 'react-query';
 import { useDispatch } from 'react-redux';
-import { updateUserInfo } from 'services';
+import { addAdditionalEmail, updateUserInfo } from 'services';
 import { updateUserData } from 'state';
 import { ProfileFormTypes, UserAllInfoTypes } from 'types';
 
@@ -76,8 +76,14 @@ const useProfilePageMobile = (data: UserAllInfoTypes) => {
     cancelChanges();
   };
 
+  const { mutate: addEmailMutation } = useMutation(addAdditionalEmail, {
+    onSuccess: () => {
+      queryClient.invalidateQueries('profile-info');
+    },
+  });
+
   const submitEmail = () => {
-    console.log(getValuesMobile().email);
+    addEmailMutation(getValuesMobile().email);
     cancelChanges();
   };
 

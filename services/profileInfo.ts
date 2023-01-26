@@ -1,4 +1,5 @@
 import { AxiosResponse } from 'axios';
+import { i18n } from 'next-i18next';
 import { axios } from 'services';
 import { UserAllInfoTypes } from 'types';
 
@@ -20,4 +21,15 @@ export const deleteEmail = (id: number) => {
 
 export const makePrimary = (id: number) => {
   return axios.get(`/api/make-email-primary/${id}`);
+};
+
+export const addAdditionalEmail = (email: string) => {
+  return axios.post('/api/add-email', {
+    email,
+    lang: i18n?.language,
+  });
+};
+
+export const sendEmailVerification = (link: string) => {
+  return axios.get(link);
 };
