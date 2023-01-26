@@ -1,5 +1,6 @@
 import {
   HalfArrow,
+  ProfileAddEmailMobile,
   ProfileEmailsMobile,
   ProfileNameMobile,
   ProfilePasswordMobile,
@@ -27,6 +28,7 @@ const ProfilePageMobile: React.FC<ProfilePageMobileProps> = ({ data }) => {
     isFileUploaded,
     emailStep,
     setEmailStep,
+    submitEmail,
   } = useProfilePageMobile(data);
 
   return (
@@ -158,6 +160,22 @@ const ProfilePageMobile: React.FC<ProfilePageMobileProps> = ({ data }) => {
           google_id={data.google_id}
           setEmailStep={setEmailStep}
         />
+      ) : (
+        <></>
+      )}
+
+      {emailStep === 'second' ? (
+        <ProfileAddEmailMobile
+          cancel={cancelChanges}
+          registerMobile={registerMobile}
+          errorsMobile={errorsMobile}
+          setEmailStep={setEmailStep}
+          getValuesMobile={getValuesMobile}
+          setErrorMobile={setErrorMobile}
+          emails={data.emails}
+        />
+      ) : emailStep === 'third' ? (
+        <ProfileSubmitMobile cancel={cancelChanges} submit={submitEmail} />
       ) : (
         <></>
       )}

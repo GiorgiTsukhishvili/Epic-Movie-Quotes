@@ -6,3 +6,4 @@ export * from './ProfileNameMobile';
 export * from './ProfileSubmitMobile';
 export * from './ProfilePasswordMobile';
 export * from './ProfileEmailsMobile';
+export * from './ProfileAddEmailMobile';

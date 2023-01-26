@@ -73,7 +73,12 @@ const useProfilePageMobile = (data: UserAllInfoTypes) => {
     formData.append('password', getValuesMobile().password);
 
     mutate(formData);
-    closeForms();
+    cancelChanges();
+  };
+
+  const submitEmail = () => {
+    console.log(getValuesMobile().email);
+    cancelChanges();
   };
 
   return {
@@ -92,6 +97,7 @@ const useProfilePageMobile = (data: UserAllInfoTypes) => {
     isFileUploaded,
     setEmailStep,
     emailStep,
+    submitEmail,
   };
 };
 
