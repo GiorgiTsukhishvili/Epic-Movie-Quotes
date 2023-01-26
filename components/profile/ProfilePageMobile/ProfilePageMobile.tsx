@@ -1,4 +1,6 @@
 import {
+  HalfArrow,
+  ProfileEmailsMobile,
   ProfileNameMobile,
   ProfilePasswordMobile,
   ProfileSubmitMobile,
@@ -23,11 +25,13 @@ const ProfilePageMobile: React.FC<ProfilePageMobileProps> = ({ data }) => {
     setPasswordEditStep,
     setErrorMobile,
     isFileUploaded,
+    emailStep,
+    setEmailStep,
   } = useProfilePageMobile(data);
 
   return (
     <Fragment>
-      {nameEditStep === '' && passwordEditStep === '' ? (
+      {nameEditStep === '' && passwordEditStep === '' && emailStep === '' ? (
         <div className='z-10 w-full min-h-[33.438rem] items-center flex-col relative justify-start flex'>
           <div className='bg-zinc-750 rounded-xl  backdrop-filter backdrop-blur-user-page -rotate-180  w-full h-full absolute top-0 left-0' />
 
@@ -102,6 +106,16 @@ const ProfilePageMobile: React.FC<ProfilePageMobileProps> = ({ data }) => {
                   {t('user.profile.edit')}
                 </button>
               </div>
+
+              <div
+                className='flex justify-between items-center mt-8 mb-[5.625rem] cursor-pointer'
+                onClick={() => setEmailStep('first')}
+              >
+                <h1 className='text-white leading-[150%] text-base uppercase'>
+                  {t('user.profile.email')}
+                </h1>
+                <HalfArrow />
+              </div>
             </div>
           </div>
         </div>
@@ -134,6 +148,16 @@ const ProfilePageMobile: React.FC<ProfilePageMobileProps> = ({ data }) => {
         />
       ) : passwordEditStep === 'second' ? (
         <ProfileSubmitMobile cancel={cancelChanges} submit={submitChanges} />
+      ) : (
+        <></>
+      )}
+
+      {emailStep === 'first' ? (
+        <ProfileEmailsMobile
+          emails={data.emails}
+          google_id={data.google_id}
+          setEmailStep={setEmailStep}
+        />
       ) : (
         <></>
       )}
