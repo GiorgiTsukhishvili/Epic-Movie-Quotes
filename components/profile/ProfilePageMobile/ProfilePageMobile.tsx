@@ -180,7 +180,10 @@ const ProfilePageMobile: React.FC<ProfilePageMobileProps> = ({ data }) => {
         <></>
       )}
 
-      {isFileUploaded ? (
+      {isFileUploaded &&
+      nameEditStep === '' &&
+      passwordEditStep === '' &&
+      emailStep === '' ? (
         <div className='w-full flex justify-end gap-8 mt-10 pr-4'>
           <button
             className='text-gray-350 text-xl leading-[150%]'

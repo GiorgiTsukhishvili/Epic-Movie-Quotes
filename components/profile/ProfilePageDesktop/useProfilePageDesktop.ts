@@ -4,7 +4,7 @@ import { useForm, useWatch } from 'react-hook-form';
 import { useMutation, useQueryClient } from 'react-query';
 import { useDispatch } from 'react-redux';
 import { emailRegex } from 'config';
-import { updateUserInfo } from 'services';
+import { addAdditionalEmail, updateUserInfo } from 'services';
 import { updateUserData } from 'state';
 import { ProfileFormTypes, UserAllInfoTypes } from 'types';
 
@@ -44,11 +44,15 @@ const useProfilePageDesktop = (data: UserAllInfoTypes) => {
     setIsFileUploaded(false);
     setIsNameEditOpen(false);
     setIsPasswordEditOpen(false);
+    setIsAddEmailOpen(false);
   };
 
   const cancelChanges = () => {
     setValue('image', data.image);
     setValue('name', data.name);
+    setValue('email', '');
+    setValue('password', '');
+    setValue('password_confirmation', '');
     closeForms();
   };
 
@@ -86,6 +90,12 @@ const useProfilePageDesktop = (data: UserAllInfoTypes) => {
     closeForms();
   };
 
+  const { mutate: addEmailMutation } = useMutation(addAdditionalEmail, {
+    onSuccess: () => {
+      queryClient.invalidateQueries('profile-info');
+    },
+  });
+
   const submitEmail = () => {
     if (!emailRegex.test(getValues().email)) {
       setError('email', {
@@ -103,8 +113,9 @@ const useProfilePageDesktop = (data: UserAllInfoTypes) => {
       return false;
     }
 
-    setIsAddEmailOpen(false);
-    console.log(getValues().email);
+    addEmailMutation(getValues().email);
+    setValue('email', '');
+    closeForms();
   };
 
   return {
