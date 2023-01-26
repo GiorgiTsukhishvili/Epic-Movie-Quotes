@@ -4,10 +4,29 @@ import { useQuery, useQueryClient } from 'react-query';
 import { getAllUserInfo } from 'services';
 import useAuth from './useAuth';
 import { sendEmailVerification } from 'services';
+import { useState } from 'react';
 
 const useProfile = () => {
   useAuth();
   const { t } = useTranslation();
+
+  const [message, setMessage] = useState({
+    isShowing: false,
+    isEmail: false,
+    text: '',
+  });
+
+  const addNewMessage = (text: string, isEmail: boolean = false) => {
+    setMessage({ isShowing: true, text, isEmail });
+
+    setTimeout(
+      () =>
+        setMessage((prevMessage) => {
+          return { ...prevMessage, isShowing: false };
+        }),
+      5000
+    );
+  };
 
   const { data } = useQuery('profile-info', getAllUserInfo, {
     refetchOnWindowFocus: false,
@@ -47,6 +66,9 @@ const useProfile = () => {
   return {
     t,
     data,
+    message,
+    setMessage,
+    addNewMessage,
   };
 };
 

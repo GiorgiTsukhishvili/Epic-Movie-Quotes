@@ -8,7 +8,10 @@ import {
 } from 'components';
 import { ProfilePageDesktopProps } from './profilePageDesktopTypes';
 
-const ProfilePageDesktop: React.FC<ProfilePageDesktopProps> = ({ data }) => {
+const ProfilePageDesktop: React.FC<ProfilePageDesktopProps> = ({
+  data,
+  addNewMessage,
+}) => {
   const {
     t,
     register,
@@ -26,7 +29,7 @@ const ProfilePageDesktop: React.FC<ProfilePageDesktopProps> = ({ data }) => {
     setIsAddEmailOpen,
     setValue,
     submitEmail,
-  } = useProfilePageDesktop(data);
+  } = useProfilePageDesktop(data, addNewMessage);
 
   return (
     <Fragment>

@@ -28,3 +28,4 @@ export { default as PencilAndBoard } from './PencilAndBoard';
 export { default as Primary } from './Primary';
 export { default as NotVerified } from './NotVerified';
 export { default as HalfArrow } from './HalfArrow';
+export { default as MessageClose } from './MessageClose';

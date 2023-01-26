@@ -128,7 +128,13 @@
       "add": "Add",
       "areYouSure": "Are you sure to make changes ?",
       "changePrimary": "Change primary email",
-      "emailIsUsed": "Email already added"
+      "emailIsUsed": "Email already added",
+      "userNameChanged": "Username changed successfully",
+      "simpleAlert": "A simple alert—check it out!",
+      "verifyNewEmail": "Please check email to verify new address",
+      "profileUpdated": "Profile updated successfully",
+      "imageChanged": "Image changed successfully",
+      "passwordChanged": "Password changed successfully"
     },
     "navbar": {
       "logout": "Log out",
