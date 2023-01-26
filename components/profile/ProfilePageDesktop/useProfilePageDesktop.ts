@@ -87,7 +87,7 @@ const useProfilePageDesktop = (data: UserAllInfoTypes) => {
     formData.append('password', getValues().password);
 
     mutate(formData);
-    cancelChanges();
+    closeForms();
   };
 
   const { mutate: addEmailMutation } = useMutation(addAdditionalEmail, {
@@ -114,8 +114,8 @@ const useProfilePageDesktop = (data: UserAllInfoTypes) => {
     }
 
     addEmailMutation(getValues().email);
-
-    cancelChanges();
+    setValue('email', '');
+    closeForms();
   };
 
   return {

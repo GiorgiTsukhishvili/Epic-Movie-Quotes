@@ -73,7 +73,7 @@ const useProfilePageMobile = (data: UserAllInfoTypes) => {
     formData.append('password', getValuesMobile().password);
 
     mutate(formData);
-    cancelChanges();
+    closeForms();
   };
 
   const { mutate: addEmailMutation } = useMutation(addAdditionalEmail, {
@@ -84,7 +84,8 @@ const useProfilePageMobile = (data: UserAllInfoTypes) => {
 
   const submitEmail = () => {
     addEmailMutation(getValuesMobile().email);
-    cancelChanges();
+    setValueMobile('password', '');
+    closeForms();
   };
 
   return {
