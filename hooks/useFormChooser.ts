@@ -1,10 +1,19 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { LandingPageFormTypes } from 'types';
 import { useQuery } from 'hooks';
 
 const useFormChooser = () => {
   const [whichForm, setWhichForm] = useState<LandingPageFormTypes>('');
   const { query } = useQuery();
+
+  useEffect(() => {
+    if (query.type === 'login') {
+      setWhichForm('login');
+    }
+    if (query.type === 'register') {
+      setWhichForm('registration');
+    }
+  }, [query]);
 
   return { whichForm, setWhichForm, query };
 };
