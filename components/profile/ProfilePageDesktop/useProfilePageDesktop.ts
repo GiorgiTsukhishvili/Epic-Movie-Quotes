@@ -8,7 +8,10 @@ import { addAdditionalEmail, updateUserInfo } from 'services';
 import { updateUserData } from 'state';
 import { ProfileFormTypes, UserAllInfoTypes } from 'types';
 
-const useProfilePageDesktop = (data: UserAllInfoTypes) => {
+const useProfilePageDesktop = (
+  data: UserAllInfoTypes,
+  addNewMessage: (text: string, isEmail?: boolean) => void
+) => {
   const { t } = useTranslation();
   const [isNameEditOpen, setIsNameEditOpen] = useState<boolean>(false);
   const [isFileUploaded, setIsFileUploaded] = useState<boolean>(false);
@@ -23,7 +26,7 @@ const useProfilePageDesktop = (data: UserAllInfoTypes) => {
     control,
     setValue,
     setError,
-    formState: { errors, isValid },
+    formState: { errors, isValid, dirtyFields },
   } = useForm<ProfileFormTypes>({
     mode: 'onChange',
     defaultValues: { image: data.image, name: data.name, email: '' },
@@ -80,6 +83,17 @@ const useProfilePageDesktop = (data: UserAllInfoTypes) => {
       });
     }
     if (!isValid) return;
+
+    if (dirtyFields.password && Object.keys(dirtyFields).length === 2) {
+      addNewMessage('user.profile.passwordChanged');
+    } else if (Object.keys(dirtyFields).length > 1) {
+      addNewMessage('user.profile.profileUpdated');
+    } else if (typeof getValues().image !== 'string') {
+      addNewMessage('user.profile.imageChanged');
+    } else if (dirtyFields.name) {
+      addNewMessage('user.profile.userNameChanged');
+    }
+
     const formData = new FormData();
 
     formData.append('image', getValues().image);
@@ -113,6 +127,7 @@ const useProfilePageDesktop = (data: UserAllInfoTypes) => {
       return false;
     }
 
+    addNewMessage('user.profile.simpleAlert', true);
     addEmailMutation(getValues().email);
     setValue('email', '');
     closeForms();

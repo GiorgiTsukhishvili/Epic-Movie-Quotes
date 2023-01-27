@@ -7,7 +7,10 @@ import { addAdditionalEmail, updateUserInfo } from 'services';
 import { updateUserData } from 'state';
 import { ProfileFormTypes, UserAllInfoTypes } from 'types';
 
-const useProfilePageMobile = (data: UserAllInfoTypes) => {
+const useProfilePageMobile = (
+  data: UserAllInfoTypes,
+  addNewMessage: (text: string, isEmail?: boolean) => void
+) => {
   const { t } = useTranslation();
   const [nameEditStep, setNameEditStep] = useState<string>('');
   const [passwordEditStep, setPasswordEditStep] = useState<string>('');
@@ -21,7 +24,11 @@ const useProfilePageMobile = (data: UserAllInfoTypes) => {
     getValues: getValuesMobile,
     control: control,
     setValue: setValueMobile,
-    formState: { errors: errorsMobile, isValid: isValidMobile },
+    formState: {
+      errors: errorsMobile,
+      isValid: isValidMobile,
+      dirtyFields: mobileDirtyFields,
+    },
     setError: setErrorMobile,
   } = useForm<ProfileFormTypes>({
     mode: 'onChange',
@@ -68,6 +75,14 @@ const useProfilePageMobile = (data: UserAllInfoTypes) => {
     if (!isValidMobile) return;
     const formData = new FormData();
 
+    if (typeof getValuesMobile().image !== 'string') {
+      addNewMessage('user.profile.imageChanged');
+    } else if (mobileDirtyFields.name) {
+      addNewMessage('user.profile.userNameChanged');
+    } else if (mobileDirtyFields.password) {
+      addNewMessage('user.profile.passwordChanged');
+    }
+
     formData.append('image', getValuesMobile().image);
     formData.append('name', getValuesMobile().name);
     formData.append('password', getValuesMobile().password);
@@ -83,8 +98,9 @@ const useProfilePageMobile = (data: UserAllInfoTypes) => {
   });
 
   const submitEmail = () => {
+    addNewMessage('user.profile.simpleAlert', true);
     addEmailMutation(getValuesMobile().email);
-    setValueMobile('password', '');
+    setValueMobile('email', '');
     closeForms();
   };
 

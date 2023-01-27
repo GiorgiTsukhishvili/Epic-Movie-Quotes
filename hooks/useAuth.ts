@@ -16,6 +16,7 @@ const useAuth = () => {
       } catch (error) {
         if (router.pathname !== '/') {
           deleteCookie('XSRF-TOKEN');
+          deleteCookie('isLoggedIn');
           router.push('/');
         }
       }

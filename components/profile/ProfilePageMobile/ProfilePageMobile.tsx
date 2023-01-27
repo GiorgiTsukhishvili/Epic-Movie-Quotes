@@ -11,7 +11,10 @@ import { Fragment } from 'react';
 import Image from 'next/image';
 import { ProfilePageMobileProps } from './profilePageMobileTypes';
 
-const ProfilePageMobile: React.FC<ProfilePageMobileProps> = ({ data }) => {
+const ProfilePageMobile: React.FC<ProfilePageMobileProps> = ({
+  data,
+  addNewMessage,
+}) => {
   const {
     t,
     handleFileUploadMobile,
@@ -29,7 +32,7 @@ const ProfilePageMobile: React.FC<ProfilePageMobileProps> = ({ data }) => {
     emailStep,
     setEmailStep,
     submitEmail,
-  } = useProfilePageMobile(data);
+  } = useProfilePageMobile(data, addNewMessage);
 
   return (
     <Fragment>
