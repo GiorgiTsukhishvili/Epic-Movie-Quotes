@@ -57,16 +57,9 @@ const useNotifications = () => {
     pusher();
 
     if (id) {
-      window.Echo.private(`epic-movies.${id}`).listen(
-        '.notifications',
-        (e: { notifications: { data: NotificationsTypes } }) => {
-          if (e.notifications.data.user_id === id) {
-            const newNotifications = notifications;
-            newNotifications.unshift(e.notifications.data);
-            setNotifications(newNotifications);
-          }
-        }
-      );
+      window.Echo.private(`epic-movies.${id}`).listen('.notifications', () => {
+        queryClient.invalidateQueries('notifications');
+      });
     }
   }, [id]);
 
