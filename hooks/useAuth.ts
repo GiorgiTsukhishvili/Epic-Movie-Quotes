@@ -25,6 +25,7 @@ const useAuth = () => {
       checkAuth();
     } else {
       deleteCookie('isLoggedIn');
+      deleteCookie('XSRF-TOKEN');
       router.push('/');
     }
   }, [router]);

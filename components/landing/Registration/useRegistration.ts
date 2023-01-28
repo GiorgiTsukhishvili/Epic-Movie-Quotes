@@ -1,10 +1,19 @@
 import { useTranslation } from 'next-i18next';
 import { Dispatch, SetStateAction, useState } from 'react';
 import { useForm, useWatch } from 'react-hook-form';
-import { fetchCSRFToken, sendUserRegisterData } from 'services';
+import {
+  callbackGoogle,
+  fetchCSRFToken,
+  redirectToGoogle,
+  sendUserRegisterData,
+} from 'services';
 import { RegistrationTypes } from './registrationTypes';
 import { AxiosError } from 'axios';
-import { deleteCookie } from 'cookies-next';
+import { deleteCookie, setCookie } from 'cookies-next';
+import { useRouter } from 'next/router';
+import { useQuery } from 'react-query';
+import { updateUserData } from 'state';
+import { useDispatch } from 'react-redux';
 
 const useRegistration = () => {
   const { t } = useTranslation();
@@ -12,6 +21,10 @@ const useRegistration = () => {
     password: false,
     password_confirmation: false,
   });
+
+  const dispatch = useDispatch();
+
+  const { push, asPath, query, replace } = useRouter();
 
   const {
     register,
@@ -57,6 +70,40 @@ const useRegistration = () => {
     }
   };
 
+  const redirectGoogle = async () => {
+    try {
+      await fetchCSRFToken();
+      const response = await redirectToGoogle('register');
+
+      push(response.data);
+    } catch (err) {
+      setError('name', { type: 'all', message: t('errors.incorrectLogin')! });
+    }
+  };
+
+  const handleGoogleAuth = async () => {
+    try {
+      await fetchCSRFToken();
+      const response = await callbackGoogle(asPath, 'register');
+
+      setCookie('isAuth', true);
+      dispatch(updateUserData(response.data.user));
+      replace('/news-feed');
+      setCookie('isLoggedIn', true);
+    } catch (error) {
+      setError('name', { type: 'all', message: t('errors.incorrectLogin')! });
+    }
+  };
+
+  useQuery({
+    queryKey: ['callback-google', asPath],
+    queryFn: handleGoogleAuth,
+    enabled: !!query.code && !!query.prompt,
+    refetchOnMount: false,
+    refetchOnWindowFocus: false,
+    retry: 0,
+  });
+
   return {
     t,
     register,
@@ -69,6 +116,7 @@ const useRegistration = () => {
     password_confirmation,
     passwordsVisible,
     setPasswordsVisible,
+    redirectGoogle,
   };
 };
 

@@ -27,9 +27,7 @@ const SideNavbar: React.FC<SideNavbarProps> = ({
           />
         )}
         <div>
-          <h1 className='text-white text-2xl leading-[150%] uppercase'>
-            {name}
-          </h1>
+          <h1 className='text-white text-2xl leading-[150%] '>{name}</h1>
           <Link
             href={{ pathname: '/profile' }}
             className='text-gray-350 text-base leading-[150%]'

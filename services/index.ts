@@ -8,3 +8,4 @@ export * from './quoteLikes';
 export * from './quoteComment';
 export * from './notifications';
 export * from './profileInfo';
+export * from './googleAuth';

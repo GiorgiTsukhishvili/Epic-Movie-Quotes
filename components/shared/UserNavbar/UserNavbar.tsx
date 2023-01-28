@@ -134,9 +134,7 @@ const UserNavbar: React.FC<UserNavbarTypes> = ({
               />
             )}
             <div>
-              <h1 className='text-white text-xl leading-[150%] uppercase'>
-                {name}
-              </h1>
+              <h1 className='text-white text-xl leading-[150%]'>{name}</h1>
               <Link
                 href={{ pathname: '/profile' }}
                 className='text-gray-350 text-sm leading-[150%]'
