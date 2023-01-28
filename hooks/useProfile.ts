@@ -38,7 +38,7 @@ const useProfile = () => {
 
   const queryClient = useQueryClient();
 
-  if (query['verification-link']) {
+  const sendEmailData = () => {
     try {
       let url = new URL(query['verification-link']?.toString()!);
       let params = new URLSearchParams(url.search);
@@ -53,8 +53,10 @@ const useProfile = () => {
           await sendEmailVerification(link);
 
           queryClient.invalidateQueries('profile-info');
-        } catch (err) {
           push('/profile');
+          addNewMessage('user.profile.emailHasBeenVerified');
+        } catch (err) {
+          push('/403');
         }
       };
 
@@ -62,7 +64,17 @@ const useProfile = () => {
     } catch (err) {
       push('/403');
     }
-  }
+  };
+
+  useQuery({
+    queryKey: ['callback-google'],
+    queryFn: sendEmailData,
+    enabled: !!query['verification-link'],
+    refetchOnMount: false,
+    refetchOnWindowFocus: false,
+    retry: 0,
+  });
+
   return {
     t,
     data,
