@@ -134,7 +134,8 @@
       "verifyNewEmail": "დაადასტურეთ ახალი მეილი",
       "profileUpdated": "პროფილი დააფდეითებულია",
       "imageChanged": "სურათი წარმატებით შეიცვალა",
-      "passwordChanged": "პაროლი წარმატებით შეიცვალა"
+      "passwordChanged": "პაროლი წარმატებით შეიცვალა",
+      "emailHasBeenVerified": "მეილი გააქტიურებულია"
     },
     "navbar": {
       "logout": "გასვლა",

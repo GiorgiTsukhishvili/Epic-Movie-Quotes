@@ -134,7 +134,8 @@
       "verifyNewEmail": "Please check email to verify new address",
       "profileUpdated": "Profile updated successfully",
       "imageChanged": "Image changed successfully",
-      "passwordChanged": "Password changed successfully"
+      "passwordChanged": "Password changed successfully",
+      "emailHasBeenVerified": "Email has been verified"
     },
     "navbar": {
       "logout": "Log out",
