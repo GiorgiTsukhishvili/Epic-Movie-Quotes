@@ -20,7 +20,7 @@ const ProfilePasswordMobile: React.FC<ProfilePasswordMobileProps> = ({
     <Fragment>
       <div className=' w-full min-h-[10.75rem] items-start flex-col relative justify-start flex'>
         <div className='bg-zinc-750 rounded-xl  backdrop-filter backdrop-blur-user-page -rotate-180  w-full h-full absolute top-0 left-0' />
-        <div className='z-10 block w-full px-8'>
+        <div className='z-10 block  px-8 mx-auto'>
           <div className='h-[8.375rem] w-full sm:w-[35rem] bg-neutral-950 mb-8  border border-profile-border mt-[2.375rem] rounded-md p-6'>
             <h1 className='text-white text-base leading-[150%]'>
               {t('user.profile.shouldContain')}

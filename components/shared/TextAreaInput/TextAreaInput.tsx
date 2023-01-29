@@ -6,6 +6,8 @@ const TextAreaInput: React.FC<TextAreaInputProps> = ({
   name,
   placeholder,
   labelText,
+  language,
+  errorText,
 }) => {
   return (
     <div className='relative'>
@@ -14,6 +16,17 @@ const TextAreaInput: React.FC<TextAreaInputProps> = ({
           required: {
             value: true,
             message: text,
+          },
+          validate: {
+            onlyGeorgianOrEnglish: (value: string) => {
+              if (language === 'en' && !/^[a-z0-9_\-]+$/.test(value)) {
+                return errorText;
+              }
+
+              if (language === 'ka' && !/^[ა-ჰ0-9_\-]+$/.test(value)) {
+                return errorText;
+              }
+            },
           },
         })}
         className='bg-transparent w-full placeholder:text-white pr-12 border-gray-550 rounded-md border h-[5.375rem] text-white text-base lg:text-2xl leading-[150%] focus:ring-0 focus:border-gray-550 focus:border'

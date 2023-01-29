@@ -22,7 +22,7 @@ const ProfileAddEmailMobile: React.FC<ProfileAddEmailMobileProps> = ({
     <Fragment>
       <div className=' w-full min-h-[10.75rem] items-start flex-col relative justify-start flex'>
         <div className='bg-zinc-750 rounded-xl  backdrop-filter backdrop-blur-user-page -rotate-180  w-full h-full absolute top-0 left-0' />
-        <div className='z-10 block w-full px-8'>
+        <div className='z-10 block  px-8 mx-auto'>
           <h1 className='py-8 text-white leading-[150%] text-base'>
             {t('user.profile.enterNewName')}
           </h1>
