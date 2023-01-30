@@ -4,7 +4,7 @@ import { useForm, useWatch } from 'react-hook-form';
 import { useMutation, useQueryClient } from 'react-query';
 import { createMovie } from 'services';
 import { MovieFormTypes } from 'types';
-import { addNewMovieFormValue } from 'utils';
+import { addNewMovieFormValue } from './utils';
 
 const useAddNewMovie = (
   setIsAddMovieOpen: Dispatch<SetStateAction<boolean>>
