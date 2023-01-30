@@ -27,6 +27,7 @@ const useProfilePageDesktop = (
     setValue,
     setError,
     formState: { errors, isValid, dirtyFields },
+    clearErrors,
   } = useForm<ProfileFormTypes>({
     mode: 'onChange',
     defaultValues: { image: data.image, name: data.name, email: '' },
@@ -48,6 +49,11 @@ const useProfilePageDesktop = (
     setIsNameEditOpen(false);
     setIsPasswordEditOpen(false);
     setIsAddEmailOpen(false);
+    clearErrors('email');
+    clearErrors('image');
+    clearErrors('name');
+    clearErrors('password');
+    clearErrors('password_confirmation');
   };
 
   const cancelChanges = () => {
