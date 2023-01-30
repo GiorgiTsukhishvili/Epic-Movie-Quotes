@@ -31,10 +31,10 @@ const EditQuote: React.FC<EditQuoteProps> = ({
         href={{
           pathname: `/movies/${movieId}`,
         }}
-        className='h-screen w-screen fixed top-0 left-0 z-20 backdrop-filter backdrop-blur-main-page '
+        className='h-screen w-screen fixed top-0 left-0 z-[70] backdrop-filter backdrop-blur-main-page '
       ></Link>
 
-      <div className='lg:w-[60rem] lg:h-[calc(100vh_-_9rem)] z-30 lg:max-h-[70rem]  fixed overflow-scroll overflow-x-hidden  top-0 lg:top-28 left-1/2 translate-x-[-50%] w-screen h-screen bg-neutral-950 rounded-xl backdrop-filter backdrop-blur-user-page rotate--180'>
+      <div className='lg:w-[60rem] lg:h-[calc(100vh_-_9rem)] z-[80] lg:max-h-[70rem]  fixed overflow-scroll overflow-x-hidden  top-0 lg:top-28 left-1/2 translate-x-[-50%] w-screen h-screen bg-neutral-950 rounded-xl backdrop-filter backdrop-blur-user-page rotate--180'>
         <div className='w-full flex px-8 py-10 border-b border-b-border-transparent items-center justify-between'>
           <div
             className='flex justify-start items-center gap-4 cursor-pointer'
@@ -79,6 +79,8 @@ const EditQuote: React.FC<EditQuoteProps> = ({
             text={t('form.login.required')}
             placeholder='“Quote in English.”'
             labelText='Eng'
+            language='en'
+            errorText={t('textArea.onlyEnglish')!}
           />
 
           <div className='text-red-550 h-5 font-normal text-sm leading-[150%] my-1 mb-5'>
@@ -91,6 +93,8 @@ const EditQuote: React.FC<EditQuoteProps> = ({
             name={'quote-ka'}
             placeholder='“ციტატა ქართულ ენაზე”'
             labelText='ქარ'
+            language='ka'
+            errorText={t('textArea.onlyGeorgian')!}
           />
 
           <div className='text-red-550 h-5 font-normal text-sm leading-[150%] my-1 z-50 '>

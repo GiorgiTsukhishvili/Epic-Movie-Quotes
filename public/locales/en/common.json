@@ -188,5 +188,9 @@
       "searchMovies": "to search movies",
       "searchQuotes": "to search quotes"
     }
+  },
+  "textArea": {
+    "onlyEnglish": "Input only English letters",
+    "onlyGeorgian": "Input only Georgian letters"
   }
 }

@@ -46,7 +46,7 @@ const Movie = ({ name }: { name: string }) => {
           <div className='hidden lg:min-w-[16.575rem] xl:min-w-[26.575rem] lg:inline'>
             <SideNavbar isMoviesPage={true} />
           </div>
-          <div className='w-full lg:pr-[4.375rem] mt-[7.375rem] '>
+          <div className='w-full lg:pr-[4.375rem] mt-[7.375rem] pb-10'>
             <h1 className='text-2xl  px-9 lg:pl-0 font-medium leading-[150%] text-white hidden lg:block'>
               {t('user.singleMovie.topHeader')}
             </h1>

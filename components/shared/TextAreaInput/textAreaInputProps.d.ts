@@ -4,4 +4,6 @@ export type TextAreaInputProps = {
   name: string;
   placeholder: string;
   labelText: string;
+  language: string;
+  errorText: string;
 };
