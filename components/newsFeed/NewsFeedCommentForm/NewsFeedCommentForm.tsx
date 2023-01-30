@@ -1,9 +1,10 @@
 import { ErrorMessage } from '@hookform/error-message';
 import Image from 'next/image';
 import { Fragment } from 'react';
+import { NewsFeedCommentFormProps } from './newsFeedCommentFormTypes';
 import useNewsFeedCommentForm from './useNewsFeedCommentForm';
 
-const NewsFeedCommentForm: React.FC<{ id: number }> = ({ id }) => {
+const NewsFeedCommentForm: React.FC<NewsFeedCommentFormProps> = ({ id }) => {
   const { t, handleSubmit, onSubmit, register, image, errors } =
     useNewsFeedCommentForm(id);
 
