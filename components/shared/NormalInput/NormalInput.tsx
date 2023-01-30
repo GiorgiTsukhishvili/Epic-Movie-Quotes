@@ -18,7 +18,7 @@ const NormalInput: React.FC<NormalInputProps> = ({
             message: text,
           },
         })}
-        className='bg-transparent w-full pr-12 placeholder:text-white border-gray-550 rounded-md border h-12 text-white text-base lg:text-2xl leading-[150%] focus:ring-0 focus:border-gray-550 focus:border'
+        className='bg-transparent w-full pr-12 placeholder:text-gray-550 border-gray-550 rounded-md border h-12 text-white text-base lg:text-2xl leading-[150%] focus:ring-0 focus:border-gray-550 focus:border'
         placeholder={placeholder}
       />
 
