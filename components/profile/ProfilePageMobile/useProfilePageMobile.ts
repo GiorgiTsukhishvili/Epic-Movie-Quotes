@@ -29,6 +29,7 @@ const useProfilePageMobile = (
       isValid: isValidMobile,
       dirtyFields: mobileDirtyFields,
     },
+    clearErrors,
     setError: setErrorMobile,
   } = useForm<ProfileFormTypes>({
     mode: 'onChange',
@@ -51,6 +52,11 @@ const useProfilePageMobile = (
     setPasswordEditStep('');
     setIsFileUploaded(false);
     setEmailStep('');
+    clearErrors('email');
+    clearErrors('image');
+    clearErrors('name');
+    clearErrors('password');
+    clearErrors('password_confirmation');
   };
 
   const cancelChanges = () => {
