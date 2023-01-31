@@ -27,10 +27,6 @@ const ProfileNameMobile: React.FC<ProfileNameMobileProps> = ({
                 value: 3,
                 message: t('form.login.minLength'),
               },
-              maxLength: {
-                value: 15,
-                message: t('form.register.nameMax'),
-              },
               validate: {
                 onlyLoweAndNumbers: (value: string) => {
                   if (!/^[a-z0-9_\-]+$/.test(value)) {
