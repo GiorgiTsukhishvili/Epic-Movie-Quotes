@@ -83,7 +83,7 @@ const ProfilePageMobile: React.FC<ProfilePageMobileProps> = ({
                     {getValuesMobile().name}
                   </h1>
                   <button
-                    className='text-gray-350 leading-[150%]  text-lg'
+                    className='text-gray-350 leading-[150%]  text-lg cursor-pointer'
                     onClick={() => setNameEditStep('first')}
                   >
                     {t('user.profile.edit')}
@@ -105,7 +105,7 @@ const ProfilePageMobile: React.FC<ProfilePageMobileProps> = ({
                   ••••••••••••
                 </h1>
                 <button
-                  className='text-gray-350 leading-[150%]  text-lg'
+                  className='text-gray-350 leading-[150%]  text-lg cursor-pointer'
                   onClick={() => setPasswordEditStep('first')}
                 >
                   {t('user.profile.edit')}

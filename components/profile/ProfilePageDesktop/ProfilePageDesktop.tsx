@@ -127,10 +127,6 @@ const ProfilePageDesktop: React.FC<ProfilePageDesktopProps> = ({
                     value: 3,
                     message: t('form.login.minLength'),
                   },
-                  maxLength: {
-                    value: 15,
-                    message: t('form.register.nameMax'),
-                  },
                   validate: {
                     onlyLoweAndNumbers: (value) => {
                       if (!/^[a-z0-9_\-]+$/.test(value)) {
@@ -141,7 +137,7 @@ const ProfilePageDesktop: React.FC<ProfilePageDesktopProps> = ({
                 })}
               />
               <h1
-                className={`text-gray-350 leading-[150%] text-xl inline ml-8 ${
+                className={`text-gray-350 leading-[150%] text-xl inline cursor-pointer ml-8 ${
                   isNameEditOpen ? 'opacity-0' : 'opacity-1'
                 }`}
                 onClick={() => setIsNameEditOpen(true)}

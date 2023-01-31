@@ -29,7 +29,7 @@ const ProfilePasswordDesktop: React.FC<ProfilePasswordDesktopProps> = ({
           defaultValue={'************'}
         />
         <h1
-          className={`text-gray-350 leading-[150%] text-xl inline ml-8 ${
+          className={`text-gray-350 leading-[150%] text-xl inline ml-8 cursor-pointer ${
             isPasswordEditOpen ? 'opacity-0' : 'opacity-1'
           }`}
           onClick={() => setIsPasswordEditOpen(true)}
