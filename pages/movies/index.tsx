@@ -80,7 +80,7 @@ const MoviePage = () => {
                 </button>
               </div>
             </div>
-            <div className='flex flex-wrap justify-center items-center mt-9 lg:mt-[4.25rem] gap-12'>
+            <div className='flex flex-wrap justify-start items-center mt-9 lg:mt-[4.25rem] gap-12'>
               {data?.data.map((movie: MovieTypes) => (
                 <Link href={`/movies/${movie.id}`} key={movie.id}>
                   <Image
