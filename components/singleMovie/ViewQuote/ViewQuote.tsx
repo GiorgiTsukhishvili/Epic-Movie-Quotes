@@ -134,7 +134,7 @@ const ViewQuote: React.FC<ViewQuoteProps> = ({ quoteId, removeQuery }) => {
                 height={60}
                 className='rounded-full w-[3.75rem] h-[3.75rem]'
               />
-              <div className='border-b border-b-gray-350 w-full pb-6 mb-6'>
+              <div className='border-b border-b-quote-border w-full pb-6 mb-6'>
                 <h1 className='text-white text-xl leading-[150%] font-medium mt-1'>
                   {comment.user.name}
                 </h1>

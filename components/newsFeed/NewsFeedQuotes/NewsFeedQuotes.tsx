@@ -69,7 +69,7 @@ const NewsFeedQuotes: React.FC<NewsFeedQuotesProps> = ({ data }) => {
             </div>
           </div>
 
-          <div className='border-t border-t-gray-350 pt-6'>
+          <div className='border-t border-t-quote-border pt-6'>
             {quote.comments.map((comment) => (
               <div key={comment.id} className='flex gap-6'>
                 <Image
@@ -79,7 +79,7 @@ const NewsFeedQuotes: React.FC<NewsFeedQuotesProps> = ({ data }) => {
                   height={60}
                   className='rounded-full w-[3.75rem] h-[3.75rem]'
                 />
-                <div className='border-b border-b-gray-350 w-full pb-6 mb-6'>
+                <div className='border-b border-b-quote-border w-full pb-6 mb-6'>
                   <h1 className='text-white text-xl leading-[150%] font-medium mt-1'>
                     {comment.user.name}
                   </h1>

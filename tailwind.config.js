@@ -77,6 +77,7 @@ module.exports = {
         'profile-border': 'rgba(206, 212, 218, 0.5)',
         primary: 'rgba(25, 135, 84, 0.2)',
         'not-verified': 'rgba(236, 149, 36, 0.2)',
+        'quote-border': 'rgba(239, 239, 239, 0.3)',
       },
       screens: {
         xs: '400px',
