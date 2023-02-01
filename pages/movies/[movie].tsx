@@ -62,8 +62,8 @@ const Movie = ({ name }: { name: string }) => {
                 />
               )}
 
-              <div className='flex flex-col  gap-4'>
-                <div className='flex justify-between items-center lg:flex-wrap'>
+              <div className='flex flex-col  gap-4 w-full'>
+                <div className='flex justify-between items-center lg:flex-wrap w-full'>
                   <h1 className='text-2xl font-medium leading-[150%] text-orange-250'>
                     {data && data?.data.name[i18n?.language! as 'en' | 'ka']}(
                     {data?.data.date})
