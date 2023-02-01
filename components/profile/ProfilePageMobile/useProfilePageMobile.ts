@@ -9,7 +9,7 @@ import { ProfileFormTypes, UserAllInfoTypes } from 'types';
 
 const useProfilePageMobile = (
   data: UserAllInfoTypes,
-  addNewMessage: (text: string, isEmail?: boolean) => void
+  addNewMessage: (text: string, isEmail?: boolean, isError?: boolean) => void
 ) => {
   const { t } = useTranslation();
   const [nameEditStep, setNameEditStep] = useState<string>('');
@@ -100,11 +100,14 @@ const useProfilePageMobile = (
   const { mutate: addEmailMutation } = useMutation(addAdditionalEmail, {
     onSuccess: () => {
       queryClient.invalidateQueries('profile-info');
+      addNewMessage('user.profile.simpleAlert', true);
+    },
+    onError: () => {
+      addNewMessage('errors.email', false, true);
     },
   });
 
   const submitEmail = () => {
-    addNewMessage('user.profile.simpleAlert', true);
     addEmailMutation(getValuesMobile().email);
     setValueMobile('email', '');
     closeForms();

@@ -14,10 +14,15 @@ const useProfile = () => {
     isShowing: false,
     isEmail: false,
     text: '',
+    isError: false,
   });
 
-  const addNewMessage = (text: string, isEmail: boolean = false) => {
-    setMessage({ isShowing: true, text, isEmail });
+  const addNewMessage = (
+    text: string,
+    isEmail: boolean = false,
+    isError: boolean = false
+  ) => {
+    setMessage({ isShowing: true, text, isEmail, isError });
 
     setTimeout(
       () =>

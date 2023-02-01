@@ -10,7 +10,7 @@ import { ProfileFormTypes, UserAllInfoTypes } from 'types';
 
 const useProfilePageDesktop = (
   data: UserAllInfoTypes,
-  addNewMessage: (text: string, isEmail?: boolean) => void
+  addNewMessage: (text: string, isEmail?: boolean, isError?: boolean) => void
 ) => {
   const { t } = useTranslation();
   const [isNameEditOpen, setIsNameEditOpen] = useState<boolean>(false);
@@ -113,6 +113,10 @@ const useProfilePageDesktop = (
   const { mutate: addEmailMutation } = useMutation(addAdditionalEmail, {
     onSuccess: () => {
       queryClient.invalidateQueries('profile-info');
+      addNewMessage('user.profile.simpleAlert', true);
+    },
+    onError: () => {
+      addNewMessage('errors.email', false, true);
     },
   });
 
@@ -133,7 +137,6 @@ const useProfilePageDesktop = (
       return false;
     }
 
-    addNewMessage('user.profile.simpleAlert', true);
     addEmailMutation(getValues().email);
     setValue('email', '');
     closeForms();
