@@ -21,6 +21,7 @@ const MovieInputs: React.FC<MovieInputsTypes> = ({
   getValues,
   setModel,
   removeTag,
+  isEdit,
 }) => {
   const { t, name, image, data, isGenresOpen, setIsGenresOpen, ref } =
     useMovieInputs();
@@ -35,7 +36,9 @@ const MovieInputs: React.FC<MovieInputsTypes> = ({
         <div className='w-full flex px-8 py-10 border-b border-b-border-transparent items-center justify-between'>
           <div />
           <h1 className='text-white text-xl lg:text-2xl leading-[150%] font-medium'>
-            {t('user.allMovies.addMovie')}
+            {isEdit
+              ? t('user.allMovies.editMovie')
+              : t('user.allMovies.addMovie')}
           </h1>
           <div onClick={() => setModel(false)} className='cursor-pointer'>
             <CloseIcon />
