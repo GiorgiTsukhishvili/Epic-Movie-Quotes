@@ -136,7 +136,7 @@ const MovieInputs: React.FC<MovieInputsTypes> = ({
                 </div>
               ))
             ) : (
-              <h1 className='text-white leading-[150%] text-base lg:text-2xl'>
+              <h1 className='text-gray-550 leading-[150%] text-base lg:text-2xl'>
                 {t('user.singleMovie.chooseTag')}
               </h1>
             )}
