@@ -1,6 +1,7 @@
 import {
   ArrowRight,
   MessageClose,
+  NotVerified,
   Primary,
   ProfilePageDesktop,
   ProfilePageMobile,
@@ -39,7 +40,11 @@ const Profile = () => {
                     })
                   }
                 />
-                <div className='fixed  top-[7.875rem] right-[0.875rem] lg:top-[8.5rem] lg:right-[8.5rem] bg-green-350 max-w-[25rem] z-[70] lg:z-20 p-4 rounded-md'>
+                <div
+                  className={`fixed  top-[7.875rem] right-[0.875rem] lg:top-[8.5rem] lg:right-[8.5rem] ${
+                    message.isError ? 'bg-red-200' : 'bg-green-350'
+                  } max-w-[25rem] z-[70] lg:z-20 p-4 rounded-md`}
+                >
                   {message.isEmail ? (
                     <Fragment>
                       <div className='flex justify-between items-center '>
@@ -64,8 +69,17 @@ const Profile = () => {
                     </Fragment>
                   ) : (
                     <div className='flex justify-between items-center '>
-                      <h1 className='flex justify-center items-center gap-2 text-green-950 text-base leading-[150%] pr-8'>
-                        <Primary isMessage={true} /> {t(message.text)}
+                      <h1
+                        className={`flex justify-center items-center gap-2 ${
+                          message.isError ? 'text-black' : 'text-green-950'
+                        } text-base leading-[150%] pr-8`}
+                      >
+                        {message.isError ? (
+                          <NotVerified isError={true} />
+                        ) : (
+                          <Primary isMessage={true} />
+                        )}{' '}
+                        {t(message.text)}
                       </h1>
                       <span
                         className='cursor-pointer'
