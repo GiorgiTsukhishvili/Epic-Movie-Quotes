@@ -92,28 +92,36 @@ const ProfilePageMobile: React.FC<ProfilePageMobileProps> = ({
               </div>
             </div>
 
-            <div>
-              <label
-                htmlFor='password'
-                className='text-medium text-white leading-[150%] block  mt-[3.75rem]'
-              >
-                {t('user.profile.password')}
-              </label>
+            <div className='w-[17rem] xs:w-[22.75rem]'>
+              {data.google_id === null ? (
+                <Fragment>
+                  <label
+                    htmlFor='password'
+                    className='text-medium text-white leading-[150%] block  mt-[3.75rem]'
+                  >
+                    {t('user.profile.password')}
+                  </label>
 
-              <div className='flex justify-between w-[17rem] xs:w-[22.75rem]  items-center gap-8 mt-2 border-b border-b-profile-border '>
-                <h1 className='  text-white  rounded-md py-2 text-lg'>
-                  ••••••••••••
-                </h1>
-                <button
-                  className='text-gray-350 leading-[150%]  text-lg cursor-pointer'
-                  onClick={() => setPasswordEditStep('first')}
-                >
-                  {t('user.profile.edit')}
-                </button>
-              </div>
+                  <div className='flex justify-between w-[17rem] xs:w-[22.75rem]  items-center gap-8 mt-2 border-b border-b-profile-border '>
+                    <h1 className='  text-white  rounded-md py-2 text-lg'>
+                      ••••••••••••
+                    </h1>
+                    <button
+                      className='text-gray-350 leading-[150%]  text-lg cursor-pointer'
+                      onClick={() => setPasswordEditStep('first')}
+                    >
+                      {t('user.profile.edit')}
+                    </button>
+                  </div>
+                </Fragment>
+              ) : (
+                <></>
+              )}
 
               <div
-                className='flex justify-between items-center mt-8 mb-[5.625rem] cursor-pointer'
+                className={`flex justify-between items-center ${
+                  data.google_id === null ? '  mt-8' : 'mt-[3.75rem]'
+                } mb-[5.625rem] cursor-pointer`}
                 onClick={() => setEmailStep('first')}
               >
                 <h1 className='text-white leading-[150%] text-base uppercase'>
