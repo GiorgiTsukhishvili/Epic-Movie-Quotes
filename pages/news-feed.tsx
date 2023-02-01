@@ -38,8 +38,8 @@ const NewsFeed = () => {
           <div className='hidden lg:min-w-[16.575rem] xl:min-w-[26.575rem] lg:inline'>
             <SideNavbar isNewsFeed={true} />
           </div>
-          <div className=' w-full lg:w-auto lg:mr-4 mr-0 lg:max-w-[58.625rem] pt-[5.375rem] lg:pt-[7.375rem] pb-12 self-start'>
-            <div className='w-full flex items-center mb-4'>
+          <div className=' w-full lg:w-full lg:mr-4 mr-0 lg:max-w-[58.625rem] pt-[5.375rem] lg:pt-[7.375rem] pb-12 self-start'>
+            <div className='w-full min-w-full flex items-center mb-4'>
               <AddQuoteNewsFeed />
               <form
                 onSubmit={handleSubmit(onSubmit)}
