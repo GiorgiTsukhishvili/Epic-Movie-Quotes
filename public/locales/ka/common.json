@@ -157,7 +157,8 @@
       "totalMovies": "ჩემი ფილმები",
       "totalSecond": " (ჯამი ",
       "addMovie": "დაამატე",
-      "search": "ძებნა"
+      "search": "ძებნა",
+      "editMovie": "ჩაასწორე ფილმი"
     },
     "singleMovie": {
       "topHeader": "ფილმის აღწერა",

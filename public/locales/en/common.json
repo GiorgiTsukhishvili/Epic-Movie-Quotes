@@ -157,7 +157,8 @@
       "totalMovies": "My list of movies",
       "totalSecond": " (Total ",
       "addMovie": "Add movie",
-      "search": "Search"
+      "search": "Search",
+      "editMovie": "Edit movie"
     },
     "singleMovie": {
       "topHeader": "Movie description",

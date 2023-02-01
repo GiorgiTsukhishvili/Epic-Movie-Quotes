@@ -25,6 +25,7 @@ const EditMovie: React.FC<EditMovieProps> = ({
       getValues={getValues}
       handleSubmit={handleSubmit}
       removeTag={removeTag}
+      isEdit={true}
     />
   );
 };
