@@ -55,6 +55,7 @@ const AddQuote: React.FC<AddQuoteProps> = ({
               alt='author-image'
               width={60}
               height={60}
+              className='rounded-full'
             />
             <h1 className='text-white text-xl = leading-[150%] font-medium'>
               {authorName}
@@ -124,32 +125,34 @@ const AddQuote: React.FC<AddQuoteProps> = ({
                   <ErrorMessage errors={errors} name='quote-ka' />
                 </div>
               </div>
-              <div className='relative w-full h-[5.25rem] mt-5 border border-gray-550 rounded-md'>
-                <input
-                  type='file'
-                  accept='image/*'
-                  multiple
-                  onChange={(e) => handleFileUpload(e.target.files)}
-                  className='w-full h-[5.25rem] opacity-0 z-50 absolute top-0 left-0'
-                />
+              <div>
+                <div className='relative w-full h-[5.25rem] mb-5 border border-gray-550 rounded-md'>
+                  <input
+                    type='file'
+                    accept='image/*'
+                    multiple
+                    onChange={(e) => handleFileUpload(e.target.files)}
+                    className='w-full h-[5.25rem] opacity-0 z-50 absolute top-0 left-0'
+                  />
 
-                <div className='w-full h-[5.25rem] absolute top-0 flex justify-between items-center px-4'>
-                  <div className='flex justify-center items-center gap-2'>
-                    <Photo />
-                    <h1 className='text-base hidden lg:inline text-white leading-[150%]'>
-                      {t('user.singleMovie.drag')}
-                    </h1>
-                    <h1 className='text-base inline lg:hidden text-white leading-[150%]'>
-                      {t('user.singleMovie.upload')}
+                  <div className='w-full h-[5.25rem] absolute top-0 flex justify-between items-center px-4'>
+                    <div className='flex justify-center items-center gap-2'>
+                      <Photo />
+                      <h1 className='text-base hidden lg:inline text-white leading-[150%]'>
+                        {t('user.singleMovie.drag')}
+                      </h1>
+                      <h1 className='text-base inline lg:hidden text-white leading-[150%]'>
+                        {t('user.singleMovie.upload')}
+                      </h1>
+                    </div>
+                    <h1 className='bg-purple-150 text-white text-xl leading-6 p-2'>
+                      {t('user.singleMovie.chooseFile')}
                     </h1>
                   </div>
-                  <h1 className='bg-purple-150 text-white text-xl leading-6 p-2'>
-                    {t('user.singleMovie.chooseFile')}
-                  </h1>
                 </div>
-              </div>
-              <div className='text-red-550 h-5 font-normal text-sm leading-[150%] my-5 z-50 '>
-                <ErrorMessage errors={errors} name='image' />
+                <div className='text-red-550 h-5 font-normal text-sm leading-[150%] my-5 z-50 '>
+                  <ErrorMessage errors={errors} name='image' />
+                </div>
               </div>
             </div>
 
