@@ -30,40 +30,41 @@ const ProfileEmailsMobile: React.FC<ProfileEmailsMobileProps> = ({
           <></>
         )}
 
-        {emails.map(
-          (email) =>
-            !email.is_primary && (
-              <div
-                key={email.id}
-                className='border-b border-profile-border max-w-[27rem] pb-6 mx-auto mb-8'
-              >
-                <h1 className='text-white leading-[150%] text-xl'>
-                  {email.email}
-                </h1>
-                <div className='flex justify-between items-center mt-6'>
-                  {email.email_verified_at ? (
-                    <h1
-                      onClick={() => mutatePrimary(email.id)}
-                      className=' p-1 border border-zinc-350 rounded-md w-40 text-center text-white text-base leading-[150%] cursor-pointer'
-                    >
-                      {t('user.profile.makePrimary')}
-                    </h1>
-                  ) : (
-                    <h1 className='italic text-amber-550 text-base leading-[150%] flex justify-center gap-2 items-center'>
-                      <NotVerified />
-                      {t('user.profile.notVerified')}
-                    </h1>
-                  )}
-                  <h1
-                    className='text-gray-350 text-base leading-[150%] cursor-pointer'
-                    onClick={() => mutateDelete(email.id)}
-                  >
-                    {t('user.profile.remove')}
+        {google_id === null &&
+          emails.map(
+            (email) =>
+              !email.is_primary && (
+                <div
+                  key={email.id}
+                  className='border-b border-profile-border max-w-[27rem] pb-6 mx-auto mb-8'
+                >
+                  <h1 className='text-white leading-[150%] text-xl'>
+                    {email.email}
                   </h1>
+                  <div className='flex justify-between items-center mt-6'>
+                    {email.email_verified_at ? (
+                      <h1
+                        onClick={() => mutatePrimary(email.id)}
+                        className=' p-1 border border-zinc-350 rounded-md w-40 text-center text-white text-base leading-[150%] cursor-pointer'
+                      >
+                        {t('user.profile.makePrimary')}
+                      </h1>
+                    ) : (
+                      <h1 className='italic text-amber-550 text-base leading-[150%] flex justify-center gap-2 items-center'>
+                        <NotVerified />
+                        {t('user.profile.notVerified')}
+                      </h1>
+                    )}
+                    <h1
+                      className='text-gray-350 text-base leading-[150%] cursor-pointer'
+                      onClick={() => mutateDelete(email.id)}
+                    >
+                      {t('user.profile.remove')}
+                    </h1>
+                  </div>
                 </div>
-              </div>
-            )
-        )}
+              )
+          )}
         {google_id === null && (
           <div className='max-w-[27rem] mx-auto mt-[3.75rem]'>
             <h1 className='text-white leading-[150%] text-sm  uppercase  mb-6 '>
