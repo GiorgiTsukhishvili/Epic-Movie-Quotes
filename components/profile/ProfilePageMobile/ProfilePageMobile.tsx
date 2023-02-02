@@ -32,6 +32,8 @@ const ProfilePageMobile: React.FC<ProfilePageMobileProps> = ({
     emailStep,
     setEmailStep,
     submitEmail,
+    emails,
+    setEmails,
   } = useProfilePageMobile(data, addNewMessage);
 
   return (
@@ -167,9 +169,10 @@ const ProfilePageMobile: React.FC<ProfilePageMobileProps> = ({
 
       {emailStep === 'first' ? (
         <ProfileEmailsMobile
-          emails={data.emails}
+          emails={emails}
           google_id={data.google_id}
           setEmailStep={setEmailStep}
+          setEmails={setEmails}
         />
       ) : (
         <></>

@@ -29,6 +29,8 @@ const ProfilePageDesktop: React.FC<ProfilePageDesktopProps> = ({
     setIsAddEmailOpen,
     setValue,
     submitEmail,
+    emails,
+    setEmails,
   } = useProfilePageDesktop(data, addNewMessage);
 
   return (
@@ -165,8 +167,9 @@ const ProfilePageDesktop: React.FC<ProfilePageDesktopProps> = ({
           ) : (
             <Fragment>
               <ProfileEmailsDesktop
-                emails={data.emails}
+                emails={emails}
                 setIsAddEmailOpen={setIsAddEmailOpen}
+                setEmails={setEmails}
               />
               <ProfilePasswordDesktop
                 setIsPasswordEditOpen={setIsPasswordEditOpen}

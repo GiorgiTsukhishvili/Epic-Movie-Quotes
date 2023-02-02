@@ -5,8 +5,12 @@ const ProfileEmailsMobile: React.FC<ProfileEmailsMobileProps> = ({
   emails,
   google_id,
   setEmailStep,
+  setEmails,
 }) => {
-  const { t, mutateDelete, mutatePrimary } = useProfileEmailsMobile();
+  const { t, removeEmail, editPrimary } = useProfileEmailsMobile(
+    setEmails,
+    emails
+  );
 
   return (
     <div className=' w-full min-h-[10.75rem] items-center flex-col relative justify-start flex'>
@@ -44,7 +48,7 @@ const ProfileEmailsMobile: React.FC<ProfileEmailsMobileProps> = ({
                   <div className='flex justify-between items-center mt-6'>
                     {email.email_verified_at ? (
                       <h1
-                        onClick={() => mutatePrimary(email.id)}
+                        onClick={() => editPrimary(email.id)}
                         className=' p-1 border border-zinc-350 rounded-md w-40 text-center text-white text-base leading-[150%] cursor-pointer'
                       >
                         {t('user.profile.makePrimary')}
@@ -57,7 +61,7 @@ const ProfileEmailsMobile: React.FC<ProfileEmailsMobileProps> = ({
                     )}
                     <h1
                       className='text-gray-350 text-base leading-[150%] cursor-pointer'
-                      onClick={() => mutateDelete(email.id)}
+                      onClick={() => removeEmail(email.id)}
                     >
                       {t('user.profile.remove')}
                     </h1>
