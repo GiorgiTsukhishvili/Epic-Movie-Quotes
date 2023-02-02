@@ -113,7 +113,7 @@ const MovieInputs: React.FC<MovieInputsTypes> = ({
 
           <div
             ref={ref}
-            className='bg-transparent relative w-full pr-12 border-gray-550 rounded-md border min-h-[3rem]  cursor-pointer flex-wrap flex items-center px-5 py-2.5 gap-1'
+            className='bg-transparent relative w-full pr-12 border-gray-550 rounded-md border min-h-[3.25rem]  cursor-pointer flex-wrap flex items-center px-5 py-2.5 gap-1'
           >
             <div
               className='w-full absolute h-full top-0 left-0'
