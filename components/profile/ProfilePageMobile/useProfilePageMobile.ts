@@ -16,6 +16,7 @@ const useProfilePageMobile = (
   const [passwordEditStep, setPasswordEditStep] = useState<string>('');
   const [emailStep, setEmailStep] = useState<string>('');
   const [isFileUploaded, setIsFileUploaded] = useState<boolean>(false);
+  const [emails, setEmails] = useState(data.emails);
 
   const dispatch = useDispatch();
 
@@ -98,8 +99,8 @@ const useProfilePageMobile = (
   };
 
   const { mutate: addEmailMutation } = useMutation(addAdditionalEmail, {
-    onSuccess: () => {
-      queryClient.invalidateQueries('profile-info');
+    onSuccess: (data) => {
+      setEmails((prevEmails) => [...prevEmails, data.data]);
       addNewMessage('user.profile.simpleAlert', true);
     },
     onError: () => {
@@ -130,6 +131,8 @@ const useProfilePageMobile = (
     setEmailStep,
     emailStep,
     submitEmail,
+    emails,
+    setEmails,
   };
 };
 

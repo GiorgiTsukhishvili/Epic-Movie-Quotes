@@ -10,8 +10,12 @@ import {
 const ProfileEmailsDesktop: React.FC<ProfileEmailsDesktopProps> = ({
   emails,
   setIsAddEmailOpen,
+  setEmails,
 }) => {
-  const { t, mutateDelete, mutatePrimary } = useProfileEmailsDesktop();
+  const { t, removeEmail, editPrimary } = useProfileEmailsDesktop(
+    setEmails,
+    emails
+  );
 
   return (
     <Fragment>
@@ -52,7 +56,7 @@ const ProfileEmailsDesktop: React.FC<ProfileEmailsDesktopProps> = ({
                   {email.email_verified_at ? (
                     <button
                       className='text-gray-350 leading-[150%] text-xl mr-4'
-                      onClick={() => mutatePrimary(email.id)}
+                      onClick={() => editPrimary(email.id)}
                     >
                       {t('user.profile.makePrimary')}
                     </button>
@@ -63,7 +67,7 @@ const ProfileEmailsDesktop: React.FC<ProfileEmailsDesktopProps> = ({
                   )}
                   <button
                     className='text-gray-350 leading-[150%] text-xl border-l border-l-gray-550 pl-4'
-                    onClick={() => mutateDelete(email.id)}
+                    onClick={() => removeEmail(email.id)}
                   >
                     {t('user.profile.remove')}
                   </button>

@@ -17,6 +17,7 @@ const useProfilePageDesktop = (
   const [isFileUploaded, setIsFileUploaded] = useState<boolean>(false);
   const [isPasswordEditOpen, setIsPasswordEditOpen] = useState<boolean>(false);
   const [isAddEmailOpen, setIsAddEmailOpen] = useState<boolean>(false);
+  const [emails, setEmails] = useState(data.emails);
 
   const dispatch = useDispatch();
 
@@ -111,8 +112,8 @@ const useProfilePageDesktop = (
   };
 
   const { mutate: addEmailMutation } = useMutation(addAdditionalEmail, {
-    onSuccess: () => {
-      queryClient.invalidateQueries('profile-info');
+    onSuccess: (data) => {
+      setEmails((prevEmails) => [...prevEmails, data.data]);
       addNewMessage('user.profile.simpleAlert', true);
     },
     onError: () => {
@@ -159,6 +160,8 @@ const useProfilePageDesktop = (
     setIsAddEmailOpen,
     submitEmail,
     setValue,
+    emails,
+    setEmails,
   };
 };
 
