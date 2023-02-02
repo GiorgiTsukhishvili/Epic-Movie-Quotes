@@ -77,7 +77,7 @@ const useRegistration = () => {
 
       push(response.data);
     } catch (err) {
-      setError('name', { type: 'all', message: t('errors.incorrectLogin')! });
+      setError('name', { type: 'all', message: t('errors.email')! });
     }
   };
 
@@ -91,7 +91,7 @@ const useRegistration = () => {
       replace('/news-feed');
       setCookie('isLoggedIn', true);
     } catch (error) {
-      setError('name', { type: 'all', message: t('errors.incorrectLogin')! });
+      setError('email', { type: 'all', message: t('errors.email')! });
     }
   };
 
