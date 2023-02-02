@@ -1,19 +1,15 @@
 import { useTranslation } from 'next-i18next';
-import { Dispatch, SetStateAction, useState } from 'react';
+import { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import { useForm, useWatch } from 'react-hook-form';
 import {
-  callbackGoogle,
   fetchCSRFToken,
   redirectToGoogle,
   sendUserRegisterData,
 } from 'services';
 import { RegistrationTypes } from './registrationTypes';
 import { AxiosError } from 'axios';
-import { deleteCookie, setCookie } from 'cookies-next';
+import { deleteCookie } from 'cookies-next';
 import { useRouter } from 'next/router';
-import { useQuery } from 'react-query';
-import { updateUserData } from 'state';
-import { useDispatch } from 'react-redux';
 
 const useRegistration = () => {
   const { t } = useTranslation();
@@ -22,9 +18,7 @@ const useRegistration = () => {
     password_confirmation: false,
   });
 
-  const dispatch = useDispatch();
-
-  const { push, asPath, query, replace } = useRouter();
+  const { push, query } = useRouter();
 
   const {
     register,
@@ -81,28 +75,11 @@ const useRegistration = () => {
     }
   };
 
-  const handleGoogleAuth = async () => {
-    try {
-      await fetchCSRFToken();
-      const response = await callbackGoogle(asPath, 'register');
-
-      setCookie('isAuth', true);
-      dispatch(updateUserData(response.data.user));
-      replace('/news-feed');
-      setCookie('isLoggedIn', true);
-    } catch (error) {
+  useEffect(() => {
+    if (query.code && query.prompt) {
       setError('email', { type: 'all', message: t('errors.email')! });
     }
-  };
-
-  useQuery({
-    queryKey: ['callback-google', asPath],
-    queryFn: handleGoogleAuth,
-    enabled: !!query.code && !!query.prompt,
-    refetchOnMount: false,
-    refetchOnWindowFocus: false,
-    retry: 0,
-  });
+  }, [query]);
 
   return {
     t,
