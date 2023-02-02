@@ -193,5 +193,8 @@
   "textArea": {
     "onlyEnglish": "Input only English letters",
     "onlyGeorgian": "Input only Georgian letters"
+  },
+  "verifyEmail": {
+    "wait": "Please wait for email verification..."
   }
 }

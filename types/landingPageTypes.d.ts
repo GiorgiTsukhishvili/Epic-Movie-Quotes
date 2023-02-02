@@ -4,4 +4,5 @@ export type LandingPageFormTypes =
   | 'forgot'
   | 'forgot-sent'
   | 'registration'
-  | 'registration-sent';
+  | 'registration-sent'
+  | 'email-verified';

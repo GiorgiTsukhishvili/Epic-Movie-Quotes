@@ -11,16 +11,18 @@ const useSuccessMessage = () => {
 
   let link: string;
 
-  try {
-    let url = new URL(query['register-link']?.toString()!);
-    let params = new URLSearchParams(url.search);
-    params.delete('expires');
-    params.append('token', query.token as string);
-    params.append('signature', query.signature as string);
+  if (query['register-link']) {
+    try {
+      let url = new URL(query['register-link']?.toString()!);
+      let params = new URLSearchParams(url.search);
+      params.delete('expires');
+      params.append('token', query.token as string);
+      params.append('signature', query.signature as string);
 
-    link = url.href + '&' + params;
-  } catch (err) {
-    push('/403');
+      link = url.href + '&' + params;
+    } catch (err) {
+      push('/403');
+    }
   }
 
   useQuery('sendVerifyEmail', () => sendRegistrationVerification(link), {
@@ -33,6 +35,7 @@ const useSuccessMessage = () => {
         }
       }
     },
+    enabled: !!query['register-link'],
     refetchOnMount: false,
     retry: false,
     refetchOnWindowFocus: false,
