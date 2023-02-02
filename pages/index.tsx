@@ -59,15 +59,14 @@ export default function Home() {
           <></>
         )}
 
-        {query['register-link'] ||
-          (whichForm === 'email-verified' && (
-            <SuccessMessage
-              setWhichForm={setWhichForm}
-              header={'form.successMessage.headerOne'}
-              mainText={'form.successMessage.mainOne'}
-              goToLogin={'form.successMessage.button'}
-            />
-          ))}
+        {(query['register-link'] || whichForm === 'email-verified') && (
+          <SuccessMessage
+            setWhichForm={setWhichForm}
+            header={'form.successMessage.headerOne'}
+            mainText={'form.successMessage.mainOne'}
+            goToLogin={'form.successMessage.button'}
+          />
+        )}
 
         {query['reset-link'] && <NewPassword setWhichForm={setWhichForm} />}
 
