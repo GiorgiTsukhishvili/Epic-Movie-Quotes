@@ -111,16 +111,20 @@ const MovieInputs: React.FC<MovieInputsTypes> = ({
             <ErrorMessage errors={errors} name='director-ka' />
           </div>
 
-          <div className='bg-transparent relative w-full pr-12 border-gray-550 rounded-md border min-h-[3rem]  cursor-pointer flex-wrap flex items-center px-5 py-2.5 gap-1'>
+          <div
+            ref={ref}
+            className='bg-transparent relative w-full pr-12 border-gray-550 rounded-md border min-h-[3rem]  cursor-pointer flex-wrap flex items-center px-5 py-2.5 gap-1'
+          >
             <div
               className='w-full absolute h-full top-0 left-0'
-              onClick={() => setIsGenresOpen(true)}
+              onClick={() => setIsGenresOpen((prevState) => !prevState)}
             />
             {getValues().tags.length > 0 ? (
               getValues().tags.map((tag: string) => (
                 <div
                   key={tag}
-                  className='bg-gray-550  h-[1.625rem] rounded-sm pl-1.5  flex justify-center items-center '
+                  className='bg-gray-550  h-[1.625rem] rounded-sm pl-1.5 z-30 flex justify-center items-center '
+                  onClick={() => removeTag(tag)}
                 >
                   <h1 className='text-white leading-6 text-sm'>
                     {
@@ -130,10 +134,7 @@ const MovieInputs: React.FC<MovieInputsTypes> = ({
                     }
                   </h1>
 
-                  <div
-                    className='z-30 cursor-pointer w-4 h-4 flex justify-center items-center'
-                    onClick={() => removeTag(tag)}
-                  >
+                  <div className='z-30 cursor-pointer w-4 h-4 flex justify-center items-center'>
                     <TagsX />
                   </div>
                 </div>
@@ -144,10 +145,7 @@ const MovieInputs: React.FC<MovieInputsTypes> = ({
               </h1>
             )}
             {isGenresOpen && (
-              <div
-                className='bg-white rounded-md absolute left-0 top-14 w-full z-10  py-2'
-                ref={ref}
-              >
+              <div className='bg-white rounded-md absolute left-0 top-14 w-full z-10  py-2'>
                 {data &&
                   data.data.map(
                     (tag: { id: number; tags: { en: string; ka: string } }) => (

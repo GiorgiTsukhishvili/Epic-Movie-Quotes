@@ -24,11 +24,10 @@ const useMovieInputs = () => {
 
   useEffect(() => {
     if (isGenresOpen === true) {
-      window.addEventListener('mousedown', (e) => closeDropdown(e));
+      window.addEventListener('click', (e) => closeDropdown(e));
     }
 
-    return () =>
-      window.removeEventListener('mousedown', (e) => closeDropdown(e));
+    return () => window.removeEventListener('click', (e) => closeDropdown(e));
   }, [isGenresOpen]);
 
   return { t, name, image, data, isGenresOpen, setIsGenresOpen, ref };
