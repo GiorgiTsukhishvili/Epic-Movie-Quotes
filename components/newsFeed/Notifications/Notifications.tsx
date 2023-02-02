@@ -35,7 +35,7 @@ const Notifications = () => {
       {isNotificationsOpen && (
         <Fragment>
           <div className='border-b-black border-b-[2rem]  border-l-[1rem] border-r-[1rem] border-l-transparent border-r-transparent absolute top-[4.5rem] right-[7.8rem] lg:right-[19.2rem]' />
-          <div className='bg-black lg:w-[60rem] overflow-scroll pb-24 lg:pb-0 lg:h-[50.75rem] w-screen h-screen absolute top-[5.5rem] lg:top-[6rem] left-0 lg:left-auto  lg:right-[5rem] rounded-xl'>
+          <div className='bg-black lg:w-[60rem] overflow-auto pb-24 lg:pb-0 lg:h-[50.75rem] w-screen h-screen absolute top-[5.5rem] lg:top-[6rem] left-0 lg:left-auto  lg:right-[5rem] rounded-xl'>
             <div className='flex justify-between items-center px-8 lg:pt-10 pt-5 mb-8'>
               <h1 className='md:text-[2rem] text-xl text-white font-medium leading-[150%]'>
                 {t('user.navbar.notifications')}
