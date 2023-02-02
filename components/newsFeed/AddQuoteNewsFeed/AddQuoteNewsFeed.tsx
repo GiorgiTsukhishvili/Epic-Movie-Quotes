@@ -73,7 +73,7 @@ const AddQuoteNewsFeed = () => {
                   alt='author-image'
                   width={60}
                   height={60}
-                  className='rounded-full'
+                  style={{ borderRadius: '100%' }}
                 />
                 <h1 className='text-white text-xl = leading-[150%] font-medium '>
                   {authorName}
