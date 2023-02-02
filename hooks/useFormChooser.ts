@@ -13,6 +13,10 @@ const useFormChooser = () => {
     if (query.type === 'register') {
       setWhichForm('registration');
     }
+
+    if (query.type === 'email-verified') {
+      setWhichForm('email-verified');
+    }
   }, [query]);
 
   return { whichForm, setWhichForm, query };
