@@ -7,6 +7,8 @@ const NormalInput: React.FC<NormalInputProps> = ({
   placeholder,
   labelText,
   type,
+  language,
+  errorText,
 }) => {
   return (
     <div className='relative '>
@@ -16,6 +18,25 @@ const NormalInput: React.FC<NormalInputProps> = ({
           required: {
             value: true,
             message: text,
+          },
+          validate: {
+            onlyGeorgianOrEnglish: (value: string) => {
+              if (
+                language === 'en' &&
+                !/^[a-zA-Z0-9! \\[\];':"\\|,.\/?]*$/.test(value)
+              ) {
+                return errorText;
+              }
+
+              if (
+                language === 'ka' &&
+                !/^[ა-ჰ0-9! \\[\];':"\\|,.\/?]*$/.test(value)
+              ) {
+                return errorText;
+              }
+
+              return;
+            },
           },
         })}
         className='bg-transparent w-full pr-12 placeholder:text-gray-550 border-gray-550 rounded-md border h-12 text-white text-base lg:text-2xl leading-[150%] focus:ring-0 focus:border-gray-550 focus:border'
