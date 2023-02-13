@@ -66,6 +66,8 @@ const MovieInputs: React.FC<MovieInputsTypes> = ({
             text={t('form.login.required')}
             placeholder='Movie name'
             labelText='Eng'
+            language='en'
+            errorText={t('textArea.onlyEnglish')!}
           />
 
           <div className='text-red-550 h-5 font-normal text-base leading-[150%] my-1 '>
@@ -79,6 +81,8 @@ const MovieInputs: React.FC<MovieInputsTypes> = ({
             text={t('form.login.required')}
             placeholder='ფილმის სახელი'
             labelText='ქარ'
+            language='ka'
+            errorText={t('textArea.onlyGeorgian')!}
           />
 
           <div className='text-red-550 h-5 font-normal text-base leading-[150%] my-1 '>
@@ -92,6 +96,8 @@ const MovieInputs: React.FC<MovieInputsTypes> = ({
             text={t('form.login.required')}
             placeholder='Director'
             labelText='Eng'
+            language='en'
+            errorText={t('textArea.onlyEnglish')!}
           />
 
           <div className='text-red-550 h-5 font-normal text-base leading-[150%] my-1 '>
@@ -105,6 +111,8 @@ const MovieInputs: React.FC<MovieInputsTypes> = ({
             text={t('form.login.required')}
             placeholder='დირექტორი'
             labelText='ქარ'
+            language='ka'
+            errorText={t('textArea.onlyGeorgian')!}
           />
 
           <div className='text-red-550 h-5 font-normal text-base leading-[150%] my-1 '>

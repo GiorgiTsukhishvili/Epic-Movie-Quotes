@@ -5,4 +5,6 @@ export type NormalInputProps = {
   placeholder: string;
   labelText: string;
   type: string;
+  language?: string;
+  errorText?: string;
 };
