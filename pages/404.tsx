@@ -12,7 +12,7 @@ const ErrorPage = () => {
   return (
     <Fragment>
       <Head>
-        <title>Movie Quotes - 403</title>
+        <title>Movie Quotes - 404</title>
       </Head>
       <div className='bg-main-gradient h-screen flex flex-col items-center'>
         <Image
