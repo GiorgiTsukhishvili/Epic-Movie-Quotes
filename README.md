@@ -38,6 +38,7 @@ Movie Epic Quotes is app where users can share quotes from their favorite movies
 - <img src="readme/assets/toolkit.jpeg" height="18" style="position: relative; top: 4px; width: 18px" /> [Redux Toolkit @1.9.1
   ](https://redux-toolkit.js.org/) - For global state management.
 - <img src="readme/assets/tailwind.png" height="18" style="position: relative; top: 4px; width: 18px" /> [Tailwind @3.2.4](https://tailwindcss.com/) - Tailwind CSS is an open source CSS framework.
+- <img src="readme/assets/pusher.png" height="18" style="position: relative; top: 4px; width: 18px" /> [Pusher @8.0.1](https://pusher.com/) - hosted API service which makes adding real-time data and functionality to web and mobile applications seamless.
 
 #
 
