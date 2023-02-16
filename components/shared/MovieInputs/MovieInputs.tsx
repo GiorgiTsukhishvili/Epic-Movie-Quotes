@@ -153,7 +153,7 @@ const MovieInputs: React.FC<MovieInputsTypes> = ({
               </h1>
             )}
             {isGenresOpen && (
-              <div className='bg-white rounded-md absolute left-0 top-14 w-full z-10  py-2'>
+              <div className='bg-white rounded-md absolute left-0 top-[115%] lg:top-[130%] w-full z-10  py-2'>
                 {data &&
                   data.data.map(
                     (tag: { id: number; tags: { en: string; ka: string } }) => (

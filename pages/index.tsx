@@ -28,7 +28,7 @@ export default function Home() {
       <div
         className={`${
           whichForm !== '' &&
-          'fixed w-screen overflow-hidden md:static md:w-auto md:overflow-y-auto'
+          'fixed w-screen overflow-hidden md:static md:w-auto md:overflow-visible'
         }`}
       >
         <Navbar setWhichForm={setWhichForm} />

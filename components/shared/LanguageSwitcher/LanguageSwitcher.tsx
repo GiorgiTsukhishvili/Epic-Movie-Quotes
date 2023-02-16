@@ -2,7 +2,7 @@ import { ArrowDown, useLanguageSwitcher } from 'components';
 import Link from 'next/link';
 
 const LanguageSwitcher = () => {
-  const { t, isDropdownOpen, setIsDropdownOpen, languageRef, asPath } =
+  const { t, isDropdownOpen, setIsDropdownOpen, languageRef, pathname, query } =
     useLanguageSwitcher();
 
   return (
@@ -20,14 +20,14 @@ const LanguageSwitcher = () => {
       {isDropdownOpen && (
         <div className='bg-white px-4 py-2 text-base font-normal leading-[150%] absolute rounded-md top-14 left-[-2rem]'>
           <Link
-            href={{ pathname: asPath }}
+            href={{ pathname, query }}
             locale='ka'
             className='cursor-pointer text-base font-normal leading-[150%] text-center block'
           >
             ქართული
           </Link>
           <Link
-            href={{ pathname: asPath }}
+            href={{ pathname, query }}
             locale='en'
             className='cursor-pointer text-base font-normal leading-[150%] text-center block'
           >

@@ -12,7 +12,7 @@ const useViewQuote = (id: number) => {
     user: { name, image, id: userId },
   } = useSelector((state: { user: UserTypes }) => state);
 
-  const { data, isLoading } = useQuery(['quote'], () => showQuote(id), {
+  const { data, isLoading } = useQuery(['quote', id], () => showQuote(id), {
     onError: () => push('/403'),
   });
 
