@@ -7,7 +7,7 @@ import { useAuth } from 'hooks';
 
 const useSingleMoviePage = (id: string) => {
   const { push, query } = useRouter();
-  const { data } = useQuery(['movie'], () => getSingleMovie(id), {
+  const { data } = useQuery(['movie', query.movie], () => getSingleMovie(id), {
     retry: false,
     onError: () => {
       push('/404');

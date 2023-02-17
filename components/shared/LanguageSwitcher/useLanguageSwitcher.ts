@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/router';
 
 const useLanguageSwitcher = () => {
-  const { asPath } = useRouter();
+  const { query, pathname } = useRouter();
   const languageRef = useRef<HTMLDivElement>(null);
   const { t } = useTranslation();
   const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
@@ -23,7 +23,7 @@ const useLanguageSwitcher = () => {
     return () => window.removeEventListener('click', (e) => closeDropdown(e));
   }, [isDropdownOpen]);
 
-  return { t, isDropdownOpen, setIsDropdownOpen, languageRef, asPath };
+  return { t, isDropdownOpen, setIsDropdownOpen, languageRef, query, pathname };
 };
 
 export default useLanguageSwitcher;

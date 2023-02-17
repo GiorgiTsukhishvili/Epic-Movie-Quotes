@@ -86,7 +86,7 @@ const Movie = ({ name }: { name: string }) => {
                     data.data.tags.map((tag) => (
                       <h1
                         key={tag.id}
-                        className='text-white font-bold text-lg bg-gray-550 h-8 px-3 rounded-md'
+                        className='text-white font-bold text-lg bg-gray-550 h-8 px-3 rounded-md flex justify-center items-center'
                       >
                         {tag.tags[i18n?.language! as 'ka' | 'en']}
                       </h1>

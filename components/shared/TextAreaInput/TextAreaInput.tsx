@@ -21,14 +21,14 @@ const TextAreaInput: React.FC<TextAreaInputProps> = ({
             onlyGeorgianOrEnglish: (value: string) => {
               if (
                 language === 'en' &&
-                !/^[a-zA-Z0-9! \\[\];':"\\|,.\/?]*$/.test(value)
+                !/^[-a-zA-Z0-9! \\[\];':"\\|,.\/?]*$/.test(value)
               ) {
                 return errorText;
               }
 
               if (
                 language === 'ka' &&
-                !/^[ა-ჰ0-9! \\[\];':"\\|,.\/?]*$/.test(value)
+                !/^[-ა-ჰ0-9! \\[\];':"\\|,.\/?]*$/.test(value)
               ) {
                 return errorText;
               }

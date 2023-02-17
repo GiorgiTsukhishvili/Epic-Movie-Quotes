@@ -64,7 +64,7 @@ const MoviePage = () => {
                   </label>
                   <input
                     type='text'
-                    className='bg-transparent border-0 text-gray-350 pl-9 ring-0 placeholder:text-gray-350 focus:ring-0 focus:outline-0 focus:border-b focus:border-b-gray-350  w-24 focus:w-60 duration-300'
+                    className='bg-transparent border-0 text-gray-350 pl-9 ring-0  focus:ring-0 focus:outline-0 focus:border-b focus:border-b-gray-350  w-24 focus:w-60 duration-300'
                     placeholder={t('user.allMovies.search')!}
                     {...register('search')}
                     id='search'

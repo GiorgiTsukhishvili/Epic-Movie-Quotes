@@ -172,7 +172,7 @@ const AddQuote: React.FC<AddQuoteProps> = ({
 
             <button
               type='submit'
-              className='bg-red-650 mb-5 hover:bg-red-750 text-white text-base  h-[2.375rem]  leading-[150%]  w-full rounded-md '
+              className='bg-red-650 mb-5 hover:bg-red-750 text-white text-xl  h-12  leading-[150%]  w-full rounded-md '
             >
               {t('user.singleMovie.addQuote')}
             </button>
