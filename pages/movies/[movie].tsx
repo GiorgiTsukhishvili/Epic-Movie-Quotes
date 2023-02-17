@@ -47,7 +47,7 @@ const Movie = ({ name }: { name: string }) => {
             <SideNavbar isMoviesPage={true} />
           </div>
           <div className='w-full lg:pr-[4.375rem] mt-[7.375rem] pb-10'>
-            <h1 className='text-2xl  px-9 lg:pl-0 font-medium leading-[150%] text-white hidden lg:block'>
+            <h1 className='text-2xl  px-9 lg:pl-0 font-medium leading-9.5 text-white hidden lg:block'>
               {t('user.singleMovie.topHeader')}
             </h1>
             <div className='lg:mt-8  pl-9 lg:pl-0 mt-0 flex gap-6 2xl:flex-row flex-col'>
@@ -64,7 +64,7 @@ const Movie = ({ name }: { name: string }) => {
 
               <div className='flex flex-col  gap-4 w-full'>
                 <div className='flex justify-between items-center lg:flex-wrap w-full'>
-                  <h1 className='text-2xl font-medium leading-[150%] text-orange-250'>
+                  <h1 className='text-2xl font-medium leading-9.5 text-orange-250'>
                     {data && data?.data.name[i18n?.language! as 'en' | 'ka']}(
                     {data?.data.date})
                   </h1>
@@ -92,12 +92,12 @@ const Movie = ({ name }: { name: string }) => {
                       </h1>
                     ))}
                 </div>
-                <h1 className='text-gray-350 font-bold text-lg leading-[150%]'>
+                <h1 className='text-gray-350 font-bold text-lg leading-9.5'>
                   {t('user.singleMovie.director')}:&#160;
                   {data &&
                     (data?.data.director)[i18n?.language! as 'en' | 'ka']}
                 </h1>
-                <h1 className='text-gray-350 font-bold text-lg leading-[150%]'>
+                <h1 className='text-gray-350 font-bold text-lg leading-9.5'>
                   {t('user.singleMovie.budget')}:&#160;
                   {data?.data.budget &&
                     data &&
@@ -107,21 +107,21 @@ const Movie = ({ name }: { name: string }) => {
                     )}
                   $
                 </h1>
-                <h1 className='text-gray-350 font-normal text-lg leading-[150%] '>
+                <h1 className='text-gray-350 font-normal text-lg leading-9.5 '>
                   {data &&
                     (data?.data.description)[i18n?.language! as 'en' | 'ka']}
                 </h1>
               </div>
             </div>
             <div className='mt-11  px-9 lg:pl-0 lg:flex-row flex flex-col-reverse items-start lg:items-center'>
-              <h1 className='text-white text-2xl w-full lg:w-auto leading-[150%] pt-10 border-t border-t-gray-350 lg:pt-0 lg:border-t-0 lg:pr-4 lg:border-r lg:border-r-gray-350'>
+              <h1 className='text-white text-2xl w-full lg:w-auto leading-9.5 pt-10 border-t border-t-gray-350 lg:pt-0 lg:border-t-0 lg:pr-4 lg:border-r lg:border-r-gray-350'>
                 {t('user.singleMovie.totalQuotes')}{' '}
                 {data && data.data.quotes.length})
               </h1>
 
               <button
                 onClick={() => setIsAddQuoteOpen(true)}
-                className='flex gap-2 mb-10 lg:mb-0 lg:ml-4  justify-center items-center bg-red-650 text-white px-[1.125rem] py-[0.625rem] rounded-md text-xl leading-[150%]'
+                className='flex gap-2 mb-10 lg:mb-0 lg:ml-4  justify-center items-center bg-red-650 text-white px-[1.125rem] py-[0.625rem] rounded-md text-xl leading-9.5'
               >
                 <Plus />
                 {t('user.singleMovie.addQuote')}

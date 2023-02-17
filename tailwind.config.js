@@ -6,6 +6,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      lineHeight: {
+        9.5: '150%',
+      },
       fontFamily: {
         'helvetica-ka': ['HelveticaKa'],
         'helvetica-en': ['HelveticaEn'],

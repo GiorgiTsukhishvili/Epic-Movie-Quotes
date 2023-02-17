@@ -31,11 +31,11 @@ const NewsFeedCommentForm: React.FC<NewsFeedCommentFormProps> = ({ id }) => {
               message: t('form.login.required'),
             },
           })}
-          className='border-none w-full rounded-xl focus:ring-0 placeholder:text-gray-350 text-white text-xl leading-[150%] bg-comment-input'
+          className='border-none w-full rounded-xl focus:ring-0 placeholder:text-gray-350 text-white text-xl leading-9.5 bg-comment-input'
           placeholder={t('user.singleMovie.writeComment')!}
         />
       </form>
-      <div className='text-red-550 h-5 font-normal text-sm leading-[150%] mb-6 '>
+      <div className='text-red-550 h-5 font-normal text-sm leading-9.5 mb-6 '>
         <ErrorMessage errors={errors} name='comment' />
       </div>
     </Fragment>

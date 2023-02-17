@@ -48,7 +48,7 @@ const Profile = () => {
                   {message.isEmail ? (
                     <Fragment>
                       <div className='flex justify-between items-center '>
-                        <h1 className='flex justify-center items-center gap-2 text-green-950 text-base leading-[150%] pr-8'>
+                        <h1 className='flex justify-center items-center gap-2 text-green-950 text-base leading-9.5 pr-8'>
                           <Primary isMessage={true} />
                           {t('user.profile.simpleAlert')}
                         </h1>
@@ -63,7 +63,7 @@ const Profile = () => {
                           <MessageClose />
                         </span>
                       </div>
-                      <h1 className=' text-neutral-950 text-base leading-[150%] mt-5'>
+                      <h1 className=' text-neutral-950 text-base leading-9.5 mt-5'>
                         {t('user.profile.verifyNewEmail')}
                       </h1>
                     </Fragment>
@@ -72,7 +72,7 @@ const Profile = () => {
                       <h1
                         className={`flex justify-center items-center gap-2 ${
                           message.isError ? 'text-black' : 'text-green-950'
-                        } text-base leading-[150%] pr-8`}
+                        } text-base leading-9.5 pr-8`}
                       >
                         {message.isError ? (
                           <NotVerified isError={true} />
@@ -99,7 +99,7 @@ const Profile = () => {
               <></>
             )}
 
-            <h1 className='text-white leading-[150%] text-2xl font-medium hidden lg:block mb-[7.875rem] ml-[3.75rem]'>
+            <h1 className='text-white leading-9.5 text-2xl font-medium hidden lg:block mb-[7.875rem] ml-[3.75rem]'>
               {t('user.profile.myProfile')}
             </h1>
             <Link

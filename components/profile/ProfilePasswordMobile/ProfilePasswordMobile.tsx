@@ -22,14 +22,14 @@ const ProfilePasswordMobile: React.FC<ProfilePasswordMobileProps> = ({
         <div className='bg-zinc-750 rounded-xl  backdrop-filter backdrop-blur-user-page -rotate-180  w-full h-full absolute top-0 left-0' />
         <div className='z-10 block  px-8 mx-auto'>
           <div className='h-[8.375rem] w-full sm:w-[35rem] bg-neutral-950 mb-8  border border-profile-border mt-[2.375rem] rounded-md p-6'>
-            <h1 className='text-white text-base leading-[150%]'>
+            <h1 className='text-white text-base leading-9.5'>
               {t('user.profile.shouldContain')}
             </h1>
-            <h1 className='text-neutral-450 text-sm leading-[150%] mt-4 flex items-center gap-1.5'>
+            <h1 className='text-neutral-450 text-sm leading-9.5 mt-4 flex items-center gap-1.5'>
               <span className='w-1 h-1 rounded-full bg-neutral-450 inline-block' />
               {t('user.profile.min')}
             </h1>
-            <h1 className='text-white text-sm leading-[150%] flex items-center gap-1.5'>
+            <h1 className='text-white text-sm leading-9.5 flex items-center gap-1.5'>
               <span className='w-1 h-1 rounded-full bg-green-750 inline-block' />
               {t('user.profile.max')}
             </h1>
@@ -37,7 +37,7 @@ const ProfilePasswordMobile: React.FC<ProfilePasswordMobileProps> = ({
           <div className='flex flex-col items-start relative mt-10 w-full sm:w-[35rem] '>
             <label
               htmlFor='password'
-              className='text-base text-white font-normal leading-[150%]'
+              className='text-base text-white font-normal leading-9.5'
             >
               {t('user.profile.newPassword')}
             </label>
@@ -63,7 +63,7 @@ const ProfilePasswordMobile: React.FC<ProfilePasswordMobileProps> = ({
               className='w-full sm:w-[35rem]  mt-2  bg-gray-350 rounded-md py-2 px-4 text-neutral-750 text-2xl pr-10'
               placeholder={`${t('form.register.passwordInput')}`}
             />
-            <div className='text-red-550 h-5 font-normal text-sm leading-[150%] my-1'>
+            <div className='text-red-550 h-5 font-normal text-sm leading-9.5 my-1'>
               <ErrorMessage errors={errorsMobile} name='password' />
             </div>
 
@@ -103,7 +103,7 @@ const ProfilePasswordMobile: React.FC<ProfilePasswordMobileProps> = ({
           <div className='flex flex-col items-start relative mt-4 w-full sm:w-[35rem]'>
             <label
               htmlFor='password_confirmation'
-              className='text-base text-white font-normal leading-[150%] mb-2'
+              className='text-base text-white font-normal leading-9.5 mb-2'
             >
               {t('form.register.passwordConfirmation')}
             </label>
@@ -123,7 +123,7 @@ const ProfilePasswordMobile: React.FC<ProfilePasswordMobileProps> = ({
               className='w-full sm:w-[35rem]  mt-2  bg-gray-350 rounded-md py-2 px-4 text-neutral-750 text-2xl pr-10'
               placeholder={`${t('form.register.passwordConfirmation')}`}
             />
-            <div className='text-red-550 h-5 font-normal text-sm leading-[150%] my-1'>
+            <div className='text-red-550 h-5 font-normal text-sm leading-9.5 my-1'>
               <ErrorMessage
                 errors={errorsMobile}
                 name='password_confirmation'
@@ -168,13 +168,13 @@ const ProfilePasswordMobile: React.FC<ProfilePasswordMobileProps> = ({
       </div>
       <div className='w-full flex justify-between gap-8 mt-24 px-7'>
         <button
-          className='text-gray-350 text-xl leading-[150%]'
+          className='text-gray-350 text-xl leading-9.5'
           onClick={() => cancel()}
         >
           {t('user.profile.cancel')}
         </button>
         <button
-          className='text-white leading-[150%] px-4 py-2 text-xl bg-red-650 rounded-md'
+          className='text-white leading-9.5 px-4 py-2 text-xl bg-red-650 rounded'
           onClick={() => {
             checkPasswordValidations() && setPasswordEditStep('second');
           }}

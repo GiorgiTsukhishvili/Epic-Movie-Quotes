@@ -22,7 +22,7 @@ const ProfileEmailsDesktop: React.FC<ProfileEmailsDesktopProps> = ({
       <div className='self-start'>
         {emails.map((email) => (
           <Fragment key={email.id}>
-            <h1 className='text-medium text-white leading-[150%] block mt-10 self-start'>
+            <h1 className='text-medium text-white leading-9.5 block mt-10 self-start'>
               {t('user.profile.email')}
             </h1>
             <div className='flex justify-start items-center gap-8 w-full mt-2 flex-wrap'>
@@ -45,7 +45,7 @@ const ProfileEmailsDesktop: React.FC<ProfileEmailsDesktopProps> = ({
                 )}
               </div>
               {email.is_primary ? (
-                <h1 className='text-gray-350 leading-[150%] text-xl'>
+                <h1 className='text-gray-350 leading-9.5 text-xl'>
                   {t('user.profile.primary')}
                 </h1>
               ) : (
@@ -55,18 +55,18 @@ const ProfileEmailsDesktop: React.FC<ProfileEmailsDesktopProps> = ({
                 <div className='flex'>
                   {email.email_verified_at ? (
                     <button
-                      className='text-gray-350 leading-[150%] text-xl mr-4'
+                      className='text-gray-350 leading-9.5 text-xl mr-4'
                       onClick={() => editPrimary(email.id)}
                     >
                       {t('user.profile.makePrimary')}
                     </button>
                   ) : (
-                    <h1 className='text-gray-350 leading-[150%] text-xl mr-4'>
+                    <h1 className='text-gray-350 leading-9.5 text-xl mr-4'>
                       {t('user.profile.notVerified')}
                     </h1>
                   )}
                   <button
-                    className='text-gray-350 leading-[150%] text-xl border-l border-l-gray-550 pl-4'
+                    className='text-gray-350 leading-9.5 text-xl border-l border-l-gray-550 pl-4'
                     onClick={() => removeEmail(email.id)}
                   >
                     {t('user.profile.remove')}
@@ -77,7 +77,7 @@ const ProfileEmailsDesktop: React.FC<ProfileEmailsDesktopProps> = ({
           </Fragment>
         ))}
         <button
-          className='mt-10 p-4 border border-zinc-350 rounded-md text-white text-xl leading-[150%] flex justify-center items-center gap-2'
+          className='mt-10 p-4 border border-zinc-350 rounded-md text-white text-xl leading-9.5 flex justify-center items-center gap-2'
           onClick={() => setIsAddEmailOpen(true)}
         >
           <Plus />

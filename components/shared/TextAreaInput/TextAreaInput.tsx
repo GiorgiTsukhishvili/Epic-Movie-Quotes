@@ -35,14 +35,14 @@ const TextAreaInput: React.FC<TextAreaInputProps> = ({
             },
           },
         })}
-        className='bg-transparent w-full placeholder:text-gray-550 pr-12 border-gray-550 rounded-md border h-[5.375rem] text-white text-base lg:text-2xl leading-[150%] focus:ring-0 focus:border-gray-550 focus:border'
+        className='bg-transparent w-full placeholder:text-gray-550 pr-12 border-gray-550 rounded-md border h-[5.375rem] text-white text-base lg:text-2xl leading-9.5 focus:ring-0 focus:border-gray-550 focus:border'
         cols={30}
         rows={10}
         placeholder={placeholder}
       ></textarea>
       <label
         htmlFor={name}
-        className='absolute right-2 top-7 text-gray-550 leading-[150%] text-xl'
+        className='absolute right-2 top-7 text-gray-550 leading-9.5 text-xl'
       >
         {labelText}
       </label>

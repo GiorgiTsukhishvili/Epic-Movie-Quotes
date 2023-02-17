@@ -53,7 +53,7 @@ const ViewQuote: React.FC<ViewQuoteProps> = ({ quoteId, removeQuery }) => {
               <TrashCan />
             </div>
           </div>
-          <h1 className='text-white text-xl lg:text-2xl leading-[150%] font-medium'>
+          <h1 className='text-white text-xl lg:text-2xl leading-9.5 font-medium'>
             {t('user.singleMovie.viewQuote')}
           </h1>
           <Link
@@ -73,21 +73,21 @@ const ViewQuote: React.FC<ViewQuoteProps> = ({ quoteId, removeQuery }) => {
               className='rounded-full w-[3.75rem] h-[3.75rem]'
             />
           )}
-          <h1 className='text-white text-xl = leading-[150%] font-medium'>
+          <h1 className='text-white text-xl = leading-9.5 font-medium'>
             {name}
           </h1>
         </div>
         <div className='border border-gray-550 lg:h-[3.375rem] h-[5.25rem] flex justify-between items-start px-2 py-1 rounded-md mx-8 mt-2'>
-          <h1 className='text-white lg:text-2xl text-base leading-[150%]'>
+          <h1 className='text-white lg:text-2xl text-base leading-9.5'>
             &quot;{quoteData.quote.en}&quot;
           </h1>
-          <h1 className=' text-gray-550 leading-[150%] text-xl'>Eng</h1>
+          <h1 className=' text-gray-550 leading-9.5 text-xl'>Eng</h1>
         </div>
         <div className='border border-gray-550 lg:h-[3.375rem] h-[5.25rem] flex justify-between items-start px-2 py-1 rounded-md mx-8 mt-4'>
-          <h1 className='text-white lg:text-2xl text-base leading-[150%]'>
+          <h1 className='text-white lg:text-2xl text-base leading-9.5'>
             &quot;{quoteData.quote.ka}&quot;
           </h1>
-          <h1 className=' text-gray-550 leading-[150%] text-xl'>ქარ</h1>
+          <h1 className=' text-gray-550 leading-9.5 text-xl'>ქარ</h1>
         </div>
 
         <div className=' mt-8 mx-8'>
@@ -101,12 +101,12 @@ const ViewQuote: React.FC<ViewQuoteProps> = ({ quoteId, removeQuery }) => {
         </div>
 
         <div className='py-6 px-8 flex gap-8 items-center'>
-          <div className='flex gap-3 text-white leading-[150%] text-xl'>
+          <div className='flex gap-3 text-white leading-9.5 text-xl'>
             {quoteData.comments.length}
             <QuoteComment />
           </div>
           <div
-            className='flex gap-3 text-white leading-[150%] text-xl cursor-pointer'
+            className='flex gap-3 text-white leading-9.5 text-xl cursor-pointer'
             onClick={() =>
               likeMutation({
                 id: quoteData.id,
@@ -135,10 +135,10 @@ const ViewQuote: React.FC<ViewQuoteProps> = ({ quoteId, removeQuery }) => {
                 className='rounded-full w-[3.75rem] h-[3.75rem]'
               />
               <div className='border-b border-b-quote-border w-full pb-6 mb-6'>
-                <h1 className='text-white text-xl leading-[150%] font-medium mt-1'>
+                <h1 className='text-white text-xl leading-9.5 font-medium mt-1'>
                   {comment.user.name}
                 </h1>
-                <h1 className='text-white text-xl leading-[150%] mt-3'>
+                <h1 className='text-white text-xl leading-9.5 mt-3'>
                   {comment.comment}
                 </h1>
               </div>
@@ -166,11 +166,11 @@ const ViewQuote: React.FC<ViewQuoteProps> = ({ quoteId, removeQuery }) => {
                 message: t('form.login.required'),
               },
             })}
-            className='border-none w-full rounded-xl focus:ring-0 placeholder:text-gray-350 text-white text-xl leading-[150%] bg-comment-input'
+            className='border-none w-full rounded-xl focus:ring-0 placeholder:text-gray-350 text-white text-xl leading-9.5 bg-comment-input'
             placeholder={t('user.singleMovie.writeComment')!}
           />
         </form>
-        <div className='text-red-550 h-5 font-normal text-sm leading-[150%] mb-6 mx-8'>
+        <div className='text-red-550 h-5 font-normal text-sm leading-9.5 mb-6 mx-8'>
           <ErrorMessage errors={errors} name='comment' />
         </div>
       </div>

@@ -29,7 +29,7 @@ const EmailSent: React.FC<EmailSentProps> = ({
           <h1 className='font-medium text-2xl md:text-[2rem] text-white leading-[120%] mt-4 md:mt-5'>
             {t(header)}
           </h1>
-          <h1 className='font-normal text-base text-white mt-6 md:mt-8 leading-[150%] px-4 '>
+          <h1 className='font-normal text-base text-white mt-6 md:mt-8 leading-9.5 px-4 '>
             {t(main)}
           </h1>
           <a
@@ -38,13 +38,13 @@ const EmailSent: React.FC<EmailSentProps> = ({
             rel={'noreferrer'}
             className={`${
               skip ? 'w-full' : 'w-[11.875rem]'
-            } bg-red-650 hover:bg-red-750 py-[0.438rem] md:w-[22.5rem] text-white leading-[150%] text-base mt-6 md:mt-10 rounded-md`}
+            } bg-red-650 hover:bg-red-750 py-[0.438rem] md:w-[22.5rem] text-white leading-9.5 text-base mt-6 md:mt-10 rounded`}
           >
             {t(goToEmail)}
           </a>
           {skip && (
             <h1
-              className='mt-8 text-gray-550 text-base font-normal leading-[150%] cursor-pointer'
+              className='mt-8 text-gray-550 text-base font-normal leading-9.5 cursor-pointer'
               onClick={() => setWhichForm('')}
             >
               {t(skip)}

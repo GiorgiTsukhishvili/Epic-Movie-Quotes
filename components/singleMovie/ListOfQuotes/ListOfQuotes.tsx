@@ -28,7 +28,7 @@ const ListOfQuotes: React.FC<ListOfQuotesTypes> = ({ quote, removeQuote }) => {
             height={140}
             className='xl:w-[14.125rem] w-full h-[8.75rem] rounded-sm object-cover'
           />
-          <h1 className='text-gray-350 break-words text-2xl leading-[150%] ml-0 mt-6 xl:mt-0 xl:ml-9 xl:w-[29.375rem] w-auto'>
+          <h1 className='text-gray-350 break-words text-2xl leading-9.5 ml-0 mt-6 xl:mt-0 xl:ml-9 xl:w-[29.375rem] w-auto'>
             &quot;
             {quote.quote[i18n?.language! as 'en' | 'ka'].length > 100
               ? quote.quote[i18n?.language! as 'en' | 'ka'].slice(0, 100) +
@@ -39,11 +39,11 @@ const ListOfQuotes: React.FC<ListOfQuotesTypes> = ({ quote, removeQuote }) => {
         </div>
 
         <div className='py-6 px-8 flex gap-8 items-center'>
-          <div className='flex gap-3 text-white leading-[150%] text-xl'>
+          <div className='flex gap-3 text-white leading-9.5 text-xl'>
             {quote.comments_count}
             <QuoteComment />
           </div>
-          <div className='flex gap-3 text-white leading-[150%] text-xl'>
+          <div className='flex gap-3 text-white leading-9.5 text-xl'>
             {quote.likes_count}
             <Like />
           </div>
@@ -69,7 +69,7 @@ const ListOfQuotes: React.FC<ListOfQuotesTypes> = ({ quote, removeQuote }) => {
               className='flex justify-start items-center gap-4 cursor-pointer'
             >
               <EyeColored />
-              <h1 className='text-white text-base leading-[150%]'>
+              <h1 className='text-white text-base leading-9.5'>
                 {t('user.singleMovie.viewQuote')}
               </h1>
             </Link>
@@ -81,7 +81,7 @@ const ListOfQuotes: React.FC<ListOfQuotesTypes> = ({ quote, removeQuote }) => {
               className='flex justify-start items-center gap-4 cursor-pointer'
             >
               <Pencil />
-              <h1 className='text-white text-base leading-[150%]'>
+              <h1 className='text-white text-base leading-9.5'>
                 {t('user.singleMovie.edit')}
               </h1>
             </Link>
@@ -90,7 +90,7 @@ const ListOfQuotes: React.FC<ListOfQuotesTypes> = ({ quote, removeQuote }) => {
               onClick={() => removeQuote(quote.id)}
             >
               <TrashCan />
-              <h1 className='text-white text-base leading-[150%]'>
+              <h1 className='text-white text-base leading-9.5'>
                 {t('user.singleMovie.delete')}
               </h1>
             </div>

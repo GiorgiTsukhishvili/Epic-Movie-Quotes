@@ -28,11 +28,11 @@ const NewsFeedQuotes: React.FC<NewsFeedQuotesProps> = ({ data }) => {
               height={52}
               className='rounded-full w-10 h-10 lg:w-[3.25rem] lg:h-[3.25rem]'
             />
-            <h1 className='text-white text-base lg:text-xl leading-[150%]'>
+            <h1 className='text-white text-base lg:text-xl leading-9.5'>
               {quote.movie.user.name}
             </h1>
           </div>
-          <h1 className='text-white text-base lg:text-xl leading-[150%] mt-4 mb-7'>
+          <h1 className='text-white text-base lg:text-xl leading-9.5 mt-4 mb-7'>
             &quot;{quote.quote[i18n?.language as 'ka' | 'en']}&quot;
             <span className='text-orange-250'>
               &nbsp;{quote.movie.name[i18n?.language as 'ka' | 'en']}&nbsp;
@@ -48,12 +48,12 @@ const NewsFeedQuotes: React.FC<NewsFeedQuotesProps> = ({ data }) => {
           />
 
           <div className='py-6  flex gap-8 items-center'>
-            <div className='flex gap-3 text-white leading-[150%] text-xl'>
+            <div className='flex gap-3 text-white leading-9.5 text-xl'>
               {quote.comments.length}
               <QuoteComment />
             </div>
             <div
-              className='flex gap-3 text-white leading-[150%] text-xl cursor-pointer'
+              className='flex gap-3 text-white leading-9.5 text-xl cursor-pointer'
               onClick={() =>
                 likeMutation({ id: quote.id, userId: quote.movie.user_id })
               }
@@ -80,10 +80,10 @@ const NewsFeedQuotes: React.FC<NewsFeedQuotesProps> = ({ data }) => {
                   className='rounded-full w-[3.75rem] h-[3.75rem]'
                 />
                 <div className='border-b border-b-quote-border w-full pb-6 mb-6'>
-                  <h1 className='text-white text-xl leading-[150%] font-medium mt-1'>
+                  <h1 className='text-white text-xl leading-9.5 font-medium mt-1'>
                     {comment.user.name}
                   </h1>
-                  <h1 className='text-white text-xl leading-[150%] mt-3'>
+                  <h1 className='text-white text-xl leading-9.5 mt-3'>
                     {comment.comment}
                   </h1>
                 </div>

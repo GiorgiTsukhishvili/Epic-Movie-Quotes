@@ -21,7 +21,7 @@ const Login: React.FC<LoginProps> = ({ setWhichForm }) => {
         <h1 className='text-white text-2xl md:text-[2rem] font-medium leading-[120%]'>
           {t('form.login.header')}
         </h1>
-        <h1 className='text-gray-550 mt-3 text-base font-normal leading-[150%] px-[2.125rem] sm:px-[7.5rem]'>
+        <h1 className='text-gray-550 mt-3 text-base font-normal leading-9.5 px-[2.125rem] sm:px-[7.5rem]'>
           {t('form.login.welcomeBack')}
         </h1>
         <form
@@ -31,7 +31,7 @@ const Login: React.FC<LoginProps> = ({ setWhichForm }) => {
           <div className='w-full flex flex-col items-start relative'>
             <label
               htmlFor='login'
-              className='text-base text-white font-normal leading-[150%] mb-2'
+              className='text-base text-white font-normal leading-9.5 mb-2'
             >
               {t('form.login.emailOrName')}
             </label>
@@ -56,7 +56,7 @@ const Login: React.FC<LoginProps> = ({ setWhichForm }) => {
               } focus:shadow-input-custom focus:outline-none w-full border-2 pr-10 rounded-md bg-gray-350 text-gray-550 px-[0.813rem] py-[0.438rem] placeholder-gray-550`}
               placeholder={`${t('form.login.emailOrNameInput')}`}
             />
-            <div className='text-red-550 h-5 font-normal text-sm leading-[150%] my-1'>
+            <div className='text-red-550 h-5 font-normal text-sm leading-9.5 my-1'>
               <ErrorMessage errors={errors} name='login' />
             </div>
             <div className='absolute top-[2.875rem] right-[0.85rem]'>
@@ -67,7 +67,7 @@ const Login: React.FC<LoginProps> = ({ setWhichForm }) => {
           <div className='w-full flex flex-col items-start relative'>
             <label
               htmlFor='password'
-              className='text-base text-white font-normal leading-[150%] mb-2'
+              className='text-base text-white font-normal leading-9.5 mb-2'
             >
               {t('form.login.password')}
             </label>
@@ -92,7 +92,7 @@ const Login: React.FC<LoginProps> = ({ setWhichForm }) => {
               }`}
               placeholder={`${t('form.login.password')}`}
             />
-            <div className='text-red-550 h-5 font-normal text-sm leading-[150%] my-1'>
+            <div className='text-red-550 h-5 font-normal text-sm leading-9.5 my-1'>
               <ErrorMessage errors={errors} name='password' />
             </div>
 
@@ -116,13 +116,13 @@ const Login: React.FC<LoginProps> = ({ setWhichForm }) => {
               />
               <label
                 htmlFor='remember'
-                className='text-base font-normal text-white leading-[150%]'
+                className='text-base font-normal text-white leading-9.5'
               >
                 {t('form.login.rememberMe')}
               </label>
             </div>
             <h1
-              className='text-base leading-[150%] font-normal text-blue-650 underline cursor-pointer'
+              className='text-base leading-9.5 font-normal text-blue-650 underline cursor-pointer'
               onClick={() => setWhichForm('forgot')}
             >
               {t('form.login.forgotPassword')}
@@ -131,7 +131,7 @@ const Login: React.FC<LoginProps> = ({ setWhichForm }) => {
 
           <button
             type='submit'
-            className='bg-red-650 hover:bg-red-750 text-white text-base  h-[2.375rem]  leading-[150%]  w-full rounded-md '
+            className='bg-red-650 hover:bg-red-750 text-white text-base  h-[2.375rem]  leading-9.5  w-full rounded '
           >
             {t('form.login.singIn')}
           </button>
@@ -142,17 +142,17 @@ const Login: React.FC<LoginProps> = ({ setWhichForm }) => {
           onClick={() => redirectGoogle()}
         >
           <Google />
-          <h1 className='text-white text-base font-normal leading-[150%]'>
+          <h1 className='text-white text-base font-normal leading-9.5'>
             {t('form.login.loginWithGoogle')}
           </h1>
         </div>
 
         <div className='flex justify-center items-center gap-1 mt-8'>
-          <h1 className='text-base leading-[150%] font-normal text-gray-550'>
+          <h1 className='text-base leading-9.5 font-normal text-gray-550'>
             {t('form.login.alreadyHaveAccount')}
           </h1>
           <button
-            className='text-base leading-[150%] font-normal text-blue-650 underline'
+            className='text-base leading-9.5 font-normal text-blue-650 underline'
             onClick={() => setWhichForm('registration')}
           >
             {t('navbar.singUp')}

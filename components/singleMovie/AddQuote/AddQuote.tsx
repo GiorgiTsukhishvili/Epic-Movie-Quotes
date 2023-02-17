@@ -37,7 +37,7 @@ const AddQuote: React.FC<AddQuoteProps> = ({
         <div className='w-full flex px-8 py-10 border-b border-b-border-transparent items-center justify-between'>
           <div />
 
-          <h1 className='text-white text-xl lg:text-2xl leading-[150%] font-medium'>
+          <h1 className='text-white text-xl lg:text-2xl leading-9.5 font-medium'>
             {t('user.singleMovie.addQuote')}
           </h1>
           <div
@@ -57,7 +57,7 @@ const AddQuote: React.FC<AddQuoteProps> = ({
               height={60}
               style={{ borderRadius: '100%' }}
             />
-            <h1 className='text-white text-xl = leading-[150%] font-medium'>
+            <h1 className='text-white text-xl = leading-9.5 font-medium'>
               {authorName}
             </h1>
           </div>
@@ -72,7 +72,7 @@ const AddQuote: React.FC<AddQuoteProps> = ({
             />
 
             <div className='flex flex-col flex-wrap gap-5'>
-              <h1 className='text-orange-250 text-base font-medium lg:text-2xl leading-[150%]'>
+              <h1 className='text-orange-250 text-base font-medium lg:text-2xl leading-9.5'>
                 {name[i18n?.language as 'ka' | 'en']} ({date})
               </h1>
               <div className='flex lg:flex-col flex-col-reverse gap-3'>
@@ -86,7 +86,7 @@ const AddQuote: React.FC<AddQuoteProps> = ({
                     </h1>
                   ))}
                 </div>
-                <h1 className='text-gray-350 font-bold text-base lg:text-lg leading-[150%]'>
+                <h1 className='text-gray-350 font-bold text-base lg:text-lg leading-9.5'>
                   {t('user.singleMovie.director')}:&#160;
                   {director[i18n?.language! as 'en' | 'ka']}
                 </h1>
@@ -107,7 +107,7 @@ const AddQuote: React.FC<AddQuoteProps> = ({
                   errorText={t('textArea.onlyEnglish')!}
                 />
 
-                <div className='text-red-550 h-5 font-normal text-sm leading-[150%] my-1 mb-5'>
+                <div className='text-red-550 h-5 font-normal text-sm leading-9.5 my-1 mb-5'>
                   <ErrorMessage errors={errors} name='quote-en' />
                 </div>
 
@@ -121,7 +121,7 @@ const AddQuote: React.FC<AddQuoteProps> = ({
                   errorText={t('textArea.onlyGeorgian')!}
                 />
 
-                <div className='text-red-550 h-5 font-normal text-sm leading-[150%] my-1 z-50 '>
+                <div className='text-red-550 h-5 font-normal text-sm leading-9.5 my-1 z-50 '>
                   <ErrorMessage errors={errors} name='quote-ka' />
                 </div>
               </div>
@@ -138,10 +138,10 @@ const AddQuote: React.FC<AddQuoteProps> = ({
                   <div className='w-full h-[5.25rem] absolute top-0 flex justify-between items-center px-4'>
                     <div className='flex justify-center items-center gap-2'>
                       <Photo />
-                      <h1 className='text-base hidden lg:inline text-white leading-[150%]'>
+                      <h1 className='text-base hidden lg:inline text-white leading-9.5'>
                         {t('user.singleMovie.drag')}
                       </h1>
-                      <h1 className='text-base inline lg:hidden text-white leading-[150%]'>
+                      <h1 className='text-base inline lg:hidden text-white leading-9.5'>
                         {t('user.singleMovie.upload')}
                       </h1>
                     </div>
@@ -150,7 +150,7 @@ const AddQuote: React.FC<AddQuoteProps> = ({
                     </h1>
                   </div>
                 </div>
-                <div className='text-red-550 h-5 font-normal text-sm leading-[150%] my-5 z-50 '>
+                <div className='text-red-550 h-5 font-normal text-sm leading-9.5 my-5 z-50 '>
                   <ErrorMessage errors={errors} name='image' />
                 </div>
               </div>
@@ -172,7 +172,7 @@ const AddQuote: React.FC<AddQuoteProps> = ({
 
             <button
               type='submit'
-              className='bg-red-650 mb-5 hover:bg-red-750 text-white text-xl  h-12  leading-[150%]  w-full rounded-md '
+              className='bg-red-650 mb-5 hover:bg-red-750 text-white text-xl  h-12  leading-9.5  w-full rounded'
             >
               {t('user.singleMovie.addQuote')}
             </button>
