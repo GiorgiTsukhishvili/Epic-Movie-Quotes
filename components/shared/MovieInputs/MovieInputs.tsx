@@ -288,7 +288,7 @@ const MovieInputs: React.FC<MovieInputsTypes> = ({
 
           <button
             type='submit'
-            className='bg-red-650 mb-20 hover:bg-red-750 text-white text-xl  h-[2.375rem]  leading-9.5  w-full rounded-md '
+            className='bg-red-650 mb-20 hover:bg-red-750 text-white text-xl  h-[2.375rem]  leading-9.5  w-full rounded '
           >
             {t('user.allMovies.addMovie')}
           </button>

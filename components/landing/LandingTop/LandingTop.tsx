@@ -13,7 +13,7 @@ const LandingTop: React.FC<LandingTopProps> = ({ setWhichForm }) => {
         </h1>
         <button
           onClick={() => setWhichForm('registration')}
-          className='bg-red-650 hover:bg-red-750 text-white text-base lg:text-xl leading-9.5 py-2 lg:py-2.5 px-7 lg:px-4 rounded-md '
+          className='bg-red-650 hover:bg-red-750 text-white text-base lg:text-xl leading-9.5 py-2 lg:py-2.5 px-7 lg:px-4 rounded '
         >
           {t('landing.top.button')}
         </button>

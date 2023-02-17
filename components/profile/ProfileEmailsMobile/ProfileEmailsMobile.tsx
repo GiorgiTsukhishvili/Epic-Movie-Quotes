@@ -76,7 +76,7 @@ const ProfileEmailsMobile: React.FC<ProfileEmailsMobileProps> = ({
             </h1>
 
             <button
-              className='mt-10 p-1 border border-zinc-350 rounded-md w-full text-white text-base leading-9.5 flex justify-center items-center gap-2'
+              className='mt-10 p-1 border border-zinc-350 rounded w-full text-white text-base leading-9.5 flex justify-center items-center gap-2'
               onClick={() => setEmailStep('second')}
             >
               <Plus />

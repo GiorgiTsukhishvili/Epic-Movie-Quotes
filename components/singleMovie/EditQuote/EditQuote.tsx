@@ -136,7 +136,7 @@ const EditQuote: React.FC<EditQuoteProps> = ({
 
           <button
             type='submit'
-            className='bg-red-650 mb-5 hover:bg-red-750 text-white text-xl  h-12  leading-9.5  w-full rounded-md '
+            className='bg-red-650 mb-5 hover:bg-red-750 text-white text-xl  h-12  leading-9.5  w-full rounded '
           >
             {t('user.singleMovie.saveChanges')}
           </button>

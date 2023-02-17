@@ -292,7 +292,7 @@ const Registration: React.FC<RegistrationProps> = ({ setWhichForm }) => {
 
           <button
             type='submit'
-            className='bg-red-650 hover:bg-red-750 text-white text-base  h-[2.375rem]  leading-9.5  w-full rounded-md '
+            className='bg-red-650 hover:bg-red-750 text-white text-base  h-[2.375rem]  leading-9.5  w-full rounded '
           >
             {t('form.register.submit')}
           </button>

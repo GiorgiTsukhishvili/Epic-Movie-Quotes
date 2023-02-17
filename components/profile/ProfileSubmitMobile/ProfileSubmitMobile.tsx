@@ -24,7 +24,7 @@ const ProfileSubmitMobile: React.FC<ProfileSubmitMobileProps> = ({
             {t('user.profile.cancel')}
           </button>
           <button
-            className='text-white leading-9.5 px-4 py-2 text-xl bg-red-650 rounded-md'
+            className='text-white leading-9.5 px-4 py-2 text-xl bg-red-650 rounded'
             onClick={() => submit()}
           >
             {t('user.profile.add')}
