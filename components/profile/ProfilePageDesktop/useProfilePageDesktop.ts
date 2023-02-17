@@ -38,6 +38,11 @@ const useProfilePageDesktop = (
 
   const handleFileUpload = (imageData: FileList | null) => {
     if (imageData !== null) {
+      if (imageData[0].size > 10 * 1024 * 1024) {
+        addNewMessage('errors.largeFile'!, false, true);
+        return;
+      }
+
       if (imageData[0]) {
         setValue('image', imageData[0]);
         setIsFileUploaded(true);

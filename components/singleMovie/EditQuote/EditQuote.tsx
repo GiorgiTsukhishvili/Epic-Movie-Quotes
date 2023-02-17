@@ -101,7 +101,7 @@ const EditQuote: React.FC<EditQuoteProps> = ({
             <ErrorMessage errors={errors} name='quote-ka' />
           </div>
 
-          <div className='relative mt-5 mb-10'>
+          <div className='relative mt-5 '>
             <input
               type='file'
               accept='image/*'
@@ -128,6 +128,10 @@ const EditQuote: React.FC<EditQuoteProps> = ({
                 {t('user.singleMovie.changePhoto')}
               </h1>
             </div>
+          </div>
+
+          <div className='text-red-550 h-5 font-normal text-sm leading-[150%] my-5 mb-5 z-50 '>
+            <ErrorMessage errors={errors} name='image' />
           </div>
 
           <button
