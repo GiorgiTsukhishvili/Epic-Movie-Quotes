@@ -44,7 +44,9 @@
       "loginWithGoogle": "Sign in with Google",
       "alreadyHaveAccount": "Don't have an account?",
       "required": "Field is mandatory",
-      "minLength": "Minimum length is 3 symbols"
+      "minLength": "Minimum length is 3 symbols",
+      "emailOrName": "Email or username",
+      "emailOrNameInput": "Enter Email or username"
     },
     "forgotPassword": {
       "header": "Forgot password?",
@@ -100,7 +102,8 @@
     "emailNotVerified": "Email is not verified",
     "emailDoesNotExist": "Email does not exist",
     "linkNotValid": "Link is not valid",
-    "incorrectLogin": "User email or password is incorrect"
+    "incorrectLogin": "User email or password is incorrect",
+    "largeFile": "File is too large"
   },
   "user": {
     "profile": {

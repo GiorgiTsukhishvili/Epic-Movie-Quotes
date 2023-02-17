@@ -33,7 +33,7 @@ const Login: React.FC<LoginProps> = ({ setWhichForm }) => {
               htmlFor='login'
               className='text-base text-white font-normal leading-[150%] mb-2'
             >
-              {t('form.login.email')}
+              {t('form.login.emailOrName')}
             </label>
             <input
               type='text'
@@ -54,7 +54,7 @@ const Login: React.FC<LoginProps> = ({ setWhichForm }) => {
                   ? 'border-green-750'
                   : 'border-gray-350'
               } focus:shadow-input-custom focus:outline-none w-full border-2 pr-10 rounded-md bg-gray-350 text-gray-550 px-[0.813rem] py-[0.438rem] placeholder-gray-550`}
-              placeholder={`${t('form.login.emailInput')}`}
+              placeholder={`${t('form.login.emailOrNameInput')}`}
             />
             <div className='text-red-550 h-5 font-normal text-sm leading-[150%] my-1'>
               <ErrorMessage errors={errors} name='login' />

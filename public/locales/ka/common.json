@@ -44,7 +44,9 @@
       "loginWithGoogle": "შედი Google-ით",
       "alreadyHaveAccount": "არ გაქვს ანგარიში?",
       "required": "ველი სავალდებულოა",
-      "minLength": "შეიყვანეთ მინიმუმ 3 სიმბოლო"
+      "minLength": "შეიყვანეთ მინიმუმ 3 სიმბოლო",
+      "emailOrName": "მეილი ან სახელი",
+      "emailOrNameInput": "შეიყვანეთ მეილი ან სახელი"
     },
     "forgotPassword": {
       "header": "დაგავიწყდა შენი პაროლი?",
@@ -100,7 +102,8 @@
     "emailNotVerified": "მეილი არ არის ვერიფიცირებული",
     "emailDoesNotExist": "მეილი არ არსებობს",
     "linkNotValid": "ლინკი არ არის ვალიდური",
-    "incorrectLogin": "მომხმარებლის მეილი ან პაროლი არასწორია"
+    "incorrectLogin": "მომხმარებლის მეილი ან პაროლი არასწორია",
+    "largeFile": "ფაილი ზედმეტად დიდია"
   },
   "user": {
     "profile": {
