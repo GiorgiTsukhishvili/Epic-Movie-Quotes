@@ -39,13 +39,13 @@ const NormalInput: React.FC<NormalInputProps> = ({
             },
           },
         })}
-        className='bg-transparent w-full pr-12 placeholder:text-gray-550 border-gray-550 rounded-md border h-12 text-white text-base lg:text-2xl leading-[150%] focus:ring-0 focus:border-gray-550 focus:border'
+        className='bg-transparent w-full pr-12 placeholder:text-gray-550 border-gray-550 rounded-md border h-12 text-white text-base lg:text-2xl leading-9.5 focus:ring-0 focus:border-gray-550 focus:border'
         placeholder={placeholder}
       />
 
       <label
         htmlFor={name}
-        className='absolute right-2 top-2 text-gray-550 leading-[150%] text-xl'
+        className='absolute right-2 top-2 text-gray-550 leading-9.5 text-xl'
       >
         {labelText}
       </label>

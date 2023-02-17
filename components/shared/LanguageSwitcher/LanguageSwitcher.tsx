@@ -11,25 +11,25 @@ const LanguageSwitcher = () => {
         className='flex items-center gap-2.5 cursor-pointer'
         onClick={() => setIsDropdownOpen((prevState) => !prevState)}
       >
-        <h1 className='text-white text-base font-normal leading-[150%]'>
+        <h1 className='text-white text-base font-normal leading-9.5'>
           {t('navbar.language')}
         </h1>
         <ArrowDown />
       </div>
 
       {isDropdownOpen && (
-        <div className='bg-white px-4 py-2 text-base font-normal leading-[150%] absolute rounded-md top-14 left-[-2rem]'>
+        <div className='bg-white px-4 py-2 text-base font-normal leading-9.5 absolute rounded-md top-14 left-[-2rem]'>
           <Link
             href={{ pathname, query }}
             locale='ka'
-            className='cursor-pointer text-base font-normal leading-[150%] text-center block'
+            className='cursor-pointer text-base font-normal leading-9.5 text-center block'
           >
             ქართული
           </Link>
           <Link
             href={{ pathname, query }}
             locale='en'
-            className='cursor-pointer text-base font-normal leading-[150%] text-center block'
+            className='cursor-pointer text-base font-normal leading-9.5 text-center block'
           >
             English
           </Link>

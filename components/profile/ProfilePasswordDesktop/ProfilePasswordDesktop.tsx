@@ -17,7 +17,7 @@ const ProfilePasswordDesktop: React.FC<ProfilePasswordDesktopProps> = ({
     <Fragment>
       <label
         htmlFor='name'
-        className='text-medium text-white leading-[150%] block mt-10 '
+        className='text-medium text-white leading-9.5 block mt-10 '
       >
         {t('user.profile.password')}
       </label>
@@ -29,7 +29,7 @@ const ProfilePasswordDesktop: React.FC<ProfilePasswordDesktopProps> = ({
           defaultValue={'************'}
         />
         <h1
-          className={`text-gray-350 leading-[150%] text-xl inline ml-8 cursor-pointer ${
+          className={`text-gray-350 leading-9.5 text-xl inline ml-8 cursor-pointer ${
             isPasswordEditOpen ? 'opacity-0' : 'opacity-1'
           }`}
           onClick={() => setIsPasswordEditOpen(true)}
@@ -41,14 +41,14 @@ const ProfilePasswordDesktop: React.FC<ProfilePasswordDesktopProps> = ({
       {isPasswordEditOpen ? (
         <Fragment>
           <div className='h-[8.375rem] w-[27rem] xl:w-[33rem] border border-profile-border mt-[2.375rem] rounded-md p-6'>
-            <h1 className='text-white text-base leading-[150%]'>
+            <h1 className='text-white text-base leading-9.5'>
               {t('user.profile.shouldContain')}
             </h1>
-            <h1 className='text-neutral-450 text-sm leading-[150%] mt-4 flex items-center gap-1.5'>
+            <h1 className='text-neutral-450 text-sm leading-9.5 mt-4 flex items-center gap-1.5'>
               <span className='w-1 h-1 rounded-full bg-neutral-450 inline-block' />
               {t('user.profile.min')}
             </h1>
-            <h1 className='text-white text-sm leading-[150%] flex items-center gap-1.5'>
+            <h1 className='text-white text-sm leading-9.5 flex items-center gap-1.5'>
               <span className='w-1 h-1 rounded-full bg-green-750 inline-block' />
               {t('user.profile.max')}
             </h1>
@@ -57,7 +57,7 @@ const ProfilePasswordDesktop: React.FC<ProfilePasswordDesktopProps> = ({
           <div className='flex flex-col items-start relative mt-10 w-[27rem] xl:w-[33rem]'>
             <label
               htmlFor='password'
-              className='text-base text-white font-normal leading-[150%]'
+              className='text-base text-white font-normal leading-9.5'
             >
               {t('user.profile.newPassword')}
             </label>
@@ -83,7 +83,7 @@ const ProfilePasswordDesktop: React.FC<ProfilePasswordDesktopProps> = ({
               className='w-[27rem] mt-2 inline xl:w-[33rem]  bg-gray-350 rounded-md py-2 px-4 placeholder:text-neutral-750 text-neutral-750 text-2xl'
               placeholder={`${t('form.register.passwordInput')}`}
             />
-            <div className='text-red-550 h-5 font-normal text-sm leading-[150%] my-1'>
+            <div className='text-red-550 h-5 font-normal text-sm leading-9.5 my-1'>
               <ErrorMessage errors={errors} name='password' />
             </div>
 
@@ -123,7 +123,7 @@ const ProfilePasswordDesktop: React.FC<ProfilePasswordDesktopProps> = ({
           <div className='flex flex-col items-start relative mt-4 w-[27rem] xl:w-[33rem]'>
             <label
               htmlFor='password_confirmation'
-              className='text-base text-white font-normal leading-[150%] mb-2'
+              className='text-base text-white font-normal leading-9.5 mb-2'
             >
               {t('form.register.passwordConfirmation')}
             </label>
@@ -143,7 +143,7 @@ const ProfilePasswordDesktop: React.FC<ProfilePasswordDesktopProps> = ({
               className='w-[27rem] mt-2 inline xl:w-[33rem]  bg-gray-350 rounded-md py-2 px-4 placeholder:text-neutral-750 text-neutral-750 text-2xl'
               placeholder={`${t('form.register.passwordConfirmation')}`}
             />
-            <div className='text-red-550 h-5 font-normal text-sm leading-[150%] my-1'>
+            <div className='text-red-550 h-5 font-normal text-sm leading-9.5 my-1'>
               <ErrorMessage errors={errors} name='password_confirmation' />
             </div>
 

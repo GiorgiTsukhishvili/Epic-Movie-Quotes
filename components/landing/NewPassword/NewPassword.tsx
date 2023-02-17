@@ -32,7 +32,7 @@ const NewPassword: React.FC<NewPasswordProps> = ({ setWhichForm }) => {
         <h1 className='text-white text-2xl md:text-[2rem] font-medium leading-[120%]'>
           {t('form.passwordReset.header')}
         </h1>
-        <h1 className='text-gray-550 mt-3 text-base font-normal leading-[150%] px-[2.125rem] sm:px-[7.5rem]'>
+        <h1 className='text-gray-550 mt-3 text-base font-normal leading-9.5 px-[2.125rem] sm:px-[7.5rem]'>
           {t('form.passwordReset.mainText')}
         </h1>
         <form
@@ -42,7 +42,7 @@ const NewPassword: React.FC<NewPasswordProps> = ({ setWhichForm }) => {
           <div className='w-full flex flex-col items-start relative'>
             <label
               htmlFor='password'
-              className='text-base text-white font-normal leading-[150%] mb-2'
+              className='text-base text-white font-normal leading-9.5 mb-2'
             >
               {t('form.login.password')} <span className='text-red-550'>*</span>
             </label>
@@ -78,7 +78,7 @@ const NewPassword: React.FC<NewPasswordProps> = ({ setWhichForm }) => {
               }`}
               placeholder={`${t('form.register.passwordInput')}`}
             />
-            <div className='text-red-550 h-5 font-normal text-sm leading-[150%] my-1'>
+            <div className='text-red-550 h-5 font-normal text-sm leading-9.5 my-1'>
               <ErrorMessage errors={errors} name='password' />
             </div>
 
@@ -125,7 +125,7 @@ const NewPassword: React.FC<NewPasswordProps> = ({ setWhichForm }) => {
           <div className='w-full flex flex-col items-start relative'>
             <label
               htmlFor='password_confirmation'
-              className='text-base text-white font-normal leading-[150%] mb-2'
+              className='text-base text-white font-normal leading-9.5 mb-2'
             >
               {t('form.register.passwordConfirmation')}{' '}
               <span className='text-red-550'>*</span>
@@ -156,7 +156,7 @@ const NewPassword: React.FC<NewPasswordProps> = ({ setWhichForm }) => {
               }`}
               placeholder={`${t('form.register.passwordConfirmation')}`}
             />
-            <div className='text-red-550 h-5 font-normal text-sm leading-[150%] my-1'>
+            <div className='text-red-550 h-5 font-normal text-sm leading-9.5 my-1'>
               <ErrorMessage errors={errors} name='password_confirmation' />
             </div>
 
@@ -204,14 +204,14 @@ const NewPassword: React.FC<NewPasswordProps> = ({ setWhichForm }) => {
 
           <button
             type='submit'
-            className='bg-red-650 hover:bg-red-750 text-white text-base  h-[2.375rem]  leading-[150%]  w-full rounded-md '
+            className='bg-red-650 hover:bg-red-750 text-white text-base  h-[2.375rem]  leading-9.5  w-full rounded-md '
           >
             {t('form.passwordReset.reset')}
           </button>
         </form>
 
         {!linkValid && (
-          <h1 className='text-red-550 h-5 font-normal text-lg leading-[150%] mt-1'>
+          <h1 className='text-red-550 h-5 font-normal text-lg leading-9.5 mt-1'>
             {t('errors.linkNotValid')}
           </h1>
         )}
@@ -222,7 +222,7 @@ const NewPassword: React.FC<NewPasswordProps> = ({ setWhichForm }) => {
             href={'/'}
           >
             <ArrowRight />
-            <h1 className='text-gray-550 text-base font-normal leading-[150%]'>
+            <h1 className='text-gray-550 text-base font-normal leading-9.5'>
               {t('form.forgotPassword.goBack')}
             </h1>
           </Link>

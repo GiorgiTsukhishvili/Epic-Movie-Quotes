@@ -27,10 +27,10 @@ const SideNavbar: React.FC<SideNavbarProps> = ({
           />
         )}
         <div>
-          <h1 className='text-white text-2xl leading-[150%] '>{name}</h1>
+          <h1 className='text-white text-2xl leading-9.5 '>{name}</h1>
           <Link
             href={{ pathname: '/profile' }}
-            className='text-gray-350 text-base leading-[150%]'
+            className='text-gray-350 text-base leading-9.5'
           >
             {t('user.profileSidebar.edit')}
           </Link>
@@ -39,7 +39,7 @@ const SideNavbar: React.FC<SideNavbarProps> = ({
 
       <Link
         href={{ pathname: '/news-feed' }}
-        className='text-white text-2xl leading-[150%] flex justify-center items-center gap-11'
+        className='text-white text-2xl leading-9.5 flex justify-center items-center gap-11'
       >
         <House isSidebar={true} isNewsFeed={isNewsFeed} />
         {t('user.profileSidebar.newsFeed')}
@@ -47,7 +47,7 @@ const SideNavbar: React.FC<SideNavbarProps> = ({
 
       <Link
         href={{ pathname: '/movies' }}
-        className='text-white text-2xl leading-[150%] flex justify-center items-center gap-11'
+        className='text-white text-2xl leading-9.5 flex justify-center items-center gap-11'
       >
         <Camera isSidebar={true} isMoviesPage={isMoviesPage} />
         {t('user.profileSidebar.movies')}

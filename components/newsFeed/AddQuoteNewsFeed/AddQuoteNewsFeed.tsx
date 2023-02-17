@@ -37,7 +37,7 @@ const AddQuoteNewsFeed = () => {
         >
           <PencilAndBoard />
           <NoSSRWrapper>
-            <h1 className='text-white leading-[150%] lg:text-2xl text-base ml-4'>
+            <h1 className='text-white leading-9.5 lg:text-2xl text-base ml-4'>
               {t('user.newsFeed.writeQuote')}
             </h1>
           </NoSSRWrapper>
@@ -55,7 +55,7 @@ const AddQuoteNewsFeed = () => {
             <div className='w-full flex px-8 py-10 border-b border-b-border-transparent items-center justify-between'>
               <div />
 
-              <h1 className='text-white text-xl lg:text-2xl leading-[150%] font-medium'>
+              <h1 className='text-white text-xl lg:text-2xl leading-9.5 font-medium'>
                 {t('user.newsFeed.writeQuote')}
               </h1>
               <div
@@ -75,7 +75,7 @@ const AddQuoteNewsFeed = () => {
                   height={60}
                   style={{ borderRadius: '100%' }}
                 />
-                <h1 className='text-white text-xl = leading-[150%] font-medium '>
+                <h1 className='text-white text-xl  leading-9.5 font-medium '>
                   {authorName}
                 </h1>
               </div>
@@ -92,7 +92,7 @@ const AddQuoteNewsFeed = () => {
                     errorText={t('textArea.onlyEnglish')!}
                   />
 
-                  <div className='text-red-550 h-5 font-normal text-base leading-[150%] my-1 mb-5'>
+                  <div className='text-red-550 h-5 font-normal text-base leading-9.5 my-1 mb-5'>
                     <ErrorMessage errors={errors} name='quote-en' />
                   </div>
 
@@ -106,7 +106,7 @@ const AddQuoteNewsFeed = () => {
                     errorText={t('textArea.onlyGeorgian')!}
                   />
 
-                  <div className='text-red-550 h-5 font-normal text-base leading-[150%] my-1 z-50 '>
+                  <div className='text-red-550 h-5 font-normal text-base leading-9.5 my-1 z-50 '>
                     <ErrorMessage errors={errors} name='quote-ka' />
                   </div>
 
@@ -121,7 +121,7 @@ const AddQuoteNewsFeed = () => {
                           message: t('form.login.required')!,
                         },
                       })}
-                      className='bg-black w-full pl-[4.25rem] border-transparent focus:border-transparent focus:ring-0 placeholder:text-white pr-12 rounded-md border h-[5.375rem] text-white text-base lg:text-2xl leading-[150%]'
+                      className='bg-black w-full pl-[4.25rem] border-transparent focus:border-transparent focus:ring-0 placeholder:text-white pr-12 rounded-md border h-[5.375rem] text-white text-base lg:text-2xl leading-9.5'
                     >
                       <option value='' disabled>
                         {t('user.newsFeed.chooseMovie')}
@@ -140,7 +140,7 @@ const AddQuoteNewsFeed = () => {
                     </select>
                   </div>
 
-                  <div className='text-red-550 h-5 font-normal text-base leading-[150%] my-1 z-50 '>
+                  <div className='text-red-550 h-5 font-normal text-base leading-9.5 my-1 z-50 '>
                     <ErrorMessage errors={errors} name='id' />
                   </div>
 
@@ -156,10 +156,10 @@ const AddQuoteNewsFeed = () => {
                     <div className='w-full h-[5.25rem] absolute top-0 flex justify-between items-center px-4'>
                       <div className='flex justify-center items-center gap-2'>
                         <Photo />
-                        <h1 className='text-base hidden lg:inline text-white leading-[150%]'>
+                        <h1 className='text-base hidden lg:inline text-white leading-9.5'>
                           {t('user.singleMovie.drag')}
                         </h1>
-                        <h1 className='text-base inline lg:hidden text-white leading-[150%]'>
+                        <h1 className='text-base inline lg:hidden text-white leading-9.5'>
                           {t('user.singleMovie.upload')}
                         </h1>
                       </div>
@@ -168,7 +168,7 @@ const AddQuoteNewsFeed = () => {
                       </h1>
                     </div>
                   </div>
-                  <div className='text-red-550 h-5 font-normal text-base leading-[150%] my-5 z-50 '>
+                  <div className='text-red-550 h-5 font-normal text-base leading-9.5 my-5 z-50 '>
                     <ErrorMessage errors={errors} name='image' />
                   </div>
                 </div>
@@ -189,7 +189,7 @@ const AddQuoteNewsFeed = () => {
 
                 <button
                   type='submit'
-                  className='bg-red-650 mb-5 hover:bg-red-750 text-white text-base  h-[2.375rem]  leading-[150%]  w-full rounded-md '
+                  className='bg-red-650 mb-5 hover:bg-red-750 text-white text-base  h-[2.375rem]  leading-9.5  w-full rounded-md '
                 >
                   {t('user.singleMovie.addQuote')}
                 </button>

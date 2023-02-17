@@ -24,12 +24,12 @@ const PasswordChangeSuccess: React.FC<PasswordSuccessMessageProps> = ({
           <h1 className='font-medium text-2xl md:text-[2rem] text-white leading-[120%] mt-[2.5rem] md:mt-5'>
             {t('form.successMessage.headerTwo')}
           </h1>
-          <h1 className='font-normal text-base text-white mt-8 md:mt-8 leading-[150%] px-4 '>
+          <h1 className='font-normal text-base text-white mt-8 md:mt-8 leading-9.5 px-4 '>
             {t('form.successMessage.mainTwo')}
           </h1>
           <Link
             href='/'
-            className=' w-full bg-red-650 hover:bg-red-750 py-[0.438rem] md:w-[22.5rem] text-white leading-[150%] text-base mt-8 md:mt-10 rounded-md'
+            className=' w-full bg-red-650 hover:bg-red-750 py-[0.438rem] md:w-[22.5rem] text-white leading-9.5 text-base mt-8 md:mt-10 rounded-md'
             onClick={() => setWhichForm('login')}
           >
             {t('form.successMessage.button')}

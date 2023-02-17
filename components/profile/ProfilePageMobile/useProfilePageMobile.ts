@@ -41,7 +41,7 @@ const useProfilePageMobile = (
 
   const handleFileUploadMobile = (imageData: FileList | null) => {
     if (imageData !== null) {
-      if (imageData[0].size > 10 * 1024 * 1024) {
+      if (imageData[0].size > 2 * 1024 * 1024) {
         addNewMessage('errors.largeFile'!, false, true);
         return;
       }

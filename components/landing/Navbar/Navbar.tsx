@@ -10,7 +10,7 @@ const Navbar: React.FC<NavbarProps> = ({ setWhichForm }) => {
     <div className='w-full h-20 fixed top-0 z-10 px-[1rem] sm:px-[2.5rem] md:px-[4.375rem] py-8 flex items-center justify-between'>
       <Link
         href={'/'}
-        className='uppercase text-orange-250 font-medium text-sm sm:text-base leading-[150%]'
+        className='uppercase text-orange-250 font-medium text-sm sm:text-base leading-9.5'
       >
         Movie Quotes
       </Link>
@@ -18,12 +18,12 @@ const Navbar: React.FC<NavbarProps> = ({ setWhichForm }) => {
         <LanguageSwitcher />
         <button
           onClick={() => setWhichForm('registration')}
-          className='bg-red-650 hover:bg-red-750 text-white text-base md:inline hidden lg:text-xl md:leading-[150%] leading-[150%] h-[2.375rem] px-7 lg:px-6 rounded '
+          className='bg-red-650 hover:bg-red-750 text-white text-base md:inline hidden lg:text-xl md:leading-9.5 leading-9.5 h-[2.375rem] px-7 lg:px-6 rounded '
         >
           {t('navbar.singUp')}
         </button>
         <button
-          className='text-white text-sm sm:text-base lg:text-xl md:leading-[150%] leading-[150%] h-[2.375rem] px-4 lg:px-6 rounded border-2 border-white'
+          className='text-white text-sm sm:text-base lg:text-xl md:leading-9.5 leading-9.5 h-[2.375rem] px-4 lg:px-6 rounded border-2 border-white'
           onClick={() => setWhichForm('login')}
         >
           {t('navbar.login')}

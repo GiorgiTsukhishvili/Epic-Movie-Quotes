@@ -24,15 +24,15 @@ const ErrorPage = () => {
           priority
         />
         <div className='bg-zinc-150 w-[7.313rem] h-[0.875rem] rounded-[100%] mt-[1.688rem]' />
-        <h1 className='lg:text-[2.938rem] text-2xl text-white mt-[1.75rem] leading-[150%] font-bold'>
+        <h1 className='lg:text-[2.938rem] text-2xl text-white mt-[1.75rem] leading-9.5 font-bold'>
           {t('404.whoops')}
         </h1>
-        <h1 className='text-white leading-[150%] text-base lg:text-2xl font-medium mt-4 lg:mt-2 mb-8 lg:mb-[2.938rem]'>
+        <h1 className='text-white leading-9.5 text-base lg:text-2xl font-medium mt-4 lg:mt-2 mb-8 lg:mb-[2.938rem]'>
           {t('404.mainText')}
         </h1>
         <Link
           href={'/'}
-          className='bg-red-650 text-white text-base lg:text-xl leading-[150%] py-2 lg:py-2.5 px-7 lg:px-4 rounded-md '
+          className='bg-red-650 text-white text-base lg:text-xl leading-9.5 py-2 lg:py-2.5 px-7 lg:px-4 rounded-md '
         >
           {t('404.return')}
         </Link>

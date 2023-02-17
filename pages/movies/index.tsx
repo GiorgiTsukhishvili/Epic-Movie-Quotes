@@ -43,10 +43,10 @@ const MoviePage = () => {
           <div className='w-full px-9 lg:pl-0 lg:pr-[4.375rem]'>
             <div className='w-full mt-[7.375rem] flex items-center justify-between'>
               <div className='flex flex-wrap items-center '>
-                <h1 className=' text-white leading-[150%] text-2xl font-medium'>
+                <h1 className=' text-white leading-9.5 text-2xl font-medium'>
                   {t('user.allMovies.totalMovies')} &#160;
                 </h1>
-                <h1 className=' text-white leading-[150%] text-base lg:text-2xl font-medium'>
+                <h1 className=' text-white leading-9.5 text-base lg:text-2xl font-medium'>
                   {t('user.allMovies.totalSecond')}
                   {data?.data.length})
                 </h1>
@@ -73,7 +73,7 @@ const MoviePage = () => {
 
                 <button
                   onClick={() => setIsAddMovieOpen(true)}
-                  className='flex gap-2  justify-center items-center bg-red-650 text-white px-[1.125rem] py-[0.625rem] rounded-md text-xl leading-[150%]'
+                  className='flex gap-2  justify-center items-center bg-red-650 text-white px-[1.125rem] py-[0.625rem] rounded-md text-xl leading-9.5'
                 >
                   <Plus />
                   {t('user.allMovies.addMovie')}
@@ -91,10 +91,10 @@ const MoviePage = () => {
                     priority
                     className='lg:w-[27.5rem] h-[22.375rem] lg:h-[23.125rem] w-[22.375rem] rounded-xl'
                   />
-                  <h1 className='text-white text-2xl leading-[150%] mt-4 font-medium'>
+                  <h1 className='text-white text-2xl leading-9.5 mt-4 font-medium'>
                     {movie.name[i18n?.language! as 'ka' | 'en']} ({movie.date})
                   </h1>
-                  <h1 className='text-white text-2xl leading-[150%] mt-4 font-medium flex gap-3 items-center'>
+                  <h1 className='text-white text-2xl leading-9.5 mt-4 font-medium flex gap-3 items-center'>
                     {movie.quotes_count}
                     <Comment />
                   </h1>

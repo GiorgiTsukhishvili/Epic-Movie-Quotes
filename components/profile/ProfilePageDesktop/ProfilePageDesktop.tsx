@@ -42,12 +42,12 @@ const ProfilePageDesktop: React.FC<ProfilePageDesktopProps> = ({
             onClick={() => setIsAddEmailOpen(false)}
           />
           <div className='w-[38rem] rounded-md h-[22.5rem] fixed z-[100] top-[21.625rem] left-1/2 bg-neutral-950 -translate-x-1/2'>
-            <h1 className='text-white text-2xl font-medium leading-[150%] py-6 pl-8 border-b border-b-profile-border'>
+            <h1 className='text-white text-2xl font-medium leading-9.5 py-6 pl-8 border-b border-b-profile-border'>
               {t('user.profile.addEmail')}
             </h1>
             <label
               htmlFor='name'
-              className='text-medium text-white leading-[150%] block mt-10 pl-8'
+              className='text-medium text-white leading-9.5 block mt-10 pl-8'
             >
               {t('user.profile.newEmail')}
             </label>
@@ -57,12 +57,12 @@ const ProfilePageDesktop: React.FC<ProfilePageDesktopProps> = ({
               placeholder={t('user.profile.enterNewEmail')!}
               className=' ml-8  mt-2 inline w-[33rem] placeholder:text-neutral-950 bg-gray-350 rounded-md py-2 px-4 text-neutral-950 text-2xl'
             />
-            <div className='text-red-550 h-5 font-normal text-sm leading-[150%] my-1 ml-8'>
+            <div className='text-red-550 h-5 font-normal text-sm leading-9.5 my-1 ml-8'>
               <ErrorMessage errors={errors} name='email' />
             </div>
             <div className='w-full flex justify-end gap-8 mt-10 pr-12'>
               <button
-                className='text-gray-350 text-xl leading-[150%]'
+                className='text-gray-350 text-xl leading-9.5'
                 onClick={() => {
                   setIsAddEmailOpen(false);
                   setValue('email', '');
@@ -71,7 +71,7 @@ const ProfilePageDesktop: React.FC<ProfilePageDesktopProps> = ({
                 {t('user.profile.cancel')}
               </button>
               <button
-                className='text-white leading-[150%] px-4 py-2 text-xl bg-red-650 rounded-md'
+                className='text-white leading-9.5 px-4 py-2 text-xl bg-red-650 rounded-md'
                 onClick={submitEmail}
               >
                 {t('user.profile.save')}
@@ -106,7 +106,7 @@ const ProfilePageDesktop: React.FC<ProfilePageDesktopProps> = ({
           />
           <label
             htmlFor='profile-photo'
-            className='text-xl block text-white leading-[150%] cursor-pointer self-center'
+            className='text-xl block text-white leading-9.5 cursor-pointer self-center'
           >
             {t('user.profile.newPhoto')}
           </label>
@@ -114,7 +114,7 @@ const ProfilePageDesktop: React.FC<ProfilePageDesktopProps> = ({
           <div>
             <label
               htmlFor='name'
-              className='text-medium text-white leading-[150%] block mt-10 '
+              className='text-medium text-white leading-9.5 block mt-10 '
             >
               {t('user.profile.username')}
             </label>
@@ -139,14 +139,14 @@ const ProfilePageDesktop: React.FC<ProfilePageDesktopProps> = ({
                 })}
               />
               <h1
-                className={`text-gray-350 leading-[150%] text-xl inline cursor-pointer ml-8 ${
+                className={`text-gray-350 leading-9.5 text-xl inline cursor-pointer ml-8 ${
                   isNameEditOpen ? 'opacity-0' : 'opacity-1'
                 }`}
                 onClick={() => setIsNameEditOpen(true)}
               >
                 {t('user.profile.edit')}
               </h1>
-              <div className='text-red-550 h-5 font-normal text-sm leading-[150%] my-1 '>
+              <div className='text-red-550 h-5 font-normal text-sm leading-9.5 my-1 '>
                 <ErrorMessage errors={errors} name='name' />
               </div>
               <div className='w-[27rem] xl:w-[33rem] border-b border-b-profile-border pt-7' />
@@ -155,7 +155,7 @@ const ProfilePageDesktop: React.FC<ProfilePageDesktopProps> = ({
 
           {data.google_id ? (
             <Fragment>
-              <h1 className='text-medium text-white leading-[150%] block mt-10 self-start'>
+              <h1 className='text-medium text-white leading-9.5 block mt-10 self-start'>
                 {t('user.profile.email')}
               </h1>
               <div className='flex justify-start items-center gap-8 w-full mt-2 '>
@@ -185,13 +185,13 @@ const ProfilePageDesktop: React.FC<ProfilePageDesktopProps> = ({
       {(isFileUploaded || isNameEditOpen || isPasswordEditOpen) && (
         <div className='w-full flex justify-end gap-8 mt-10'>
           <button
-            className='text-gray-350 text-xl leading-[150%]'
+            className='text-gray-350 text-xl leading-9.5'
             onClick={cancelChanges}
           >
             {t('user.profile.cancel')}
           </button>
           <button
-            className='text-white leading-[150%] px-4 py-2 text-xl bg-red-650 rounded-md'
+            className='text-white leading-9.5 px-4 py-2 text-xl bg-red-650 rounded-md'
             onClick={submitChanges}
           >
             {t('user.profile.save')}

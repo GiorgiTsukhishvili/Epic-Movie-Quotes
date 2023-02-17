@@ -23,7 +23,7 @@ const ProfileAddEmailMobile: React.FC<ProfileAddEmailMobileProps> = ({
       <div className=' w-full min-h-[10.75rem] items-start flex-col relative justify-start flex'>
         <div className='bg-zinc-750 rounded-xl  backdrop-filter backdrop-blur-user-page -rotate-180  w-full h-full absolute top-0 left-0' />
         <div className='z-10 block  px-8 mx-auto'>
-          <h1 className='py-8 text-white leading-[150%] text-base'>
+          <h1 className='py-8 text-white leading-9.5 text-base'>
             {t('user.profile.enterNewName')}
           </h1>
           <input
@@ -32,20 +32,20 @@ const ProfileAddEmailMobile: React.FC<ProfileAddEmailMobileProps> = ({
             {...registerMobile('email')}
             placeholder={t('user.profile.enterNewName')}
           />
-          <div className='text-red-550 h-5 font-normal text-sm leading-[150%] my-1 '>
+          <div className='text-red-550 h-5 font-normal text-sm leading-9.5 my-1 '>
             <ErrorMessage errors={errorsMobile} name='email' />
           </div>
         </div>
       </div>
       <div className='w-full flex justify-between gap-8 mt-24 px-7'>
         <button
-          className='text-gray-350 text-xl leading-[150%]'
+          className='text-gray-350 text-xl leading-9.5'
           onClick={() => cancel()}
         >
           {t('user.profile.cancel')}
         </button>
         <button
-          className='text-white leading-[150%] px-4 py-2 text-xl bg-red-650 rounded-md'
+          className='text-white leading-9.5 px-4 py-2 text-xl bg-red-650 rounded-md'
           onClick={() => {
             checkEmailValidation() && setEmailStep('third');
           }}

@@ -40,7 +40,7 @@ const UserNavbar: React.FC<UserNavbarTypes> = ({
       <div className='bg-white fixed z-40 w-full rotate--180 h-[5.375rem] flex justify-between items-center px-9 lg:px-[4.375rem] py-8 backdrop-filter backdrop-blur-user-page bg-opacity-5'>
         <Link
           href={'/news-feed'}
-          className='uppercase text-orange-250 font-medium leading-[150%] hidden lg:inline'
+          className='uppercase text-orange-250 font-medium leading-9.5 hidden lg:inline'
         >
           movie quotes
         </Link>
@@ -86,7 +86,7 @@ const UserNavbar: React.FC<UserNavbarTypes> = ({
                     </form>
                   </div>
                   <div className='flex flex-col items-start gap-6 mt-6 ml-[4.625rem]'>
-                    <h1 className='text-white text-base leading-[150%]'>
+                    <h1 className='text-white text-base leading-9.5'>
                       <span className='opacity-60'>
                         {t('user.newsFeed.enter')}
                       </span>{' '}
@@ -95,7 +95,7 @@ const UserNavbar: React.FC<UserNavbarTypes> = ({
                         {t('user.newsFeed.searchMovies')}
                       </span>
                     </h1>
-                    <h1 className='text-white text-base leading-[150%]'>
+                    <h1 className='text-white text-base leading-9.5'>
                       <span className='opacity-60'>
                         {t('user.newsFeed.enter')}
                       </span>{' '}
@@ -112,7 +112,7 @@ const UserNavbar: React.FC<UserNavbarTypes> = ({
           <Notifications />
           <LanguageSwitcher />
           <button
-            className='hidden lg:inline text-white text-sm sm:text-base lg:text-xl lg:leading-[150%] leading-[150%] h-[2.375rem] px-4 lg:px-4 rounded-lg border-2 border-white'
+            className='hidden lg:inline text-white text-sm sm:text-base lg:text-xl lg:leading-9.5 leading-9.5 h-[2.375rem] px-4 lg:px-4 rounded-lg border-2 border-white'
             onClick={logoutUser}
           >
             {t('user.navbar.logout')}
@@ -137,10 +137,10 @@ const UserNavbar: React.FC<UserNavbarTypes> = ({
               />
             )}
             <div>
-              <h1 className='text-white text-xl leading-[150%]'>{name}</h1>
+              <h1 className='text-white text-xl leading-9.5'>{name}</h1>
               <Link
                 href={{ pathname: '/profile' }}
-                className='text-gray-350 text-sm leading-[150%]'
+                className='text-gray-350 text-sm leading-9.5'
               >
                 {t('user.profileSidebar.edit')}
               </Link>
@@ -150,7 +150,7 @@ const UserNavbar: React.FC<UserNavbarTypes> = ({
             <House isSidebar={false} isNewsFeed={isNewsFeed} />
             <Link
               href={{ pathname: '/news-feed' }}
-              className='text-white text-xl leading-[150%] uppercase'
+              className='text-white text-xl leading-9.5 uppercase'
             >
               {t('user.profileSidebar.newsFeed')}
             </Link>
@@ -160,7 +160,7 @@ const UserNavbar: React.FC<UserNavbarTypes> = ({
             <Camera isSidebar={false} isMoviesPage={isMoviesPage} />
             <Link
               href={{ pathname: '/movies' }}
-              className='text-white text-xl leading-[150%] uppercase'
+              className='text-white text-xl leading-9.5 uppercase'
             >
               {t('user.profileSidebar.movies')}
             </Link>
@@ -170,7 +170,7 @@ const UserNavbar: React.FC<UserNavbarTypes> = ({
             onClick={logoutUser}
           >
             <ArrowRight isLogout={true} />
-            <h1 className='text-white text-xl leading-[150%] uppercase'>
+            <h1 className='text-white text-xl leading-9.5 uppercase'>
               {t('user.navbar.logout')}
             </h1>
           </div>

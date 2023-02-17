@@ -41,11 +41,11 @@ const EditQuote: React.FC<EditQuoteProps> = ({
             onClick={() => removeQuery(quoteId)}
           >
             <TrashCan />
-            <h1 className='text-white text-base leading-[150%]'>
+            <h1 className='text-white text-base leading-9.5'>
               {t('user.singleMovie.delete')}
             </h1>
           </div>
-          <h1 className='text-white text-xl lg:text-2xl leading-[150%] font-medium'>
+          <h1 className='text-white text-xl lg:text-2xl leading-9.5 font-medium'>
             {t('user.singleMovie.editQuote')}
           </h1>
           <Link
@@ -67,7 +67,7 @@ const EditQuote: React.FC<EditQuoteProps> = ({
               className='rounded-full w-[3.75rem] h-[3.75rem]'
             />
           )}
-          <h1 className='text-white text-xl = leading-[150%] font-medium'>
+          <h1 className='text-white text-xl = leading-9.5 font-medium'>
             {name}
           </h1>
         </div>
@@ -83,7 +83,7 @@ const EditQuote: React.FC<EditQuoteProps> = ({
             errorText={t('textArea.onlyEnglish')!}
           />
 
-          <div className='text-red-550 h-5 font-normal text-sm leading-[150%] my-1 mb-5'>
+          <div className='text-red-550 h-5 font-normal text-sm leading-9.5 my-1 mb-5'>
             <ErrorMessage errors={errors} name='quote-en' />
           </div>
 
@@ -97,7 +97,7 @@ const EditQuote: React.FC<EditQuoteProps> = ({
             errorText={t('textArea.onlyGeorgian')!}
           />
 
-          <div className='text-red-550 h-5 font-normal text-sm leading-[150%] my-1 z-50 '>
+          <div className='text-red-550 h-5 font-normal text-sm leading-9.5 my-1 z-50 '>
             <ErrorMessage errors={errors} name='quote-ka' />
           </div>
 
@@ -124,19 +124,19 @@ const EditQuote: React.FC<EditQuoteProps> = ({
 
             <div className=' flex flex-col gap-2.5 justify-center z-40 items-center bg-main-gradient backdrop-filter backdrop-blur-user-page rounded-xl opacity-80 w-[8.438rem] h-20 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'>
               <Photo />
-              <h1 className='text-base text-white leading-[150%]'>
+              <h1 className='text-base text-white leading-9.5'>
                 {t('user.singleMovie.changePhoto')}
               </h1>
             </div>
           </div>
 
-          <div className='text-red-550 h-5 font-normal text-sm leading-[150%] my-5 mb-5 z-50 '>
+          <div className='text-red-550 h-5 font-normal text-sm leading-9.5 my-5 mb-5 z-50 '>
             <ErrorMessage errors={errors} name='image' />
           </div>
 
           <button
             type='submit'
-            className='bg-red-650 mb-5 hover:bg-red-750 text-white text-xl  h-12  leading-[150%]  w-full rounded-md '
+            className='bg-red-650 mb-5 hover:bg-red-750 text-white text-xl  h-12  leading-9.5  w-full rounded-md '
           >
             {t('user.singleMovie.saveChanges')}
           </button>

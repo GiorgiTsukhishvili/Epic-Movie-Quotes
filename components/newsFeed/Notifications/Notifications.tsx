@@ -25,7 +25,7 @@ const Notifications = () => {
         <Bell />
         {calculateNewNotifications() > 0 && (
           <div className='bg-red-850 w-[1.563rem] h-[1.563rem] rounded-full flex justify-center items-center absolute top-[-0.5rem] left-[0.85rem]'>
-            <span className='text-white leading-[150%] font-medium'>
+            <span className='text-white leading-9.5 font-medium'>
               {calculateNewNotifications()}
             </span>
           </div>
@@ -37,11 +37,11 @@ const Notifications = () => {
           <div className='border-b-black border-b-[2rem]  border-l-[1rem] border-r-[1rem] border-l-transparent border-r-transparent absolute top-[4.5rem] right-[7.8rem] lg:right-[19.2rem]' />
           <div className='bg-black lg:w-[60rem] overflow-auto pb-24 lg:pb-0 lg:h-[50.75rem] w-screen h-screen absolute top-[5.5rem] lg:top-[6rem] left-0 lg:left-auto  lg:right-[5rem] rounded-xl'>
             <div className='flex justify-between items-center px-8 lg:pt-10 pt-5 mb-8'>
-              <h1 className='md:text-[2rem] text-xl text-white font-medium leading-[150%]'>
+              <h1 className='md:text-[2rem] text-xl text-white font-medium leading-9.5'>
                 {t('user.navbar.notifications')}
               </h1>
               <h1
-                className='md:text-xl text-sm text-white font-medium leading-[150%] underline cursor-pointer'
+                className='md:text-xl text-sm text-white font-medium leading-9.5 underline cursor-pointer'
                 onClick={updateAllNotifications}
               >
                 {t('user.navbar.mark')}
@@ -66,16 +66,16 @@ const Notifications = () => {
                     }`}
                   />
                   <div>
-                    <h1 className='text-xl leading-[150%] text-white mb-1'>
+                    <h1 className='text-xl leading-9.5 text-white mb-1'>
                       {notification.person.name}
                     </h1>
                     {notification.is_comment ? (
-                      <h1 className='lg:text-xl text-base leading-[150%] text-gray-350 flex gap-3'>
+                      <h1 className='lg:text-xl text-base leading-9.5 text-gray-350 flex gap-3'>
                         <Comment />
                         {t('user.navbar.commented')}
                       </h1>
                     ) : (
-                      <h1 className='lg:text-xl text-base  leading-[150%] text-gray-350 flex gap-3'>
+                      <h1 className='lg:text-xl text-base  leading-9.5 text-gray-350 flex gap-3'>
                         <LikeFilled />
                         {t('user.navbar.reacted')}
                       </h1>
@@ -83,15 +83,15 @@ const Notifications = () => {
                   </div>
                 </div>
                 <div className='flex lg:flex-col lg:items-end items-center flex-row-reverse justify-end mt-2 lg:mt-0 gap-6 lg:gap-0'>
-                  <h1 className='text-zinc-350 text-base lg:text-xl leading-[150%]'>
+                  <h1 className='text-zinc-350 text-base lg:text-xl leading-9.5'>
                     {calculateData(notification.created_at)}
                   </h1>
                   {notification.is_new ? (
-                    <h1 className='text-green-750 text-base lg:text-xl leading-[150%] lg:mt-2'>
+                    <h1 className='text-green-750 text-base lg:text-xl leading-9.5 lg:mt-2'>
                       {t('user.navbar.new')}
                     </h1>
                   ) : (
-                    <h1 className='text-green-750 text-base lg:text-xl leading-[150%] lg:mt-2 opacity-0'>
+                    <h1 className='text-green-750 text-base lg:text-xl leading-9.5 lg:mt-2 opacity-0'>
                       {t('user.navbar.new')}
                     </h1>
                   )}

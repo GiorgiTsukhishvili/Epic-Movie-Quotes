@@ -68,7 +68,7 @@ const useAddQuoteNewsFeed = () => {
 
   const handleFileUpload = (data: FileList | null) => {
     if (data !== null) {
-      if (data[0].size > 10 * 1024 * 1024) {
+      if (data[0].size > 2 * 1024 * 1024) {
         setError('image', { message: t('errors.largeFile')! });
         return;
       }

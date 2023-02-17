@@ -67,7 +67,7 @@ const ProfilePageMobile: React.FC<ProfilePageMobileProps> = ({
               />
               <label
                 htmlFor='profile-photo-mobile'
-                className='text-xl block text-white leading-[150%] cursor-pointer'
+                className='text-xl block text-white leading-9.5 cursor-pointer'
               >
                 {t('user.profile.newPhoto')}
               </label>
@@ -75,7 +75,7 @@ const ProfilePageMobile: React.FC<ProfilePageMobileProps> = ({
               <div>
                 <label
                   htmlFor='name'
-                  className='text-medium text-white leading-[150%] block  mt-[3.75rem]'
+                  className='text-medium text-white leading-9.5 block  mt-[3.75rem]'
                 >
                   {t('user.profile.username')}
                 </label>
@@ -85,7 +85,7 @@ const ProfilePageMobile: React.FC<ProfilePageMobileProps> = ({
                     {getValuesMobile().name}
                   </h1>
                   <button
-                    className='text-gray-350 leading-[150%]  text-lg cursor-pointer'
+                    className='text-gray-350 leading-9.5  text-lg cursor-pointer'
                     onClick={() => setNameEditStep('first')}
                   >
                     {t('user.profile.edit')}
@@ -99,7 +99,7 @@ const ProfilePageMobile: React.FC<ProfilePageMobileProps> = ({
                 <Fragment>
                   <label
                     htmlFor='password'
-                    className='text-medium text-white leading-[150%] block  mt-[3.75rem]'
+                    className='text-medium text-white leading-9.5 block  mt-[3.75rem]'
                   >
                     {t('user.profile.password')}
                   </label>
@@ -109,7 +109,7 @@ const ProfilePageMobile: React.FC<ProfilePageMobileProps> = ({
                       ••••••••••••
                     </h1>
                     <button
-                      className='text-gray-350 leading-[150%]  text-lg cursor-pointer'
+                      className='text-gray-350 leading-9.5  text-lg cursor-pointer'
                       onClick={() => setPasswordEditStep('first')}
                     >
                       {t('user.profile.edit')}
@@ -126,7 +126,7 @@ const ProfilePageMobile: React.FC<ProfilePageMobileProps> = ({
                 } mb-[5.625rem] cursor-pointer`}
                 onClick={() => setEmailStep('first')}
               >
-                <h1 className='text-white leading-[150%] text-base uppercase'>
+                <h1 className='text-white leading-9.5 text-base uppercase'>
                   {t('user.profile.email')}
                 </h1>
                 <HalfArrow />
@@ -200,13 +200,13 @@ const ProfilePageMobile: React.FC<ProfilePageMobileProps> = ({
       emailStep === '' ? (
         <div className='w-full flex justify-end gap-8 mt-10 pr-4'>
           <button
-            className='text-gray-350 text-xl leading-[150%]'
+            className='text-gray-350 text-xl leading-9.5'
             onClick={cancelChanges}
           >
             {t('user.profile.cancel')}
           </button>
           <button
-            className='text-white leading-[150%] px-4 py-2 text-xl bg-red-650 rounded-md'
+            className='text-white leading-9.5 px-4 py-2 text-xl bg-red-650 rounded-md'
             onClick={submitChanges}
           >
             {t('user.profile.save')}

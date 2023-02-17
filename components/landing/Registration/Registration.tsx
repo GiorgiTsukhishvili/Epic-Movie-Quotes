@@ -34,7 +34,7 @@ const Registration: React.FC<RegistrationProps> = ({ setWhichForm }) => {
         <h1 className='text-white text-2xl md:text-[2rem] font-medium leading-[120%]'>
           {t('form.register.header')}
         </h1>
-        <h1 className='text-gray-550 mt-3 text-base font-normal leading-[150%] px-[2.125rem] sm:px-[7.5rem]'>
+        <h1 className='text-gray-550 mt-3 text-base font-normal leading-9.5 px-[2.125rem] sm:px-[7.5rem]'>
           {t('form.register.mainText')}
         </h1>
         <form
@@ -44,7 +44,7 @@ const Registration: React.FC<RegistrationProps> = ({ setWhichForm }) => {
           <div className='w-full flex flex-col items-start relative'>
             <label
               htmlFor='name'
-              className='text-base text-white font-normal leading-[150%] mb-2'
+              className='text-base text-white font-normal leading-9.5 mb-2'
             >
               {t('form.register.name')} <span className='text-red-550'>*</span>
             </label>
@@ -80,7 +80,7 @@ const Registration: React.FC<RegistrationProps> = ({ setWhichForm }) => {
               } focus:shadow-input-custom focus:outline-none w-full border-2 pr-10 rounded-md bg-gray-350 text-gray-550 px-[0.813rem] py-[0.438rem] placeholder-gray-550`}
               placeholder={`${t('form.register.nameInput')}`}
             />
-            <div className='text-red-550 h-5 font-normal text-sm leading-[150%] my-1'>
+            <div className='text-red-550 h-5 font-normal text-sm leading-9.5 my-1'>
               <ErrorMessage errors={errors} name='name' />
             </div>
             <div className='absolute top-[2.875rem] right-[0.85rem]'>
@@ -91,7 +91,7 @@ const Registration: React.FC<RegistrationProps> = ({ setWhichForm }) => {
           <div className='w-full flex flex-col items-start relative'>
             <label
               htmlFor='email'
-              className='text-base text-white font-normal leading-[150%] mb-2'
+              className='text-base text-white font-normal leading-9.5 mb-2'
             >
               {t('form.login.email')} <span className='text-red-550'>*</span>
             </label>
@@ -119,7 +119,7 @@ const Registration: React.FC<RegistrationProps> = ({ setWhichForm }) => {
               } focus:shadow-input-custom focus:outline-none w-full border-2 pr-10 rounded-md bg-gray-350 text-gray-550 px-[0.813rem] py-[0.438rem] placeholder-gray-550`}
               placeholder={`${t('form.login.emailInput')}`}
             />
-            <div className='text-red-550 h-5 font-normal text-sm leading-[150%] my-1'>
+            <div className='text-red-550 h-5 font-normal text-sm leading-9.5 my-1'>
               <ErrorMessage errors={errors} name='email' />
             </div>
             <div className='absolute top-[2.875rem] right-[0.85rem]'>
@@ -130,7 +130,7 @@ const Registration: React.FC<RegistrationProps> = ({ setWhichForm }) => {
           <div className='w-full flex flex-col items-start relative'>
             <label
               htmlFor='password'
-              className='text-base text-white font-normal leading-[150%] mb-2'
+              className='text-base text-white font-normal leading-9.5 mb-2'
             >
               {t('form.login.password')} <span className='text-red-550'>*</span>
             </label>
@@ -166,7 +166,7 @@ const Registration: React.FC<RegistrationProps> = ({ setWhichForm }) => {
               }`}
               placeholder={`${t('form.register.passwordInput')}`}
             />
-            <div className='text-red-550 h-5 font-normal text-sm leading-[150%] my-1'>
+            <div className='text-red-550 h-5 font-normal text-sm leading-9.5 my-1'>
               <ErrorMessage errors={errors} name='password' />
             </div>
 
@@ -213,7 +213,7 @@ const Registration: React.FC<RegistrationProps> = ({ setWhichForm }) => {
           <div className='w-full flex flex-col items-start relative'>
             <label
               htmlFor='password_confirmation'
-              className='text-base text-white font-normal leading-[150%] mb-2'
+              className='text-base text-white font-normal leading-9.5 mb-2'
             >
               {t('form.register.passwordConfirmation')}{' '}
               <span className='text-red-550'>*</span>
@@ -244,7 +244,7 @@ const Registration: React.FC<RegistrationProps> = ({ setWhichForm }) => {
               }`}
               placeholder={`${t('form.register.passwordConfirmation')}`}
             />
-            <div className='text-red-550 h-5 font-normal text-sm leading-[150%] my-1'>
+            <div className='text-red-550 h-5 font-normal text-sm leading-9.5 my-1'>
               <ErrorMessage errors={errors} name='password_confirmation' />
             </div>
 
@@ -292,7 +292,7 @@ const Registration: React.FC<RegistrationProps> = ({ setWhichForm }) => {
 
           <button
             type='submit'
-            className='bg-red-650 hover:bg-red-750 text-white text-base  h-[2.375rem]  leading-[150%]  w-full rounded-md '
+            className='bg-red-650 hover:bg-red-750 text-white text-base  h-[2.375rem]  leading-9.5  w-full rounded-md '
           >
             {t('form.register.submit')}
           </button>
@@ -303,17 +303,17 @@ const Registration: React.FC<RegistrationProps> = ({ setWhichForm }) => {
           onClick={() => redirectGoogle()}
         >
           <Google />
-          <h1 className='text-white text-base font-normal leading-[150%] overflow-ellipsis overflow-hidden h-6'>
+          <h1 className='text-white text-base font-normal leading-9.5 overflow-ellipsis overflow-hidden h-6'>
             {t('form.register.google')}
           </h1>
         </div>
 
         <div className='flex justify-center items-center gap-1 mt-8'>
-          <h1 className='text-base leading-[150%] font-normal text-gray-550'>
+          <h1 className='text-base leading-9.5 font-normal text-gray-550'>
             {t('form.register.haveAccount')}
           </h1>
           <button
-            className='text-base leading-[150%] font-normal text-blue-650 underline'
+            className='text-base leading-9.5 font-normal text-blue-650 underline'
             onClick={() => setWhichForm('login')}
           >
             {t('form.register.logIn')}
